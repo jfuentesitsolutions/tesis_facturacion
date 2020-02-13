@@ -35,7 +35,6 @@ namespace interfaces.panel_inicio
             verificandoCaja();
 
             control_permisos.controlador_de_permisos per = new control_permisos.controlador_de_permisos(this.panel_opciones, conexiones_BD.clases.usuarios.permisosAsigandosInicio(secion.Datos[5]));
-
         }
 
         private void btnAbajo_Click(object sender, EventArgs e)

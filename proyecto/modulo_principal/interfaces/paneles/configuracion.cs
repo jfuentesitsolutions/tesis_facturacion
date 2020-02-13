@@ -381,6 +381,7 @@ namespace interfaces.paneles
         private void configuracion_Load(object sender, EventArgs e)
         {
             control_permisos.controlador_de_permisos per= new control_permisos.controlador_de_permisos(this.panel_central, conexiones_BD.clases.usuarios.permisosAsigandosConfiguracion(sesion.Datos[5]));
+            
         }
 
         private void btnModificaC_Click(object sender, EventArgs e)
@@ -559,6 +560,24 @@ namespace interfaces.paneles
         private void abajoCorre_Click(object sender, EventArgs e)
         {
             gadgets.slider fun = new gadgets.slider(detalleCorrelativo, imagenCorre, arribaCorre, abajoCorre);
+            fun.despliegue();
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            cajas_efectivo.Imagenes gestion_caja = new cajas_efectivo.Imagenes();
+            gestion_caja.ShowDialog();
+        }
+
+        private void arribaCaja_Click(object sender, EventArgs e)
+        {
+            gadgets.slider fun = new gadgets.slider(detalleCaja, imagenCaja, arribaCaja, abajoCaja);
+            fun.despliegue();
+        }
+
+        private void abajoCaja_Click(object sender, EventArgs e)
+        {
+            gadgets.slider fun = new gadgets.slider(detalleCaja, imagenCaja, arribaCaja, abajoCaja);
             fun.despliegue();
         }
     }

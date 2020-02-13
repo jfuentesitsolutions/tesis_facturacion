@@ -82,3 +82,17 @@ C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\esp
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csproj.GenerateResource.Cache
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.dll
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.pdb
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.pdb
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\bin\Debug\Bunifu_UI_v1.52.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.xml
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.xml
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csprojResolveAssemblyReference.cache
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.carga_tablas.resources
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.Properties.Resources.resources
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.splash_espera.resources
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csproj.GenerateResource.Cache
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.pdb

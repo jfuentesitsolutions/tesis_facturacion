@@ -220,6 +220,14 @@
             this.arribaCorre = new System.Windows.Forms.PictureBox();
             this.abajoCorre = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.pCajas = new System.Windows.Forms.Panel();
+            this.imagenCaja = new System.Windows.Forms.PictureBox();
+            this.detalleCaja = new System.Windows.Forms.Panel();
+            this.btnAbrir = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.arribaCaja = new System.Windows.Forms.PictureBox();
+            this.abajoCaja = new System.Windows.Forms.PictureBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel_central.SuspendLayout();
             this.pEmpleados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenE)).BeginInit();
@@ -347,6 +355,12 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.arribaCorre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abajoCorre)).BeginInit();
+            this.pCajas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenCaja)).BeginInit();
+            this.detalleCaja.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arribaCaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abajoCaja)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -392,6 +406,7 @@
             this.panel_central.Controls.Add(this.pGrupos);
             this.panel_central.Controls.Add(this.pBancos);
             this.panel_central.Controls.Add(this.pCorrelativos);
+            this.panel_central.Controls.Add(this.pCajas);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(60, 15);
             this.panel_central.Name = "panel_central";
@@ -2988,6 +3003,108 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Correlativos";
             // 
+            // pCajas
+            // 
+            this.pCajas.BackColor = System.Drawing.Color.Transparent;
+            this.pCajas.Controls.Add(this.imagenCaja);
+            this.pCajas.Controls.Add(this.detalleCaja);
+            this.pCajas.Location = new System.Drawing.Point(531, 615);
+            this.pCajas.Margin = new System.Windows.Forms.Padding(6);
+            this.pCajas.Name = "pCajas";
+            this.pCajas.Size = new System.Drawing.Size(163, 191);
+            this.pCajas.TabIndex = 25;
+            this.pCajas.Visible = false;
+            // 
+            // imagenCaja
+            // 
+            this.imagenCaja.Image = global::interfaces.Properties.Resources.caja_control;
+            this.imagenCaja.Location = new System.Drawing.Point(23, 22);
+            this.imagenCaja.Name = "imagenCaja";
+            this.imagenCaja.Size = new System.Drawing.Size(116, 107);
+            this.imagenCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagenCaja.TabIndex = 2;
+            this.imagenCaja.TabStop = false;
+            // 
+            // detalleCaja
+            // 
+            this.detalleCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(75)))), ((int)(((byte)(83)))), ((int)(((byte)(2)))));
+            this.detalleCaja.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detalleCaja.Controls.Add(this.btnAbrir);
+            this.detalleCaja.Controls.Add(this.panel9);
+            this.detalleCaja.Cursor = System.Windows.Forms.Cursors.Default;
+            this.detalleCaja.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.detalleCaja.Location = new System.Drawing.Point(0, 144);
+            this.detalleCaja.Name = "detalleCaja";
+            this.detalleCaja.Size = new System.Drawing.Size(163, 47);
+            this.detalleCaja.TabIndex = 0;
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbrir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbrir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAbrir.FlatAppearance.BorderSize = 0;
+            this.btnAbrir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnAbrir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(103)))), ((int)(((byte)(101)))));
+            this.btnAbrir.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrir.Image")));
+            this.btnAbrir.Location = new System.Drawing.Point(47, 73);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(69, 91);
+            this.btnAbrir.TabIndex = 7;
+            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAbrir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAbrir.UseVisualStyleBackColor = false;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(208)))), ((int)(((byte)(158)))));
+            this.panel9.Controls.Add(this.arribaCaja);
+            this.panel9.Controls.Add(this.abajoCaja);
+            this.panel9.Controls.Add(this.label22);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(161, 47);
+            this.panel9.TabIndex = 2;
+            // 
+            // arribaCaja
+            // 
+            this.arribaCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.arribaCaja.Image = ((System.Drawing.Image)(resources.GetObject("arribaCaja.Image")));
+            this.arribaCaja.Location = new System.Drawing.Point(118, 4);
+            this.arribaCaja.Name = "arribaCaja";
+            this.arribaCaja.Size = new System.Drawing.Size(32, 32);
+            this.arribaCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.arribaCaja.TabIndex = 3;
+            this.arribaCaja.TabStop = false;
+            this.arribaCaja.Click += new System.EventHandler(this.arribaCaja_Click);
+            // 
+            // abajoCaja
+            // 
+            this.abajoCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.abajoCaja.Image = ((System.Drawing.Image)(resources.GetObject("abajoCaja.Image")));
+            this.abajoCaja.Location = new System.Drawing.Point(118, 4);
+            this.abajoCaja.Name = "abajoCaja";
+            this.abajoCaja.Size = new System.Drawing.Size(32, 32);
+            this.abajoCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.abajoCaja.TabIndex = 4;
+            this.abajoCaja.TabStop = false;
+            this.abajoCaja.Click += new System.EventHandler(this.abajoCaja_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(56, 12);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(44, 19);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Cajas";
+            // 
             // configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -3152,6 +3269,13 @@
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.arribaCorre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abajoCorre)).EndInit();
+            this.pCajas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imagenCaja)).EndInit();
+            this.detalleCaja.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arribaCaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abajoCaja)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3349,5 +3473,13 @@
         private System.Windows.Forms.PictureBox arribaCorre;
         private System.Windows.Forms.PictureBox abajoCorre;
         private System.Windows.Forms.Label label21;
+        public System.Windows.Forms.Panel pCajas;
+        private System.Windows.Forms.PictureBox imagenCaja;
+        private System.Windows.Forms.Panel detalleCaja;
+        private System.Windows.Forms.Button btnAbrir;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.PictureBox arribaCaja;
+        private System.Windows.Forms.PictureBox abajoCaja;
+        private System.Windows.Forms.Label label22;
     }
 }

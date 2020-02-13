@@ -55,13 +55,21 @@ namespace control_principal
             if (btnInventario.Location==new Point(5,65))
             {
                 this.funcionamientoBotones(0);
+                //this.panel_contenidos.Controls.RemoveAt(0);
+                
             }
             else
             {
                 this.funcionamientoBotones(1);
-            }
+                if (this.panel_contenidos.Controls.Count != 0)
+                {
+                    //this.panel_contenidos.Controls.RemoveAt(0);
+                }
+                else
+                {
 
-               
+                }
+            }
             
         }
 
@@ -119,13 +127,21 @@ namespace control_principal
             {
                 this.funcionamientoBotones(0);
                 this.panel_contenidos.Controls.RemoveAt(0);
-                this.colocarPanel(new interfaces.panel_inicio.inicio());
+                //this.colocarPanel(new interfaces.panel_inicio.inicio());
             }
             else
             {
                 this.funcionamientoBotones(2);
-                this.panel_contenidos.Controls.RemoveAt(0);
-                this.colocarPanel(new interfaces.paneles.negocio());
+                if (this.panel_contenidos.Controls.Count != 0)
+                {
+                    this.panel_contenidos.Controls.RemoveAt(0);
+                    this.colocarPanel(new interfaces.paneles.negocio());
+                }
+                else
+                {
+                    this.colocarPanel(new interfaces.paneles.negocio());
+                }
+                
             }
         }
 
@@ -134,11 +150,9 @@ namespace control_principal
             if (btncon.Location == new Point(5, 189))
             {
                 this.funcionamientoBotones(0);
-                if (this.panel_contenidos.Controls.Count > 0)
-                {
                     this.panel_contenidos.Controls.RemoveAt(0);
-                    this.colocarPanel(new interfaces.panel_inicio.inicio());
-                }
+                    //this.colocarPanel(new interfaces.panel_inicio.inicio());
+                
 
             }
             else
@@ -147,6 +161,11 @@ namespace control_principal
                 if (this.panel_contenidos.Controls.Count > 0)
                 {
                     this.panel_contenidos.Controls.RemoveAt(0);
+                    this.colocarPanel(new interfaces.paneles.configuracion());
+                }
+                else
+                {
+                    //this.panel_contenidos.Controls.RemoveAt(0);
                     this.colocarPanel(new interfaces.paneles.configuracion());
                 }
             }
@@ -190,7 +209,8 @@ namespace control_principal
 
         private void principal_Load(object sender, EventArgs e)
         {
-            this.colocarPanel(new interfaces.panel_inicio.inicio());
+            //this.colocarPanel(new interfaces.panel_inicio.inicio());
+            this.verificandoCaja();
             this.dibujarTitulo();
         }
 
@@ -234,6 +254,22 @@ namespace control_principal
             {
                 Application.Restart();
             }
+        }
+
+        private void verificandoCaja()
+        {
+            DataTable caja = conexiones_BD.clases.cajas.datosTabla(sesion.DatosRegistro[6]);
+            if (caja.Rows.Count > 0)
+            {
+                sesion.Caja_activa = true;
+                sesion.Idcaja = caja.Rows[0][0].ToString();
+            }
+            else
+            {
+                sesion.Caja_activa = false;
+                sesion.Idcaja = "0";
+            }
+
         }
     }
 }

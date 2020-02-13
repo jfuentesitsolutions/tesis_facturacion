@@ -62,3 +62,10 @@ C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitario
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.barra_progreso.resources
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb

@@ -51,11 +51,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(66, 16);
+            this.label4.Location = new System.Drawing.Point(131, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(243, 27);
+            this.label4.Size = new System.Drawing.Size(130, 27);
             this.label4.TabIndex = 12;
-            this.label4.Text = "SISTEMA DE VENTAS";
+            this.label4.Text = "INGRESAR";
             // 
             // btnCancelar
             // 
@@ -100,17 +100,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(385, 58);
+            this.panel1.Size = new System.Drawing.Size(385, 44);
             this.panel1.TabIndex = 18;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(344, 11);
+            this.pictureBox1.Image = global::control_principal.Properties.Resources.close__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(349, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 43);
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -131,7 +132,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtUsuario.BackColor = System.Drawing.SystemColors.Control;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(149, 88);
@@ -142,7 +143,7 @@
             // 
             // txtContrase
             // 
-            this.txtContrase.BackColor = System.Drawing.Color.Silver;
+            this.txtContrase.BackColor = System.Drawing.SystemColors.Control;
             this.txtContrase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContrase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrase.Location = new System.Drawing.Point(149, 136);
@@ -195,8 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(385, 279);
             this.Controls.Add(this.btnConfigInicial);
@@ -212,7 +212,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "login";
-            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);

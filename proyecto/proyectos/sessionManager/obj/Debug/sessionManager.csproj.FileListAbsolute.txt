@@ -47,3 +47,8 @@ C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\sessionMan
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.dll
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.pdb
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\bin\Debug\sessionManager.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\bin\Debug\sessionManager.pdb
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.dll
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.pdb

@@ -27,11 +27,5 @@ namespace interfaces.control_permisos
                 }
 
         }
-
-       
-
-
-
-
     }
 }
