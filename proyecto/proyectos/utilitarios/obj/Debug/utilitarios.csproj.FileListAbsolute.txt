@@ -69,3 +69,11 @@ D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csprojAssemblyReference.cache
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.barra_progreso.resources
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.cache
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.CoreCompileInputs.cache
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb

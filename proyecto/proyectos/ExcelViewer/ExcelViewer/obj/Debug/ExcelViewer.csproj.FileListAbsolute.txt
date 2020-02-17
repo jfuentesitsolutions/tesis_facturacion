@@ -23,3 +23,9 @@ D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewe
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csprojResolveAssemblyReference.cache
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.dll
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\bin\Debug\ExcelViewer.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\bin\Debug\ExcelViewer.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csprojAssemblyReference.cache
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csproj.CoreCompileInputs.cache
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.pdb

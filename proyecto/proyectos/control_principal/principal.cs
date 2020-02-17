@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using control_principal.ModulosFacturaElectronica;
 
 namespace control_principal
 {
@@ -52,25 +53,27 @@ namespace control_principal
         private void btnInventario_Click(object sender, EventArgs e)
         {
 
-            if (btnInventario.Location==new Point(5,65))
+            if (btnVentas.Location == new Point(5, 127))
             {
                 this.funcionamientoBotones(0);
-                //this.panel_contenidos.Controls.RemoveAt(0);
-                
+                this.panel_contenidos.Controls.RemoveAt(0);
+                //this.colocarPanel(new interfaces.panel_inicio.inicio());
             }
             else
             {
                 this.funcionamientoBotones(1);
                 if (this.panel_contenidos.Controls.Count != 0)
                 {
-                    //this.panel_contenidos.Controls.RemoveAt(0);
+                    this.panel_contenidos.Controls.RemoveAt(0);
+                    this.colocarPanel(new PrincipalModulosFacturaElec());
                 }
                 else
                 {
-
+                    this.colocarPanel(new PrincipalModulosFacturaElec());
                 }
+
             }
-            
+
         }
 
         private void funcionamientoBotones(Int16 i)

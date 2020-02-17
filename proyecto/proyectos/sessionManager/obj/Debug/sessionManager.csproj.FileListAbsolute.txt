@@ -52,3 +52,9 @@ D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\bin\Deb
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.dll
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\sessionManager\bin\Debug\sessionManager.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\sessionManager\bin\Debug\sessionManager.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.csprojAssemblyReference.cache
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.csproj.CoreCompileInputs.cache
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.pdb

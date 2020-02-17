@@ -53,6 +53,12 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AltoControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\modulo_principal\packages\AltoControls.1.0.1\lib\AltoControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\modulo_principal\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -104,6 +110,54 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="manejadorVentanas.cs" />
+    <Compile Include="ModulosFacturaElectronica\FirmarPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\FirmarPDF.Designer.cs">
+      <DependentUpon>FirmarPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarCertificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarCertificado.Designer.cs">
+      <DependentUpon>GenerarCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarJSON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarJSON.Designer.cs">
+      <DependentUpon>GenerarJSON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarPDF.Designer.cs">
+      <DependentUpon>GenerarPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\PrincipalModulosFacturaElec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\PrincipalModulosFacturaElec.Designer.cs">
+      <DependentUpon>PrincipalModulosFacturaElec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarJSON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarJSON.Designer.cs">
+      <DependentUpon>ValidarJSON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarPDF.Designer.cs">
+      <DependentUpon>ValidarPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarXML.Designer.cs">
+      <DependentUpon>ValidarXML.cs</DependentUpon>
+    </Compile>
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +190,30 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\FirmarPDF.resx">
+      <DependentUpon>FirmarPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\GenerarCertificado.resx">
+      <DependentUpon>GenerarCertificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\GenerarJSON.resx">
+      <DependentUpon>GenerarJSON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\GenerarPDF.resx">
+      <DependentUpon>GenerarPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\PrincipalModulosFacturaElec.resx">
+      <DependentUpon>PrincipalModulosFacturaElec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\ValidarJSON.resx">
+      <DependentUpon>ValidarJSON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\ValidarPDF.resx">
+      <DependentUpon>ValidarPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\ValidarXML.resx">
+      <DependentUpon>ValidarXML.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="principal.resx">
       <DependentUpon>principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +230,7 @@
     <EmbeddedResource Include="splash.resx">
       <DependentUpon>splash.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,6 +245,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\modulo_principal\FirmarPDF\FirmarPDF.csproj">
+      <Project>{08df8707-3f2a-4ab8-8cd9-68d5ca7f0db3}</Project>
+      <Name>FirmarPDF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\modulo_principal\gadgets\gadgets.csproj">
       <Project>{49ab546f-3431-482b-a8d0-c96639346bc4}</Project>
       <Name>gadgets</Name>
@@ -173,6 +256,10 @@
     <ProjectReference Include="..\..\modulo_principal\interfaces\interfaces.csproj">
       <Project>{addb7abc-3cad-41e1-a61c-58fb7158b645}</Project>
       <Name>interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\modulo_principal\ModulosfacturaElectronica\ModulosfacturaElectronica.csproj">
+      <Project>{bbc21a4c-4fe5-4d9f-a5e5-5e33bc53b2a9}</Project>
+      <Name>ModulosfacturaElectronica</Name>
     </ProjectReference>
     <ProjectReference Include="..\cache_manager\cache_manager.csproj">
       <Project>{055d52e4-233c-45c3-82e4-adf0361408de}</Project>
@@ -217,6 +304,81 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validar32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmar32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certificado32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmarpdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generarpfx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearJson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearPDF1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validarJSON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validarpdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validar xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validar xml2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearPDF2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validarpdf2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmarpdf2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearJson2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
