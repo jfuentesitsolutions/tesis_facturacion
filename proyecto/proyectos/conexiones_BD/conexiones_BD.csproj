@@ -89,6 +89,7 @@
     <Compile Include="clases\descuentos.cs" />
     <Compile Include="clases\empleados.cs" />
     <Compile Include="clases\empleados_sucursales.cs" />
+    <Compile Include="clases\empresa.cs" />
     <Compile Include="clases\entidad.cs" />
     <Compile Include="clases\estantes.cs" />
     <Compile Include="clases\formas_pago.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="clases\productos_codigos.cs" />
     <Compile Include="clases\proveedores.cs" />
     <Compile Include="clases\proveedores_productos.cs" />
+    <Compile Include="clases\resoluciones.cs" />
     <Compile Include="clases\sucursales.cs" />
     <Compile Include="clases\sucursales_productos.cs" />
     <Compile Include="clases\tipos_factura.cs" />
@@ -113,7 +115,9 @@
     <Compile Include="clases\utilidades.cs" />
     <Compile Include="clases\ventas\anulaciones.cs" />
     <Compile Include="clases\ventas\correlativos_tickets.cs" />
+    <Compile Include="clases\ventas\detalles_productos_venta_factura.cs" />
     <Compile Include="clases\ventas\detalles_productos_venta_ticket.cs" />
+    <Compile Include="clases\ventas\facturas.cs" />
     <Compile Include="clases\ventas\impresion_prueba.cs" />
     <Compile Include="clases\ventas\tickets.cs" />
     <Compile Include="clases\ventas\ventas.cs" />

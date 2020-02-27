@@ -228,6 +228,23 @@
             this.arribaCaja = new System.Windows.Forms.PictureBox();
             this.abajoCaja = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.pResoluciones = new System.Windows.Forms.Panel();
+            this.imagenResolu = new System.Windows.Forms.PictureBox();
+            this.detalleResolucion = new System.Windows.Forms.Panel();
+            this.btnModiResolu = new System.Windows.Forms.Button();
+            this.btnAgreResolu = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.arribaResolu = new System.Windows.Forms.PictureBox();
+            this.abajoResolu = new System.Windows.Forms.PictureBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.pEmpresa = new System.Windows.Forms.Panel();
+            this.imagenEmpresa = new System.Windows.Forms.PictureBox();
+            this.detalleEmpresa = new System.Windows.Forms.Panel();
+            this.btnAbrirEmpre = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.arribaEmpresa = new System.Windows.Forms.PictureBox();
+            this.abajoEmpresa = new System.Windows.Forms.PictureBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.panel_central.SuspendLayout();
             this.pEmpleados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenE)).BeginInit();
@@ -361,6 +378,18 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.arribaCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abajoCaja)).BeginInit();
+            this.pResoluciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenResolu)).BeginInit();
+            this.detalleResolucion.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arribaResolu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abajoResolu)).BeginInit();
+            this.pEmpresa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenEmpresa)).BeginInit();
+            this.detalleEmpresa.SuspendLayout();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arribaEmpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abajoEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -378,7 +407,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(60, 792);
+            this.panel2.Size = new System.Drawing.Size(60, 734);
             this.panel2.TabIndex = 1;
             // 
             // panel_central
@@ -407,10 +436,12 @@
             this.panel_central.Controls.Add(this.pBancos);
             this.panel_central.Controls.Add(this.pCorrelativos);
             this.panel_central.Controls.Add(this.pCajas);
+            this.panel_central.Controls.Add(this.pResoluciones);
+            this.panel_central.Controls.Add(this.pEmpresa);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(60, 15);
             this.panel_central.Name = "panel_central";
-            this.panel_central.Size = new System.Drawing.Size(1150, 792);
+            this.panel_central.Size = new System.Drawing.Size(1150, 734);
             this.panel_central.TabIndex = 3;
             // 
             // pEmpleados
@@ -3105,12 +3136,238 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Cajas";
             // 
+            // pResoluciones
+            // 
+            this.pResoluciones.BackColor = System.Drawing.Color.Transparent;
+            this.pResoluciones.Controls.Add(this.imagenResolu);
+            this.pResoluciones.Controls.Add(this.detalleResolucion);
+            this.pResoluciones.Location = new System.Drawing.Point(706, 615);
+            this.pResoluciones.Margin = new System.Windows.Forms.Padding(6);
+            this.pResoluciones.Name = "pResoluciones";
+            this.pResoluciones.Size = new System.Drawing.Size(163, 191);
+            this.pResoluciones.TabIndex = 26;
+            this.pResoluciones.Visible = false;
+            // 
+            // imagenResolu
+            // 
+            this.imagenResolu.Image = global::interfaces.Properties.Resources.request_64;
+            this.imagenResolu.Location = new System.Drawing.Point(23, 22);
+            this.imagenResolu.Name = "imagenResolu";
+            this.imagenResolu.Size = new System.Drawing.Size(116, 107);
+            this.imagenResolu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagenResolu.TabIndex = 2;
+            this.imagenResolu.TabStop = false;
+            // 
+            // detalleResolucion
+            // 
+            this.detalleResolucion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(75)))), ((int)(((byte)(83)))), ((int)(((byte)(2)))));
+            this.detalleResolucion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detalleResolucion.Controls.Add(this.btnModiResolu);
+            this.detalleResolucion.Controls.Add(this.btnAgreResolu);
+            this.detalleResolucion.Controls.Add(this.panel11);
+            this.detalleResolucion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.detalleResolucion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.detalleResolucion.Location = new System.Drawing.Point(0, 144);
+            this.detalleResolucion.Name = "detalleResolucion";
+            this.detalleResolucion.Size = new System.Drawing.Size(163, 47);
+            this.detalleResolucion.TabIndex = 0;
+            // 
+            // btnModiResolu
+            // 
+            this.btnModiResolu.BackColor = System.Drawing.Color.Transparent;
+            this.btnModiResolu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModiResolu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnModiResolu.FlatAppearance.BorderSize = 0;
+            this.btnModiResolu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnModiResolu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnModiResolu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModiResolu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(103)))), ((int)(((byte)(101)))));
+            this.btnModiResolu.Image = ((System.Drawing.Image)(resources.GetObject("btnModiResolu.Image")));
+            this.btnModiResolu.Location = new System.Drawing.Point(77, 72);
+            this.btnModiResolu.Name = "btnModiResolu";
+            this.btnModiResolu.Size = new System.Drawing.Size(75, 91);
+            this.btnModiResolu.TabIndex = 10;
+            this.btnModiResolu.Text = "Modifica";
+            this.btnModiResolu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnModiResolu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnModiResolu.UseVisualStyleBackColor = false;
+            this.btnModiResolu.Click += new System.EventHandler(this.btnModiResolu_Click);
+            // 
+            // btnAgreResolu
+            // 
+            this.btnAgreResolu.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgreResolu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgreResolu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAgreResolu.FlatAppearance.BorderSize = 0;
+            this.btnAgreResolu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnAgreResolu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnAgreResolu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgreResolu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(103)))), ((int)(((byte)(101)))));
+            this.btnAgreResolu.Image = ((System.Drawing.Image)(resources.GetObject("btnAgreResolu.Image")));
+            this.btnAgreResolu.Location = new System.Drawing.Point(6, 72);
+            this.btnAgreResolu.Name = "btnAgreResolu";
+            this.btnAgreResolu.Size = new System.Drawing.Size(69, 91);
+            this.btnAgreResolu.TabIndex = 9;
+            this.btnAgreResolu.Text = "Agrega";
+            this.btnAgreResolu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgreResolu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAgreResolu.UseVisualStyleBackColor = false;
+            this.btnAgreResolu.Click += new System.EventHandler(this.btnAgreResolu_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
+            this.panel11.Controls.Add(this.arribaResolu);
+            this.panel11.Controls.Add(this.abajoResolu);
+            this.panel11.Controls.Add(this.label23);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(161, 47);
+            this.panel11.TabIndex = 2;
+            // 
+            // arribaResolu
+            // 
+            this.arribaResolu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.arribaResolu.Image = ((System.Drawing.Image)(resources.GetObject("arribaResolu.Image")));
+            this.arribaResolu.Location = new System.Drawing.Point(118, 4);
+            this.arribaResolu.Name = "arribaResolu";
+            this.arribaResolu.Size = new System.Drawing.Size(32, 32);
+            this.arribaResolu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.arribaResolu.TabIndex = 3;
+            this.arribaResolu.TabStop = false;
+            this.arribaResolu.Click += new System.EventHandler(this.arribaResolu_Click);
+            // 
+            // abajoResolu
+            // 
+            this.abajoResolu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.abajoResolu.Image = ((System.Drawing.Image)(resources.GetObject("abajoResolu.Image")));
+            this.abajoResolu.Location = new System.Drawing.Point(118, 4);
+            this.abajoResolu.Name = "abajoResolu";
+            this.abajoResolu.Size = new System.Drawing.Size(32, 32);
+            this.abajoResolu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.abajoResolu.TabIndex = 4;
+            this.abajoResolu.TabStop = false;
+            this.abajoResolu.Click += new System.EventHandler(this.abajoResolu_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(29, 12);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(88, 19);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Resoluciones";
+            // 
+            // pEmpresa
+            // 
+            this.pEmpresa.BackColor = System.Drawing.Color.Transparent;
+            this.pEmpresa.Controls.Add(this.imagenEmpresa);
+            this.pEmpresa.Controls.Add(this.detalleEmpresa);
+            this.pEmpresa.Location = new System.Drawing.Point(881, 615);
+            this.pEmpresa.Margin = new System.Windows.Forms.Padding(6);
+            this.pEmpresa.Name = "pEmpresa";
+            this.pEmpresa.Size = new System.Drawing.Size(163, 191);
+            this.pEmpresa.TabIndex = 27;
+            this.pEmpresa.Visible = false;
+            // 
+            // imagenEmpresa
+            // 
+            this.imagenEmpresa.Image = global::interfaces.Properties.Resources.building_64;
+            this.imagenEmpresa.Location = new System.Drawing.Point(23, 22);
+            this.imagenEmpresa.Name = "imagenEmpresa";
+            this.imagenEmpresa.Size = new System.Drawing.Size(116, 107);
+            this.imagenEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagenEmpresa.TabIndex = 2;
+            this.imagenEmpresa.TabStop = false;
+            // 
+            // detalleEmpresa
+            // 
+            this.detalleEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(75)))), ((int)(((byte)(83)))), ((int)(((byte)(2)))));
+            this.detalleEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detalleEmpresa.Controls.Add(this.btnAbrirEmpre);
+            this.detalleEmpresa.Controls.Add(this.panel15);
+            this.detalleEmpresa.Cursor = System.Windows.Forms.Cursors.Default;
+            this.detalleEmpresa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.detalleEmpresa.Location = new System.Drawing.Point(0, 144);
+            this.detalleEmpresa.Name = "detalleEmpresa";
+            this.detalleEmpresa.Size = new System.Drawing.Size(163, 47);
+            this.detalleEmpresa.TabIndex = 0;
+            // 
+            // btnAbrirEmpre
+            // 
+            this.btnAbrirEmpre.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbrirEmpre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbrirEmpre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAbrirEmpre.FlatAppearance.BorderSize = 0;
+            this.btnAbrirEmpre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnAbrirEmpre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnAbrirEmpre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirEmpre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(103)))), ((int)(((byte)(101)))));
+            this.btnAbrirEmpre.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrirEmpre.Image")));
+            this.btnAbrirEmpre.Location = new System.Drawing.Point(47, 73);
+            this.btnAbrirEmpre.Name = "btnAbrirEmpre";
+            this.btnAbrirEmpre.Size = new System.Drawing.Size(69, 91);
+            this.btnAbrirEmpre.TabIndex = 9;
+            this.btnAbrirEmpre.Text = "Abrir";
+            this.btnAbrirEmpre.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAbrirEmpre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAbrirEmpre.UseVisualStyleBackColor = false;
+            this.btnAbrirEmpre.Click += new System.EventHandler(this.btnAbrirEmpre_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(216)))), ((int)(((byte)(222)))));
+            this.panel15.Controls.Add(this.arribaEmpresa);
+            this.panel15.Controls.Add(this.abajoEmpresa);
+            this.panel15.Controls.Add(this.label24);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(161, 47);
+            this.panel15.TabIndex = 2;
+            // 
+            // arribaEmpresa
+            // 
+            this.arribaEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.arribaEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("arribaEmpresa.Image")));
+            this.arribaEmpresa.Location = new System.Drawing.Point(118, 4);
+            this.arribaEmpresa.Name = "arribaEmpresa";
+            this.arribaEmpresa.Size = new System.Drawing.Size(32, 32);
+            this.arribaEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.arribaEmpresa.TabIndex = 3;
+            this.arribaEmpresa.TabStop = false;
+            this.arribaEmpresa.Click += new System.EventHandler(this.arribaEmpresa_Click);
+            // 
+            // abajoEmpresa
+            // 
+            this.abajoEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.abajoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("abajoEmpresa.Image")));
+            this.abajoEmpresa.Location = new System.Drawing.Point(118, 4);
+            this.abajoEmpresa.Name = "abajoEmpresa";
+            this.abajoEmpresa.Size = new System.Drawing.Size(32, 32);
+            this.abajoEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.abajoEmpresa.TabIndex = 4;
+            this.abajoEmpresa.TabStop = false;
+            this.abajoEmpresa.Click += new System.EventHandler(this.abajoEmpresa_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(48, 12);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(62, 19);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Empresa";
+            // 
             // configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1210, 807);
+            this.ClientSize = new System.Drawing.Size(1210, 749);
             this.Controls.Add(this.panel_central);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -3276,6 +3533,20 @@
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.arribaCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abajoCaja)).EndInit();
+            this.pResoluciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imagenResolu)).EndInit();
+            this.detalleResolucion.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arribaResolu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abajoResolu)).EndInit();
+            this.pEmpresa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imagenEmpresa)).EndInit();
+            this.detalleEmpresa.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arribaEmpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abajoEmpresa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3481,5 +3752,22 @@
         private System.Windows.Forms.PictureBox arribaCaja;
         private System.Windows.Forms.PictureBox abajoCaja;
         private System.Windows.Forms.Label label22;
+        public System.Windows.Forms.Panel pResoluciones;
+        private System.Windows.Forms.PictureBox imagenResolu;
+        private System.Windows.Forms.Panel detalleResolucion;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.PictureBox arribaResolu;
+        private System.Windows.Forms.PictureBox abajoResolu;
+        private System.Windows.Forms.Label label23;
+        public System.Windows.Forms.Panel pEmpresa;
+        private System.Windows.Forms.PictureBox imagenEmpresa;
+        private System.Windows.Forms.Panel detalleEmpresa;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.PictureBox arribaEmpresa;
+        private System.Windows.Forms.PictureBox abajoEmpresa;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btnModiResolu;
+        private System.Windows.Forms.Button btnAgreResolu;
+        private System.Windows.Forms.Button btnAbrirEmpre;
     }
 }

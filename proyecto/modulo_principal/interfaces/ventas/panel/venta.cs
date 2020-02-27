@@ -30,6 +30,7 @@ namespace interfaces.ventas.panel
         DataRowView cliente = null;
         List<string> lista = new List<string>();
         List<string> lista_p = new List<string>();
+        int tipo_factura = 0;
 
         //DataTable producto_venta = null;
         DataTable pre_producto = null;
@@ -49,7 +50,7 @@ namespace interfaces.ventas.panel
                 txtDireccion.Visible = true;
                 lblncr.Visible = true;
                 lblven.Visible = true;
-                txtncr.Visible = true;
+                txtNumFact.Visible = true;
                 listaVendedor.Visible = true;
 
             }
@@ -59,7 +60,7 @@ namespace interfaces.ventas.panel
                 txtDireccion.Visible = false;
                 lblncr.Visible = false;
                 lblven.Visible = false;
-                txtncr.Visible = false;
+                txtNumFact.Visible = false;
                 listaVendedor.Visible = false;
             }
             
@@ -531,14 +532,14 @@ namespace interfaces.ventas.panel
                 {
                     if (fila.Cells[7].Value.Equals(idpr_pro))
                     {
-                        Int32 canA = Convert.ToInt32(fila.Cells[4].Value);
-                        Int32 canN = Convert.ToInt32(cant);
+                        Int32 canA = Convert.ToInt32(fila.Cells[4].Value); // cantidad actual del producto.
+                        Int32 canN = Convert.ToInt32(cant); //cantidad nueva del producto
 
-                        Int32 canInt = Convert.ToInt32(fila.Cells[10].Value);
-                        Int32 exis = Convert.ToInt32(fila.Cells[11].Value);
+                        Int32 canInt = Convert.ToInt32(fila.Cells[10].Value); //cantidad interna del producto
+                        Int32 exis = Convert.ToInt32(fila.Cells[11].Value); //Existencias del producto
 
-                        Int32 canTN = canA + canN;
-                        Int32 tN = (canA * canInt) + (canN * canInt);
+                        Int32 canTN = canA + canN; //cantidad nueva ya sumada
+                        Int32 tN = (canA * canInt) + (canN * canInt); //determinando la cantidad total segun la cantidad interna
 
                         if (tN > exis)
                         {
@@ -547,8 +548,12 @@ namespace interfaces.ventas.panel
                         }
                         else
                         {
-                            fila.Cells[4].Value = canTN.ToString();
-                            fila.Cells[6].Value = recalcularTotalProducto(fila.Cells[4].Value.ToString(), fila.Cells[5].Value.ToString());
+                            fila.Cells[4].Value = canTN.ToString(); //colocando la cantidad nueva sumada
+                            double total = Convert.ToDouble(recalcularTotalProducto(fila.Cells[4].Value.ToString(), fila.Cells[5].Value.ToString()));
+                            double iva= Math.Round(total * 0.13, 2);
+                            fila.Cells[6].Value = Math.Round(total,2).ToString();
+                            fila.Cells[15].Value = iva.ToString();
+                        calcularTotales();
                             encontrado = true;
                         }
                     }
@@ -559,33 +564,90 @@ namespace interfaces.ventas.panel
 
             return encontrado;
         }
+
+
         private string recalcularTotalProducto(string canti, string pre)
         {
             string total = "";
             double ca = Convert.ToDouble(canti);
             double prec = Convert.ToDouble(pre);
-            double tota = Math.Round(ca * prec, 2, MidpointRounding.AwayFromZero);
-            Console.WriteLine(ca);
-            Console.WriteLine(pre);
 
-            total = tota.ToString();
+            switch (listaTipoFactura.SelectedIndex)
+            {
+                case 2:
+                    {
+                        double tota = (((ca * prec) / 1.13));
+                        total = tota.ToString();
+                        break;
+                    }
+                case 5:
+                    {
+                        double tota = (((ca * prec) / 1.13));
+                        total = tota.ToString();
+                        break;
+                    }
+                default:
+                    {
+                        double tota = Math.Round(ca * prec, 2, MidpointRounding.AwayFromZero);
+                        total = tota.ToString();
+                        break;
+                    }
+            }
+            
             
             return total;
         }
+
         private void calcularTotales()
         {
-            double precio = 0;
+            double precio = 0.00;
+            double iva = 0.00;
+
             foreach(DataGridViewRow fila in tabla_articulos.Rows)
             {
                 precio += Convert.ToDouble(fila.Cells[6].Value);
+                iva += Convert.ToDouble(fila.Cells[15].Value);
             }
 
-            lblCantidad_de_articulos.Text = "Cantidad de articulos " + tabla_articulos.Rows.Count;
-            lblSubt.Text = precio.ToString();
-            lblIva.Text = "0.0";
-            lblDescuento.Text = "0.0";
-            lblTotal.Text = "$ "+ precio.ToString();
-            total = precio.ToString();
+
+            switch (listaTipoFactura.SelectedIndex)
+            {
+                case 2:
+                    {
+                        lblCantidad_de_articulos.Text = "Cantidad de articulos " + tabla_articulos.Rows.Count;
+                        lblSubt.Text = precio.ToString();
+                        lblIva.Text = iva.ToString();
+                        double tota = Math.Round(iva + Convert.ToDouble(lblSubt.Text), 2, MidpointRounding.AwayFromZero);
+                        lblTotal.Text = "$ " + tota.ToString();
+                        total = tota.ToString();
+                        lblDescuento.Text = tota.ToString();
+                        break;
+                    }
+                
+                case 5:
+                    {
+                        lblCantidad_de_articulos.Text = "Cantidad de articulos " + tabla_articulos.Rows.Count;
+                        lblSubt.Text = precio.ToString();
+                        lblIva.Text = iva.ToString();
+                        double tota = Math.Round(iva + Convert.ToDouble(lblSubt.Text), 2, MidpointRounding.AwayFromZero);
+                        lblTotal.Text = "$ " + tota.ToString();
+                        total = tota.ToString();
+                        lblDescuento.Text = tota.ToString();
+                        break;
+                    }
+                default:
+                    {
+                        lblCantidad_de_articulos.Text = "Cantidad de articulos " + tabla_articulos.Rows.Count;
+                        lblSubt.Text = precio.ToString();
+                        lblDescuento.Text = "0.00";
+                        lblTotal.Text = "$ " + precio.ToString();
+                        total = precio.ToString();
+                        break;
+                    }
+            }
+
+            
+            
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -600,6 +662,7 @@ namespace interfaces.ventas.panel
                     txtBusqueda.Enabled = true;
                     calcularTotales();
                     colocarFoco();
+                    lblIva.Text = "0.00";
                 }
                 
             }
@@ -629,25 +692,72 @@ namespace interfaces.ventas.panel
         {
             fecha_actual.Value = DateTime.Now;
 
-            if (!validar())
+            switch (listaTipoFactura.SelectedIndex)
             {
-                string correlativo = generaciondecorrelativo(); //se genera el correlativo
-                string id = IDCorrelativoTicket(); // se coloca el id del correlativo
-                if (correlativo != null) // si el correlativo se genera correctamente
-                {
-                    interfaces.ventas.auxiliares.cobrar cobro = new auxiliares.cobrar();
-                    cobro.lblTotala.Text = total;
-                    cobro.efec.Text = total;
-                    cobro.ShowDialog();
-                    if (cobro.Cobrado)
+                 default:
                     {
-                        ingresandoVentaTicket(correlativo, cobro.txtefe.Text, cobro.lblCambio.Text, id); // metodo para ingresar la venta del ticket
+                        if (!validar())
+                        {
+                            string correlativo = generaciondecorrelativo(); //se genera el correlativo
+                            string id = IDCorrelativoTicket(); // se coloca el id del correlativo
+                            if (correlativo != null) // si el correlativo se genera correctamente
+                            {
+                                auxiliares.cobrar cobro = new auxiliares.cobrar();
+                                cobro.lblTotala.Text = total;
+                                cobro.efec.Text = total;
+                                cobro.ShowDialog();
+                                if (cobro.Cobrado)
+                                {
+                                    ingresandoVentaTicket(correlativo, cobro.txtefe.Text, cobro.lblCambio.Text, id); // metodo para ingresar la venta del ticket
+                                }
+                            }
+                        }
+                        break;
                     }
-                }
+                case 2:
+                    {
+                        if (!validar())
+                        {
+                            if (sesion.Empresa_activa)
+                            {
+                                auxiliares.cobrar cobro = new auxiliares.cobrar();
+                                cobro.lblTotala.Text = total;
+                                cobro.efec.Text = total;
+                                cobro.ShowDialog();
+                                if (cobro.Cobrado)
+                                {
+                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("No esta configurada la información de la empresa, porfavor vaya a la opcion configuraciones y agregue la información", "No hay información de la empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        
+                        break;
+                    }
+
+                case 5:
+                    {
+                        if (!validar())
+                        {
+                            if (sesion.Empresa_activa)
+                            {
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("No esta configurada la información de la empresa, porfavor vaya a la opcion configuraciones y agregue la información", "No hay información de la empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        break;
+                    }
             }
+            
  
         }
-
         private void cobrosinTicket()
         {
             fecha_actual.Value = DateTime.Now;
@@ -689,7 +799,7 @@ namespace interfaces.ventas.panel
 
             if ( res > 0)
             {
-               
+               // Aqui se imprime los tickets en la impresora
                     PrintDocument printDoc = new PrintDocument();
                 string impresora = printDoc.PrinterSettings.PrinterName;
                     
@@ -744,6 +854,11 @@ namespace interfaces.ventas.panel
                 Console.WriteLine(correlativoAA);
                 MessageBox.Show(err.Error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ingresandoVentaFactura(string efec, string cam, string num_factura, string serie_auto)
+        {
+            
         }
 
         private void ingresandoVentaTicket_sincomprobante(string correl, string efec, string cam, string idcorre)
@@ -803,21 +918,17 @@ namespace interfaces.ventas.panel
 
             if (listaTipoFactura.SelectedIndex!=0)
             {
-                if (txtncr.TextLength == 0)
+                if (txtNumFact.TextLength == 0)
                 {
                     valido = true;
-                    error.SetError(txtncr, "Tienes que digitar un numero de documento");
-                    //if (Gcliente.Height != 137)
-                    //{
-                    //    ocultarDetalles();
-                    //}
+                    error.SetError(txtNumFact, "Tienes que digitar un numero de documento");
                 }
             }
 
             if (tabla_articulos.Rows.Count == 0)
             {
                 valido = true;
-                error.SetError(tabla_articulos, "Tienes que gregar articulos al detalle");
+                error.SetError(tabla_articulos, "Tienes que agregar articulos al detalle");
             }
 
             if (lista.Count == 0)
@@ -848,22 +959,50 @@ namespace interfaces.ventas.panel
             return dp;
         }
 
+        private List<conexiones_BD.clases.ventas.detalles_productos_venta_factura> retornoProductos_factura()
+        {
+            List<conexiones_BD.clases.ventas.detalles_productos_venta_factura> dp = new List<conexiones_BD.clases.ventas.detalles_productos_venta_factura>();
+
+            foreach (DataGridViewRow fila in tabla_articulos.Rows)
+            {
+                double cantidad_interna = Convert.ToDouble(fila.Cells[4].Value.ToString()) * 
+                    Convert.ToDouble(fila.Cells[10].Value.ToString()); // colocamos las dos cantidades
+                double cantidad_neta = Convert.ToDouble(fila.Cells[4].Value.ToString()); // cantidad actual
+
+                dp.Add(new conexiones_BD.clases.ventas.detalles_productos_venta_factura(
+                    "",
+                    fila.Cells[7].Value.ToString(),
+                    cantidad_neta.ToString(),
+                    fila.Cells[5].Value.ToString(),
+                    fila.Cells[6].Value.ToString(),
+                    fila.Cells[8].Value.ToString(),
+                    "",
+                    fila.Cells[15].Value.ToString(),
+                    fila.Cells[1].Value.ToString(),
+                    fila.Cells[12].Value.ToString(),
+                    cantidad_interna.ToString()
+                    ));
+            }
+
+
+            return dp;
+        }
+
         private void tabla_articulos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-
             if (tabla_articulos.Columns[e.ColumnIndex].Name == "canti")
             {
-                double canN = 0;
-                double canNU = 0;
+                double canN = 0; // cantidad nueva
+                double canNU = 0; 
                 int canNuu = 0;
 
                 if (tabla_articulos.Rows[e.RowIndex].Cells[13].Value.ToString().Equals("0"))
-                {
-                    
+                {   
                     try
                     {
                         canN = Convert.ToDouble(tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToInt32(tabla_articulos.Rows[e.RowIndex].Cells[10].Value.ToString());
                         canNuu = Convert.ToInt32(tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString());
+
 
                         if (!revisarExistencias2(tabla_articulos.Rows[e.RowIndex].Cells[12].Value.ToString(), canN.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[10].Value.ToString()))
                         {
@@ -871,9 +1010,38 @@ namespace interfaces.ventas.panel
 
                             if (canN == exist || canN < exist)
                             {
-                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = recalcularTotalProducto(canNuu.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString());
-                                calcularTotales();
-                                colocarFoco();
+                                switch (listaTipoFactura.SelectedIndex)
+                                {
+                                    case 2:
+                                        {
+                                            double total = Convert.ToDouble(recalcularTotalProducto(canNuu.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                                            double iva = Math.Round(total * 0.13, 2);
+                                            tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(total, 2).ToString();
+                                            tabla_articulos.Rows[e.RowIndex].Cells[15].Value = iva.ToString();
+                                            calcularTotales();
+                                            colocarFoco();
+                                            break;
+                                        }
+                                    case 5:
+                                        {
+                                            double total = Convert.ToDouble(recalcularTotalProducto(canNuu.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                                            double iva = Math.Round(total * 0.13, 2);
+                                            tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(total, 2).ToString();
+                                            tabla_articulos.Rows[e.RowIndex].Cells[15].Value = iva.ToString();
+                                            calcularTotales();
+                                            colocarFoco();
+                                            break;
+                                        }
+                                    default:
+                                        {
+                                            double total = Convert.ToDouble(recalcularTotalProducto(canNuu.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                                            tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(total, 2).ToString();
+                                            calcularTotales();
+                                            colocarFoco();
+                                            break;
+                                        }
+                                }
+                                
                             }
                             else
                             {
@@ -889,10 +1057,8 @@ namespace interfaces.ventas.panel
                         MessageBox.Show("No puedes agregar esa cantidad", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         canN = Convert.ToInt32(cantiAn);
                         tabla_articulos.Rows[e.RowIndex].Cells[4].Value = cantiAn;
-                        tabla_articulos.Rows[e.RowIndex].Cells[6].Value = recalcularTotalProducto(cantiAn.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString());
-                        
+                        tabla_articulos.Rows[e.RowIndex].Cells[6].Value = recalcularTotalProducto(cantiAn.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString());          
                     }
-
                 }
                 else
                 { 
@@ -916,9 +1082,37 @@ namespace interfaces.ventas.panel
 
                         if (canN == exist || canN < exist)
                         {
-                            tabla_articulos.Rows[e.RowIndex].Cells[6].Value = recalcularTotalProducto(canNU.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString());
-                            calcularTotales();
-                            colocarFoco();
+                            switch (listaTipoFactura.SelectedIndex)
+                            {
+                                case 2:
+                                    {
+                                        double total = Convert.ToDouble(recalcularTotalProducto(canNU.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                                        double iva = Math.Round(total * 0.13, 2);
+                                        tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(total, 2).ToString();
+                                        tabla_articulos.Rows[e.RowIndex].Cells[15].Value = iva.ToString();
+                                        calcularTotales();
+                                        colocarFoco();
+                                        break;
+                                    }
+                                case 5:
+                                    {
+                                        double total = Convert.ToDouble(recalcularTotalProducto(canNU.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                                        double iva = Math.Round(total * 0.13, 2);
+                                        tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(total, 2).ToString();
+                                        tabla_articulos.Rows[e.RowIndex].Cells[15].Value = iva.ToString();
+                                        calcularTotales();
+                                        colocarFoco();
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        double total = Convert.ToDouble(recalcularTotalProducto(canNU.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                                        tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(total, 2).ToString();
+                                        calcularTotales();
+                                        colocarFoco();
+                                        break;
+                                    }
+                            }
                         }
                         else
                         {
@@ -934,16 +1128,43 @@ namespace interfaces.ventas.panel
             }else if (tabla_articulos.Columns[e.ColumnIndex].Name == "preci")
             {
 
-                if (MessageBox.Show("¿Deseas cambiar el precio de la presentación?","Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show("¿Deseas cambiar el precio de la presentación?","Pregunta", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     barraDeprogreso(10);
-                    string precioN = tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    if (!conexiones_BD.clases.presentaciones_productos.cambio_precio(tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[7].Value.ToString()))
+                    string precioN = tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(); //recogemos el precio digitado
+                    if (!conexiones_BD.clases.presentaciones_productos.cambio_precio(tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(),
+                        tabla_articulos.Rows[e.RowIndex].Cells[7].Value.ToString())) //Guardamos el nuevo precio
                     {     
-                        tabla_articulos.Rows[e.RowIndex].Cells[5].Value = precioN;
-                        calcularTotales();     
+                        tabla_articulos.Rows[e.RowIndex].Cells[5].Value = precioN; //Asignamos el nuevo precio a la celda    
                     }
-                    tabla_articulos.Rows[e.RowIndex].Cells[6].Value = recalcularTotalProducto(tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString());
+
+                    double tota = Convert.ToDouble(recalcularTotalProducto(tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString(),
+                        tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString()));
+
+                    switch (listaTipoFactura.SelectedIndex)
+                    {
+                        case 2:
+                            {
+                                double iva = Math.Round((tota * 0.13), 2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(tota, 2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[15].Value = Math.Round(iva, 2);
+                                break;
+                            }
+                        case 5:
+                            {
+                                double iva = Math.Round((tota * 0.13), 2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(tota, 2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[15].Value = Math.Round(iva, 2);
+                                break;
+                            }
+                        default:
+                            {
+                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(tota, 2);
+                                break;
+                            }
+                    }
+
                     cargarTablas();
                     txtBusqueda.Text = "";
                     txtBusqueda.Focus();
@@ -953,9 +1174,37 @@ namespace interfaces.ventas.panel
                 }
                 else
                 {
-                    string precioN = tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    //Para no cambiar el precio en la base de datos
+                    string precioN = tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(); //Precio nuevo ya puesto en la celda
                     tabla_articulos.Rows[e.RowIndex].Cells[5].Value = precioN;
-                    tabla_articulos.Rows[e.RowIndex].Cells[6].Value = recalcularTotalProducto(tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    double tota = Convert.ToDouble(recalcularTotalProducto(tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString(),
+                        tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString()));
+
+
+                    switch (listaTipoFactura.SelectedIndex)
+                    {
+                        case 2:
+                            {
+                                double iva = Math.Round((tota * 0.13), 2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(tota,2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[15].Value = Math.Round(iva, 2);
+                                break;
+                            }
+                        case 5:
+                            {
+                                double iva = Math.Round((tota * 0.13), 2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(tota, 2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[15].Value = Math.Round(iva, 2);
+                                break;
+                            }
+                        default:
+                            {
+                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(tota, 2);
+                                break;
+                            }
+                    }
+
+                    
                     cargarTablas();
                     txtBusqueda.Text = "";
                     txtBusqueda.Focus();
@@ -998,11 +1247,11 @@ namespace interfaces.ventas.panel
         {
             if (tabla_articulos.Columns[e.ColumnIndex].Name == "canti")
             {
-                cantiAn = tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString();
+                cantiAn = tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString(); //cantidad actual
             }
             else if (tabla_articulos.Columns[e.ColumnIndex].Name == "preci")
             {
-                precioAn= tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString();
+                precioAn= tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(); //precio actual
             }
         }
 
@@ -1053,22 +1302,53 @@ namespace interfaces.ventas.panel
         {
             if (listaTipoFactura.SelectedIndex==0)
             {
-                txtncr.Enabled = false;
-                txtncr.Text = "";
-                //if (Gcliente.Height == 137)
-                //{
-                //    ocultarDetalles();
-                //}
+                txtNumFact.Enabled = false;
+                txtNumFact.Text = "";
+                txtSerie.Text = "";
+
             }
             else
             {
-                txtncr.Enabled = true;
-                txtncr.Text = "";
-                txtncr.Focus();
-                //if(Gcliente.Height != 137)
-                //{
-                //    ocultarDetalles();
-                //}
+                if (sesion.Correlativos_activos)
+                {
+                    DataTable datos = conexiones_BD.clases.resoluciones.datos_resolucion_activa();
+                    switch (listaTipoFactura.SelectedIndex)
+                    {
+                        case 1:
+                            {
+                                txtSerie.Text = datos.Rows[0][2].ToString();
+                                break;
+                            }
+                        case 2:
+                            {
+                                txtSerie.Text = datos.Rows[0][3].ToString();
+                                break;
+                            }
+                        case 3:
+                            {
+                                txtSerie.Text = "";
+                                break;
+                            }
+                        case 4:
+                            {
+                                txtSerie.Text = datos.Rows[0][2].ToString();
+                                break;
+                            }
+                        case 5:
+                            {
+                                txtSerie.Text = datos.Rows[0][3].ToString();
+                                break;
+                            }
+                    }
+                    txtNumFact.Enabled = true;
+                    txtNumFact.Text = "";
+                    txtNumFact.Focus();
+                }else
+                {
+                    MessageBox.Show("No hay resoluciones activas porfavor vaya a configuraciones en la opcion resoluciones y active o agregue una","No hay resolución activa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    listaTipoFactura.SelectedIndex = 0;
+                }
+                
             }
 
         }
@@ -1092,8 +1372,25 @@ namespace interfaces.ventas.panel
         {
             if (listaTipoFactura.SelectedValue != null)
             {
-                activacionCampoDocumento();
-                
+                if (tabla_articulos.Rows.Count != 0)
+                {
+                    if (tipo_factura != listaTipoFactura.SelectedIndex)
+                    {
+                        
+                                    if (MessageBox.Show("Al cambiar el tipo de factura se borran los articulos de la grilla. ¿Desea cambiar el tipo de factura?", "Cambio de factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                    {
+                                        tabla_articulos.Rows.Clear();
+                                        lblIva.Text = "0.00";
+                                        calcularTotales();
+                                    }
+                                    else
+                                    {
+                                        listaTipoFactura.SelectedIndex = tipo_factura;
+                                    }
+                        
+                    }
+                }
+                activacionCampoDocumento();      
             }
         }
 
@@ -1281,8 +1578,6 @@ namespace interfaces.ventas.panel
                 existen = false;
             }
             
-
-
             return existen;
         }
 
@@ -1461,9 +1756,7 @@ namespace interfaces.ventas.panel
             if (tabla_articulos.Columns[e.ColumnIndex].Name == "prese")
             {
                 try
-                {
-                     
-                    
+                {   
                     if (MessageBox.Show("¿Cambiar presentación?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         
@@ -1474,6 +1767,7 @@ namespace interfaces.ventas.panel
                         } else
                         {
                             auxiliares.productos_mas_presentaciones puu = new auxiliares.productos_mas_presentaciones();
+                            puu.Tipo_factura = listaTipoFactura.SelectedIndex;
                             puu.Sucursal_producto = tabla_articulos.Rows[e.RowIndex].Cells[12].Value.ToString();
                             puu.IdsucursalProducto = tabla_articulos.Rows[e.RowIndex].Cells[12].Value.ToString();
                             puu.Codigo = tabla_articulos.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -1505,7 +1799,8 @@ namespace interfaces.ventas.panel
                                     puu.lblExis.Text,
                                     puu.Sucursal_producto,
                                     puu.UtilidadD,
-                                    puu.UtiliadM
+                                    puu.UtiliadM,
+                                    puu.Iva_descontado
                                     );
 
                                     tabla_articulos.Rows.RemoveAt(e.RowIndex);
@@ -1535,7 +1830,8 @@ namespace interfaces.ventas.panel
                                         puu.lblExis.Text,
                                         puu.Sucursal_producto,
                                         puu.UtilidadD,
-                                        puu.UtiliadM
+                                        puu.UtiliadM,
+                                        puu.Iva_descontado
                                         );
                                             tabla_articulos.Rows.RemoveAt(e.RowIndex);
                                             calcularTotales();
@@ -1613,7 +1909,7 @@ namespace interfaces.ventas.panel
             //si el articulos solo tiene una presentacion
             if (seleccion.Cells[3].Value.ToString().Equals("1"))
             {
-                
+                pu.Tipo_factura = listaTipoFactura.SelectedIndex;
                 pu.Idpresentacion_poroducto = seleccion.Cells[8].Value.ToString();
                 if (seleccion.Cells[11].Value.ToString().Equals("Detalle"))
                 {
@@ -1655,10 +1951,13 @@ namespace interfaces.ventas.panel
                         "1",
                         pu.lblExis.Text,
                         pu.Sucursal_producto,
-                        "0"
+                        pu.Utilidad,
+                        "0",
+                        pu.Iva_descontado.ToString()
                         );
 
                         colocarEnelutimoRegistro();
+                        Console.WriteLine("Descuento: "+pu.Iva_descontado);
                     }
                     else
                     {
@@ -1680,7 +1979,9 @@ namespace interfaces.ventas.panel
                         "1",
                         pu.lblExis.Text,
                         pu.Sucursal_producto,
-                        "0"
+                        pu.Utilidad,
+                        "0",
+                        pu.Iva_descontado.ToString()
                         );
                             colocarEnelutimoRegistro();
                         } 
@@ -1693,6 +1994,7 @@ namespace interfaces.ventas.panel
             }
             else
             {
+                puu.Tipo_factura = listaTipoFactura.SelectedIndex;
                 puu.Sucursal_producto = seleccion.Cells[0].Value.ToString();
                 puu.IdsucursalProducto = seleccion.Cells[0].Value.ToString();
                 puu.Codigo = seleccion.Cells[1].Value.ToString();
@@ -1723,7 +2025,8 @@ namespace interfaces.ventas.panel
                         puu.lblExis.Text,
                         puu.Sucursal_producto,
                         puu.UtilidadD,
-                        puu.UtiliadM
+                        puu.UtiliadM,
+                        puu.Iva_descontado
                         );
                         colocarEnelutimoRegistro();
                     }
@@ -1750,7 +2053,8 @@ namespace interfaces.ventas.panel
                             puu.lblExis.Text,
                             puu.Sucursal_producto,
                             puu.UtilidadD,
-                            puu.UtiliadM
+                            puu.UtiliadM,
+                            puu.Iva_descontado
                             );
                                 colocarEnelutimoRegistro();
                             }
@@ -1915,6 +2219,12 @@ namespace interfaces.ventas.panel
             barraDeprogreso(10);
             
         }
+
+        private void listaTipoFactura_Click(object sender, EventArgs e)
+        {
+            tipo_factura = listaTipoFactura.SelectedIndex;
+        }
+
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {

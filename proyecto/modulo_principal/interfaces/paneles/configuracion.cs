@@ -580,5 +580,58 @@ namespace interfaces.paneles
             gadgets.slider fun = new gadgets.slider(detalleCaja, imagenCaja, arribaCaja, abajoCaja);
             fun.despliegue();
         }
+
+        private void arribaResolu_Click(object sender, EventArgs e)
+        {
+            gadgets.slider fun = new gadgets.slider(detalleResolucion, imagenResolu, arribaResolu, abajoResolu);
+            fun.despliegue();
+        }
+
+        private void abajoResolu_Click(object sender, EventArgs e)
+        {
+            gadgets.slider fun = new gadgets.slider(detalleResolucion, imagenResolu, arribaResolu, abajoResolu);
+            fun.despliegue();
+        }
+
+        private void arribaEmpresa_Click(object sender, EventArgs e)
+        {
+            gadgets.slider fun = new gadgets.slider(detalleEmpresa, imagenEmpresa, arribaEmpresa, abajoEmpresa);
+            fun.despliegue();
+        }
+
+        private void abajoEmpresa_Click(object sender, EventArgs e)
+        {
+            gadgets.slider fun = new gadgets.slider(detalleEmpresa, imagenEmpresa, arribaEmpresa, abajoEmpresa);
+            fun.despliegue();
+        }
+
+        private void btnAbrirEmpre_Click(object sender, EventArgs e)
+        {
+            mantenimientos.empresa empre = new mantenimientos.empresa();
+            empre.Actualizar = sesion.Empresa_activa;
+            empre.ShowDialog();
+        }
+
+        private void btnAgreResolu_Click(object sender, EventArgs e)
+        {
+            mantenimientos.resoluciones res = new mantenimientos.resoluciones();
+            if (!sesion.Correlativos_activos)
+            {
+                res.ShowDialog();
+            }else
+            {
+                MessageBox.Show("Ya hay una resolución activa, ingrese a modificar para cambiar la resolución", "Resolución activa", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            
+        }
+
+        private void btnModiResolu_Click(object sender, EventArgs e)
+        {
+            mantenimientos.resoluciones res = new mantenimientos.resoluciones();
+            res.Modificar = true;
+            res.ShowDialog();
+        }
+
+        
     }
 }

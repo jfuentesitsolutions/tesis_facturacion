@@ -173,6 +173,16 @@ namespace interfaces.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap building_64 {
+            get {
+                object obj = ResourceManager.GetObject("building_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap caja_abierta {
             get {
                 object obj = ResourceManager.GetObject("caja_abierta", resourceCulture);
@@ -706,6 +716,16 @@ namespace interfaces.Properties {
         internal static System.Drawing.Bitmap repor {
             get {
                 object obj = ResourceManager.GetObject("repor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap request_64 {
+            get {
+                object obj = ResourceManager.GetObject("request_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

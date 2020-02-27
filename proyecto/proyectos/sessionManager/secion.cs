@@ -16,6 +16,8 @@ namespace sessionManager
         List<string> datos = new List<string>();
         List<string> datosRegistro = new List<string>();
         bool caja_activa;
+        bool empresa_activa;
+        bool correlativos_activos;
         string idcaja;
 
         public static secion Instancia
@@ -85,6 +87,32 @@ namespace sessionManager
             set
             {
                 idcaja = value;
+            }
+        }
+
+        public bool Empresa_activa
+        {
+            get
+            {
+                return empresa_activa;
+            }
+
+            set
+            {
+                empresa_activa = value;
+            }
+        }
+
+        public bool Correlativos_activos
+        {
+            get
+            {
+                return correlativos_activos;
+            }
+
+            set
+            {
+                correlativos_activos = value;
             }
         }
 

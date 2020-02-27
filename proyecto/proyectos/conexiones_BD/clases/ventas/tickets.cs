@@ -139,7 +139,5 @@ namespace conexiones_BD.clases.ventas
             return Datos;
         }
 
-
-
     }
 }

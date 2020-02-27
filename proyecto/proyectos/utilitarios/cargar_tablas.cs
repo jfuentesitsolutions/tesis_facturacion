@@ -76,7 +76,6 @@ namespace utilitarios
             this.TablaDatos = tablaDatos;
             this.CampoAfiltrar = campobusqueda;
             this.registros = reg;
-            
         }
 
         public cargar_tablas(DataGridView tabla, TextBox busqueda, DataTable tablaDatos, String campobusqueda)

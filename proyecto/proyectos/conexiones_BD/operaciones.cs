@@ -36,6 +36,7 @@ namespace conexiones_BD
 
             return numeroFilas;
         }
+
         private DataTable Ejecutarconsulta(string sentencia)
         {
             DataTable resultado = new DataTable();
@@ -60,6 +61,7 @@ namespace conexiones_BD
 
             return resultado;
         }
+
         private DataTable comprasClientes(string fi, string ff, int id)
         {
             DataTable resultado = new DataTable();
@@ -464,6 +466,7 @@ namespace conexiones_BD
 
             return numeroFilas;
         }
+        // ejecuta la transaccion de la venta de tickets
         private clases.ctrl_errores.errores Ejecutartransaccion_Ventas_tickets(List<clases.ventas.detalles_productos_venta_ticket> dp, clases.ventas.tickets tic)
         {
             MySqlTransaction trans = null;
@@ -494,6 +497,54 @@ namespace conexiones_BD
 
                     tic.IdDocu = tic.Correlativo;
                     comando.CommandText = tic.insertarVenta();
+                    comando.ExecuteNonQuery();
+
+                    trans.Commit();
+                    err.Res = 1;
+
+                }
+                catch (MySqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                    trans.Rollback();
+                    err.Res = -1;
+                    err.Error = e.Message;
+                }
+            }
+
+            return err;
+        }
+        // ejecuta la transaccion de la venta de factura
+        private clases.ctrl_errores.errores Ejecutartransaccion_Ventas_factura(List<clases.ventas.detalles_productos_venta_factura> dp, clases.ventas.facturas fac)
+        {
+            MySqlTransaction trans = null;
+
+            clases.ctrl_errores.errores err = new clases.ctrl_errores.errores();
+
+            if (base.conectar())
+            {
+
+                try
+                {
+                    trans = base.Conec.BeginTransaction();
+                    MySqlCommand comando = new MySqlCommand();
+                    comando.Connection = base.Conec;
+                    comando.Transaction = trans;
+
+                    comando.CommandText = fac.sentenciaIngresar();
+                    comando.ExecuteNonQuery();
+
+
+                    foreach (clases.ventas.detalles_productos_venta_factura p in dp)
+                    {
+                        p.Idventa_factura = fac.Numero_factura;
+                        comando.CommandText = p.ingresarProducto();
+                        Console.WriteLine(p.ingresarProducto());
+                        comando.ExecuteNonQuery();
+                    }
+
+                    fac.IdDocu = fac.Numero_factura;
+                    comando.CommandText = fac.insertarVenta();
                     comando.ExecuteNonQuery();
 
                     trans.Commit();
@@ -925,9 +976,15 @@ namespace conexiones_BD
         {
             return EjecutartransaccionProductos_Presentaciones_Proveedores(prove, prese, pro, sp, co);
         }
+        // Ejecuta las sentencias para crear el ticket en la base de datos...
         public clases.ctrl_errores.errores transaccionVentasTickets(List<clases.ventas.detalles_productos_venta_ticket> dp, clases.ventas.tickets tic)
         {
             return Ejecutartransaccion_Ventas_tickets(dp, tic);
+        }
+        // Ejecuta las sentencias para crear la factura en la base de datos...
+        public clases.ctrl_errores.errores transaccionVentasFacturas(List<clases.ventas.detalles_productos_venta_factura> df, clases.ventas.facturas fac)
+        {
+            return Ejecutartransaccion_Ventas_factura(df, fac);
         }
         public Int32 transaccionAnulacionVentaTic(conexiones_BD.clases.ventas.tickets v, conexiones_BD.clases.ventas.anulaciones a, List<clases.sucursales_productos> p)
         {
@@ -961,6 +1018,11 @@ namespace conexiones_BD
         public long insertar(string se)
         {
             return Ejecutarsentencia2(se);
+        }
+
+        public Int32 insertar2(string se)
+        {
+            return Ejecutarsentencia(se);
         }
         public Int32 actualizar(string se)
         {
@@ -1143,5 +1205,6 @@ namespace conexiones_BD
         {
             return estadisticasCaja(id);
         }
+
     }
 }

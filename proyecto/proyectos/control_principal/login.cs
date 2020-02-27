@@ -81,7 +81,21 @@ namespace control_principal
             {
                 MessageBox.Show("Bienvenido al sistema " + datos.Rows[0][1].ToString());
                 sessionManager.secion sesion = sessionManager.secion.Instancia;
+                if (conexiones_BD.clases.empresa.datos_empresa().Rows.Count > 0)
+                {
+                    sesion.Empresa_activa = true;
+                }else
+                {
+                    sesion.Empresa_activa = false;
+                }
 
+                if (conexiones_BD.clases.resoluciones.datos_resolucion_activa().Rows.Count == 1)
+                {
+                    sesion.Correlativos_activos = true;
+                }else
+                {
+                    sesion.Correlativos_activos = false;
+                }
                 
                 for (int i = 0; i < datos.Columns.Count; i++)
                 {

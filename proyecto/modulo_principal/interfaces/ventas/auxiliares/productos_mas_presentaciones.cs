@@ -18,6 +18,8 @@ namespace interfaces.ventas.auxiliares
         bool modificar = false;
         utilitarios.cargar_tablas tabla;
         TextBox bus;
+        double iva_descontado = 0.00;
+        int tipo_factura = 0;
 
         public productos_mas_presentaciones()
         {
@@ -245,6 +247,32 @@ namespace interfaces.ventas.auxiliares
             }
         }
 
+        public double Iva_descontado
+        {
+            get
+            {
+                return iva_descontado;
+            }
+
+            set
+            {
+                iva_descontado = value;
+            }
+        }
+
+        public int Tipo_factura
+        {
+            get
+            {
+                return tipo_factura;
+            }
+
+            set
+            {
+                tipo_factura = value;
+            }
+        }
+
         private void cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -286,8 +314,33 @@ namespace interfaces.ventas.auxiliares
         {
             double cantidad = Convert.ToDouble(txtCantidad.Value.ToString());
             double preci = Convert.ToDouble(tablaPres.CurrentRow.Cells[1].Value.ToString());
-            double tota = Math.Round((cantidad * preci),2, MidpointRounding.AwayFromZero);
-            total = tota.ToString();
+
+            switch (tipo_factura)
+            {
+                case 2:
+                    {
+                        double tota = ((cantidad * preci) / 1.13);
+                        Console.WriteLine(tota);
+                        iva_descontado = Math.Round(tota * 0.13, 2);
+                        total = Math.Round(tota, 2).ToString();
+                        break;
+                    }
+                case 5:
+                    {
+                        double tota = ((cantidad * preci) / 1.13);
+                        Console.WriteLine(tota);
+                        iva_descontado = Math.Round(tota * 0.13, 2);
+                        total = Math.Round(tota, 2).ToString();
+                        break;
+                    }
+                default:
+                    {
+                        double tota = Math.Round((cantidad * preci), 2, MidpointRounding.AwayFromZero);
+                        total = tota.ToString();
+                        break;
+                    }
+            }
+            
 
             if (tablaPres.CurrentRow.Cells[4].ToString().Equals("Detalle"))
             {

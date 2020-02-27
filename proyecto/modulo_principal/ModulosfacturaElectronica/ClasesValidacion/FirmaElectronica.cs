@@ -203,7 +203,7 @@ namespace ModulosfacturaElectronica.ClasesValidacion
                 string cadena_ori = "";
                 string certificado = ""; // Obtenido del XML
                 string selloBase64 = ""; // Obtenido del XML
-                string path = @"C:\Users\Mario\Desktop\cadenaoriginal_3_3.xslt";
+                string path = @"C:\Users\Fuentes\Desktop\cadenaoriginal_3_3.xslt";
 
                 System.Xml.Xsl.XslCompiledTransform tran = new System.Xml.Xsl.XslCompiledTransform(true);
                 tran.Load(path);

@@ -248,6 +248,12 @@
     <Compile Include="mantenimientos\empleados.Designer.cs">
       <DependentUpon>empleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="mantenimientos\empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimientos\empresa.Designer.cs">
+      <DependentUpon>empresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="mantenimientos\estantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +319,12 @@
     </Compile>
     <Compile Include="mantenimientos\proveedores.Designer.cs">
       <DependentUpon>proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientos\resoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimientos\resoluciones.Designer.cs">
+      <DependentUpon>resoluciones.cs</DependentUpon>
     </Compile>
     <Compile Include="mantenimientos\sucursales.cs">
       <SubType>Form</SubType>
@@ -643,6 +655,9 @@
     <EmbeddedResource Include="mantenimientos\empleados.resx">
       <DependentUpon>empleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mantenimientos\empresa.resx">
+      <DependentUpon>empresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mantenimientos\estantes.resx">
       <DependentUpon>estantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -675,6 +690,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimientos\proveedores.resx">
       <DependentUpon>proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenimientos\resoluciones.resx">
+      <DependentUpon>resoluciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimientos\sucursales.resx">
       <DependentUpon>sucursales.cs</DependentUpon>
@@ -1127,6 +1145,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
