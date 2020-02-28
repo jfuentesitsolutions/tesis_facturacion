@@ -45,6 +45,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.listaMetodoPago = new System.Windows.Forms.ComboBox();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -114,7 +116,7 @@
             // 
             this.btnCobrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCobrar.Location = new System.Drawing.Point(75, 382);
+            this.btnCobrar.Location = new System.Drawing.Point(67, 446);
             this.btnCobrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(89, 38);
@@ -219,11 +221,34 @@
             this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error.ContainerControl = this;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 382);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 19);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Metodo de pago";
+            // 
+            // listaMetodoPago
+            // 
+            this.listaMetodoPago.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listaMetodoPago.BackColor = System.Drawing.SystemColors.Control;
+            this.listaMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listaMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.listaMetodoPago.FormattingEnabled = true;
+            this.listaMetodoPago.Location = new System.Drawing.Point(16, 409);
+            this.listaMetodoPago.Name = "listaMetodoPago";
+            this.listaMetodoPago.Size = new System.Drawing.Size(200, 27);
+            this.listaMetodoPago.TabIndex = 34;
+            // 
             // cobrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(232, 438);
+            this.ClientSize = new System.Drawing.Size(232, 494);
+            this.Controls.Add(this.listaMetodoPago);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -246,6 +271,7 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -265,5 +291,7 @@
         public System.Windows.Forms.TextBox txtefe;
         public System.Windows.Forms.Panel panelTitulo;
         public System.Windows.Forms.Label lblEncanezado;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox listaMetodoPago;
     }
 }

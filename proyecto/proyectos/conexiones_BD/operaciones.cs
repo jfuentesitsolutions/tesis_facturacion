@@ -544,6 +544,7 @@ namespace conexiones_BD
                     }
 
                     fac.IdDocu = fac.Numero_factura;
+                    Console.WriteLine(fac.insertarVenta());
                     comando.CommandText = fac.insertarVenta();
                     comando.ExecuteNonQuery();
 

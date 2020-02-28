@@ -19,6 +19,9 @@ namespace sessionManager
         bool empresa_activa;
         bool correlativos_activos;
         string idcaja;
+        string resolucion;
+        string limite_corre_resol_cf;
+        string limite_corre_resol_conf;
 
         public static secion Instancia
         {
@@ -113,6 +116,45 @@ namespace sessionManager
             set
             {
                 correlativos_activos = value;
+            }
+        }
+
+        public string Resolucion
+        {
+            get
+            {
+                return resolucion;
+            }
+
+            set
+            {
+                resolucion = value;
+            }
+        }
+
+        public string Limite_corre_resol_cf
+        {
+            get
+            {
+                return limite_corre_resol_cf;
+            }
+
+            set
+            {
+                limite_corre_resol_cf = value;
+            }
+        }
+
+        public string Limite_corre_resol_conf
+        {
+            get
+            {
+                return limite_corre_resol_conf;
+            }
+
+            set
+            {
+                limite_corre_resol_conf = value;
             }
         }
 

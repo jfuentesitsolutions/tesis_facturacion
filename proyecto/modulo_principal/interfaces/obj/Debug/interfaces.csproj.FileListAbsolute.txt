@@ -1041,7 +1041,6 @@ D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\WinFormAnimation.xml
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\MySql.Data.xml
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
-D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.csprojFakesResolveAssemblyReference.cache
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.csprojResolveAssemblyReference.cache
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.actualizaciones.actualiza_productos.resources
@@ -1337,3 +1336,5 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\in
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.pdb
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.empresa.resources
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.resoluciones.resources
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.empresa.resources
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.resoluciones.resources

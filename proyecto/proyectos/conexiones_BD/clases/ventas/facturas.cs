@@ -12,7 +12,7 @@ namespace conexiones_BD.clases.ventas
             idusuario, sub_total, descuento_total, descuento_iva, descuento_renta, moneda, idcliente, 
             total_ventas_exentas, total_ventas_sujetas, total, metodo_pago, version, resolucion, 
             lugar_expedicion, cantidad_letras, num_factura_numero, nom_per_entrega, nom_pre_recibe, 
-            nit_per_entrega, nit_per_recibe, dui_per_entrega, dui_per_recibe;
+            nit_per_entrega, nit_per_recibe, dui_per_entrega, dui_per_recibe, num_cheque, num_transaccion;
 
         public string Numero_factura
         {
@@ -34,7 +34,7 @@ namespace conexiones_BD.clases.ventas
             string total_ventas_exentas, string total_ventas_sujetas, string total, string metodo_pago, 
             string version, string resolucion, string lugar_expedicion, string cantidad_letras, 
             string num_factura_numero, string nom_per_entrega, string nom_pre_recibe, string nit_per_entrega, 
-            string nit_per_recibe, string dui_per_entrega, string dui_per_recibe)
+            string nit_per_recibe, string dui_per_entrega, string dui_per_recibe, string num_cheque, string num_transaccion)
             : base(idventa, idventa_factura, fecha_expedicion, idsucursal, anulacion, idcaja)
         {
             this.Numero_factura = numero_factura;
@@ -65,6 +65,8 @@ namespace conexiones_BD.clases.ventas
             this.nit_per_recibe = nit_per_recibe;
             this.dui_per_entrega = dui_per_entrega;
             this.dui_per_recibe = dui_per_recibe;
+            this.num_cheque = num_cheque;
+            this.num_transaccion = num_transaccion;
             base.cargarDatos(generarCampos(), generarValores(), "ventas_factura");
         }
 
@@ -104,6 +106,8 @@ namespace conexiones_BD.clases.ventas
             campos.Add("nit_per_recibe");
             campos.Add("dui_per_entrega");
             campos.Add("dui_per_recibe");
+            campos.Add("num_cheque");
+            campos.Add("num_transaccion");
 
             return campos;
         }
@@ -132,13 +136,15 @@ namespace conexiones_BD.clases.ventas
             valores.Add(this.resolucion);
             valores.Add(this.lugar_expedicion);
             valores.Add(this.cantidad_letras);
-            valores.Add(this.Numero_factura);
+            valores.Add(this.num_factura_numero);
             valores.Add(this.nom_per_entrega);
             valores.Add(this.nom_pre_recibe);
             valores.Add(this.nit_per_entrega);
             valores.Add(this.nit_per_recibe);
             valores.Add(this.dui_per_entrega);
             valores.Add(this.dui_per_recibe);
+            valores.Add(this.num_cheque);
+            valores.Add(this.num_transaccion);
 
             return valores;
         }
@@ -159,7 +165,7 @@ namespace conexiones_BD.clases.ventas
         public override List<string> valores()
         {
             List<string> valores = new List<string>();
-            valores.Add(Numero_factura);
+            valores.Add(idventa);
             valores.Add(base.idDocu);
             valores.Add(base.fecha);
             valores.Add(base.idsucursal);

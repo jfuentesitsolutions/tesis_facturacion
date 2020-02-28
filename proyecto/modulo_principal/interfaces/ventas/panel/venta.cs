@@ -215,8 +215,6 @@ namespace interfaces.ventas.panel
             lista_p.Clear();
             lista.ForEach(c => lista_p.Add(c));
 
-
-
         }
 
         private void chkCod_CheckedChanged(object sender, EventArgs e)
@@ -694,7 +692,7 @@ namespace interfaces.ventas.panel
 
             switch (listaTipoFactura.SelectedIndex)
             {
-                 default:
+                 case 0:
                     {
                         if (!validar())
                         {
@@ -714,21 +712,28 @@ namespace interfaces.ventas.panel
                         }
                         break;
                     }
-                case 2:
+                case 1:
                     {
                         if (!validar())
                         {
                             if (sesion.Empresa_activa)
                             {
-                                auxiliares.cobrar cobro = new auxiliares.cobrar();
-                                cobro.lblTotala.Text = total;
-                                cobro.efec.Text = total;
-                                cobro.ShowDialog();
-                                if (cobro.Cobrado)
+                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Limite_corre_resol_conf))
                                 {
-                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                    MessageBox.Show("Ya no hay correlativos disponibles porfavor ingresa un nueva resolución", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-
+                                else
+                                {
+                                    auxiliares.cobrar cobro = new auxiliares.cobrar();
+                                    cobro.lblTotala.Text = total;
+                                    cobro.efec.Text = total;
+                                    cobro.ShowDialog();
+                                    if (cobro.Cobrado)
+                                    {
+                                        ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                    }
+                                }
+                               
                             }
                             else
                             {
@@ -739,13 +744,94 @@ namespace interfaces.ventas.panel
                         break;
                     }
 
+                case 2:
+                    {
+                        if (!validar())
+                        {
+                            if (sesion.Empresa_activa)
+                            {
+                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Limite_corre_resol_conf))
+                                {
+                                    MessageBox.Show("Ya no hay correlativos disponibles porfavor ingresa un nueva resolución", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    auxiliares.cobrar cobro = new auxiliares.cobrar();
+                                    cobro.lblTotala.Text = total;
+                                    cobro.efec.Text = total;
+                                    cobro.ShowDialog();
+                                    if (cobro.Cobrado)
+                                    {
+                                        ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("No esta configurada la información de la empresa, porfavor vaya a la opcion configuraciones y agregue la información", "No hay información de la empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        break;
+                    }
+
+                case 3:
+                    {
+                        MessageBox.Show("No se a definido un cobro para la factura comercial", "Tipo no disponible", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
+                case 4:
+                    {
+                        if (!validar())
+                        {
+                            if (sesion.Empresa_activa)
+                            {
+                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Limite_corre_resol_conf))
+                                {
+                                    MessageBox.Show("Ya no hay correlativos disponibles porfavor ingresa un nueva resolución", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    auxiliares.cobrar cobro = new auxiliares.cobrar();
+                                    cobro.lblTotala.Text = total;
+                                    cobro.efec.Text = total;
+                                    cobro.ShowDialog();
+                                    if (cobro.Cobrado)
+                                    {
+                                        ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("No esta configurada la información de la empresa, porfavor vaya a la opcion configuraciones y agregue la información", "No hay información de la empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        break;
+                    }
+
                 case 5:
                     {
                         if (!validar())
                         {
                             if (sesion.Empresa_activa)
                             {
-
+                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Limite_corre_resol_conf))
+                                {
+                                    MessageBox.Show("Ya no hay correlativos disponibles porfavor ingresa un nueva resolución", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    auxiliares.cobrar cobro = new auxiliares.cobrar();
+                                    cobro.lblTotala.Text = total;
+                                    cobro.efec.Text = total;
+                                    cobro.ShowDialog();
+                                    if (cobro.Cobrado)
+                                    {
+                                        ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                    }
+                                }
                             }
                             else
                             {
@@ -788,9 +874,22 @@ namespace interfaces.ventas.panel
             Console.WriteLine(fecha_actual.ToString());
 
             conexiones_BD.clases.ventas.tickets ticke = new conexiones_BD.clases.ventas.tickets(
-                "0", "0", fecha.fechaMy(lblrelog.ToString()), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
-                correl, listaVendedor.SelectedValue.ToString(), lblSubt.Text, lblDescuento.Text,
-                this.total, "1", efec, cam, lista[0], idcorre, sesion.Idcaja);
+                "0", 
+                "0", 
+                fecha.fechaMy(lblrelog.ToString()), 
+                sesion.DatosRegistro[1],
+                "1", 
+                listaFormaPago.SelectedValue.ToString(),
+                correl, 
+                listaVendedor.SelectedValue.ToString(), 
+                lblSubt.Text, lblDescuento.Text,
+                this.total, 
+                "1", 
+                efec, 
+                cam, 
+                lista[0], 
+                idcorre, 
+                sesion.Idcaja);
 
             conexiones_BD.operaciones op = new conexiones_BD.operaciones();
             conexiones_BD.clases.ctrl_errores.errores err= op.transaccionVentasTickets(retornoProductos(), ticke);
@@ -858,7 +957,38 @@ namespace interfaces.ventas.panel
 
         private void ingresandoVentaFactura(string efec, string cam, string num_factura, string serie_auto)
         {
-            
+            string centre = "ND", crecibe = "ND", dentrega = "ND", drecibe = "ND", nentrega = "ND", nrecibe = "ND"; 
+            if (Convert.ToDouble(lblSubt.Text)>=200)
+            {
+                if (MessageBox.Show("La cantidad es mayor a 200 dolares, ¿Desea colocar los datos de quien entrega y quien recibe?") == DialogResult.Yes)
+                {
+
+                }
+            }
+
+            double descuento = Math.Round((Convert.ToDouble(lblIva.Text) + Convert.ToDouble(lblExe.Text) + Convert.ToDouble(lblDesc.Text)),2);
+
+            conexiones_BD.clases.ventas.facturas factura = new conexiones_BD.clases.ventas.facturas("F" + txtSerie.Text + txtNumFact.Text, "", sesion.DatosRegistro[1],
+                "1", sesion.Idcaja, txtSerie.Text + "-" + txtNumFact.Text, listaFormaPago.SelectedValue.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
+                DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), listaTipoFactura.SelectedValue.ToString(), listaVendedor.SelectedValue.ToString(),
+                lblSubt.Text, descuento.ToString(), lblIva.Text, lblDesc.Text, "SV", lista[0], lblExe.Text, lblExe.Text, lblDescuento.Text, "Efectivo", "1.0", sesion.Resolucion,
+                sesion.DatosRegistro[1], "cantidad letras", txtNumFact.Text, centre, crecibe, nentrega, nrecibe, dentrega, drecibe, "0", "0");
+
+            conexiones_BD.operaciones op = new conexiones_BD.operaciones();
+            conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(), factura);
+
+            Int32 res = err.Res;
+
+            if (res > 0)
+            {
+                MessageBox.Show("factura ingresada");
+            }
+            else
+            {
+                MessageBox.Show("No se puede ingresar");
+            }
+
+
         }
 
         private void ingresandoVentaTicket_sincomprobante(string correl, string efec, string cam, string idcorre)
@@ -918,7 +1048,7 @@ namespace interfaces.ventas.panel
 
             if (listaTipoFactura.SelectedIndex!=0)
             {
-                if (txtNumFact.TextLength == 0)
+                if (txtNumFact.Value == 0)
                 {
                     valido = true;
                     error.SetError(txtNumFact, "Tienes que digitar un numero de documento");
@@ -1317,11 +1447,18 @@ namespace interfaces.ventas.panel
                         case 1:
                             {
                                 txtSerie.Text = datos.Rows[0][2].ToString();
+                                sesion.Resolucion = datos.Rows[0][0].ToString();
+                                sesion.Limite_corre_resol_cf = datos.Rows[0][9].ToString();
+                                sesion.Limite_corre_resol_conf = datos.Rows[0][5].ToString();
+                                
                                 break;
                             }
                         case 2:
                             {
                                 txtSerie.Text = datos.Rows[0][3].ToString();
+                                sesion.Resolucion = datos.Rows[0][0].ToString();
+                                sesion.Limite_corre_resol_cf = datos.Rows[0][9].ToString();
+                                sesion.Limite_corre_resol_conf = datos.Rows[0][5].ToString();
                                 break;
                             }
                         case 3:
@@ -1332,11 +1469,17 @@ namespace interfaces.ventas.panel
                         case 4:
                             {
                                 txtSerie.Text = datos.Rows[0][2].ToString();
+                                sesion.Resolucion = datos.Rows[0][0].ToString();
+                                sesion.Limite_corre_resol_cf = datos.Rows[0][9].ToString();
+                                sesion.Limite_corre_resol_conf = datos.Rows[0][5].ToString();
                                 break;
                             }
                         case 5:
                             {
                                 txtSerie.Text = datos.Rows[0][3].ToString();
+                                sesion.Resolucion = datos.Rows[0][0].ToString();
+                                sesion.Limite_corre_resol_cf = datos.Rows[0][9].ToString();
+                                sesion.Limite_corre_resol_conf = datos.Rows[0][5].ToString();
                                 break;
                             }
                     }
