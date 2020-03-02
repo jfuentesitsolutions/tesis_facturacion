@@ -31,27 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(configuraciones_iniciales));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSuperior = new System.Windows.Forms.Panel();
-            this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnConexion = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnGrupos = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnUnidades = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEmpleados = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnUsuarios = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnConfigurar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnRestablecer = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnConexion = new System.Windows.Forms.ToolStripButton();
+            this.btnRestablecer = new System.Windows.Forms.ToolStripButton();
+            this.btnGrupos = new System.Windows.Forms.ToolStripButton();
+            this.btnUnidades = new System.Windows.Forms.ToolStripButton();
+            this.btnEmpleados = new System.Windows.Forms.ToolStripButton();
+            this.btnUsuarios = new System.Windows.Forms.ToolStripButton();
+            this.btnConfigurar = new System.Windows.Forms.ToolStripButton();
+            this.cerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,18 +74,6 @@
             this.panelSuperior.Size = new System.Drawing.Size(679, 59);
             this.panelSuperior.TabIndex = 6;
             this.panelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
-            // cerrar
-            // 
-            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(630, 12);
-            this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(37, 35);
-            this.cerrar.TabIndex = 2;
-            this.cerrar.TabStop = false;
-            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
             // lblTitulo
             // 
@@ -122,9 +110,46 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 62);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(94, 709);
+            this.toolStrip1.Size = new System.Drawing.Size(94, 726);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(91, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(91, 6);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(91, 6);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(91, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(91, 6);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(91, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(91, 6);
             // 
             // btnConexion
             // 
@@ -139,10 +164,16 @@
             this.btnConexion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConexion.Click += new System.EventHandler(this.btnConexion_Click_1);
             // 
-            // toolStripSeparator3
+            // btnRestablecer
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(91, 6);
+            this.btnRestablecer.Image = ((System.Drawing.Image)(resources.GetObject("btnRestablecer.Image")));
+            this.btnRestablecer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnRestablecer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRestablecer.Name = "btnRestablecer";
+            this.btnRestablecer.Size = new System.Drawing.Size(91, 87);
+            this.btnRestablecer.Text = "Restablecer";
+            this.btnRestablecer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
             // 
             // btnGrupos
             // 
@@ -151,17 +182,10 @@
             this.btnGrupos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGrupos.Name = "btnGrupos";
             this.btnGrupos.Size = new System.Drawing.Size(91, 87);
-            this.btnGrupos.Text = "Grupos";
+            this.btnGrupos.Text = "Empresa";
             this.btnGrupos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGrupos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGrupos.Click += new System.EventHandler(this.btnGrupos_Click_1);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(91, 6);
             // 
             // btnUnidades
             // 
@@ -174,11 +198,6 @@
             this.btnUnidades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUnidades.Click += new System.EventHandler(this.btnUnidades_Click_1);
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(91, 6);
-            // 
             // btnEmpleados
             // 
             this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
@@ -189,11 +208,6 @@
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click_1);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(91, 6);
             // 
             // btnUsuarios
             // 
@@ -206,11 +220,6 @@
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click_1);
             // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(91, 6);
-            // 
             // btnConfigurar
             // 
             this.btnConfigurar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfigurar.Image")));
@@ -222,33 +231,24 @@
             this.btnConfigurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfigurar.Click += new System.EventHandler(this.btnConfigurar_Click);
             // 
-            // toolStripSeparator5
+            // cerrar
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(91, 6);
-            // 
-            // btnRestablecer
-            // 
-            this.btnRestablecer.Image = ((System.Drawing.Image)(resources.GetObject("btnRestablecer.Image")));
-            this.btnRestablecer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnRestablecer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRestablecer.Name = "btnRestablecer";
-            this.btnRestablecer.Size = new System.Drawing.Size(91, 87);
-            this.btnRestablecer.Text = "Restablecer";
-            this.btnRestablecer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(91, 6);
+            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
+            this.cerrar.Location = new System.Drawing.Point(630, 12);
+            this.cerrar.Name = "cerrar";
+            this.cerrar.Size = new System.Drawing.Size(37, 35);
+            this.cerrar.TabIndex = 2;
+            this.cerrar.TabStop = false;
+            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
             // configuraciones_iniciales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(679, 771);
+            this.ClientSize = new System.Drawing.Size(679, 788);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -267,9 +267,9 @@
             this.panel1.ResumeLayout(false);
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.ResumeLayout(false);
 
         }

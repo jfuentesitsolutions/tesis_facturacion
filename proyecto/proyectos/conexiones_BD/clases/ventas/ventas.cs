@@ -126,7 +126,7 @@ namespace conexiones_BD.clases.ventas
         {
             StringBuilder sentencia = new StringBuilder();
             sentencia.Append("UPDATE ventas SET anulacion='" + Anulacion + "' WHERE idventa='" + idventa + "';");
-            return sentencia;
+            return sentencia;   
         }
 
 

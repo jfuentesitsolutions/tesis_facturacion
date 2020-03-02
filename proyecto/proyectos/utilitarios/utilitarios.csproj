@@ -69,6 +69,7 @@
     <Compile Include="cargandoListas.cs" />
     <Compile Include="cargar_tablas.cs" />
     <Compile Include="conectar_excel.cs" />
+    <Compile Include="convertir_letra.cs" />
     <Compile Include="crearSentencia.cs" />
     <Compile Include="manejandoCadenas.cs" />
     <Compile Include="maneja_fechas.cs" />

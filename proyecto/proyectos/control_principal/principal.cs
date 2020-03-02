@@ -53,7 +53,7 @@ namespace control_principal
         private void btnInventario_Click(object sender, EventArgs e)
         {
 
-            if (btnVentas.Location == new Point(5, 127))
+            if (btnInventario.Location == new Point(5, 65))
             {
                 this.funcionamientoBotones(0);
                 this.panel_contenidos.Controls.RemoveAt(0);
@@ -213,6 +213,15 @@ namespace control_principal
         private void principal_Load(object sender, EventArgs e)
         {
             //this.colocarPanel(new interfaces.panel_inicio.inicio());
+            if (!sesion.Empresa_activa)
+            {
+                if (MessageBox.Show("No hay información de la empresa\n¿Desea ingresar la información ahora mismo?\nSi la respuesta es no, puede ingresar la información desde el menú configuración y la oopción empresa", "No hay información de la empresa", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    interfaces.mantenimientos.empresa empresa = new interfaces.mantenimientos.empresa();
+                    empresa.ShowDialog();
+                }
+            }
+
             this.verificandoCaja();
             this.dibujarTitulo();
         }

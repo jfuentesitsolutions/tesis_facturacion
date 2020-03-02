@@ -18,7 +18,7 @@ namespace utilitarios
             controles = con;
             foreach(Control c in controles)
             {
-                c.Text = " ";
+                c.Text = "";
             }
         }
 

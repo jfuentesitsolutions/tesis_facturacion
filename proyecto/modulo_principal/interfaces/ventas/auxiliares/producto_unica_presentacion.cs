@@ -15,6 +15,8 @@ namespace interfaces.ventas.auxiliares
         string idpresentacion_poroducto, total, utilidad, tipoUtilidad, precio, codigo, cantidadInter, sucursal_producto;
         bool llenado = false;
         bool modificar = false;
+        double iva_descontado = 0.00;
+        int tipo_factura=0;
         public producto_unica_presentacion()
         {
             InitializeComponent();
@@ -179,6 +181,32 @@ namespace interfaces.ventas.auxiliares
             }
         }
 
+        public double Iva_descontado
+        {
+            get
+            {
+                return iva_descontado;
+            }
+
+            set
+            {
+                iva_descontado = value;
+            }
+        }
+
+        public int Tipo_factura
+        {
+            get
+            {
+                return tipo_factura;
+            }
+
+            set
+            {
+                tipo_factura = value;
+            }
+        }
+
         private void producto_unica_presentacion_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -215,8 +243,32 @@ namespace interfaces.ventas.auxiliares
         {
             int cantidad = Convert.ToInt32(txtCantidad.Value);
             double preci = Convert.ToDouble(precio);
-            double tota = cantidad * preci;
-            total = tota.ToString();
+            
+
+            switch (Tipo_factura)
+            {
+                case 2:
+                    {
+                        double tota = ((cantidad * preci) / 1.13);
+                        Console.WriteLine(tota);
+                        iva_descontado = Math.Round(tota * 0.13, 2);
+                        total = Math.Round(tota, 2).ToString();
+                        break;
+                    }
+                case 5:
+                    {
+                        double tota = ((cantidad * preci) / 1.13);
+                        iva_descontado = Math.Round(tota * 0.13, 2);
+                        total = Math.Round(tota, 2).ToString();
+                        break;
+                    }
+                default:
+                    {
+                        double tota = cantidad * preci;
+                        total = tota.ToString();
+                        break;
+                    }
+            }
 
             double uti = Convert.ToDouble(tipoUtilidad);
             double utili = uti * preci;

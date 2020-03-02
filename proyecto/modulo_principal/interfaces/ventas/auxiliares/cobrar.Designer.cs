@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cobrar));
             this.panelTitulo = new System.Windows.Forms.Panel();
-            this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.lblTotala = new System.Windows.Forms.Label();
             this.lblCambio = new System.Windows.Forms.Label();
@@ -45,13 +44,16 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblMeto = new System.Windows.Forms.Label();
+            this.listaMetodoPago = new System.Windows.Forms.ComboBox();
+            this.cerrar = new System.Windows.Forms.PictureBox();
             this.panelTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.efec)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -65,19 +67,6 @@
             this.panelTitulo.Size = new System.Drawing.Size(232, 46);
             this.panelTitulo.TabIndex = 6;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
-            // 
-            // cerrar
-            // 
-            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(194, 6);
-            this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(32, 32);
-            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.cerrar.TabIndex = 2;
-            this.cerrar.TabStop = false;
-            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
             // lblEncanezado
             // 
@@ -114,10 +103,10 @@
             // 
             this.btnCobrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCobrar.Location = new System.Drawing.Point(75, 382);
+            this.btnCobrar.Location = new System.Drawing.Point(68, 453);
             this.btnCobrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(89, 38);
+            this.btnCobrar.Size = new System.Drawing.Size(89, 27);
             this.btnCobrar.TabIndex = 1;
             this.btnCobrar.Text = "Cobrar";
             this.btnCobrar.UseVisualStyleBackColor = true;
@@ -219,11 +208,52 @@
             this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error.ContainerControl = this;
             // 
+            // lblMeto
+            // 
+            this.lblMeto.AutoSize = true;
+            this.lblMeto.Location = new System.Drawing.Point(14, 382);
+            this.lblMeto.Name = "lblMeto";
+            this.lblMeto.Size = new System.Drawing.Size(111, 19);
+            this.lblMeto.TabIndex = 18;
+            this.lblMeto.Text = "Metodo de pago";
+            // 
+            // listaMetodoPago
+            // 
+            this.listaMetodoPago.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listaMetodoPago.BackColor = System.Drawing.SystemColors.Control;
+            this.listaMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listaMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.listaMetodoPago.FormattingEnabled = true;
+            this.listaMetodoPago.Items.AddRange(new object[] {
+            "Efectivo",
+            "Tarjeta",
+            "Cheque"});
+            this.listaMetodoPago.Location = new System.Drawing.Point(16, 409);
+            this.listaMetodoPago.Name = "listaMetodoPago";
+            this.listaMetodoPago.Size = new System.Drawing.Size(200, 27);
+            this.listaMetodoPago.TabIndex = 34;
+            this.listaMetodoPago.SelectedIndexChanged += new System.EventHandler(this.listaMetodoPago_SelectedIndexChanged);
+            // 
+            // cerrar
+            // 
+            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
+            this.cerrar.Location = new System.Drawing.Point(194, 6);
+            this.cerrar.Name = "cerrar";
+            this.cerrar.Size = new System.Drawing.Size(32, 32);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.cerrar.TabIndex = 2;
+            this.cerrar.TabStop = false;
+            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
+            // 
             // cobrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(232, 438);
+            this.ClientSize = new System.Drawing.Size(232, 494);
+            this.Controls.Add(this.listaMetodoPago);
+            this.Controls.Add(this.lblMeto);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -238,20 +268,20 @@
             this.Load += new System.EventHandler(this.cobrar_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.efec)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox cerrar;
-        private System.Windows.Forms.Button btnCobrar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -265,5 +295,8 @@
         public System.Windows.Forms.TextBox txtefe;
         public System.Windows.Forms.Panel panelTitulo;
         public System.Windows.Forms.Label lblEncanezado;
+        public System.Windows.Forms.ComboBox listaMetodoPago;
+        public System.Windows.Forms.Label lblMeto;
+        public System.Windows.Forms.Button btnCobrar;
     }
 }

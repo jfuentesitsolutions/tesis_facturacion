@@ -77,8 +77,8 @@ namespace control_principal
 
             if (pruebaConexion())
             {
-                interfaces.mantenimientos.grupos gr = new interfaces.mantenimientos.grupos();
-                cheCarForm(gr, this);
+                interfaces.mantenimientos.empresa empre = new interfaces.mantenimientos.empresa();
+                cheCarForm(empre, this);
             }else
             {
                 MessageBox.Show("No hay conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

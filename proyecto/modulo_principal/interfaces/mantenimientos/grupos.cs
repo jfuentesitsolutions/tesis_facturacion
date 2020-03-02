@@ -205,7 +205,7 @@ namespace interfaces.mantenimientos
                         MessageBox.Show("Los registros se ingresaron correctamente", "Exíto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         tabla = new utilitarios.cargar_tablas(tablaGrupos, txtBuscar, conexiones_BD.clases.grupos.datosTabla(), "nombre", lblRegistros);
                         vaciarTexbox();
-                        tabla.cargar();
+                        tabla.cargar(); 
                     }
                     else
                     {
