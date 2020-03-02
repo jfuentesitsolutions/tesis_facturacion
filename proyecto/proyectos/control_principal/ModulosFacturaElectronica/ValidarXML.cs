@@ -58,20 +58,38 @@ namespace control_principal.ModulosFacturaElectronica
             if (Ruta_XML != null && Ruta_XML != "")
             {
 
-                if (_firma.VerificarXML(Ruta_XML))
-                {
-
-                    MessageBox.Show("El XML no ha sufrido cambios", "Exito", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("El XML se ha modificado", "Alerta", MessageBoxButtons.OK);
+                switch (_firma.VerificarXML(Ruta_XML)) {
+                    case 0:
+                           MessageBox.Show("El XML es valido, el contenido no ha tenido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                           
+                    case 1:
+                            MessageBox.Show("La ubicacion del archivo XSLT es incorrecta, o el tipo de archivo seleccionado es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            break;
+                                   
+                    case 2:
+                            MessageBox.Show("El archivo XML selecionado es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            break;        
+                           
+                    case 3:
+                            MessageBox.Show("El XML es invalido, su contenido ha sido modificado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            break;              
+                        
+                    case 4:
+                            MessageBox.Show("Error al validar el xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                           
+                    default:
+                            MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                            
+                        
                 }
 
             }
             else
             {
-                MessageBox.Show("Seleccione un XML", "Alerta", MessageBoxButtons.OK);
+                MessageBox.Show("Seleccione un XML", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

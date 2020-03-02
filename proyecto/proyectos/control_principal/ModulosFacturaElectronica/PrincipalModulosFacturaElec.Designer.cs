@@ -73,7 +73,7 @@
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(1249, 55);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(1241, 55);
             this.pnlBarraTitulo.TabIndex = 6;
             // 
             // label1
@@ -117,7 +117,7 @@
             this.pnlMenuLateral.Location = new System.Drawing.Point(0, 55);
             this.pnlMenuLateral.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMenuLateral.Name = "pnlMenuLateral";
-            this.pnlMenuLateral.Size = new System.Drawing.Size(380, 695);
+            this.pnlMenuLateral.Size = new System.Drawing.Size(380, 691);
             this.pnlMenuLateral.TabIndex = 12;
             // 
             // btnValidarJSON
@@ -375,7 +375,7 @@
             this.pnlShowO.Location = new System.Drawing.Point(380, 55);
             this.pnlShowO.Margin = new System.Windows.Forms.Padding(4);
             this.pnlShowO.Name = "pnlShowO";
-            this.pnlShowO.Size = new System.Drawing.Size(869, 695);
+            this.pnlShowO.Size = new System.Drawing.Size(861, 691);
             this.pnlShowO.TabIndex = 14;
             // 
             // pictureBox1
@@ -387,7 +387,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(195, 89);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(504, 479);
+            this.pictureBox1.Size = new System.Drawing.Size(496, 475);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -396,7 +396,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 750);
+            this.ClientSize = new System.Drawing.Size(1241, 746);
             this.Controls.Add(this.pnlShowO);
             this.Controls.Add(this.pnlMenuLateral);
             this.Controls.Add(this.pnlBarraTitulo);

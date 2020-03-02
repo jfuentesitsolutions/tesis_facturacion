@@ -9,32 +9,55 @@ using System.Threading.Tasks;
 
 namespace FirmarPDF
 {
-    public class Notario
+    public class ValidacionPDF
     {
-        private readonly Certificado certificado;
+        private readonly ValidarCertificado certificado;
 
-        public Notario(Certificado certificado)
+        public ValidacionPDF(ValidarCertificado certificado)
         {
             this.certificado = certificado;
         }
 
 
-        public bool CertificarDocumento(string rutaDocumentoFirmado)
+       
+
+        public int ValidarDocumentoPDF(string rutaDocumentoFirmado)
         {
-            using (var reader = new PdfReader(rutaDocumentoFirmado))
+            try
             {
-                var campos = reader.AcroFields;
-                var nombresDefirmas = campos.GetSignatureNames();
-                foreach (var nombre in nombresDefirmas)
+                bool pdfFirmado =false;
+
+                using (var reader = new PdfReader(rutaDocumentoFirmado))
                 {
-                    if (ValidarFirma(campos, nombre))
+                    var campos = reader.AcroFields;
+                    var nombresDefirmas = campos.GetSignatureNames();
+                    foreach (var nombre in nombresDefirmas)
                     {
-                        return true;
+                        pdfFirmado = true; //el pdf si esta firmado
+                        if (ValidarFirma(campos, nombre))
+                        {
+                            return 0; // el archivo pdf es valido
+                        }
+                       
                     }
                 }
-            }
 
-            return false;
+                if (pdfFirmado)
+                {
+                    return 1;//el pdf ha sido modificado y no se ha podido validar(si esta firmado)
+                }
+                else {
+                    return 3;//el pdf que seleciono no esta firmado 
+                }
+
+                
+            }
+            catch (Exception)
+            {
+
+                return 2; // el archivo seleccionado no es un pdf
+            }
+          
         }
 
         private bool ValidarFirma(AcroFields campos, string nombre)

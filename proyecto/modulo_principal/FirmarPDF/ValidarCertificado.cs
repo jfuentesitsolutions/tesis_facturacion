@@ -10,13 +10,13 @@ using Org.BouncyCastle.X509;
 
 namespace FirmarPDF
 {
-    public class Certificado
+    public class ValidarCertificado
     {
         public AsymmetricKeyParameter Key { get; private set; }
 
         public X509Certificate[] Chain { get; private set; }
 
-        public Certificado(string rutaCompletaDelPfx, string claveDelPfx = null)
+        public ValidarCertificado(string rutaCompletaDelPfx, string claveDelPfx = null)
         {
             using (var file = File.OpenRead(rutaCompletaDelPfx))
             {

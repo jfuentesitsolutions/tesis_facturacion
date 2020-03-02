@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FirmarPDF;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,31 +84,57 @@ namespace control_principal.ModulosFacturaElectronica
                 if (Ruta_XML != null && Ruta_XML != "" && Ruta_SelectJSON != null && Ruta_SelectJSON != "" &&
                     txtNombreJSON.Text != null && txtNombreJSON.Text != "")
                 {
+                    GenerarXMLtoPDF _validarXML = new GenerarXMLtoPDF();
 
-                    System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
-                    doc.Load(Ruta_XML);
+                    if (!System.IO.File.Exists(Ruta_SelectJSON + "\\" + txtNombreJSON.Text + ".json"))
+                    {
+                        if (_validarXML.VerificarXML(Ruta_XML, true))
+                        {
+                            System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                            doc.Load(Ruta_XML);
 
-                    string json = JsonConvert.SerializeXmlNode(doc);
+                            string json = JsonConvert.SerializeXmlNode(doc);
 
-                    System.IO.File.WriteAllText(Ruta_SelectJSON+@"\"+ txtNombreJSON.Text + ".json", json);
+                            System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
 
-                    MessageBox.Show("El archivo JSON se genero con exito", "Exito", MessageBoxButtons.OK);
+                            MessageBox.Show("El archivo JSON se genero con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else {
+                        DialogResult a = MessageBox.Show("El archivo "+ txtNombreJSON.Text +".json" + " ya existe en la ruta seleccionada,¿Desea sobrescribir el archivo?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+                        if (a.Equals(DialogResult.OK))
+                        {
+                            if (_validarXML.VerificarXML(Ruta_XML, true))
+                            {
+                                System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                                doc.Load(Ruta_XML);
+
+                                string json = JsonConvert.SerializeXmlNode(doc);
+
+                                System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+
+                                MessageBox.Show("El archivo JSON se genero y se sobrescribio con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                 
                 }
                 else
                 {
                     if (Ruta_XML == null || Ruta_XML == "")
                     {
-                        MessageBox.Show("Selecione un archivo XML", "Alerta", MessageBoxButtons.OK);
+                        MessageBox.Show("Selecione un archivo XML", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else {
                         if (txtNombreJSON.Text == null || txtNombreJSON.Text == "")
                         {
-                            MessageBox.Show("Debe escribir un nombre para el archivo JSON", "Alerta", MessageBoxButtons.OK);
+                            MessageBox.Show("Debe escribir un nombre para el archivo JSON", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else {
                             if (Ruta_SelectJSON == null || Ruta_SelectJSON == "")
                             {
-                                MessageBox.Show("Selecione una ruta para guardar el JSON", "Alerta", MessageBoxButtons.OK);
+                                MessageBox.Show("Selecione una ruta para guardar el JSON", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             }
                         }
                     }

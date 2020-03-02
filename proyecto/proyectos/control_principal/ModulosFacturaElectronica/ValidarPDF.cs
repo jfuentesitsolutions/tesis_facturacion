@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,33 +58,44 @@ namespace control_principal.ModulosFacturaElectronica
                 if (@Ruta_PDF != null && @Ruta_PDF != "")
                 {
 
-                    var certificado = new Certificado(@"C:\Users\Mario\Desktop\certificado_mape.pfx", "1234");
-                    var notario = new Notario(certificado);
+                    var certificado = new ValidarCertificado(Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\certificado_mape.pfx", "1234");
+                    var validarPDF = new ValidacionPDF(certificado);
 
                     //string rutaDoc = BuscarRutaDocumento();
 
-                    var documentoValido = notario.CertificarDocumento(@Ruta_PDF);
+                    int documentoValido = validarPDF.ValidarDocumentoPDF(@Ruta_PDF);
 
-                    if (documentoValido)
-                    {
-                        MessageBox.Show("Documento firmado no ha sufrido modificaciones", "Exito", MessageBoxButtons.OK);
-                    }
-                    else
-                    {
-                        MessageBox.Show("El documento ha sido modificado, y no pudo validarse", "Alerta", MessageBoxButtons.OK);
+                    switch (documentoValido) {
+                        case 0:
+                            MessageBox.Show("El archivo PDF es valido, y no ha sido modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        case 1:
+                            MessageBox.Show("El archivo PDF ha sido modificado, y no pudo validarse", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            break;
+                        case 2:
+                            MessageBox.Show("El archivo selecionado no en un PDF, Selecione un archivo PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            break;
+                        case 3:
+                            MessageBox.Show("El archivo PDF selecionado no esta firmado, Selecione un PDF que este firmado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            break;
+                        default:
+                            MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+
+
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Selecione primero un PDF firmado", "Alerta", MessageBoxButtons.OK);
+                    MessageBox.Show("Selecione primero un archivo PDF firmado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
             }
             catch (Exception)
             {
 
-                MessageBox.Show("EL documento no se pudo validar", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error al validar el archivo PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             

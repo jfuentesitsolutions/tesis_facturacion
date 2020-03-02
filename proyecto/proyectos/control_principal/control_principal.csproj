@@ -158,6 +158,12 @@
     <Compile Include="ModulosFacturaElectronica\ValidarXML.Designer.cs">
       <DependentUpon>ValidarXML.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModulosFacturaElectronica\VisorPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\VisorPDF.Designer.cs">
+      <DependentUpon>VisorPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModulosFacturaElectronica\ValidarXML.resx">
       <DependentUpon>ValidarXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\VisorPDF.resx">
+      <DependentUpon>VisorPDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="principal.resx">
       <DependentUpon>principal.cs</DependentUpon>
@@ -379,6 +388,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\crearJson2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

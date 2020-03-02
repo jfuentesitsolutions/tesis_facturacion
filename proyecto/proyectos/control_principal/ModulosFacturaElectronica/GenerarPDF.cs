@@ -57,6 +57,8 @@ namespace control_principal.ModulosFacturaElectronica
 
         }
 
+     
+
         private void btnBuscar_XML_Click(object sender, EventArgs e)
         {
             string RutaXML = BuscarRutaDocumento();
@@ -71,27 +73,54 @@ namespace control_principal.ModulosFacturaElectronica
             Ruta_SelectPDF = RutaSelectPDF;
         }
 
-
-        private void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnCrear_PDF_Click(object sender, EventArgs e)
         {
-          
+
             if (Ruta_XML != null && Ruta_XML != "" && Ruta_SelectPDF != null && Ruta_SelectPDF != "" &&
                 txtNombrePDF.Text != null && txtNombrePDF.Text != "")
             {
-                GenerarXMLtoPDF _generarPDF = new GenerarXMLtoPDF(Ruta_XML,txtNombrePDF.Text, Ruta_SelectPDF);
+                GenerarXMLtoPDF _generarPDF = new GenerarXMLtoPDF(Ruta_XML, txtNombrePDF.Text, Ruta_SelectPDF);
 
-                if (_generarPDF.CrearPDF())
+                switch (_generarPDF.CrearPDF())
                 {
-                    MessageBox.Show("El PDF se realizo con exito", "Exito", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK);
+                    case 0:
+                        DialogResult result = MessageBox.Show("El PDF se generó con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (result.Equals(DialogResult.Yes)) {
+                          //se visualiza el pdf en un cuadro de dialogo
+                            new Visor_PDF(Ruta_SelectPDF + "\\" + txtNombrePDF.Text + ".pdf").ShowDialog();
+                        }
+
+                            break;
+
+                    case 1:
+                        MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        break;
+                    case 2:
+                        MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+
+                    case 3:
+                        DialogResult result2 = MessageBox.Show("El PDF se sobrescribio y se genero con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (result2.Equals(DialogResult.Yes))
+                        {   //se visualiza el pdf en un cuadro de dialogo
+                            new Visor_PDF(Ruta_SelectPDF + "\\" + txtNombrePDF.Text + ".pdf").ShowDialog();
+                        }
+
+                        break;
+
+                    case 4:
+                        /*este caso solo es de salida */
+                        break;
+                    case 5:
+                        MessageBox.Show("El archivo XML ha sido corrompido y ha fallado en la validacion", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+
+                    default:
+                        MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
                 }
 
             }
@@ -99,30 +128,44 @@ namespace control_principal.ModulosFacturaElectronica
             {
                 int opcion = 0;
 
-                if (Ruta_XML == null || Ruta_XML == "") { opcion = 1; } else {
-                    if (Ruta_SelectPDF == null || Ruta_SelectPDF == "") { opcion = 2; } else {
-                        if (txtNombrePDF.Text == null || txtNombrePDF.Text == "") { opcion = 3; }
+                if (Ruta_XML == null || Ruta_XML == "") { opcion = 1; }
+                else
+                {
+                    if (txtNombrePDF.Text == null || txtNombrePDF.Text == "") { opcion = 2; }
+                    else
+                    {
+                        if (Ruta_SelectPDF == null || Ruta_SelectPDF == "") { opcion = 3; }
                     }
-                }               
-              
-                switch (opcion) {
-                    case 1: {
-                            MessageBox.Show("Debe selecionar un .xml", "Alerta", MessageBoxButtons.OK);
+                }
+
+                switch (opcion)
+                {
+                    case 1:
+                        {
+                            MessageBox.Show("Debe selecionar un XML", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             break;
                         }
                     case 2:
                         {
-                            MessageBox.Show("Debe selecionar un nombre para el pdf", "Alerta", MessageBoxButtons.OK);
+                            MessageBox.Show("Debe selecionar un nombre para el PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             break;
                         }
                     case 3:
                         {
-                            MessageBox.Show("Debe selecionar una ruta para guardar el pdf", "Alerta", MessageBoxButtons.OK);
+                            MessageBox.Show("Debe selecionar una ruta para guardar el PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             break;
                         }
                 }
             }
         }
+
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
 
         private void btnBuscar_XML_MouseEnter(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Asn1.Pkcs;
+﻿using Newtonsoft.Json;
+using Org.BouncyCastle.Asn1.Pkcs;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Pkcs;
@@ -12,6 +13,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace ModulosfacturaElectronica.ClasesValidacion
 {
@@ -21,6 +23,11 @@ namespace ModulosfacturaElectronica.ClasesValidacion
         private AsymmetricKeyParameter llave_privada;
         private Org.BouncyCastle.X509.X509Certificate[] certificado;
         Org.BouncyCastle.X509.X509Certificate[] chain;
+
+
+        private System.Xml.Xsl.XslCompiledTransform tran = new System.Xml.Xsl.XslCompiledTransform(true);
+        private string cadena_ori = "";
+        private string PathXmlTemporal = Directory.GetCurrentDirectory() + "\\xmlTemp.xml";
 
         public AsymmetricKeyParameter llave_priva
         {
@@ -193,28 +200,58 @@ namespace ModulosfacturaElectronica.ClasesValidacion
         }
 
 
+        //Esta funcion verifica si el archivo Xslt es correcto
+        private bool VerificacionDeXslt(string _pathXslt) {
+            try
+            {
+                
+                tran.Load(_pathXslt);
+                return true;
+            }
+            catch (Exception)
+            {
 
-        public bool VerificarXML(string rutaXML)
+                return false;
+            }
+           
+        }
+
+        //esta funcion verifica si el archivo xml selecionado es correcto
+        private bool VerificarArchivoXML(string _xml) {
+            try
+            {    
+                using (StringWriter sw = new StringWriter())
+                using (XmlWriter swm = XmlWriter.Create(sw, tran.OutputSettings))
+                {
+                    tran.Transform(_xml, swm); // aqui transforma el xml a la cadena original
+                    cadena_ori = sw.ToString();
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+          
+        }
+
+        public int VerificarXML(string rutaXML)
         {
             try
             {
                 /*******************************Obtenemos la cadena original del xml*****************************************/
-                string version = "";
-                string cadena_ori = "";
+                string version = "";        
                 string certificado = ""; // Obtenido del XML
                 string selloBase64 = ""; // Obtenido del XML
-                string path = @"C:\Users\Mario\Desktop\cadenaoriginal_3_3.xslt";
+                string pathXslt = Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\cadenaoriginal_3_3.xslt";
+              
 
-                System.Xml.Xsl.XslCompiledTransform tran = new System.Xml.Xsl.XslCompiledTransform(true);
-                tran.Load(path);
+                if (!VerificacionDeXslt(pathXslt)) return 1; // verifica si el archivo xslt es correcta
 
-                using (StringWriter sw = new StringWriter())
-                using (XmlWriter swm = XmlWriter.Create(sw, tran.OutputSettings))
-                {
-                    tran.Transform(rutaXML, swm); // aqui transforma el xml a la cadena origunal
+                if (!VerificarArchivoXML(rutaXML)) return 2;// verifica si el xml selecionado es correcto
 
-                    cadena_ori = sw.ToString();
-                }
                 /*********************************Obtenemos la informacion interna del xml*****************************/
 
                 XmlDocument xDoc = new XmlDocument();
@@ -251,16 +288,42 @@ namespace ModulosfacturaElectronica.ClasesValidacion
                         hashCadenaOriginal = algoritmoHash.ComputeHash(Encoding.UTF8.GetBytes(cadena_ori));
                         selloValido = verificador.VerifyHash(hashCadenaOriginal, "SHA256", sello);
                         break;
+                    default:
+                        return 3;
+                     
                 }
 
                 if (selloValido)
                 {
-                    return true;
+                    return 0; // el xml no ha sufrido modificaciones y es valido el sello
                 }
                 else
                 {
-                    return false;
+                    return 3; // ha sufrido modificaciones 
                 }
+            }
+            catch (Exception)
+            {
+
+                return 4; // error en elproceso de validacion del xml
+            }
+
+
+        }
+
+        //funcion que sirve para verificar si el archivo selecionado es un json y despues pasarlo a xml
+        private bool VerificaElarchivoJson(string _pahtjson) {
+
+            try
+            {
+                using (StreamReader _json = new StreamReader(_pahtjson)) {//leemos el archivo json y lo gusrdamos en un streamreader
+                    string json = _json.ReadToEnd();//pasamos el contenido del streamreader a string
+                    XNode node = JsonConvert.DeserializeXNode(json); //convertimos el contenido del json en xml
+                    string XmlFormat = node.ToString(); //guardamos el contenido del xml en un string
+                    System.IO.File.WriteAllText(PathXmlTemporal, XmlFormat);//creamos un archivo xml temporal
+                }
+
+                return true;
             }
             catch (Exception)
             {
@@ -268,7 +331,91 @@ namespace ModulosfacturaElectronica.ClasesValidacion
                 return false;
             }
 
+        }
 
+        public int ValidarJSON(string _RutaJson) {
+
+            try
+            {
+                /*******************************Obtenemos la cadena original del xml*****************************************/
+                string version = "";
+                string certificado = ""; // Obtenido del XML
+                string selloBase64 = ""; // Obtenido del XML
+                string pathXslt = Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\cadenaoriginal_3_3.xslt";
+
+
+                if (!VerificaElarchivoJson(_RutaJson)) return 1; // verifica si el archivo Json es correcto
+                if (!VerificacionDeXslt(pathXslt)) return 2; // verifica si el archivo xslt es correcta
+
+                
+
+                using (StringWriter sw = new StringWriter())
+                using (XmlWriter swm = XmlWriter.Create(sw, tran.OutputSettings))
+                {     
+                    tran.Transform(PathXmlTemporal, swm); // aqui transforma el xml a la cadena original
+                    cadena_ori = sw.ToString();
+                }
+
+                /*********************************Obtenemos la informacion interna del xml*****************************/
+
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load(PathXmlTemporal);
+                System.IO.File.Delete(PathXmlTemporal);//eliminamos el xml temporal
+
+                XmlNodeList _Comprobante = xDoc.GetElementsByTagName("Comprobante");
+
+                foreach (XmlElement nodo in _Comprobante)
+                {
+                    version = nodo.GetAttribute("Version");
+                    certificado = nodo.GetAttribute("Certificado");
+                    selloBase64 = nodo.GetAttribute("Sello");
+
+                }
+
+                /*******************************************************************************************************/
+
+                byte[] sello = Convert.FromBase64String(selloBase64);
+                X509Certificate2 cert = new X509Certificate2(Convert.FromBase64String(certificado));
+                RSACryptoServiceProvider verificador = (RSACryptoServiceProvider)cert.PublicKey.Key;
+                HashAlgorithm algoritmoHash = null;
+                byte[] hashCadenaOriginal = null;
+                bool selloValido = false;
+
+                switch (version)
+                {
+                    case "3.2":
+                        algoritmoHash = SHA1.Create();
+                        hashCadenaOriginal = algoritmoHash.ComputeHash(Encoding.UTF8.GetBytes(cadena_ori));
+                        selloValido = verificador.VerifyHash(hashCadenaOriginal, "SHA1", sello);
+                        break;
+                    case "3.3":
+                        algoritmoHash = SHA256.Create();
+                        hashCadenaOriginal = algoritmoHash.ComputeHash(Encoding.UTF8.GetBytes(cadena_ori));
+                        selloValido = verificador.VerifyHash(hashCadenaOriginal, "SHA256", sello);
+                        break;
+                    default:
+                        return 3;
+
+                }
+
+                if (selloValido)
+                {
+                    return 0; // el json no ha sufrido modificaciones y es valido el sello
+                }
+                else
+                {
+                    return 4; //el archivo json ha sufrido modificaciones 
+                }
+
+
+          
+
+            }
+            catch (Exception)
+            {
+
+                return 5;//error al validarce el json
+            }
         }
     }
 }

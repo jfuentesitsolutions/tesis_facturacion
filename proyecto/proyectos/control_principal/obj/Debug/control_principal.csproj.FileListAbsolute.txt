@@ -760,3 +760,9 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_pri
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\obj\Debug\control_principal.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\obj\Debug\control_principal.csproj.ResolveComReference.cache
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\obj\Debug\control_principal.ModulosFacturaElectronica.Visor_PDF.resources

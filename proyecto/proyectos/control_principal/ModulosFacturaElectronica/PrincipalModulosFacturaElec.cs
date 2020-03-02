@@ -39,7 +39,8 @@ namespace control_principal.ModulosFacturaElectronica
 
         private void btnValidarXml_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new ValidarXML());
+           
+           AbrirFormularioHijo(new ValidarXML());
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
@@ -84,8 +85,9 @@ namespace control_principal.ModulosFacturaElectronica
                 pnlMenuLateral.Width = 428;
               //  pnlLinea.Width = 272;
             }
+;
         }
 
-
+     
     }
 }
