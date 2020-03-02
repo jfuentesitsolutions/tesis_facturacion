@@ -10,7 +10,7 @@ namespace conexiones_BD.clases.ventas
     public class detalles_productos_venta_factura:entidad
     {
         string iddetalle, idpresentacion_producto, cantidad, precio_venta, total, utilidad, 
-            idventa_factura, descuento_iva, codigo, idsucursal_producto, cantidad_paquete;
+            idventa_factura, descuento_iva, codigo, idsucursal_producto, cantidad_paquete, nombre, presentacion;
 
         public string Idventa_factura
         {
@@ -25,21 +25,180 @@ namespace conexiones_BD.clases.ventas
             }
         }
 
+        public string Iddetalle
+        {
+            get
+            {
+                return iddetalle;
+            }
+
+            set
+            {
+                iddetalle = value;
+            }
+        }
+
+        public string Idpresentacion_producto
+        {
+            get
+            {
+                return idpresentacion_producto;
+            }
+
+            set
+            {
+                idpresentacion_producto = value;
+            }
+        }
+
+        public string Cantidad
+        {
+            get
+            {
+                return cantidad;
+            }
+
+            set
+            {
+                cantidad = value;
+            }
+        }
+
+        public string Precio_venta
+        {
+            get
+            {
+                return precio_venta;
+            }
+
+            set
+            {
+                precio_venta = value;
+            }
+        }
+
+        public string Total
+        {
+            get
+            {
+                return total;
+            }
+
+            set
+            {
+                total = value;
+            }
+        }
+
+        public string Utilidad
+        {
+            get
+            {
+                return utilidad;
+            }
+
+            set
+            {
+                utilidad = value;
+            }
+        }
+
+        public string Descuento_iva
+        {
+            get
+            {
+                return descuento_iva;
+            }
+
+            set
+            {
+                descuento_iva = value;
+            }
+        }
+
+        public string Codigo
+        {
+            get
+            {
+                return codigo;
+            }
+
+            set
+            {
+                codigo = value;
+            }
+        }
+
+        public string Idsucursal_producto
+        {
+            get
+            {
+                return idsucursal_producto;
+            }
+
+            set
+            {
+                idsucursal_producto = value;
+            }
+        }
+
+        public string Cantidad_paquete
+        {
+            get
+            {
+                return cantidad_paquete;
+            }
+
+            set
+            {
+                cantidad_paquete = value;
+            }
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
+
+        public string Presentacion
+        {
+            get
+            {
+                return presentacion;
+            }
+
+            set
+            {
+                presentacion = value;
+            }
+        }
+
         public detalles_productos_venta_factura(string iddetalle, string idpresentacion_producto, 
             string cantidad, string precio_venta, string total, string utilidad, string idventa_factura, 
-            string descuento_iva, string codigo, string idsucursal_producto, string cantidad_paquete)
+            string descuento_iva, string codigo, string idsucursal_producto, string cantidad_paquete,
+            string nombre, string presentacion)
         {
-            this.iddetalle = iddetalle;
-            this.idpresentacion_producto = idpresentacion_producto;
-            this.cantidad = cantidad;
-            this.precio_venta = precio_venta;
-            this.total = total;
-            this.utilidad = utilidad;
+            this.Iddetalle = iddetalle;
+            this.Idpresentacion_producto = idpresentacion_producto;
+            this.Cantidad = cantidad;
+            this.Precio_venta = precio_venta;
+            this.Total = total;
+            this.Utilidad = utilidad;
             this.Idventa_factura = idventa_factura;
-            this.descuento_iva = descuento_iva;
-            this.codigo = codigo;
-            this.idsucursal_producto = idsucursal_producto;
-            this.cantidad_paquete = cantidad_paquete;
+            this.Descuento_iva = descuento_iva;
+            this.Codigo = codigo;
+            this.Idsucursal_producto = idsucursal_producto;
+            this.Cantidad_paquete = cantidad_paquete;
+            this.nombre = nombre;
+            this.presentacion = presentacion;
         }
 
         public override List<string> generarCampos()
@@ -62,16 +221,16 @@ namespace conexiones_BD.clases.ventas
         public override List<string> generarValores()
         {
             List<string> campos = new List<string>();
-            campos.Add(idpresentacion_producto);
-            campos.Add(cantidad);
-            campos.Add(precio_venta);
-            campos.Add(total);
-            campos.Add(utilidad);
+            campos.Add(Idpresentacion_producto);
+            campos.Add(Cantidad);
+            campos.Add(Precio_venta);
+            campos.Add(Total);
+            campos.Add(Utilidad);
             campos.Add(idventa_factura);
-            campos.Add(descuento_iva);
-            campos.Add(codigo);
-            campos.Add(idsucursal_producto);
-            campos.Add(cantidad_paquete);
+            campos.Add(Descuento_iva);
+            campos.Add(Codigo);
+            campos.Add(Idsucursal_producto);
+            campos.Add(Cantidad_paquete);
 
             return campos;
         }

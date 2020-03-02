@@ -69,7 +69,8 @@ namespace interfaces.mantenimientos
                     txtGiro.Text = datos.Rows[0][5].ToString();
                     txtNit.Text = datos.Rows[0][6].ToString();
                     txtDireccion.Text = datos.Rows[0][7].ToString();
-                    txtCerti.Text = datos.Rows[0][8].ToString().Replace("\\", @"\\");
+                    txtPfx.Text = datos.Rows[0][8].ToString().Replace("\\", @"\\");
+                    txtCerti.Text = datos.Rows[0][9].ToString().Replace("\\", @"\\");
 
                     btnGuarda.Text = "Modificar";
                 }
@@ -92,6 +93,7 @@ namespace interfaces.mantenimientos
             text.Add(txtNit);
             text.Add(txtDireccion);
             text.Add(txtCerti);
+            text.Add(txtPfx);
 
             return utilitarios.vaciando_formularios.validando(text, error);
         }
@@ -112,6 +114,7 @@ namespace interfaces.mantenimientos
                     txtDireccion.Text,
                     txtNit.Text,
                     txtCerti.Text,
+                    txtPfx.Text,
                     false
                     );
                     if (empresa.guardar(true) > 0)
@@ -132,6 +135,7 @@ namespace interfaces.mantenimientos
                     txtDireccion.Text,
                     txtNit.Text,
                     txtCerti.Text,
+                    txtPfx.Text,
                     true
                     );
 
@@ -152,14 +156,28 @@ namespace interfaces.mantenimientos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             buscar_certificado.InitialDirectory = @"C:\";
-            buscar_certificado.Filter = "pfx files (*.pfx)|*.pfx";
+            buscar_certificado.Filter = "pfx files (*.cer)|*.cer";
             buscar_certificado.FilterIndex = 2;
-            buscar_certificado.FileName = "certificado.pfx";
+            buscar_certificado.FileName = "certificado.cer";
             buscar_certificado.RestoreDirectory = true;
 
             if (buscar_certificado.ShowDialog() == DialogResult.OK)
             {
                 txtCerti.Text = buscar_certificado.FileName.Replace("\\",@"\\");
+            }
+        }
+
+        private void btnBuscar2_Click(object sender, EventArgs e)
+        {
+            buscar_pfx.InitialDirectory = @"C:\";
+            buscar_pfx.Filter = "pfx files (*.pfx)|*.pfx";
+            buscar_pfx.FilterIndex = 2;
+            buscar_pfx.FileName = "certificado.pfx";
+            buscar_pfx.RestoreDirectory = true;
+
+            if (buscar_pfx.ShowDialog() == DialogResult.OK)
+            {
+                txtPfx.Text = buscar_pfx.FileName.Replace("\\", @"\\");
             }
         }
     }

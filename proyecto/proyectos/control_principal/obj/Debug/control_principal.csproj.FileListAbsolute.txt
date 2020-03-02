@@ -868,3 +868,5 @@ D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\control_principal\obj\
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\control_principal\obj\Debug\control_principal.ModulosFacturaElectronica.ValidarJSON.resources
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\control_principal\obj\Debug\control_principal.ModulosFacturaElectronica.ValidarPDF.resources
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\control_principal\obj\Debug\control_principal.ModulosFacturaElectronica.ValidarXML.resources
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\cryptografia.dll
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\cryptografia.pdb

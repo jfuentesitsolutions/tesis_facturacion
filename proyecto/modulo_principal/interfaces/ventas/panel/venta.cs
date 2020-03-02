@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -637,7 +638,7 @@ namespace interfaces.ventas.panel
                     {
                         lblCantidad_de_articulos.Text = "Cantidad de articulos " + tabla_articulos.Rows.Count;
                         lblSubt.Text = precio.ToString();
-                        lblDescuento.Text = "0.00";
+                        lblDescuento.Text = precio.ToString();
                         lblTotal.Text = "$ " + precio.ToString();
                         total = precio.ToString();
                         break;
@@ -662,9 +663,9 @@ namespace interfaces.ventas.panel
                     colocarFoco();
                     lblIva.Text = "0.00";
                 }
-                
+
             }
-            
+
         }
         private void quitarPestaña()
         {
@@ -703,9 +704,13 @@ namespace interfaces.ventas.panel
                                 auxiliares.cobrar cobro = new auxiliares.cobrar();
                                 cobro.lblTotala.Text = total;
                                 cobro.efec.Text = total;
+                                cobro.listaMetodoPago.Visible = false;
+                                cobro.lblMeto.Visible = false;
+                                cobro.btnCobrar.Location = new Point(67, 385);
+                                cobro.Size = new Size(232, 429);
                                 cobro.ShowDialog();
                                 if (cobro.Cobrado)
-                                {
+                                {    
                                     ingresandoVentaTicket(correlativo, cobro.txtefe.Text, cobro.lblCambio.Text, id); // metodo para ingresar la venta del ticket
                                 }
                             }
@@ -718,7 +723,7 @@ namespace interfaces.ventas.panel
                         {
                             if (sesion.Empresa_activa)
                             {
-                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Limite_corre_resol_conf))
+                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Serie_final))
                                 {
                                     MessageBox.Show("Ya no hay correlativos disponibles porfavor ingresa un nueva resolución", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
@@ -730,7 +735,30 @@ namespace interfaces.ventas.panel
                                     cobro.ShowDialog();
                                     if (cobro.Cobrado)
                                     {
-                                        ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                        int lt = cobro.listaMetodoPago.SelectedIndex+1;
+
+                                        switch (cobro.listaMetodoPago.SelectedIndex)
+                                        {
+                                            case 0:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), null);
+                                                    break;
+                                                }
+                                            case 1:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), cobro.Tarjeta);
+                                                    break;
+                                                }
+                                            case 2:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), cobro.Cheque);
+                                                    break;
+                                                }
+                                        }
+                                        
                                     }
                                 }
                                
@@ -750,7 +778,7 @@ namespace interfaces.ventas.panel
                         {
                             if (sesion.Empresa_activa)
                             {
-                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Limite_corre_resol_conf))
+                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Serie_final))
                                 {
                                     MessageBox.Show("Ya no hay correlativos disponibles porfavor ingresa un nueva resolución", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
@@ -762,7 +790,28 @@ namespace interfaces.ventas.panel
                                     cobro.ShowDialog();
                                     if (cobro.Cobrado)
                                     {
-                                        ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                        int lt = cobro.listaMetodoPago.SelectedIndex + 1;
+                                        switch (cobro.listaMetodoPago.SelectedIndex)
+                                        {
+                                            case 0:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), null);
+                                                    break;
+                                                }
+                                            case 1:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), cobro.Tarjeta);
+                                                    break;
+                                                }
+                                            case 2:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), cobro.Cheque);
+                                                    break;
+                                                }
+                                        }
                                     }
                                 }
                             }
@@ -785,7 +834,7 @@ namespace interfaces.ventas.panel
                         {
                             if (sesion.Empresa_activa)
                             {
-                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Limite_corre_resol_conf))
+                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Serie_final))
                                 {
                                     MessageBox.Show("Ya no hay correlativos disponibles porfavor ingresa un nueva resolución", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
@@ -797,7 +846,28 @@ namespace interfaces.ventas.panel
                                     cobro.ShowDialog();
                                     if (cobro.Cobrado)
                                     {
-                                        ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                        int lt = cobro.listaMetodoPago.SelectedIndex + 1;
+                                        switch (cobro.listaMetodoPago.SelectedIndex)
+                                        {
+                                            case 0:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), null);
+                                                    break;
+                                                }
+                                            case 1:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), cobro.Tarjeta);
+                                                    break;
+                                                }
+                                            case 2:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), cobro.Cheque);
+                                                    break;
+                                                }
+                                        }
                                     }
                                 }
 
@@ -817,7 +887,7 @@ namespace interfaces.ventas.panel
                         {
                             if (sesion.Empresa_activa)
                             {
-                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Limite_corre_resol_conf))
+                                if (Convert.ToInt32(txtNumFact.Text) > Convert.ToInt32(sesion.Serie_final))
                                 {
                                     MessageBox.Show("Ya no hay correlativos disponibles porfavor ingresa un nueva resolución", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
@@ -829,7 +899,28 @@ namespace interfaces.ventas.panel
                                     cobro.ShowDialog();
                                     if (cobro.Cobrado)
                                     {
-                                        ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text, txtNumFact.Text, txtSerie.Text);
+                                        int lt = cobro.listaMetodoPago.SelectedIndex + 1;
+                                        switch (cobro.listaMetodoPago.SelectedIndex)
+                                        {
+                                            case 0:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), null);
+                                                    break;
+                                                }
+                                            case 1:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), cobro.Tarjeta);
+                                                    break;
+                                                }
+                                            case 2:
+                                                {
+                                                    ingresandoVentaFactura(cobro.txtefe.Text, cobro.lblCambio.Text,
+                                            txtNumFact.Text, txtSerie.Text, lt.ToString(), cobro.Cheque);
+                                                    break;
+                                                }
+                                        }
                                     }
                                 }
                             }
@@ -905,28 +996,8 @@ namespace interfaces.ventas.panel
                         conexiones_BD.clases.ventas.impresion_prueba imp = new conexiones_BD.clases.ventas.impresion_prueba();
                         if (imp.impresionTicket(impresora, conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(correl)))
                         {
-                        tabla_articulos.Rows.Clear();
-                        calcularTotales();
-                        busqueda = false;
-                        txtBusqueda.Text = "";
-                        txtBusqueda.Focus();
-                        tablad.Visible = false;
-                        tablad.DataSource = null;
-                        tabla_clientes.DataSource = null;
-                        cargaListas();
 
-                    cargarTablas();
-
-                    lista.Clear();
-                    lista_p.ForEach(c => lista.Add(c));
-                       
-                        txtDireccion.Text = lista_p[3];
-                        txtBuscarCliente.Text = lista_p[1]+" "+lista_p[2];
-
-                    tabla_clientes.Visible = false;
-                    System.Console.Write(lista[1]);
-                        
-
+                    limpiarTodo();
                         //if (Gcliente.Height==137)
                         //{
                         //    ocultarDetalles();
@@ -955,40 +1026,300 @@ namespace interfaces.ventas.panel
             }
         }
 
-        private void ingresandoVentaFactura(string efec, string cam, string num_factura, string serie_auto)
+        private void limpiarTodo()
+        {
+            tabla_articulos.Rows.Clear();
+            calcularTotales();
+            busqueda = false;
+            txtBusqueda.Text = "";
+            txtBusqueda.Focus();
+            tablad.Visible = false;
+            tablad.DataSource = null;
+            tabla_clientes.DataSource = null;
+            cargaListas();
+            txtNumFact.Value = 0;
+
+            cargarTablas();
+
+            lista.Clear();
+            lista_p.ForEach(c => lista.Add(c));
+
+            txtDireccion.Text = lista_p[3];
+            txtBuscarCliente.Text = lista_p[1] + " " + lista_p[2];
+
+            tabla_clientes.Visible = false;
+            System.Console.Write(lista[1]);
+        }
+
+        private void ingresandoVentaFactura(string efec, string cam, string num_factura, string serie_auto, 
+            string meto_pago, conexiones_BD.clases.entidad en)
         {
             string centre = "ND", crecibe = "ND", dentrega = "ND", drecibe = "ND", nentrega = "ND", nrecibe = "ND"; 
             if (Convert.ToDouble(lblSubt.Text)>=200)
             {
-                if (MessageBox.Show("La cantidad es mayor a 200 dolares, ¿Desea colocar los datos de quien entrega y quien recibe?") == DialogResult.Yes)
+                if (MessageBox.Show("La cantidad es mayor a 200 dolares, ¿Desea colocar los datos de quien entrega y quien recibe?", "Venta mayor a 200 dolares",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-
+                    auxiliares.datos_emisor_receptor datos = new auxiliares.datos_emisor_receptor();
+                    datos.ShowDialog();
+                    if (datos.Valido)
+                    {
+                        centre = datos.txtNentrega.Text;
+                        crecibe = datos.txtNrecibe.Text;
+                        dentrega = datos.txtDentrega.Text;
+                        drecibe = datos.txtDrecibe.Text;
+                        nentrega = datos.txtNientrega.Text;
+                        nrecibe = datos.txtNirecibe.Text;
+                    }
+                }else
+                {
+                    centre = "ND";
+                    crecibe = "ND";
+                    dentrega = "ND";
+                    drecibe = "ND";
+                    nentrega = "ND";
+                    nrecibe = "ND";
                 }
             }
 
+            
             double descuento = Math.Round((Convert.ToDouble(lblIva.Text) + Convert.ToDouble(lblExe.Text) + Convert.ToDouble(lblDesc.Text)),2);
+            utilitarios.convertir_letra letras = new utilitarios.convertir_letra();
 
             conexiones_BD.clases.ventas.facturas factura = new conexiones_BD.clases.ventas.facturas("F" + txtSerie.Text + txtNumFact.Text, "", sesion.DatosRegistro[1],
                 "1", sesion.Idcaja, txtSerie.Text + "-" + txtNumFact.Text, listaFormaPago.SelectedValue.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
                 DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), listaTipoFactura.SelectedValue.ToString(), listaVendedor.SelectedValue.ToString(),
-                lblSubt.Text, descuento.ToString(), lblIva.Text, lblDesc.Text, "SV", lista[0], lblExe.Text, lblExe.Text, lblDescuento.Text, "Efectivo", "1.0", sesion.Resolucion,
-                sesion.DatosRegistro[1], "cantidad letras", txtNumFact.Text, centre, crecibe, nentrega, nrecibe, dentrega, drecibe, "0", "0");
+                lblSubt.Text, descuento.ToString(), lblIva.Text, lblDesc.Text, "SV", lista[0], lblExe.Text, lblExe.Text, lblDescuento.Text, meto_pago, "1.0", sesion.Resolucion,
+                sesion.DatosRegistro[1], letras.enletras(lblDescuento.Text), txtNumFact.Text, centre, crecibe, nentrega, nrecibe, dentrega, drecibe, "0", "0");
 
-            conexiones_BD.operaciones op = new conexiones_BD.operaciones();
-            conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(), factura);
-
-            Int32 res = err.Res;
-
-            if (res > 0)
+            switch (listaTipoFactura.SelectedIndex)
             {
-                MessageBox.Show("factura ingresada");
+                case 4:
+                    {
+                        generando_factura_electronica(factura, meto_pago, en);
+                        break;
+                    }
+                case 5:
+                    {
+                        generando_factura_electronica(factura, meto_pago, en);
+                        break;
+                    }
+                default:
+                    {
+                        conexiones_BD.operaciones op = new conexiones_BD.operaciones();
+
+                        switch (meto_pago)
+                        {
+                            case "1":
+                                {
+                                    conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
+                            factura);
+                                    Int32 res = err.Res;
+                                    if (res > 0)
+                                    {
+                                        MessageBox.Show("La factura se creo con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        limpiarTodo();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    break;
+                                }
+                            case "2":
+                                {
+                                    conexiones_BD.clases.tarjetas ta = (conexiones_BD.clases.tarjetas)en;
+                                    factura.Num_transaccion = ta.Resolucion;
+                                    factura.recargandoDatos();
+                                    ta.Idventa = factura.Idventa;
+                                    ta.cargarDatosNuevamente();
+                                    conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
+                            factura);
+                                    Int32 res = err.Res;
+                                    if (res > 0)
+                                    {
+                                        if (op.insertar2(ta.sentenciaIngresar()) > 0)
+                                        {
+                                            MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            limpiarTodo();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        
+                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    break;
+                                }
+                            case "3":
+                                {
+                                    conexiones_BD.clases.cheques ta = (conexiones_BD.clases.cheques)en;
+                                    factura.Num_cheque = ta.Numero_cheque;
+                                    factura.recargandoDatos();
+                                    ta.Idventa = factura.Idventa;
+                                    ta.cargarDatosNuevamente();
+                                    conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
+                            factura);
+                                    Int32 res = err.Res;
+                                    if (res > 0)
+                                    {
+                                        if (op.insertar2(ta.sentenciaIngresar()) > 0)
+                                        {
+                                            MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            limpiarTodo();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        
+                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    break;
+                                }
+                        }
+                        
+                        break;
+                    }
             }
-            else
+        }
+
+        private void generando_factura_electronica(conexiones_BD.clases.ventas.facturas factura, string tipo, conexiones_BD.clases.entidad en)
+        {
+            auxiliares.validacion_firma valida = new auxiliares.validacion_firma();
+            valida.ShowDialog();
+
+            if (valida.Vali)
             {
-                MessageBox.Show("No se puede ingresar");
+                switch (valida.listaTipoFactura.SelectedIndex)
+                {
+                    case 0:
+                        {
+                            guarda_xml.InitialDirectory = @"C:\";
+                            guarda_xml.Title = "Guardar archivo factura electronica";
+                            guarda_xml.DefaultExt = "xml";
+                            guarda_xml.Filter = "Text files (*.xml)|*.xml|All files (*.*)|*.*";
+                            guarda_xml.FileName = factura.Numero_factura;
+                            if (guarda_xml.ShowDialog() == DialogResult.OK)
+                            {
+                                cryptografia.crear_xml fact = new cryptografia.crear_xml(lista[0], factura,
+                                            retornoProductos_factura(), guarda_xml.FileName, valida.txtContrase.Text);
+
+                                if (fact.firmando_documento())
+                                {
+                                    conexiones_BD.operaciones op = new conexiones_BD.operaciones();
+                                    switch (tipo)
+                                    {
+                                        case "1":
+                                            {
+                                                conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
+                                        factura);
+                                                Int32 res = err.Res;
+                                                if (res > 0)
+                                                {
+                                                    MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    limpiarTodo();
+                                                }
+                                                else
+                                                {
+                                                    File.Delete(guarda_xml.FileName);
+                                                    MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                }
+                                                break;
+                                            }
+                                        case "2":
+                                            {
+                                                conexiones_BD.clases.tarjetas ta = (conexiones_BD.clases.tarjetas)en;
+                                                factura.Num_transaccion = ta.Resolucion;
+                                                ta.Idventa = factura.Idventa;
+                                                factura.recargandoDatos();
+                                                ta.cargarDatosNuevamente();
+                                                conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
+                                        factura);
+                                                Int32 res = err.Res;
+                                                if (res > 0)
+                                                {
+                                                    if (op.insertar2(ta.sentenciaIngresar()) > 0)
+                                                    {
+                                                        MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        limpiarTodo();
+                                                    }
+                                                    else
+                                                    {
+                                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    File.Delete(guarda_xml.FileName);
+                                                    MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                }
+                                                break;
+                                            }
+                                        case "3":
+                                            {
+                                                conexiones_BD.clases.cheques ta = (conexiones_BD.clases.cheques)en;
+                                                factura.Num_cheque = ta.Numero_cheque;
+                                                ta.Idventa = factura.Idventa;
+                                                factura.recargandoDatos();
+                                                ta.cargarDatosNuevamente();
+                                                conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
+                                        factura);
+                                                Int32 res = err.Res;
+                                                if (res > 0)
+                                                {
+                                                    if (op.insertar2(ta.sentenciaIngresar())>0)
+                                                    {
+                                                        MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        limpiarTodo();
+                                                    } else
+                                                    {
+                                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                    }
+                                                    
+                                                }
+                                                else
+                                                {
+                                                    File.Delete(guarda_xml.FileName);
+                                                    MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                }
+                                                break;
+                                            }
+                                    }
+                                    
+                                       
+                                }
+                                else
+                                {
+                                    MessageBox.Show("La contraseña no coincide o el archivo de contenedor del certificado esta dañado", "Error al abrir el almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            break;
+                        }
+                    case 1:
+                        {
+                            guarda_xml.InitialDirectory = @"C:\";
+                            guarda_xml.Title = "Guardar archivo json";
+                            guarda_xml.DefaultExt = "xml";
+                            guarda_xml.Filter = "Text files (*.json)|*.json|All files (*.*)|*.*";
+                            if (guarda_xml.ShowDialog() == DialogResult.OK)
+                            {
+                                MessageBox.Show("Json no definido");
+                            }
+                            break;
+                        }
+                }
+
+                
             }
-
-
+          
         }
 
         private void ingresandoVentaTicket_sincomprobante(string correl, string efec, string cam, string idcorre)
@@ -1110,7 +1441,9 @@ namespace interfaces.ventas.panel
                     fila.Cells[15].Value.ToString(),
                     fila.Cells[1].Value.ToString(),
                     fila.Cells[12].Value.ToString(),
-                    cantidad_interna.ToString()
+                    cantidad_interna.ToString(),
+                    fila.Cells[2].Value.ToString(),
+                    fila.Cells[3].Value.ToString()
                     ));
             }
 
@@ -1446,10 +1779,12 @@ namespace interfaces.ventas.panel
                     {
                         case 1:
                             {
+                                //consumidor final convencional
                                 txtSerie.Text = datos.Rows[0][2].ToString();
                                 sesion.Resolucion = datos.Rows[0][0].ToString();
-                                sesion.Limite_corre_resol_cf = datos.Rows[0][9].ToString();
-                                sesion.Limite_corre_resol_conf = datos.Rows[0][5].ToString();
+                                sesion.Serie_inicio = datos.Rows[0][4].ToString();
+                                sesion.Serie_final = datos.Rows[0][5].ToString();
+                                sesion.Serie = txtSerie.Text;
                                 
                                 break;
                             }
@@ -1457,8 +1792,9 @@ namespace interfaces.ventas.panel
                             {
                                 txtSerie.Text = datos.Rows[0][3].ToString();
                                 sesion.Resolucion = datos.Rows[0][0].ToString();
-                                sesion.Limite_corre_resol_cf = datos.Rows[0][9].ToString();
-                                sesion.Limite_corre_resol_conf = datos.Rows[0][5].ToString();
+                                sesion.Serie_inicio = datos.Rows[0][8].ToString();
+                                sesion.Serie_final = datos.Rows[0][9].ToString();
+                                sesion.Serie = txtSerie.Text;
                                 break;
                             }
                         case 3:
@@ -1470,16 +1806,18 @@ namespace interfaces.ventas.panel
                             {
                                 txtSerie.Text = datos.Rows[0][2].ToString();
                                 sesion.Resolucion = datos.Rows[0][0].ToString();
-                                sesion.Limite_corre_resol_cf = datos.Rows[0][9].ToString();
-                                sesion.Limite_corre_resol_conf = datos.Rows[0][5].ToString();
+                                sesion.Serie_inicio = datos.Rows[0][4].ToString();
+                                sesion.Serie_final = datos.Rows[0][5].ToString();
+                                sesion.Serie = txtSerie.Text;
                                 break;
                             }
                         case 5:
                             {
                                 txtSerie.Text = datos.Rows[0][3].ToString();
                                 sesion.Resolucion = datos.Rows[0][0].ToString();
-                                sesion.Limite_corre_resol_cf = datos.Rows[0][9].ToString();
-                                sesion.Limite_corre_resol_conf = datos.Rows[0][5].ToString();
+                                sesion.Serie_inicio = datos.Rows[0][8].ToString();
+                                sesion.Serie_final = datos.Rows[0][9].ToString();
+                                sesion.Serie = txtSerie.Text;
                                 break;
                             }
                     }
@@ -2030,17 +2368,16 @@ namespace interfaces.ventas.panel
             {
                 tabla_articulos.Rows.Add(
                     "0",
-                    fila[16].ToString(),
-                    fila[2].ToString(),
-                    fila[1].ToString(),
-                    fila[0].ToString(),
-                    fila[3].ToString(),
-                    fila[4].ToString()
+                    fila[16].ToString(), //codigo
+                    fila[2].ToString(), //nombre_producto
+                    fila[1].ToString(), //presentacion
+                    fila[0].ToString(), //cantidad_paquete
+                    fila[3].ToString(), //precio
+                    fila[4].ToString() //total
                     );
             }
             utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
             calcularTotales();
-
         }
 
         private void cantidadProductos2()

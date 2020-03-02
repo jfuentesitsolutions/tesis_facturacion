@@ -515,11 +515,23 @@
     <Compile Include="ventas\auxiliares\busquedaArticulos.Designer.cs">
       <DependentUpon>busquedaArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ventas\auxiliares\cheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas\auxiliares\cheque.Designer.cs">
+      <DependentUpon>cheque.cs</DependentUpon>
+    </Compile>
     <Compile Include="ventas\auxiliares\cobrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ventas\auxiliares\cobrar.Designer.cs">
       <DependentUpon>cobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ventas\auxiliares\datos_emisor_receptor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas\auxiliares\datos_emisor_receptor.Designer.cs">
+      <DependentUpon>datos_emisor_receptor.cs</DependentUpon>
     </Compile>
     <Compile Include="ventas\auxiliares\nuevo_cliente_simple.cs">
       <SubType>Form</SubType>
@@ -544,6 +556,18 @@
     </Compile>
     <Compile Include="ventas\auxiliares\producto_unica_presentacion.Designer.cs">
       <DependentUpon>producto_unica_presentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ventas\auxiliares\tarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas\auxiliares\tarjeta.Designer.cs">
+      <DependentUpon>tarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ventas\auxiliares\validacion_firma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas\auxiliares\validacion_firma.Designer.cs">
+      <DependentUpon>validacion_firma.cs</DependentUpon>
     </Compile>
     <Compile Include="ventas\panel\anulacion_de_ventas.cs">
       <SubType>Form</SubType>
@@ -777,8 +801,14 @@
     <EmbeddedResource Include="ventas\auxiliares\busquedaArticulos.resx">
       <DependentUpon>busquedaArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ventas\auxiliares\cheque.resx">
+      <DependentUpon>cheque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ventas\auxiliares\cobrar.resx">
       <DependentUpon>cobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventas\auxiliares\datos_emisor_receptor.resx">
+      <DependentUpon>datos_emisor_receptor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventas\auxiliares\nuevo_cliente_simple.resx">
       <DependentUpon>nuevo_cliente_simple.cs</DependentUpon>
@@ -791,6 +821,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ventas\auxiliares\producto_unica_presentacion.resx">
       <DependentUpon>producto_unica_presentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventas\auxiliares\tarjeta.resx">
+      <DependentUpon>tarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventas\auxiliares\validacion_firma.resx">
+      <DependentUpon>validacion_firma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventas\panel\anulacion_de_ventas.resx">
       <DependentUpon>anulacion_de_ventas.cs</DependentUpon>
@@ -824,6 +860,10 @@
     <ProjectReference Include="..\..\proyectos\utilitarios\utilitarios.csproj">
       <Project>{7aea9e83-c821-4dfd-ad6e-3317f25025ab}</Project>
       <Name>utilitarios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cryptografia\cryptografia.csproj">
+      <Project>{061066c5-caec-42fe-ad35-35fb86a9bd71}</Project>
+      <Name>cryptografia</Name>
     </ProjectReference>
     <ProjectReference Include="..\espera_datos\espera_datos.csproj">
       <Project>{0822e6f8-74d5-4526-be21-afdd3dbc6154}</Project>
@@ -1151,6 +1191,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\building_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textura_cheque.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\degradado_tarjeta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visa1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

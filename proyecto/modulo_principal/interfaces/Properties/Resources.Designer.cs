@@ -313,6 +313,16 @@ namespace interfaces.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chip {
+            get {
+                object obj = ResourceManager.GetObject("chip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clock {
             get {
                 object obj = ResourceManager.GetObject("clock", resourceCulture);
@@ -356,6 +366,16 @@ namespace interfaces.Properties {
         internal static System.Drawing.Bitmap customer {
             get {
                 object obj = ResourceManager.GetObject("customer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap degradado_tarjeta {
+            get {
+                object obj = ResourceManager.GetObject("degradado_tarjeta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -823,6 +843,16 @@ namespace interfaces.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap textura_cheque {
+            get {
+                object obj = ResourceManager.GetObject("textura_cheque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap unlock {
             get {
                 object obj = ResourceManager.GetObject("unlock", resourceCulture);
@@ -846,6 +876,26 @@ namespace interfaces.Properties {
         internal static System.Drawing.Bitmap users {
             get {
                 object obj = ResourceManager.GetObject("users", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visa {
+            get {
+                object obj = ResourceManager.GetObject("visa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visa1 {
+            get {
+                object obj = ResourceManager.GetObject("visa1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -53,6 +53,10 @@
             this.btnGuarda = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.buscar_certificado = new System.Windows.Forms.OpenFileDialog();
+            this.btnBuscar2 = new System.Windows.Forms.Button();
+            this.txtPfx = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.buscar_pfx = new System.Windows.Forms.OpenFileDialog();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -284,7 +288,7 @@
             // 
             this.btnGuarda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnGuarda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuarda.Location = new System.Drawing.Point(169, 392);
+            this.btnGuarda.Location = new System.Drawing.Point(169, 439);
             this.btnGuarda.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuarda.Name = "btnGuarda";
             this.btnGuarda.Size = new System.Drawing.Size(87, 31);
@@ -302,12 +306,54 @@
             // 
             this.buscar_certificado.FileName = "openFileDialog1";
             // 
+            // btnBuscar2
+            // 
+            this.btnBuscar2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnBuscar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar2.Location = new System.Drawing.Point(370, 403);
+            this.btnBuscar2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar2.Name = "btnBuscar2";
+            this.btnBuscar2.Size = new System.Drawing.Size(40, 26);
+            this.btnBuscar2.TabIndex = 25;
+            this.btnBuscar2.Text = "...";
+            this.btnBuscar2.UseVisualStyleBackColor = true;
+            this.btnBuscar2.Click += new System.EventHandler(this.btnBuscar2_Click);
+            // 
+            // txtPfx
+            // 
+            this.txtPfx.BackColor = System.Drawing.Color.Silver;
+            this.txtPfx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPfx.Location = new System.Drawing.Point(22, 403);
+            this.txtPfx.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPfx.Name = "txtPfx";
+            this.txtPfx.ReadOnly = true;
+            this.txtPfx.Size = new System.Drawing.Size(340, 26);
+            this.txtPfx.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Location = new System.Drawing.Point(18, 380);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 19);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Almacen pfx";
+            // 
+            // buscar_pfx
+            // 
+            this.buscar_pfx.FileName = "openFileDialog1";
+            // 
             // empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(434, 442);
+            this.ClientSize = new System.Drawing.Size(434, 495);
+            this.Controls.Add(this.btnBuscar2);
+            this.Controls.Add(this.txtPfx);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnGuarda);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtCerti);
@@ -369,5 +415,9 @@
         public System.Windows.Forms.Button btnGuarda;
         private System.Windows.Forms.ErrorProvider error;
         private System.Windows.Forms.OpenFileDialog buscar_certificado;
+        private System.Windows.Forms.Button btnBuscar2;
+        private System.Windows.Forms.TextBox txtPfx;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.OpenFileDialog buscar_pfx;
     }
 }

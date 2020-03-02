@@ -100,15 +100,28 @@ namespace interfaces.ventas.auxiliares
 
         private void cargarTablas()
         {
-            if (listaDocumentos.SelectedIndex == 0)
+
+            switch (listaDocumentos.SelectedIndex)
             {
-                utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
-                tabla = new utilitarios.cargar_tablas(tablaDocumentos, txtBuscar, conexiones_BD.clases.ventas.tickets.datosTabla(fe.fechaCortaMysql(fecha), sesion.DatosRegistro[1]), "correlativo");
-                tabla.cargarSinContadorRegistros();
-            } else
-            {
-                tablaDocumentos.DataSource = null;
+                case 0: {
+                        utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
+                        tabla = new utilitarios.cargar_tablas(tablaDocumentos, txtBuscar,
+                            conexiones_BD.clases.ventas.tickets.datosTabla(fe.fechaCortaMysql(fecha),
+                            sesion.DatosRegistro[1]), "correlativo");
+                        tabla.cargarSinContadorRegistros();
+                        break;
+                        }
+                case 1:
+                    {
+                        utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
+                        tabla = new utilitarios.cargar_tablas(tablaDocumentos, txtBuscar,
+                            conexiones_BD.clases.ventas.facturas.datosTabla(fe.fechaCortaMysql(fecha),
+                            sesion.DatosRegistro[1]), "correlativo");
+                        tabla.cargarSinContadorRegistros();
+                        break;
+                    }
             }
+            
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -125,7 +138,18 @@ namespace interfaces.ventas.auxiliares
         {
             try
             {
-                docu = conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(tablaDocumentos.CurrentRow.Cells[0].Value.ToString());
+                switch (listaDocumentos.SelectedIndex)
+                {
+                    case 0:
+                        {
+                            docu = conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(tablaDocumentos.CurrentRow.Cells[0].Value.ToString());
+                            break;
+                        }
+                    case 1:
+                        {
+                            break;
+                        }
+                }     
             }
             catch
             {
@@ -144,5 +168,6 @@ namespace interfaces.ventas.auxiliares
         {
             cargarTablas();
         }
+
     }
 }

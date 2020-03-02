@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using conexiones_BD.clases;
 
 namespace interfaces.ventas.auxiliares
 {
     public partial class cobrar : Form
     {
         bool cobrado = false;
+        conexiones_BD.clases.tarjetas tarjeta;
+        conexiones_BD.clases.cheques cheque;
 
         public bool Cobrado
         {
@@ -24,6 +27,32 @@ namespace interfaces.ventas.auxiliares
             set
             {
                 cobrado = value;
+            }
+        }
+
+        public tarjetas Tarjeta
+        {
+            get
+            {
+                return tarjeta;
+            }
+
+            set
+            {
+                tarjeta = value;
+            }
+        }
+
+        public cheques Cheque
+        {
+            get
+            {
+                return cheque;
+            }
+
+            set
+            {
+                cheque = value;
             }
         }
 
@@ -42,6 +71,7 @@ namespace interfaces.ventas.auxiliares
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
             //efec.Select(0, efec.Text.Length);
             txtefe.Text = efec.Value.ToString();
+            listaMetodoPago.SelectedIndex = 0;
         }
 
         private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -54,6 +84,8 @@ namespace interfaces.ventas.auxiliares
         {
             if (!validar())
             {
+                utilitarios.convertir_letra letra = new utilitarios.convertir_letra();
+                Console.WriteLine(letra.enletras(txtefe.Text));
                 cobrado = true;
                 this.Close();
             }
@@ -102,6 +134,37 @@ namespace interfaces.ventas.auxiliares
             if (e.KeyCode == Keys.Enter)
             {
                 btnCobrar.PerformClick();
+            }
+        }
+
+        private void listaMetodoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (listaMetodoPago.SelectedIndex)
+            {
+                case 1:
+                    {
+                        tarjeta tar = new tarjeta();
+                        tar.ShowDialog();
+                        if (tar.Valido)
+                        {
+                            Tarjeta = tar.Tajeta;
+                            txtefe.Text = tar.monto.Value.ToString();
+                        }
+                        
+                        break;
+                    }
+                case 2:
+                    {
+                        cheque che = new cheque();
+                        che.ShowDialog();
+                        if (che.Valido)
+                        {
+                            cheque = che.Chequ;
+                            txtefe.Text = che.monto.Value.ToString();
+                        }
+                        
+                        break;
+                    }
             }
         }
     }

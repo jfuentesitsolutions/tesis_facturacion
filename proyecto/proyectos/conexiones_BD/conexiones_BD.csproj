@@ -75,6 +75,7 @@
     <Compile Include="clases\cajas.cs" />
     <Compile Include="clases\cargos.cs" />
     <Compile Include="clases\categorias.cs" />
+    <Compile Include="clases\cheques.cs" />
     <Compile Include="clases\clientes.cs" />
     <Compile Include="clases\codigos.cs" />
     <Compile Include="clases\compras\anulaciones_compras.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="clases\resoluciones.cs" />
     <Compile Include="clases\sucursales.cs" />
     <Compile Include="clases\sucursales_productos.cs" />
+    <Compile Include="clases\tarjetas.cs" />
     <Compile Include="clases\tipos_factura.cs" />
     <Compile Include="clases\tipos_gastos.cs" />
     <Compile Include="clases\tipo_compra.cs" />

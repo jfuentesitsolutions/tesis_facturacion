@@ -9,9 +9,10 @@ namespace conexiones_BD.clases
 {
     public class empresa:entidad
     {
-        string nombre_empresa, nrc, razon_social, denominacion, giro, direccion_local, nit, ruta_certificado;
+        string nombre_empresa, nrc, razon_social, denominacion, giro, direccion_local, nit, ruta_almacen_pfx, ruta_certificado;
 
-        public empresa(string nombre_empresa, string nrc, string razon_social, string denominacion, string giro, string direccion_local, string nit, string ruta_certificado, bool actualizar)
+        public empresa(string nombre_empresa, string nrc, string razon_social, string denominacion, string giro, 
+            string direccion_local, string nit, string ruta_certificado, string ruta_almacen_pfx, bool actualizar)
         {
             this.nombre_empresa = nombre_empresa;
             this.nrc = nrc;
@@ -21,6 +22,7 @@ namespace conexiones_BD.clases
             this.direccion_local = direccion_local;
             this.nit = nit;
             this.ruta_certificado = ruta_certificado;
+            this.ruta_almacen_pfx = ruta_almacen_pfx;
             if (!actualizar)
             {
                 cargarDatos(generarCampos(), generarValores(), "empresa");
@@ -31,6 +33,7 @@ namespace conexiones_BD.clases
         {
             cargarDatosEliminados("empresa", idempresa, "idempresa");
         }
+
         public override List<string> generarCampos()
         {
             List<string> campos = new List<string>();
@@ -41,6 +44,7 @@ namespace conexiones_BD.clases
             campos.Add("giro");
             campos.Add("direccion_local");
             campos.Add("nit");
+            campos.Add("ruta_almacen_pfx");
             campos.Add("ruta_certificado");
 
             return campos;
@@ -56,6 +60,7 @@ namespace conexiones_BD.clases
             valores.Add(this.giro);
             valores.Add(this.direccion_local);
             valores.Add(this.nit);
+            valores.Add(this.ruta_almacen_pfx);
             valores.Add(this.ruta_certificado);
 
             return valores;
@@ -90,6 +95,7 @@ namespace conexiones_BD.clases
             sentencia.Append("giro='" + giro + "',");
             sentencia.Append("direccion_local='" + direccion_local + "',");
             sentencia.Append("nit='" + nit + "',");
+            sentencia.Append("ruta_almacen_pfx='" + ruta_almacen_pfx + "',");
             sentencia.Append("ruta_certificado='" + ruta_certificado + "' ");
             sentencia.Append("where (idempresa='"+idempresa+"');");
 

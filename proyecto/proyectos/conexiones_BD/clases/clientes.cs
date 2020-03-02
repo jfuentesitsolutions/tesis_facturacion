@@ -211,7 +211,6 @@ namespace conexiones_BD.clases
             return Datos;
         }
 
-
         public static DataTable datosClientes2()
         {
             DataTable Datos = new DataTable();
@@ -233,7 +232,6 @@ namespace conexiones_BD.clases
 
             return Datos;
         }
-
 
         public static DataTable ventasXcliente(string id, string fechai, string fechaf)
         {
@@ -277,6 +275,23 @@ namespace conexiones_BD.clases
             try
             {
                 Datos = oOperacion.estadisticasXcliente(fechai, fechaf);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
+        public static DataTable clienteXid(string idcliente)
+        {
+            DataTable Datos = new DataTable();
+            operaciones oOperacion = new operaciones();
+            string sentencia = "select * from clientes where idcliente='"+idcliente+"'";
+            try
+            {
+                Datos = oOperacion.Consultar(sentencia);
             }
             catch
             {

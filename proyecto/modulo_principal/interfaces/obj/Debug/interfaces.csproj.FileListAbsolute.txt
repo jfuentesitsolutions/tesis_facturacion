@@ -1338,3 +1338,9 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\in
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.resoluciones.resources
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.empresa.resources
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.resoluciones.resources
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\cryptografia.dll
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\cryptografia.pdb
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.cheque.resources
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.tarjeta.resources
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.validacion_firma.resources
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.datos_emisor_receptor.resources

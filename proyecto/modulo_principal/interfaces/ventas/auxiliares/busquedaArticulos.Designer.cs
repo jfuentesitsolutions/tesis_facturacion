@@ -227,7 +227,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "busquedaArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "busquedaArticulos";
+            this.Text = "7";
             this.Load += new System.EventHandler(this.busquedaArticulos_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
