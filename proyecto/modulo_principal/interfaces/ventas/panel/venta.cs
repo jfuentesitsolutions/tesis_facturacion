@@ -1088,7 +1088,7 @@ namespace interfaces.ventas.panel
             conexiones_BD.clases.ventas.facturas factura = new conexiones_BD.clases.ventas.facturas("F" + txtSerie.Text + txtNumFact.Text, "", sesion.DatosRegistro[1],
                 "1", sesion.Idcaja, txtSerie.Text + "-" + txtNumFact.Text, listaFormaPago.SelectedValue.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
                 DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), listaTipoFactura.SelectedValue.ToString(), listaVendedor.SelectedValue.ToString(),
-                lblSubt.Text, descuento.ToString(), lblIva.Text, lblDesc.Text, "SV", lista[0], lblExe.Text, lblExe.Text, lblDescuento.Text, meto_pago, "1.0", sesion.Resolucion,
+                lblSubt.Text, descuento.ToString(), lblIva.Text, lblDesc.Text, "SV", lista[0], lblExe.Text, lblExe.Text, lblDescuento.Text, meto_pago, "3.3", sesion.Resolucion,
                 sesion.DatosRegistro[1], letras.enletras(lblDescuento.Text), txtNumFact.Text, centre, crecibe, nentrega, nrecibe, dentrega, drecibe, "0", "0");
 
             switch (listaTipoFactura.SelectedIndex)
