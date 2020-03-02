@@ -16,3 +16,6 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cr
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\obj\Debug\cryptografia.csprojResolveAssemblyReference.cache
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\obj\Debug\cryptografia.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\obj\Debug\cryptografia.pdb
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\bin\Debug\cryptografia.dll.config
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\bin\Debug\Newtonsoft.Json.xml

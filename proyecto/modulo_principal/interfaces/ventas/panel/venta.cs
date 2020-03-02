@@ -1055,7 +1055,7 @@ namespace interfaces.ventas.panel
             string meto_pago, conexiones_BD.clases.entidad en)
         {
             string centre = "ND", crecibe = "ND", dentrega = "ND", drecibe = "ND", nentrega = "ND", nrecibe = "ND"; 
-            if (Convert.ToDouble(lblSubt.Text)>=200)
+            if (Convert.ToDouble(lblDescuento.Text)>=200)
             {
                 if (MessageBox.Show("La cantidad es mayor a 200 dolares, ¿Desea colocar los datos de quien entrega y quien recibe?", "Venta mayor a 200 dolares",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -1212,7 +1212,7 @@ namespace interfaces.ventas.panel
                                 cryptografia.crear_xml fact = new cryptografia.crear_xml(lista[0], factura,
                                             retornoProductos_factura(), guarda_xml.FileName, valida.txtContrase.Text);
 
-                                if (fact.firmando_documento())
+                                if (creando_xml_json(true, fact))
                                 {
                                     conexiones_BD.operaciones op = new conexiones_BD.operaciones();
                                     switch (tipo)
@@ -1241,8 +1241,8 @@ namespace interfaces.ventas.panel
                                                 ta.Idventa = factura.Idventa;
                                                 factura.recargandoDatos();
                                                 ta.cargarDatosNuevamente();
-                                                conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
-                                        factura);
+                                                conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(
+                                                    retornoProductos_factura(),factura);
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
@@ -1305,13 +1305,129 @@ namespace interfaces.ventas.panel
                         }
                     case 1:
                         {
+                            //Guardando json
                             guarda_xml.InitialDirectory = @"C:\";
                             guarda_xml.Title = "Guardar archivo json";
-                            guarda_xml.DefaultExt = "xml";
+                            guarda_xml.DefaultExt = "json";
                             guarda_xml.Filter = "Text files (*.json)|*.json|All files (*.*)|*.*";
+                            guarda_xml.FileName = factura.Numero_factura;
                             if (guarda_xml.ShowDialog() == DialogResult.OK)
                             {
-                                MessageBox.Show("Json no definido");
+                                string ruta= Path.GetFullPath("xmlTemporal.xml");
+                                cryptografia.crear_xml fact = new cryptografia.crear_xml(lista[0], factura,
+                                            retornoProductos_factura(), ruta, valida.txtContrase.Text);
+
+                                if (creando_xml_json(false, fact))
+                                {
+                                    conexiones_BD.operaciones op = new conexiones_BD.operaciones();
+                                    switch (tipo)
+                                    {
+                                        case "1":
+                                            {
+                                                conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
+                                        factura);
+                                                Int32 res = err.Res;
+                                                if (res > 0)
+                                                {
+                                                    if(fact.creando_json(ruta, guarda_xml.FileName))
+                                                    {
+                                                        MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        limpiarTodo();
+                                                    }
+                                                    else
+                                                    {
+                                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                    }
+                                                    
+                                                }
+                                                else
+                                                {
+                                                    File.Delete(ruta);
+                                                    MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                }
+                                                break;
+                                            }
+                                        case "2":
+                                            {
+                                                conexiones_BD.clases.tarjetas ta = (conexiones_BD.clases.tarjetas)en;
+                                                factura.Num_transaccion = ta.Resolucion;
+                                                ta.Idventa = factura.Idventa;
+                                                factura.recargandoDatos();
+                                                ta.cargarDatosNuevamente();
+                                                conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(
+                                                    retornoProductos_factura(), factura);
+                                                Int32 res = err.Res;
+                                                if (res > 0)
+                                                {
+                                                    if (op.insertar2(ta.sentenciaIngresar()) > 0)
+                                                    {
+                                                        if (fact.creando_json(ruta, guarda_xml.FileName))
+                                                        {
+                                                            MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            limpiarTodo();
+                                                        }
+                                                        else
+                                                        {
+                                                            MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    File.Delete(ruta);
+                                                    MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                }
+                                                break;
+                                            }
+                                        case "3":
+                                            {
+                                                conexiones_BD.clases.cheques ta = (conexiones_BD.clases.cheques)en;
+                                                factura.Num_cheque = ta.Numero_cheque;
+                                                ta.Idventa = factura.Idventa;
+                                                factura.recargandoDatos();
+                                                ta.cargarDatosNuevamente();
+                                                conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(retornoProductos_factura(),
+                                        factura);
+                                                Int32 res = err.Res;
+                                                if (res > 0)
+                                                {
+                                                    if (op.insertar2(ta.sentenciaIngresar()) > 0)
+                                                    {
+                                                        if (fact.creando_json(ruta, guarda_xml.FileName))
+                                                        {
+                                                            MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            limpiarTodo();
+                                                        }
+                                                        else
+                                                        {
+                                                            MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    File.Delete(ruta);
+                                                    MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                }
+                                                break;
+                                            }
+                                    }
+
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("La contraseña no coincide o el archivo de contenedor del certificado esta dañado", "Error al abrir el almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                             break;
                         }
@@ -1320,6 +1436,41 @@ namespace interfaces.ventas.panel
                 
             }
           
+        }
+
+        private bool creando_xml_json(bool tipo, cryptografia.crear_xml fac)
+        {
+            if (tipo)
+            {
+                using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                {
+                    fe.Funcion_listo = fac.firmando_documento;
+                    fe.Tipo_operacio = 1;
+                    if (fe.ShowDialog() == DialogResult.OK)
+                    {
+                        return true;
+                    }else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                {
+                    fe.Funcion_listo = fac.firmando_documento;
+                    fe.Tipo_operacio = 1;
+                    if (fe.ShowDialog() == DialogResult.OK)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
 
         private void ingresandoVentaTicket_sincomprobante(string correl, string efec, string cam, string idcorre)

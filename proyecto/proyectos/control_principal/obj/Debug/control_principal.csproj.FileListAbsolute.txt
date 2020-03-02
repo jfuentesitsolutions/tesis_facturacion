@@ -834,7 +834,6 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_p
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\Google.Protobuf.dll
-C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\Renci.SshNet.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll

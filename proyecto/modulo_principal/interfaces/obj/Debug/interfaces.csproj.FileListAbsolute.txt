@@ -1344,3 +1344,5 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\in
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.tarjeta.resources
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.validacion_firma.resources
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.datos_emisor_receptor.resources
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\Newtonsoft.Json.xml

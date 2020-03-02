@@ -11,6 +11,7 @@ using System.Xml;
 using System.IO;
 using System.Xml.Xsl;
 using Org.BouncyCastle.Crypto.Parameters;
+using Newtonsoft.Json;
 
 namespace cryptografia
 {
@@ -98,11 +99,12 @@ namespace cryptografia
             return cadena_ori;
         }
 
-        public bool firmando_documento()
+        public List<bool> firmando_documento()
         {
             this.ruta_almacen = empres.Rows[0][8].ToString();
             this.ruta_certificado = empres.Rows[0][9].ToString();
             firma_digital firma = new firma_digital(ruta_almacen, contra);
+            List<bool> listo = new List<bool>();
 
             if (firma.Verificado)
             {
@@ -117,14 +119,31 @@ namespace cryptografia
                     factura_xml.Certificado = firma.certificado_base64(ruta_certificado);
                     factura_xml.Sello = firma.sella_xml(llavePrivada, cadena_original());
                     creandoFacturaXml();
+                    listo.Add(true);
                 }
-                return true;
+                return listo;
             }else
+            {
+                listo.Add(false);
+                return listo;
+            }  
+        }
+
+        public bool creando_json(string directorio_xml, string directorio_json)
+        {
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(directorio_xml);
+                File.Delete(directorio_xml);
+                string json = JsonConvert.SerializeXmlNode(doc);
+                File.WriteAllText(directorio_json, json);
+                return true;
+            }
+            catch
             {
                 return false;
             }
-            
-
         }
 
         private void creandoXML(Comprobante fac)
@@ -148,6 +167,7 @@ namespace cryptografia
             }
 
             File.WriteAllText(directorio, xmln);
+            
         }
 
         private ComprobanteEmisor empre()
