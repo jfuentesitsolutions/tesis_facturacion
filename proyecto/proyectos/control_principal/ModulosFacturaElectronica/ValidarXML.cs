@@ -60,7 +60,7 @@ namespace control_principal.ModulosFacturaElectronica
 
                 switch (_firma.VerificarXML(Ruta_XML)) {
                     case 0:
-                           MessageBox.Show("El XML es valido, el contenido no ha tenido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                           MessageBox.Show("El XML es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                            
                     case 1:
@@ -89,7 +89,7 @@ namespace control_principal.ModulosFacturaElectronica
             }
             else
             {
-                MessageBox.Show("Seleccione un XML", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un archivo XML", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
