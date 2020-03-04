@@ -345,7 +345,7 @@ namespace ModulosfacturaElectronica.ClasesValidacion
 
 
                 if (!VerificaElarchivoJson(_RutaJson)) return 1; // verifica si el archivo Json es correcto
-                if (!VerificacionDeXslt(pathXslt)) return 2; // verifica si el archivo xslt es correcta
+                if (!VerificacionDeXslt(pathXslt)) return 2; // verifica si el archivo xslt es correcto
 
                 
 

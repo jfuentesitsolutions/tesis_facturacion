@@ -58,11 +58,34 @@ namespace control_principal.ModulosFacturaElectronica
                 FirmaElectronica validarJson = new FirmaElectronica();
 
 
-                switch (validarJson.ValidarJSON(Ruta_JSON)) {
-
+                switch (validarJson.ValidarJSON(Ruta_JSON))
+                {
+                    case 0:
+                        MessageBox.Show("El JSON es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case 1:
+                        MessageBox.Show("El archivo que selecciono no es un JSON", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    case 2:
+                        MessageBox.Show("Error al tratar de encontrar el archivo xslt", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    case 3:
+                        MessageBox.Show("Version de comprobate invalida, verifique que la version sea (3.3 ó 3.2) del comprobante", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    case 4:
+                        MessageBox.Show("El JSON es invalido, su contenido ha sido modificado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        break;
+                    case 5:
+                        MessageBox.Show("Error al validarce el JSON", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    default:
+                        MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
                 }
 
-                
+            }
+            else {
+                MessageBox.Show("Seleccione un archivo JSON", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
 
