@@ -247,7 +247,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox listaDocumentos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView tablaDocumentos;
         private System.Windows.Forms.Label label2;
@@ -255,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        public System.Windows.Forms.ComboBox listaDocumentos;
     }
 }

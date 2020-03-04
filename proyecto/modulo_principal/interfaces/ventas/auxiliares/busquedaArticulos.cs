@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using conexiones_BD.clases.ventas;
 
 namespace interfaces.ventas.auxiliares
 {
@@ -19,6 +19,7 @@ namespace interfaces.ventas.auxiliares
         bool elegido = false;
         string idventa_tic = null;
         Action accion;
+        facturas factura;
         sessionManager.secion sesion = sessionManager.secion.Instancia;
 
         public DataTable Docu
@@ -57,6 +58,19 @@ namespace interfaces.ventas.auxiliares
             set
             {
                 idventa_tic = value;
+            }
+        }
+
+        public facturas Factura
+        {
+            get
+            {
+                return factura;
+            }
+
+            set
+            {
+                factura = value;
             }
         }
 
@@ -147,6 +161,57 @@ namespace interfaces.ventas.auxiliares
                         }
                     case 1:
                         {
+                            BindingSource select = (BindingSource)tablaDocumentos.DataSource;
+                            DataTable data = (DataTable)select.DataSource;
+                            DataRow fila=null;
+                            foreach (DataRow fila_e in data.Rows)
+                            {
+                                if (fila_e[0].Equals(tablaDocumentos.CurrentRow.Cells[0].Value))
+                                 {
+                                    fila = fila_e;
+                                }
+                            }
+
+                            
+                            Console.WriteLine("La catidad de filas es: "+data.Rows.Count);
+
+                            Factura = new facturas(
+                                fila[3].ToString(),
+                                fila[0].ToString(),
+                                fila[2].ToString(),
+                                "1",
+                                "1",
+                                fila[9].ToString(),
+                                fila[10].ToString(),
+                                fila[12].ToString(),
+                                fila[13].ToString(),
+                                fila[14].ToString(),
+                                fila[15].ToString(),
+                                fila[16].ToString(),
+                                fila[17].ToString(),
+                                fila[18].ToString(),
+                                fila[19].ToString(),
+                                fila[20].ToString(),
+                                fila[21].ToString(),
+                                fila[22].ToString(),
+                                fila[23].ToString(),
+                                fila[24].ToString(),
+                                fila[25].ToString(),
+                                fila[26].ToString(),
+                                fila[27].ToString(),
+                                fila[28].ToString(),
+                                fila[29].ToString(),
+                                fila[30].ToString(),
+                                fila[31].ToString(),
+                                fila[32].ToString(),
+                                fila[33].ToString(),
+                                fila[34].ToString(),
+                                fila[35].ToString(),
+                                fila[36].ToString(),
+                                fila[37].ToString(),
+                                fila[38].ToString()
+                                );
+                            docu = detalles_productos_venta_factura.detalle_proTic(fila[0].ToString());
                             break;
                         }
                 }     
@@ -168,6 +233,7 @@ namespace interfaces.ventas.auxiliares
         {
             cargarTablas();
         }
+
 
     }
 }

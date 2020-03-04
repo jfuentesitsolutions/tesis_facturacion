@@ -577,7 +577,7 @@ namespace conexiones_BD.clases.ventas
             DataTable Datos = new DataTable();
             String Consulta;
             Consulta = @"select vf.numero_factura as correlativo, vf.fecha_expedicion as fecha, concat(c.nombre_cliente,' ',c.apellidos_cliente) as nombre, v.idventa
-                        , vf.idcliente, vf.idtipo_factura, vf.idusuario, vf.idforma_pago, vf.num_factura_numero
+                        , vf.idcliente, vf.idtipo_factura, vf.idusuario, vf.idforma_pago, vf.num_factura_numero, vf.*
                         from ventas v, ventas_factura vf, clientes c
                         where v.num_factura = vf.numero_factura and vf.idcliente = c.idcliente
                         and v.fecha>='" + fech + @" 00:00:00' and v.fecha<='" + fech + @" 23:59:59' and v.idsucursal='5'
