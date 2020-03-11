@@ -85,7 +85,7 @@ namespace control_principal.ModulosFacturaElectronica
                 pnlMenuLateral.Width = 428;
               //  pnlLinea.Width = 272;
             }
-;
+
         }
 
      

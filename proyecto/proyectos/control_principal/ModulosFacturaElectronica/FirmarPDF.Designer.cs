@@ -41,6 +41,8 @@
             this.btnSelecionarCarpetaGuardar = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtContraPFX = new AltoControls.AltoTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnlTxtTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFIrmar_PDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cancelar)).BeginInit();
@@ -209,12 +211,37 @@
             this.label3.TabIndex = 56;
             this.label3.Text = "Ruta:";
             // 
+            // txtContraPFX
+            // 
+            this.txtContraPFX.BackColor = System.Drawing.Color.Transparent;
+            this.txtContraPFX.Br = System.Drawing.Color.White;
+            this.txtContraPFX.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txtContraPFX.ForeColor = System.Drawing.Color.DimGray;
+            this.txtContraPFX.Location = new System.Drawing.Point(479, 113);
+            this.txtContraPFX.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContraPFX.Name = "txtContraPFX";
+            this.txtContraPFX.Size = new System.Drawing.Size(329, 41);
+            this.txtContraPFX.TabIndex = 59;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(117, 113);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(364, 33);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "Contraseña de almacen PFX:";
+            // 
             // FirmarPDF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1067, 622);
+            this.Controls.Add(this.txtContraPFX);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtRutaGuardarPDFirmado);
             this.Controls.Add(this.btnSelecionarCarpetaGuardar);
@@ -256,5 +283,7 @@
         private System.Windows.Forms.PictureBox btnSelecionarCarpetaGuardar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private AltoControls.AltoTextBox txtContraPFX;
+        private System.Windows.Forms.Label label6;
     }
 }

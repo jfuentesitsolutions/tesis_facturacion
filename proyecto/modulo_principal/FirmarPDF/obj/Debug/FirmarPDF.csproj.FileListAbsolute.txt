@@ -51,3 +51,17 @@ D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\D
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\obj\Debug\FirmarPDF.csprojResolveAssemblyReference.cache
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\obj\Debug\FirmarPDF.dll
 D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\obj\Debug\FirmarPDF.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\conexiones_BD.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MySql.Data.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MySqlBackup.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\sessionManager.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\utilitarios.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\LibPrintTicket.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\Google.Protobuf.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\Renci.SshNet.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\conexiones_BD.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MySql.Data.xml
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\sessionManager.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\utilitarios.pdb

@@ -16,17 +16,44 @@ namespace FirmarPDF
 
         public X509Certificate[] Chain { get; private set; }
 
-        public ValidarCertificado(string rutaCompletaDelPfx, string claveDelPfx = null)
-        {
-            using (var file = File.OpenRead(rutaCompletaDelPfx))
-            {
-                var password = claveDelPfx?.ToCharArray() ?? new char[] { }; //contraseña que posee el alchivo de certificado
-                var store = new Pkcs12Store(file, password);
-                var alias = GetCertificateAlias(store);
+        string RutaCompletaDelPfx { get; set; } = null;
+        string  ClaveDelPfx { get; set; } = null;
 
-                Key = store.GetKey(alias).Key;
-                Chain = store.GetCertificateChain(alias).Select(x => x.Certificate).ToArray();
+        public ValidarCertificado(string _rutaCompletaDelPfx, string _claveDelPfx = null)
+        {
+            this.RutaCompletaDelPfx = _rutaCompletaDelPfx;
+            this.ClaveDelPfx = _claveDelPfx;
+
+        }
+
+        public int Validar_AlmacenPFX() {
+
+           
+                   if (!System.IO.File.Exists(RutaCompletaDelPfx))
+                   {
+                       return 1; //si no existe el archivo pfx en la ruta guardad en la BD
+                   }
+
+                    var file = File.OpenRead(RutaCompletaDelPfx);
+                    var password = ClaveDelPfx?.ToCharArray() ?? new char[] { }; //contraseña que posee el alchivo de certificado
+
+            try
+            {
+               
+                    var store = new Pkcs12Store(file, password);
+                    var alias = GetCertificateAlias(store);
+                    Key = store.GetKey(alias).Key;
+                    Chain = store.GetCertificateChain(alias).Select(x => x.Certificate).ToArray();
+                
+
+                return 0;//no se encontro nigun error al validar el pfx
             }
+            catch (Exception)
+            {
+
+                return 2;//si la contraseña insertada es incorrecta
+            }
+
         }
 
         private static string GetCertificateAlias(Pkcs12Store store)

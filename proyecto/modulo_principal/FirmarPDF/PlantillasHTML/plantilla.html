@@ -3,9 +3,162 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title> Plantilla Factura Electronica</title>
 </head>
-<body>
-    la factura es: <b> numero del certificado: @Model.NoCertificado </b>
+<body style="margin: 2em 10em 5em 10em;">
+    <!-- top,right,bottom,left -->
+    <table style="border: 1px solid; border-radius: 15px 15px 15px 15px; padding: 1em 5em 5em 5em;" width="100%">
+        <tr>
+            <td>
+                <!-- ************************************************************************************************************************************************ -->
+                <table style="height: 191px;" width="100%">
+                    <tbody>
+                        <tr style="height: 19.4px;">
+                            <td style="width: 272px; height: 19.4px;" colspan="2">
+                                <p>&nbsp;<img style="display: block; margin-left: auto; margin-right: auto;" src="C:\Users\Mario\Desktop\logo2.png" alt="logos" width="150" height="150" /></p>
+                                <p style="text-align: center;">Tecno Code.</p>
+                                <p style="text-align: center;">Sistema de ventas y generacion de facturas electronicas.</p>
+                                <hr />
+                            </td>
+                            <td style="width: 284px; height: 19.4px;">
+                                <!--*******  cuadro de  comprobante de credito fiscal *****-->
+                                <table style="height: 149px; width: 284px;  float: right; border: 2px solid; border-radius: 15px 15px 15px 15px">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 275.2px; text-align: center;" colspan="3"><strong>&nbsp;COMPROBANTE DE CREDITO FISCAL</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 120px; text-align: center;">&nbsp;##########</td>
+                                            <td style="width: 23.2px;">&nbsp;al</td>
+                                            <td style="width: 120.8px; text-align: center;">&nbsp;##########</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 120px; text-align: center;"><span style="color: #ff0000;"><strong>&nbsp;N&deg;</strong></span></td>
+                                            <td style="width: 23.2px;">&nbsp;</td>
+                                            <td style="width: 120.8px; text-align: center;"><span style="color: #ff0000;"><strong>&nbsp;@Model.NoCertificado</strong></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 275.2px; text-align: center;" colspan="3">&nbsp;REGISTRO No. ######-#</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 275.2px; text-align: center;" colspan="3">&nbsp;&nbsp;NIT. ####-######-###-#</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!--  *****************************************************-->
+                            </td>
+                        </tr>
+                        <tr style="height: 19.4px;">
+                            <td style="width: 272px; height: 19.4px; text-align: center;" colspan="2">
+                                <p>Mario Jose Pe&ntilde;a Arevalo.</p>
+                                <p>Giro: Construccion de obras de ingenieria civil.</p>
+                                <p>Blvd. los heroes, local 11 cond. 2000 sansalvador.</p>
+                                <p>telefono:2048-9687&nbsp; -&nbsp; correo:arevalomariojose@gamai.com</p>
+                            </td>
+                            <td style="width: 284px; height: 19.4px;">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr /><!-- *************************************************************************************************-->
+                <table style="height: 122px;" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>Cliente:</td>
+                            <td>Fecha:</td>
+                        </tr>
+                        <tr>
+                            <td>Direccion:</td>
+                            <td>Registro:</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Municipio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Depto:
+                            </td>
+                            <td>NIT:</td>
+                        </tr>
+                        <tr>
+                            <td>N&deg; de nota de remisi&oacute;n anterior:</td>
+                            <td>Giro:</td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de Nota de Remisi&oacute;n Anterior:</td>
+                            <td>Cond. de pago:</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>Venta a Cuente de:</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- *************************************************************************************************--><hr />
+                <table style="height: 327px; width: 100%;border-radius: 15px 15px 15px 15px;" border="3">
+                    <tbody>
+                        <tr style="height: 42px;">
+                            <td style="width: 88px; text-align: center; height: 42px;">&nbsp;CANT:</td>
+                            <td style="width: 105.8px; text-align: center; height: 42px;">&nbsp;DESCRIPCION</td>
+                            <td style="width: 70.2px; text-align: center; height: 42px;">&nbsp;PRECIO UNITARIO</td>
+                            <td style="width: 88px; text-align: center; height: 42px;">&nbsp;VENTAS NO SUJETAS</td>
+                            <td style="width: 88px; text-align: center; height: 42px;">&nbsp;VENTAS EXENTAS</td>
+                            <td style="width: 88px; text-align: center; height: 42px;">&nbsp;VENTAS AFECTAS</td>
+                        </tr>
+                        <tr style="height: 298.6px;">
+                            <td style="width: 88px; height: 298.6px;">&nbsp;</td>
+                            <td style="width: 105.8px; height: 298.6px;">&nbsp;</td>
+                            <td style="width: 70.2px; height: 298.6px;">&nbsp;</td>
+                            <td style="width: 88px; height: 298.6px;">&nbsp;</td>
+                            <td style="width: 88px; height: 298.6px;">&nbsp;</td>
+                            <td style="width: 88px; height: 298.6px;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 24px;">
+                            <td style="width: 88px; height: 24px;" colspan="2">&nbsp;SON:</td>
+                            <td style="width: 70.2px; height: 24px;">&nbsp;SUMAS:</td>
+                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 24px;">
+                            <td style="width: 88px; height: 24px;" colspan="2">&nbsp;OPERACION SUPERIOR A $11428.57</td>
+                            <td style="width: 70.2px; height: 24px;" colspan="3">&nbsp;13% DE I.V.A</td>
+                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 24px;">
+                            <td style="width: 88px; height: 24px;">ENTREGO:&nbsp;</td>
+                            <td style="width: 105.8px; height: 24px;">&nbsp;RECIBIO:</td>
+                            <td style="width: 70.2px; height: 24px;" colspan="3">SUB-TOTAL&nbsp;</td>
+                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 24px;">
+                            <td style="width: 88px; height: 24px;">DUI:&nbsp;</td>
+                            <td style="width: 105.8px; height: 24px;">&nbsp;DUI:</td>
+                            <td style="width: 70.2px; height: 24px;" colspan="3">VENTAS EXENTAS&nbsp;</td>
+                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 24px;">
+                            <td style="width: 88px; height: 24px;">FIRMA:&nbsp;</td>
+                            <td style="width: 105.8px; height: 24px;">&nbsp;FIRMA:</td>
+                            <td style="width: 70.2px; height: 24px;" colspan="3">(-)IVA RETENIDO&nbsp;</td>
+                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 24px;">
+                            <td style="width: 88px; height: 24px;">&nbsp;EXTRANJERO: Pasaporteo carnet de residente</td>
+                            <td style="width: 105.8px; height: 24px;">&nbsp;EXTRANJERO: Pasaporteo carnet de residente</td>
+                            <td style="width: 70.2px; height: 24px;" colspan="3">VENTAS NO SUJETAS&nbsp;</td>
+                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 25px;">
+                            <td style="width: 88px; height: 25px;" colspan="2">&nbsp;Cancelado el,_____________de ___________________de 20________</td>
+                            <td style="width: 70.2px; height: 25px;" colspan="3">VENTA TOTAL</td>
+                            <td style="width: 88px; height: 25px;">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- ************************************************************************************************************************************************ -->
+
+            </td>
+        </tr>
+    </table>
+
 </body>
 </html>

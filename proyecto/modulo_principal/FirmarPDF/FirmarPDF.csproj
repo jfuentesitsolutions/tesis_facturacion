@@ -83,5 +83,11 @@
     <Content Include="wkhtmltopdf\wkhtmltopdf.exe" />
     <Content Include="wkhtmltopdf\wkhtmltox.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\proyectos\conexiones_BD\conexiones_BD.csproj">
+      <Project>{46262F34-63B5-4DA4-9D5D-F0111C13B65D}</Project>
+      <Name>conexiones_BD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -245,8 +245,8 @@ namespace ModulosfacturaElectronica.ClasesValidacion
                 string version = "";        
                 string certificado = ""; // Obtenido del XML
                 string selloBase64 = ""; // Obtenido del XML
-                string pathXslt = Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\cadenaoriginal_3_3.xslt";
-              
+               // string pathXslt = Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\cadenaoriginal_3_3.xslt";
+                string pathXslt = Path.GetFullPath("cadenaoriginal_3_3.xslt"); 
 
                 if (!VerificacionDeXslt(pathXslt)) return 1; // verifica si el archivo xslt es correcta
 
@@ -341,8 +341,8 @@ namespace ModulosfacturaElectronica.ClasesValidacion
                 string version = "";
                 string certificado = ""; // Obtenido del XML
                 string selloBase64 = ""; // Obtenido del XML
-                string pathXslt = Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\cadenaoriginal_3_3.xslt";
-
+               //string pathXslt = Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\cadenaoriginal_3_3.xslt";
+                string pathXslt = Path.GetFullPath("cadenaoriginal_3_3.xslt");
 
                 if (!VerificaElarchivoJson(_RutaJson)) return 1; // verifica si el archivo Json es correcto
                 if (!VerificacionDeXslt(pathXslt)) return 2; // verifica si el archivo xslt es correcto

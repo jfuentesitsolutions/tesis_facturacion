@@ -1,4 +1,5 @@
-﻿using FirmarPDF;
+﻿using conexiones_BD.clases;
+using FirmarPDF;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace control_principal.ModulosFacturaElectronica
         public FirmarPDF()
         {
             InitializeComponent();
+           
         }
 
 
@@ -102,62 +104,75 @@ namespace control_principal.ModulosFacturaElectronica
         {
             try
             {
+                if (txtContraPFX.Text != null && txtContraPFX.Text != "") {
 
-
-
-
-                if (Ruta_PDF != null && Ruta_PDF != "")
-                {
-                    if (Ruta_guardarPDFirmado != null && Ruta_guardarPDFirmado != "")
+                    if (Ruta_PDF != null && Ruta_PDF != "")
                     {
-                        var certificado = new ValidarCertificado(Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\certificado_mape.pfx", "1234");
-                        var firmante = new Firmante(certificado);
+                        if (Ruta_guardarPDFirmado != null && Ruta_guardarPDFirmado != "")
+                        {
+                            Firmante firmante = new Firmante();
 
+                            int indice = firmante.Firmar(Ruta_PDF, Ruta_guardarPDFirmado + "\\Firmado(#)-" + NombrePDFSelecionado(Ruta_PDF), false, txtContraPFX.Text);
 
-                        int indice = firmante.Firmar(Ruta_PDF, Ruta_guardarPDFirmado + "\\Firmado(#)-" + NombrePDFSelecionado(Ruta_PDF),false);
-
-                        if (indice==3) {
-                            DialogResult _result = MessageBox.Show("Ya existe una copia firmada del PDF seleccionado, ¿Desea sobrescribir la copia firmada?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-                            if (_result.Equals(DialogResult.Yes))
+                            if (indice == 3)
                             {
-                                indice = firmante.Firmar(Ruta_PDF, Ruta_guardarPDFirmado + "\\Firmado(#)-" + NombrePDFSelecionado(Ruta_PDF), true);
+                                DialogResult _result = MessageBox.Show("Ya existe una copia firmada del PDF seleccionado, ¿Desea sobrescribir la copia firmada?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                                if (_result.Equals(DialogResult.Yes))
+                                {
+                                    indice = firmante.Firmar(Ruta_PDF, Ruta_guardarPDFirmado + "\\Firmado(#)-" + NombrePDFSelecionado(Ruta_PDF), true, txtContraPFX.Text);
+                                }
                             }
+
+                            switch (indice)
+                            {
+                                case 0:
+                                    MessageBox.Show("El archivo PDF fue firmado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    break;
+                                case 1:
+                                    MessageBox.Show("El archivo selecionado no es un archivo PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    break;
+                                case 2:
+                                    MessageBox.Show("El archivo PDF seleccionado ya esta firmado, seleccione un archivo PDF que no este firmado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    break;
+                                case 3:
+                                    //este caso solo sirve como metodo de escape
+                                    break;
+                                case 4:
+                                    MessageBox.Show("La ruta del almacenamiento PFX es nula, revise en configuraciones si ha selecionado una ruta para el PFX", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    break;
+                                case 5:
+                                    MessageBox.Show("La ruta del pfx es incorrecta o el archivo es incorrecto, verificar en configuraciones opcion (empresa)", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    break;
+                                case 6:
+                                    MessageBox.Show("La contraseña del almacen PFX es incorrecta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    break;
+                                default:
+                                    MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    break;
+                            }
+
                         }
-
-
-                        switch (indice) {
-                            case 0:
-                                MessageBox.Show("El archivo PDF fue firmado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                break;
-                            case 1:
-                                MessageBox.Show("El archivo selecionado no es un archivo PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-                            case 2:
-                                MessageBox.Show("El archivo PDF seleccionado ya esta firmado, seleccione un archivo PDF que no este firmado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-                            case 3:
-                                //este caso solo sirve como metodo de escape
-                                break;
-                            default:
-                                MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
+                        else
+                        {
+                            MessageBox.Show("Selecione la ruta donde se guardara el PDF firmado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
-
-
 
                     }
-                    else {
-                        MessageBox.Show("Selecione la ruta donde se guardara el PDF firmado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    else
+                    {
+                        MessageBox.Show("Selecione un archivo PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Selecione un archivo PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Ingrese contraseña", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
 
+              
 
             }
             catch
