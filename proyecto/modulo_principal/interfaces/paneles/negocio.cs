@@ -30,11 +30,8 @@ namespace interfaces.paneles
             //cp.ShowDialog();
 
             using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
-            {
-                
+            {    
                 fe.Funcion = cargarDatos;
-                
-
                 if (fe.ShowDialog() == DialogResult.OK)
                 {
                     productos.precios_productos cp = new productos.precios_productos();

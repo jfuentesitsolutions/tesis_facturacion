@@ -245,24 +245,35 @@ namespace conexiones_BD.clases.ventas
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = @"select dvt.cantidad_paquete, p.nombre_presentacion, 
-                        pr.nom_producto,  pp.precio, dvt.total, vt.fecha, vt.correlativo, vt.monto_total_neto, 
-                        vt.efectivo, vt.cambio, ci.contenido, concat(cll.nombre_cliente,' ',cll.apellidos_cliente) as nombre,
-                        cll.direccion, corr.inicio, corr.final, vt.idcorrelativo, codi.codigo as cod_producto, sp.kardex
-                        from ventas v, ventas_tickets vt, detalles_ventas_ticket dvt, presentaciones_productos pp, sucursales_productos sp, 
-                        presentaciones p, productos pr, citas ci, clientes cll, correlativos_ticket corr, codigos codi, productos_codigos proco
-                        where v.idventa = vt.correlativo
-                        and proco.idproducto=pr.idproducto
-                        and proco.idcodigo=codi.idcodigo
-                        and dvt.idventa_ticket = vt.correlativo
-                        and dvt.idpresentacion_producto = pp.idpresentacion_producto
-                        and pp.idsucursal_producto = sp.idsucursal_producto
-                        and sp.idproducto = pr.idproducto
-                        and pp.idpresentacion = p.idpresentacion
-                        and dvt.idventa_ticket = '"+id+ @"' and vt.idcita=ci.idcita and vt.idcliente=cll.idcliente and vt.idcorrelativo = corr.idcorrelativo_ticket
-                        and dvt.codigo=codi.codigo
-                        and codi.estado=1                        
-                        ; ";
+            Consulta = @"select dvf.cantidad_paquete, 
+                            dvf.idpresentacion_producto,
+                            dvf.utilidad,
+                            dvf.idsucursal_producto,
+                            p.nombre_presentacion, 
+                            dvf.cantidad,
+                            pr.nom_producto,  
+                            pp.precio, 
+                            dvf.total, 
+                            vf.numero_factura as correlativo,  
+                            concat(cll.nombre_cliente,' ',cll.apellidos_cliente) as nombre,
+                            cll.direccion, 
+                            codi.codigo as cod_producto, 
+                            dvf.descuento_iva
+                            from ventas v, ventas_factura vf, detalles_ventas_factura dvf, presentaciones_productos pp, sucursales_productos sp, 
+                            presentaciones p, productos pr, clientes cll, codigos codi, productos_codigos proco
+                            where v.num_factura = vf.numero_factura
+                            and proco.idproducto=pr.idproducto
+                            and proco.idcodigo=codi.idcodigo
+                            and dvf.idventa_factura = vf.numero_factura
+                            and dvf.idpresentacion_producto = pp.idpresentacion_producto
+                            and pp.idsucursal_producto = sp.idsucursal_producto
+                            and sp.idproducto = pr.idproducto
+                            and pp.idpresentacion = p.idpresentacion
+                            and dvf.idventa_factura = '"+id+@"' 
+                            and vf.idcliente=cll.idcliente 
+                            and dvf.codigo=codi.codigo
+                            and codi.estado=1                        
+                            ; ";
 
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try

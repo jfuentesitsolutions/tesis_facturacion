@@ -16,7 +16,7 @@ namespace espera_datos
         {
             InitializeComponent();
         }
-
+        private int tipo_operacio=0;
         string titulo;
 
         public string Titulo
@@ -58,14 +58,54 @@ namespace espera_datos
             }
         }
 
+
+        public int Tipo_operacio
+        {
+            get
+            {
+                return tipo_operacio;
+            }
+
+            set
+            {
+                tipo_operacio = value;
+            }
+        }
+
+        public Func<List<bool>> Funcion_listo
+        {
+            get
+            {
+                return funcion_listo;
+            }
+
+            set
+            {
+                funcion_listo = value;
+            }
+        }
+
         Action accion;
 
         Func<List<DataTable>> funcion;
+        Func<List<bool>> funcion_listo;
 
         private void splash_espera_Shown(object sender, EventArgs e)
         {
+            switch (tipo_operacio)
+            {
+                case 0:
+                    {
+                        Task.Factory.StartNew(Funcion).ContinueWith((t) => taskCompleted());
+                        break;
+                    }
+                case 1:
+                    {
+                        Task.Factory.StartNew(Funcion_listo).ContinueWith((t) => taskCompleted());
+                        break;
+                    }
+            }
             
-            Task.Factory.StartNew(Funcion).ContinueWith((t) => taskCompleted());
         }
 
         private void taskCompleted()
