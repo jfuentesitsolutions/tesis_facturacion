@@ -188,7 +188,6 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manag
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\LibPrintTicket.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\Google.Protobuf.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\Renci.SshNet.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\conexiones_BD.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\MySql.Data.xml

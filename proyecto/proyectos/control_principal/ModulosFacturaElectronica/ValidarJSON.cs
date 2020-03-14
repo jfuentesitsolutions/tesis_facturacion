@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,16 @@ namespace control_principal.ModulosFacturaElectronica
     public partial class ValidarJSON : Form
     {
         public string Ruta_JSON { get; set; } = null;
+
+
+        #region DLL para mover la ventana
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        #endregion
 
         public ValidarJSON()
         {
@@ -91,6 +102,46 @@ namespace control_principal.ModulosFacturaElectronica
 
         }
 
+        private void btn_cancelar_MouseEnter(object sender, EventArgs e)
+        {
+            this.btn_cancelar.Image = global::control_principal.Properties.Resources.cerrar2;
+        }
 
+        private void btn_cancelar_MouseLeave(object sender, EventArgs e)
+        {
+            this.btn_cancelar.Image = global::control_principal.Properties.Resources.cerrar1;
+        }
+
+        private void btnBuscar_JSON_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnBuscar_JSON.Image = global::control_principal.Properties.Resources.folder22;
+        }
+
+        private void btnBuscar_JSON_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnBuscar_JSON.Image = global::control_principal.Properties.Resources.folder2;
+        }
+
+        private void btnValidarJson_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnValidarJson.Image = global::control_principal.Properties.Resources.validarJSON2;
+        }
+
+        private void btnValidarJson_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnValidarJson.Image = global::control_principal.Properties.Resources.validarJSON;
+        }
+
+        private void pnlTxtTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void label4_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

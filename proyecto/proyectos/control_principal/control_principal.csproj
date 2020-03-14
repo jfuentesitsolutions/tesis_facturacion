@@ -408,6 +408,48 @@
       <Isolated>False</Isolated>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\js-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diploma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Genrar json.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firma pdf 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validarJSON2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generarpfx2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

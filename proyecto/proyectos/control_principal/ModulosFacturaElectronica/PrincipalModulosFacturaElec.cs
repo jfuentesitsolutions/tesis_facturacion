@@ -29,65 +29,45 @@ namespace control_principal.ModulosFacturaElectronica
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-            pnlShowO.Controls.Add(formulario);
-            pnlShowO.Tag = formulario;
+            // pnlShowO.Controls.Add(formulario);  // (pnlShowO)panel donde se agregaban los formularios
+            // pnlShowO.Tag = formulario;
             formulario.BringToFront();
             formulario.Show();
         }
 
-
-
-        private void btnValidarXml_Click(object sender, EventArgs e)
+        private void btnValidarXML_Click_1(object sender, EventArgs e)
         {
-           
-           AbrirFormularioHijo(new ValidarXML());
+            new ValidarXML().ShowDialog();
         }
 
-        private void btnGenerarPDF_Click(object sender, EventArgs e)
+        private void btnValidarPDF_Click_1(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new GenerarPDF());
+            new ValidarPDF().ShowDialog();
         }
 
-        private void btnValidarPDF_Click(object sender, EventArgs e)
+        private void btnValidarJSON_Click_1(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new ValidarPDF());
+            new ValidarJSON().ShowDialog();
         }
 
-        private void btnFirmarPDF_Click(object sender, EventArgs e)
+        private void btnGenerarPDF_Click_1(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new FirmarPDF());
+            new GenerarPDF().ShowDialog();
         }
 
-        private void btnGenerarCertificado_Click(object sender, EventArgs e)
+        private void btnGenerarJSON_Click_1(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new GenerarCertificado());
+            new GenerarJSON().ShowDialog();
         }
 
-        private void btnGenerarJson_Click(object sender, EventArgs e)
+        private void btnFirmarPDF_Click_1(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new GenerarJSON());
+            new FirmarPDF().ShowDialog();
         }
 
-        private void btnValidarJSON_Click(object sender, EventArgs e)
+        private void btnGenerarCertificado_Click_1(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new ValidarJSON());
+            new GenerarCertificado().ShowDialog();
         }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            if (pnlMenuLateral.Width == 428)
-            {
-                pnlMenuLateral.Width = 0;
-                //pnlLinea.Width = 53;
-            }
-            else
-            {
-                pnlMenuLateral.Width = 428;
-              //  pnlLinea.Width = 272;
-            }
-
-        }
-
-     
     }
 }
