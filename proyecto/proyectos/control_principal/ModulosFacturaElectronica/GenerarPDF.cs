@@ -128,6 +128,10 @@ namespace control_principal.ModulosFacturaElectronica
                         MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         break;
 
+                    case 6:
+                        MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
                     default:
                         MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;

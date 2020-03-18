@@ -874,3 +874,5 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_pri
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\stdole.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\cryptografia.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\cryptografia.dll.config
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\control_principal\bin\Debug\Ubiety.Dns.Core.dll

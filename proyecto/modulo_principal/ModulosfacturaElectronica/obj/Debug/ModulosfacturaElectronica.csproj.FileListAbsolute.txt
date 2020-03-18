@@ -51,3 +51,4 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\Modu
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\ModulosfacturaElectronica\bin\Debug\conexiones_BD.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\ModulosfacturaElectronica\bin\Debug\sessionManager.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\ModulosfacturaElectronica\bin\Debug\utilitarios.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\ModulosfacturaElectronica\bin\Debug\MessagingToolkit.QRCode.dll

@@ -59,3 +59,4 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\Firm
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\conexiones_BD.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\sessionManager.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\utilitarios.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MessagingToolkit.QRCode.dll

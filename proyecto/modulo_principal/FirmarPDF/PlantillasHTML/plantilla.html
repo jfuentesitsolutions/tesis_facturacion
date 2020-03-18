@@ -5,151 +5,203 @@
     <meta charset="utf-8" />
     <title> Plantilla Factura Electronica</title>
 </head>
-<body style="margin: 2em 10em 5em 10em;">
+<body style="margin: 2em 0em 5em 0em;">
     <!-- top,right,bottom,left -->
-    <table style="border: 1px solid; border-radius: 15px 15px 15px 15px; padding: 1em 5em 5em 5em;" width="100%">
+    @{
+    string imagen = AppDomain.CurrentDomain.BaseDirectory + "..\\..\\Resources\\logo2.png";  //encuentra el logo dentro del proyecto
+    string imagenQR = AppDomain.CurrentDomain.BaseDirectory + "QR_Temp.png";
+    }
+    <table style="border: 1px solid; border-radius: 15px 15px 15px 15px; padding: 1em 2em 2em 2em;" width="100%">
         <tr>
             <td>
                 <!-- ************************************************************************************************************************************************ -->
                 <table style="height: 191px;" width="100%">
                     <tbody>
                         <tr style="height: 19.4px;">
-                            <td style="width: 272px; height: 19.4px;" colspan="2">
-                                <p>&nbsp;<img style="display: block; margin-left: auto; margin-right: auto;" src="C:\Users\Mario\Desktop\logo2.png" alt="logos" width="150" height="150" /></p>
-                                <p style="text-align: center;">Tecno Code.</p>
-                                <p style="text-align: center;">Sistema de ventas y generacion de facturas electronicas.</p>
-                                <hr />
+                            <td style="width: 272px; height: 19.4px;" colspan="2" rowspan="2">
+
+                                <table>
+                                    <tr>
+                                        <td style="width: 175px;">
+                                            <p>&nbsp;<img style="display: block; margin-left: auto; margin-right: auto;" src=@imagen alt="logos" width="150" height="150" /></p>
+                                            <p style="text-align: center;">Tecno Code.</p>
+                                            <p style="text-align: center;">Sistema de ventas y generacion de facturas electronicas.</p>
+                                        </td>
+                                        <td style="padding: 2em 0em 0em 1em;">
+                                            <p><strong><h4>Mario Jose Pe&ntilde;a Arevalo.</h4></strong></p>
+                                            <p><strong><h4>Giro: @Model.Emisor.Giro</h4></strong></p>
+                                            <p><strong><h4>Direccion: @Model.Emisor.Direccion_Local</h4></strong></p>
+                                            <p><strong><h4>Telefonos: 2048-9687&nbsp; -&nbsp; 7852-2385</h4></p>
+                                            <p><strong><h4>Correo: arevalomariojose@gamai.com</h4></p>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
                             </td>
                             <td style="width: 284px; height: 19.4px;">
                                 <!--*******  cuadro de  comprobante de credito fiscal *****-->
-                                <table style="height: 149px; width: 284px;  float: right; border: 2px solid; border-radius: 15px 15px 15px 15px">
+                                <table style="height: 149px; width: 284px;  float: right; border: 2px solid; border-radius: 15px 15px 15px 15px;padding: 0.5em 0.5em 0.5em 0.5em;">
                                     <tbody>
                                         <tr>
-                                            <td style="width: 275.2px; text-align: center;" colspan="3"><strong>&nbsp;COMPROBANTE DE CREDITO FISCAL</strong></td>
+                                            <td style="width: 275.2px; text-align: center;" colspan="3"><strong> COMPROBANTE DE CREDITO FISCAL </strong></td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 120px; text-align: center;">&nbsp;##########</td>
-                                            <td style="width: 23.2px;">&nbsp;al</td>
-                                            <td style="width: 120.8px; text-align: center;">&nbsp;##########</td>
+                                            <td style="width: 120px; text-align: center;">@Model.CorrInicio</td>
+                                            <td style="width: 23.2px;"> al </td>
+                                            <td style="width: 120px; text-align: center;">@Model.CorrFinal</td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 120px; text-align: center;"><span style="color: #ff0000;"><strong>&nbsp;N&deg;</strong></span></td>
+                                            <td style="width: 120px; text-align: center;"><span style="color: #ff0000;"><strong><h2>N&deg;</h2></strong></span></td>
                                             <td style="width: 23.2px;">&nbsp;</td>
-                                            <td style="width: 120.8px; text-align: center;"><span style="color: #ff0000;"><strong>&nbsp;@Model.NoCertificado</strong></span></td>
+                                            <td style="width: 120.8px; text-align: center;"><span style="color: #ff0000;"><strong><h2>@Model.NumFactura</h2></strong></span></td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 275.2px; text-align: center;" colspan="3">&nbsp;REGISTRO No. ######-#</td>
+                                            <td style="width: 275.2px; text-align: center;" colspan="3"> REGISTRO No. @Model.Emisor.NRC </td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 275.2px; text-align: center;" colspan="3">&nbsp;&nbsp;NIT. ####-######-###-#</td>
+                                            <td style="width: 275.2px; text-align: center;" colspan="3">  NIT. @Model.Emisor.Nit </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <!--  *****************************************************-->
                             </td>
                         </tr>
-                        <tr style="height: 19.4px;">
-                            <td style="width: 272px; height: 19.4px; text-align: center;" colspan="2">
-                                <p>Mario Jose Pe&ntilde;a Arevalo.</p>
-                                <p>Giro: Construccion de obras de ingenieria civil.</p>
-                                <p>Blvd. los heroes, local 11 cond. 2000 sansalvador.</p>
-                                <p>telefono:2048-9687&nbsp; -&nbsp; correo:arevalomariojose@gamai.com</p>
+                        <tr>
+
+                            <td>
+                                <!------ Codigo QR ----->
+                                <p style="text-align: center;">
+                                    Codigo QR&nbsp;<img style="display: block; margin-left: auto; margin-right: auto;" src=@imagenQR
+                                                        alt="logos" width="200" height="200" />
+                                </p>
+
                             </td>
-                            <td style="width: 284px; height: 19.4px;">&nbsp;</td>
                         </tr>
                     </tbody>
                 </table>
-                <hr /><!-- *************************************************************************************************-->
-                <table style="height: 122px;" width="100%">
+                <!-- *************************************************************************************************-->
+                <table style="height: 122px;border: 2px solid; border-radius: 15px 15px 15px 15px;padding: 0.5em 0.5em 0.5em 0.5em;" width="100%">
                     <tbody>
-                        <tr>
-                            <td>Cliente:</td>
-                            <td>Fecha:</td>
+                        <tr style="height: 30px;">
+                            <td><strong> Cliente:</strong> @Model.Receptor.Nombre_Cliente </td>
+                            <td><strong> Fecha:</strong> @Model.FechaExpedicion </td>
                         </tr>
-                        <tr>
-                            <td>Direccion:</td>
-                            <td>Registro:</td>
+                        <tr style="height: 30px;">
+                            <td><strong>Direccion:</strong>  @Model.Receptor.Direccion </td>
+                            <td><strong>Registro:</strong> @Model.Receptor.NRC </td>
                         </tr>
-                        <tr>
+                        <tr style="height: 30px;">
                             <td>
-                                Municipio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Depto:
+                                <strong>Municipio:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Depto:</strong>
                             </td>
-                            <td>NIT:</td>
+                            <td><strong>NIT: </strong>@Model.Receptor.Nit</td>
                         </tr>
-                        <tr>
-                            <td>N&deg; de nota de remisi&oacute;n anterior:</td>
-                            <td>Giro:</td>
+                        <tr style="height: 30px;">
+                            <td><strong>N&deg; de nota de remisi&oacute;n anterior:</strong></td>
+                            <td><strong>Giro:</strong> @Model.Receptor.Giro</td>
                         </tr>
-                        <tr>
-                            <td>Fecha de Nota de Remisi&oacute;n Anterior:</td>
-                            <td>Cond. de pago:</td>
+                        <tr style="height: 30px;">
+                            <td><strong>Fecha de Nota de Remisi&oacute;n Anterior:</strong></td>
+                            <td><strong>Cond. de pago:</strong></td>
                         </tr>
-                        <tr>
+                        <tr style="height: 30px;">
                             <td>&nbsp;</td>
-                            <td>Venta a Cuente de:</td>
+                            <td><strong>Venta a Cuente de:</strong></td>
                         </tr>
                     </tbody>
                 </table>
                 <!-- *************************************************************************************************--><hr />
-                <table style="height: 327px; width: 100%;border-radius: 15px 15px 15px 15px;" border="3">
+                <table style="height: 327px; width: 100%;border-radius: 10px 10px 10px 10px;" border="3" cellspacing="0">
                     <tbody>
                         <tr style="height: 42px;">
-                            <td style="width: 88px; text-align: center; height: 42px;">&nbsp;CANT:</td>
-                            <td style="width: 105.8px; text-align: center; height: 42px;">&nbsp;DESCRIPCION</td>
-                            <td style="width: 70.2px; text-align: center; height: 42px;">&nbsp;PRECIO UNITARIO</td>
-                            <td style="width: 88px; text-align: center; height: 42px;">&nbsp;VENTAS NO SUJETAS</td>
-                            <td style="width: 88px; text-align: center; height: 42px;">&nbsp;VENTAS EXENTAS</td>
-                            <td style="width: 88px; text-align: center; height: 42px;">&nbsp;VENTAS AFECTAS</td>
+                            <td style="text-align: center; width: 10px;"><strong><h5>CANT</h5></strong></td>
+                            <td style="text-align: center;"><strong><h5>DESCRIPCION</h5></strong></td>
+                            <td style="text-align: center; width: 25px;"><strong><h5>PRECIO UNITARIO</h5></strong></td>
+                            <td style="text-align: center; width: 25px;"><strong><h5>VENTAS NO SUJETAS</h5></strong></td>
+                            <td style="text-align: center; width: 25px;"><strong><h5>VENTAS EXENTAS</h5></strong></td>
+                            <td style="text-align: center; width: 25px;"><strong><h5>VENTAS AFECTAS</h5></strong></td>
                         </tr>
-                        <tr style="height: 298.6px;">
-                            <td style="width: 88px; height: 298.6px;">&nbsp;</td>
-                            <td style="width: 105.8px; height: 298.6px;">&nbsp;</td>
-                            <td style="width: 70.2px; height: 298.6px;">&nbsp;</td>
-                            <td style="width: 88px; height: 298.6px;">&nbsp;</td>
-                            <td style="width: 88px; height: 298.6px;">&nbsp;</td>
-                            <td style="width: 88px; height: 298.6px;">&nbsp;</td>
+                        @{
+
+                        var salir = Model.Conceptos.Length;//obtiene la cantidad de productos totales
+                        var cont = 0;
+                        decimal suma_VentasNoSujetas = 0;
+                        decimal suma_Ventas_Exentas = 0;
+                        }
+
+                        @while(salir!=0){
+
+                        <tr>
+                            <td style="text-align: center;"> @Model.Conceptos[cont].Cantidad</td>
+                            <td style="text-align: center;"> @Model.Conceptos[cont].Descripcion</td>
+                            <td style="text-align: center;"> $&nbsp;@Model.Conceptos[cont].Precio_Unitario</td>
+                            <td style="text-align: center;"> $&nbsp;@Model.Conceptos[cont].Ventas_No_Sujetas</td>
+                            <td style="text-align: center;"> $&nbsp;@Model.Conceptos[cont].Ventas_Exentas</td>
+                            <td style="text-align: center;"> $&nbsp;@Model.Conceptos[cont].Monto_Total </td>
+                        </tr>
+                        suma_VentasNoSujetas = @Model.Conceptos[cont].Ventas_No_Sujetas + suma_VentasNoSujetas;
+                        suma_Ventas_Exentas = @Model.Conceptos[cont].Ventas_Exentas + suma_Ventas_Exentas;
+                        cont++;
+                        salir--;
+                        }
+
+                        <tr style="height: 24px;">
+                            <td colspan="2">&nbsp;<strong>SON:</strong>&nbsp;@Model.Cantidad_letras</td>
+                            <td>&nbsp;<strong>SUMAS:</strong></td>
+                            <td style="text-align: center;">$&nbsp;@suma_VentasNoSujetas</td>
+                            <td style="text-align: center;">$&nbsp;@suma_Ventas_Exentas</td>
+                            <td style="text-align: center;">$&nbsp;@Model.SubTotal</td>
                         </tr>
                         <tr style="height: 24px;">
-                            <td style="width: 88px; height: 24px;" colspan="2">&nbsp;SON:</td>
-                            <td style="width: 70.2px; height: 24px;">&nbsp;SUMAS:</td>
-                            <td style="width: 88px; height: 24px;">&nbsp;</td>
-                            <td style="width: 88px; height: 24px;">&nbsp;</td>
-                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                            <td colspan="2" rowspan="5" style="text-align: center;">
+                                <table width="100%">
+                                    <tr>
+                                        <td colspan="2" style="text-align: center;"><strong>OPERACION SUPERIOR A $11428.57</strong></td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;">&nbsp;ENTREGO:</td>
+                                        <td style="text-align: left;">&nbsp;RECIBIO:</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;">&nbsp;DUI: </td>
+                                        <td style="text-align: left;">&nbsp;DUI: </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;">&nbsp;FIRMA: </td>
+                                        <td style="text-align: left;">&nbsp;FIRMA: </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;">&nbsp;EXTRANJERO: Pasaporte o Carnet de residente</td>
+                                        <td style="text-align: left;">&nbsp;EXTRANJERO: Pasaporte o Carnet de residente</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td colspan="3">&nbsp;<strong>13% DE I.V.A</strong></td>
+                            <td style="text-align: center;">$&nbsp;@Model.Impuestos.Total_Iva</td>
                         </tr>
                         <tr style="height: 24px;">
-                            <td style="width: 88px; height: 24px;" colspan="2">&nbsp;OPERACION SUPERIOR A $11428.57</td>
-                            <td style="width: 70.2px; height: 24px;" colspan="3">&nbsp;13% DE I.V.A</td>
-                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                            <td colspan="3">&nbsp;<strong>SUB-TOTAL</strong>&nbsp;</td>
+                            <td style="text-align: center;">$&nbsp;@Model.SubTotal</td>
                         </tr>
                         <tr style="height: 24px;">
-                            <td style="width: 88px; height: 24px;">ENTREGO:&nbsp;</td>
-                            <td style="width: 105.8px; height: 24px;">&nbsp;RECIBIO:</td>
-                            <td style="width: 70.2px; height: 24px;" colspan="3">SUB-TOTAL&nbsp;</td>
-                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                            <td colspan="3">&nbsp;<strong>VENTAS EXENTAS</strong></td>
+                            <td>&nbsp;</td>
                         </tr>
                         <tr style="height: 24px;">
-                            <td style="width: 88px; height: 24px;">DUI:&nbsp;</td>
-                            <td style="width: 105.8px; height: 24px;">&nbsp;DUI:</td>
-                            <td style="width: 70.2px; height: 24px;" colspan="3">VENTAS EXENTAS&nbsp;</td>
-                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                            <td colspan="3">&nbsp;<strong>(-)IVA RETENIDO</strong></td>
+                            <td>&nbsp;</td>
                         </tr>
                         <tr style="height: 24px;">
-                            <td style="width: 88px; height: 24px;">FIRMA:&nbsp;</td>
-                            <td style="width: 105.8px; height: 24px;">&nbsp;FIRMA:</td>
-                            <td style="width: 70.2px; height: 24px;" colspan="3">(-)IVA RETENIDO&nbsp;</td>
-                            <td style="width: 88px; height: 24px;">&nbsp;</td>
-                        </tr>
-                        <tr style="height: 24px;">
-                            <td style="width: 88px; height: 24px;">&nbsp;EXTRANJERO: Pasaporteo carnet de residente</td>
-                            <td style="width: 105.8px; height: 24px;">&nbsp;EXTRANJERO: Pasaporteo carnet de residente</td>
-                            <td style="width: 70.2px; height: 24px;" colspan="3">VENTAS NO SUJETAS&nbsp;</td>
-                            <td style="width: 88px; height: 24px;">&nbsp;</td>
+                            <td colspan="3">&nbsp;<strong>VENTAS NO SUJETAS</strong></td>
+                            <td>&nbsp;</td>
                         </tr>
                         <tr style="height: 25px;">
-                            <td style="width: 88px; height: 25px;" colspan="2">&nbsp;Cancelado el,_____________de ___________________de 20________</td>
-                            <td style="width: 70.2px; height: 25px;" colspan="3">VENTA TOTAL</td>
-                            <td style="width: 88px; height: 25px;">&nbsp;</td>
+                            <td colspan="2">&nbsp;&nbsp;Cancelado el,___________________de ______________________de 20_______</td>
+                            <td colspan="3"><span style="color: #BA1B04;">&nbsp;<strong>VENTA TOTAL</strong></span></td>
+                            <td style="text-align: center;"><span style="color: #BA1B04;">&nbsp;$&nbsp;@Model.Total</span></td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -11,9 +12,11 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 
+
+
 namespace FirmarPDF
 {
-   public class GenerarXMLtoPDF : Form
+    public class GenerarXMLtoPDF : Form
     {
         public string PathXML { get; set; } = null;
         public string NombrePDF { get; set; } = null;
@@ -21,22 +24,24 @@ namespace FirmarPDF
         private Comprobante objetoComprobante;
 
 
-        public GenerarXMLtoPDF(string _PathXML,string _NombrePDF, string _RutaSelecPDF)
+        public GenerarXMLtoPDF(string _PathXML, string _NombrePDF, string _RutaSelecPDF)
         {
             PathXML = _PathXML;
             NombrePDF = _NombrePDF;
             RutaSelecPDF = _RutaSelecPDF;
         }
 
-        public GenerarXMLtoPDF() {
+        public GenerarXMLtoPDF()
+        {
 
         }
 
-        private bool ValidarSiesArchivoXML(string _rutaXML) {
+        private bool ValidarSiesArchivoXML(string _rutaXML)
+        {
 
             try
             {
-                  
+
                 XmlSerializer ObjetoSerializar = new XmlSerializer(typeof(Comprobante));
 
                 using (StreamReader reader = new StreamReader(_rutaXML))
@@ -53,7 +58,7 @@ namespace FirmarPDF
 
                 return false;
             }
-        
+
 
         }
 
@@ -65,8 +70,11 @@ namespace FirmarPDF
                 //valida si el archivo xml que selecionado sea real mente un archivo xml y no de otro tipo
                 if (!ValidarSiesArchivoXML(PathXML)) return 2;
 
-                if (!VerificarXML(PathXML,false)) return 5;
+                if (!VerificarXML(PathXML, false)) return 5;
+
                 
+
+                string pathQR = AppDomain.CurrentDomain.BaseDirectory + "QR_Temp.png";
                 string path = AppDomain.CurrentDomain.BaseDirectory + "/";
                 string pathPDF = AppDomain.CurrentDomain.BaseDirectory;
                 string pathHTMLTemp = path + "miHtml.html"; //temporal
@@ -74,6 +82,7 @@ namespace FirmarPDF
                 string sHtml = File.ReadAllText(pathHTMLPlantilla);
                 string resultHtml = "";
 
+                if (!CreacionCodigoQR(objetoComprobante.Sello, pathQR)) return 6;//realiza la creacion del QR 
 
                 //aplicamos razor
                 resultHtml = RazorEngine.Razor.Parse(sHtml, objetoComprobante);
@@ -87,7 +96,7 @@ namespace FirmarPDF
                 oProcessStartInfo.UseShellExecute = false;
                 oProcessStartInfo.FileName = pathWKHTMLTOPDF;
                 //se crea el pdf en una ruta dentro del proyecto
-                oProcessStartInfo.Arguments = @"miHtml.html "+ NombrePDF +".pdf";
+                oProcessStartInfo.Arguments = @"miHtml.html " + NombrePDF + ".pdf";
 
                 using (Process oProcess = Process.Start(oProcessStartInfo))
                 {
@@ -103,8 +112,8 @@ namespace FirmarPDF
                     System.IO.File.Copy(pathPDF + NombrePDF + ".pdf", RutaSelecPDF + @"\" + NombrePDF + ".pdf");
                     //elimina el pdf temporal creado
                     System.IO.File.Delete(pathPDF + NombrePDF + ".pdf");
-                    // Console.Read();
-
+                    // eliminamos el la imagen del codigo qr
+                    System.IO.File.Delete(pathQR);
                     return 0;
                 }
                 else
@@ -119,25 +128,50 @@ namespace FirmarPDF
                         System.IO.File.Copy(pathPDF + NombrePDF + ".pdf", RutaSelecPDF + @"\" + NombrePDF + ".pdf");
                         //elimina el pdf temporal creado
                         System.IO.File.Delete(pathPDF + NombrePDF + ".pdf");
-
+                        // eliminamos el la imagen del codigo qr
+                        System.IO.File.Delete(pathQR);
                         return 3;
                     }
 
                     return 4;
                 }
-             
+
             }
             catch (Exception e)
             {
 
-                Console.Write(e);
+                Console.Write("Error -- :" + e);
                 return 1;
 
             }
 
         }
 
-/*****************************************VALIDACION DE XML*************************************************************************************/
+        /********************************CREACION DE CODIGO QR**********************************/
+
+        private bool CreacionCodigoQR(string _selloFactura,string _pathQR) {
+
+            try
+            { 
+                //instanciamos el codificador QR
+                MessagingToolkit.QRCode.Codec.QRCodeEncoder codificadorQR = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
+                codificadorQR.QRCodeScale = 8; //se establece la escala que tendra el qr
+
+                Bitmap bmp = codificadorQR.Encode(_selloFactura);
+
+                bmp.Save(_pathQR);//guardamos una copia temporal del qr en formato png 
+
+                return true;//el qr se creo con exito
+            }
+            catch (Exception)
+            {
+
+                return false;//fallo en la creacion del codigo qr
+            }
+           
+        }
+
+        /*****************************************VALIDACION DE XML*************************************************************************************/
         private System.Xml.Xsl.XslCompiledTransform tran = new System.Xml.Xsl.XslCompiledTransform(true);
         private string cadena_ori = "";
 
