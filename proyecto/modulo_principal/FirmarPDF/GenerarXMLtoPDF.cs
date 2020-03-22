@@ -67,12 +67,12 @@ namespace FirmarPDF
 
             try
             {
+
+           
                 //valida si el archivo xml que selecionado sea real mente un archivo xml y no de otro tipo
                 if (!ValidarSiesArchivoXML(PathXML)) return 2;
 
                 if (!VerificarXML(PathXML, false)) return 5;
-
-                
 
                 string pathQR = AppDomain.CurrentDomain.BaseDirectory + "QR_Temp.png";
                 string path = AppDomain.CurrentDomain.BaseDirectory + "/";
