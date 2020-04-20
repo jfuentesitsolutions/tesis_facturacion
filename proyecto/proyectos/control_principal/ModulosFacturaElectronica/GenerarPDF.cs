@@ -1,4 +1,5 @@
 ﻿using FirmarPDF;
+using ModulosfacturaElectronica.ClasesValidacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,9 @@ namespace control_principal.ModulosFacturaElectronica
     {
         public string Ruta_XML { get; private set; }
         public string Ruta_SelectPDF { get; private set; }
-
+        private FirmaElectronica _firma = new FirmaElectronica();
+        List<string> listaNomArchivos = new List<string>();
+        List<string> listaRutArchivos = new List<string>();
 
         #region DLL para mover la ventana
 
@@ -27,9 +30,41 @@ namespace control_principal.ModulosFacturaElectronica
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
 
+        private void CargarDatosFormularios()
+        {
+
+            listaRutArchivos = _firma.ObtenerRutasDeArchivosXML();
+            listaNomArchivos = _firma.ObtenerNombresDeArchivosXML();
+
+
+            ListaRutasArchivosXML.DataSource = listaNomArchivos;
+            datosListas();
+        }
+
+        private void datosListas()
+        {
+            if (ListaRutasArchivosXML.Text != "" || ListaRutasArchivosXML.Text != null)
+            {
+
+                foreach (var item in listaRutArchivos)
+                {
+                    if (item.Contains(ListaRutasArchivosXML.SelectedItem.ToString()))
+                    {
+                        lblRutaXML.Text = item.ToString();
+                        break;
+                    }
+
+                }
+            }
+
+            Ruta_XML = lblRutaXML.Text;
+        }
+
+
         public GenerarPDF()
         {
             InitializeComponent();
+            CargarDatosFormularios();
         }
 
         private string BuscarRutaDocumento()
@@ -75,6 +110,7 @@ namespace control_principal.ModulosFacturaElectronica
             string RutaXML = BuscarRutaDocumento();
             lblRutaXML.Text = RutaXML;
             Ruta_XML = RutaXML;
+            ListaRutasArchivosXML.Text = RutaXML;
         }
 
         private void btnSelecionarRuta_Click(object sender, EventArgs e)
@@ -95,6 +131,8 @@ namespace control_principal.ModulosFacturaElectronica
                 switch (_generarPDF.CrearPDF())
                 {
                     case 0:
+                        _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
+                        CargarDatosFormularios();
                         DialogResult result = MessageBox.Show("El PDF se generó con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                         if (result.Equals(DialogResult.Yes)) {
@@ -112,6 +150,8 @@ namespace control_principal.ModulosFacturaElectronica
                         break;
 
                     case 3:
+                        _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
+                        CargarDatosFormularios();
                         DialogResult result2 = MessageBox.Show("El PDF se sobrescribio y se genero con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                         if (result2.Equals(DialogResult.Yes))
@@ -234,5 +274,12 @@ namespace control_principal.ModulosFacturaElectronica
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void ListaRutasArchivosXML_SelectedValueChanged(object sender, EventArgs e)
+        {
+            datosListas();
+        }
+
+
     }
 }

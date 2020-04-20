@@ -85,8 +85,9 @@ namespace FirmarPDF
                 if (!CreacionCodigoQR(objetoComprobante.Sello, pathQR)) return 6;//realiza la creacion del QR 
 
                 //aplicamos razor
+                
                 resultHtml = RazorEngine.Razor.Parse(sHtml, objetoComprobante);
-
+                
                 //creamos el archivo html temporal con informacion obtenida del xml
                 System.IO.File.WriteAllText(pathHTMLTemp, resultHtml);
 

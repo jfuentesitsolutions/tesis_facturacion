@@ -18,6 +18,7 @@ namespace control_principal.ModulosFacturaElectronica
     {
         private string Ruta_PDF { get; set; } = null;
         public string Ruta_guardarPDFirmado { get; set; } = null;
+        private bool visible = false;
 
         #region DLL para mover la ventana
 
@@ -244,6 +245,46 @@ namespace control_principal.ModulosFacturaElectronica
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnVisibilidadPass_MouseEnter(object sender, EventArgs e)
+        {
+            if (visible)
+            {
+                this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.visible2;
+            }
+            else
+            {
+                this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.novisible2;
+            }
+        }
+
+        private void btnVisibilidadPass_MouseLeave(object sender, EventArgs e)
+        {
+            if (visible)
+            {
+                this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.visible;
+            }
+            else
+            {
+                this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.novisible;
+            }
+
+        }
+
+        private void btnVisibilidadPass_Click(object sender, EventArgs e)
+        {
+            if (txtContraPFX.PasswordChar.Equals('●'))
+            {
+                visible = true;
+                txtContraPFX.PasswordChar = '\0';
+
+            }
+            else
+            {
+                visible = false;
+                txtContraPFX.PasswordChar = '●';
+            }
         }
     }
 }
