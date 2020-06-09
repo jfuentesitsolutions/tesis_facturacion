@@ -42,3 +42,4 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryp
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\obj\Debug\cryptografia.csproj.CopyComplete
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\obj\Debug\cryptografia.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\obj\Debug\cryptografia.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\cryptografia\bin\Debug\Ubiety.Dns.Core.dll

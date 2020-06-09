@@ -216,3 +216,4 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_man
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.csprojResolveAssemblyReference.cache
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.pdb
+C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\Ubiety.Dns.Core.dll
