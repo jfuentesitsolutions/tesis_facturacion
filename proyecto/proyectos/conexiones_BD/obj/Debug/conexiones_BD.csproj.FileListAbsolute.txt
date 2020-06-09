@@ -180,3 +180,4 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\conexione
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csprojResolveAssemblyReference.cache
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.pdb
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\proyectos\conexiones_BD\bin\Debug\conexiones_BD.dll.config

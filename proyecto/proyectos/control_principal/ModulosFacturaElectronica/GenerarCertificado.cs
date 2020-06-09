@@ -64,5 +64,10 @@ namespace control_principal.ModulosFacturaElectronica
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void btnGenerar_PFX_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

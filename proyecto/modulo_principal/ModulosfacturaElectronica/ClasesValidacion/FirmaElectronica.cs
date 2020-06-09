@@ -68,7 +68,6 @@ namespace ModulosfacturaElectronica.ClasesValidacion
             }
         }
 
-
         public FirmaElectronica()
         {
 
@@ -239,8 +238,12 @@ namespace ModulosfacturaElectronica.ClasesValidacion
 
         public int VerificarXML(string rutaXML)
         {
+            List<int> tipo = new List<int>();
+            tipo.Add(0);
             try
             {
+
+
                 /*******************************Obtenemos la cadena original del xml*****************************************/
                 string version = "";        
                 string certificado = ""; // Obtenido del XML
@@ -248,9 +251,17 @@ namespace ModulosfacturaElectronica.ClasesValidacion
                // string pathXslt = Directory.GetCurrentDirectory() + "\\..\\..\\..\\ArchivosFacturaElectronica\\cadenaoriginal_3_3.xslt";
                 string pathXslt = Path.GetFullPath("cadenaoriginal_3_3.xslt"); 
 
-                if (!VerificacionDeXslt(pathXslt)) return 1; // verifica si el archivo xslt es correcta
+                if (!VerificacionDeXslt(pathXslt))
+                {
+                    return 1; // verifica si el archivo xslt es correcta
+                }
 
-                if (!VerificarArchivoXML(rutaXML)) return 2;// verifica si el xml selecionado es correcto
+
+                if (!VerificarArchivoXML(rutaXML))
+                {
+                    return 1;// verifica si el xml selecionado es correcto
+                }
+                    
 
                 /*********************************Obtenemos la informacion interna del xml*****************************/
 
@@ -264,7 +275,6 @@ namespace ModulosfacturaElectronica.ClasesValidacion
                     version = nodo.GetAttribute("Version");
                     certificado = nodo.GetAttribute("Certificado");
                     selloBase64 = nodo.GetAttribute("Sello");
-
                 }
 
                 /******************************************************************************************************/
@@ -289,7 +299,7 @@ namespace ModulosfacturaElectronica.ClasesValidacion
                         selloValido = verificador.VerifyHash(hashCadenaOriginal, "SHA256", sello);
                         break;
                     default:
-                        return 3;
+                        return 2;
                      
                 }
 
@@ -304,7 +314,6 @@ namespace ModulosfacturaElectronica.ClasesValidacion
             }
             catch (Exception)
             {
-
                 return 4; // error en elproceso de validacion del xml
             }
 

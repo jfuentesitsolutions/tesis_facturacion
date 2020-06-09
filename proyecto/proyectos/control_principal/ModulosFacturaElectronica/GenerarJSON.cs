@@ -95,38 +95,58 @@ namespace control_principal.ModulosFacturaElectronica
                 if (Ruta_XML != null && Ruta_XML != "" && Ruta_SelectJSON != null && Ruta_SelectJSON != "" &&
                     txtNombreJSON.Text != null && txtNombreJSON.Text != "")
                 {
-                    GenerarXMLtoPDF _validarXML = new GenerarXMLtoPDF();
 
                     if (!System.IO.File.Exists(Ruta_SelectJSON + "\\" + txtNombreJSON.Text + ".json"))
                     {
-                        if (_validarXML.VerificarXML(Ruta_XML, true))
+                        using(espera_datos.splash_espera fe=new espera_datos.splash_espera())
                         {
-                            System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
-                            doc.Load(Ruta_XML);
+                            fe.Validando = generando_json;
+                            fe.Tipo_operacio = 3;
 
-                            string json = JsonConvert.SerializeXmlNode(doc);
+                            if (fe.ShowDialog() == DialogResult.OK)
+                            {
+                                if (fe.Creado)
+                                {
+                                    System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                                    doc.Load(Ruta_XML);
 
-                            System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+                                    string json = JsonConvert.SerializeXmlNode(doc);
 
-                            MessageBox.Show("El archivo JSON se genero con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+
+                                    MessageBox.Show("El archivo JSON se genero con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                            
                         }
+                        
                     }
                     else {
                         DialogResult a = MessageBox.Show("El archivo "+ txtNombreJSON.Text +".json" + " ya existe en la ruta seleccionada,¿Desea sobrescribir el archivo?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                         if (a.Equals(DialogResult.OK))
                         {
-                            if (_validarXML.VerificarXML(Ruta_XML, true))
+                            using(espera_datos.splash_espera fe=new espera_datos.splash_espera())
                             {
-                                System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
-                                doc.Load(Ruta_XML);
+                                fe.Validando = generando_json;
+                                fe.Tipo_operacio = 3;
 
-                                string json = JsonConvert.SerializeXmlNode(doc);
+                                if (fe.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (fe.Creado)
+                                    {
+                                        System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                                        doc.Load(Ruta_XML);
 
-                                System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+                                        string json = JsonConvert.SerializeXmlNode(doc);
 
-                                MessageBox.Show("El archivo JSON se genero y se sobrescribio con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+
+                                        MessageBox.Show("El archivo JSON se genero y se sobrescribio con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                }
                             }
+                            
                         }
                     }
                  
@@ -161,6 +181,12 @@ namespace control_principal.ModulosFacturaElectronica
                 MessageBox.Show("Error al generar el archivo JSON", "Error", MessageBoxButtons.OK);
             }
 
+        }
+
+        private bool generando_json()
+        {
+            GenerarXMLtoPDF _validarXML = new GenerarXMLtoPDF();
+            return _validarXML.VerificarXML(Ruta_XML, true);
         }
 
         private void btnBuscar_XML_MouseEnter(object sender, EventArgs e)

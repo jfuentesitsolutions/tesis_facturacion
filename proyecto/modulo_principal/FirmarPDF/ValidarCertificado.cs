@@ -12,7 +12,7 @@ namespace FirmarPDF
 {
     public class ValidarCertificado
     {
-        public AsymmetricKeyParameter Key { get; private set; }
+        public  AsymmetricKeyParameter Key { get; private set; }
 
         public X509Certificate[] Chain { get; private set; }
 
@@ -44,7 +44,6 @@ namespace FirmarPDF
                     var alias = GetCertificateAlias(store);
                     Key = store.GetKey(alias).Key;
                     Chain = store.GetCertificateChain(alias).Select(x => x.Certificate).ToArray();
-                
 
                 return 0;//no se encontro nigun error al validar el pfx
             }
@@ -64,8 +63,7 @@ namespace FirmarPDF
                 {
                     return currentAlias;
                 }
-            }
-
+            } 
             return null;
         }
     }

@@ -183,3 +183,4 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\tr
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.csprojResolveAssemblyReference.cache
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.pdb
+D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\transferencias_internet\bin\Debug\transferencias_internet.dll.config
