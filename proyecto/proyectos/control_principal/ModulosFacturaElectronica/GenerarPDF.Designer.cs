@@ -87,7 +87,11 @@
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label4.Size = new System.Drawing.Size(193, 32);
+=======
+            this.label4.Size = new System.Drawing.Size(173, 34);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label4.Size = new System.Drawing.Size(173, 34);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -142,6 +146,9 @@
             this.lblRutaXML.Multiline = true;
             this.lblRutaXML.Name = "lblRutaXML";
             this.lblRutaXML.Size = new System.Drawing.Size(519, 67);
+<<<<<<< HEAD
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.lblRutaXML.TabIndex = 37;
             // 
@@ -151,6 +158,7 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(53, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 31);
@@ -159,6 +167,10 @@
 =======
             this.label1.Location = new System.Drawing.Point(103, 93);
             this.label1.Name = "label1";
+=======
+            this.label1.Location = new System.Drawing.Point(103, 93);
+            this.label1.Name = "label1";
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.label1.Size = new System.Drawing.Size(318, 33);
             this.label1.TabIndex = 33;
             this.label1.Text = "Selecione XML(factura) :";
@@ -182,9 +194,15 @@
             this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(53, 296);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(237, 31);
+=======
+            this.label3.Location = new System.Drawing.Point(103, 255);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(225, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label3.Location = new System.Drawing.Point(103, 255);
             this.label3.Name = "label3";
@@ -198,6 +216,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(53, 364);
             this.label5.Name = "label5";
@@ -219,6 +238,10 @@
 =======
             this.label5.Location = new System.Drawing.Point(103, 338);
             this.label5.Name = "label5";
+=======
+            this.label5.Location = new System.Drawing.Point(103, 338);
+            this.label5.Name = "label5";
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.label5.Size = new System.Drawing.Size(548, 33);
             this.label5.TabIndex = 49;
             this.label5.Text = "Selecione la ruta donde se guardara el pdf : ";
@@ -262,7 +285,11 @@
             this.btnSelecionarRuta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelecionarRuta.Image = global::control_principal.Properties.Resources.folder2;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnSelecionarRuta.Location = new System.Drawing.Point(748, 356);
+=======
+            this.btnSelecionarRuta.Location = new System.Drawing.Point(658, 322);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.btnSelecionarRuta.Location = new System.Drawing.Point(658, 322);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -281,7 +308,11 @@
             this.btnCrear_PDF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrear_PDF.Image = global::control_principal.Properties.Resources.crearPDF1;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnCrear_PDF.Location = new System.Drawing.Point(309, 517);
+=======
+            this.btnCrear_PDF.Location = new System.Drawing.Point(301, 539);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.btnCrear_PDF.Location = new System.Drawing.Point(301, 539);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -300,7 +331,11 @@
             this.btnBuscar_XML.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar_XML.Image = global::control_principal.Properties.Resources.folder2;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnBuscar_XML.Location = new System.Drawing.Point(382, 89);
+=======
+            this.btnBuscar_XML.Location = new System.Drawing.Point(437, 82);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.btnBuscar_XML.Location = new System.Drawing.Point(437, 82);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -360,8 +395,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(863, 631);
 =======
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.ClientSize = new System.Drawing.Size(863, 660);
             this.Controls.Add(this.label7);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf

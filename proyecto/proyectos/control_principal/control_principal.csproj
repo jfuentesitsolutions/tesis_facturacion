@@ -451,6 +451,7 @@
     <None Include="Resources\generarpfx2.png" />
   </ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="Resources\visible.png" />
   </ItemGroup>
@@ -466,6 +467,8 @@
   <ItemGroup>
     <None Include="Resources\visible2.png" />
   </ItemGroup>
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

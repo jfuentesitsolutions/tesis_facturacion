@@ -217,6 +217,9 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_man
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\cache_manager\bin\Debug\Ubiety.Dns.Core.dll
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf

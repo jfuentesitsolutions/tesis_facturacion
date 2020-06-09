@@ -90,7 +90,11 @@
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label4.Size = new System.Drawing.Size(192, 32);
+=======
+            this.label4.Size = new System.Drawing.Size(173, 34);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label4.Size = new System.Drawing.Size(173, 34);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -136,6 +140,9 @@
             // 
             this.txtTiempoValides.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.txtTiempoValides.Location = new System.Drawing.Point(364, 314);
+<<<<<<< HEAD
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.txtTiempoValides.Margin = new System.Windows.Forms.Padding(4);
             this.txtTiempoValides.Name = "txtTiempoValides";
@@ -148,7 +155,11 @@
             // 
             this.txtLongitudBit.Font = new System.Drawing.Font("Comic Sans MS", 12F);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txtLongitudBit.Location = new System.Drawing.Point(362, 244);
+=======
+            this.txtLongitudBit.Location = new System.Drawing.Point(364, 229);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.txtLongitudBit.Location = new System.Drawing.Point(364, 229);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -192,9 +203,15 @@
             this.label12.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label12.Location = new System.Drawing.Point(753, 424);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 31);
+=======
+            this.label12.Location = new System.Drawing.Point(755, 405);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label12.Location = new System.Drawing.Point(755, 405);
             this.label12.Name = "label12";
@@ -209,9 +226,15 @@
             this.label13.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label13.Location = new System.Drawing.Point(44, 417);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(300, 31);
+=======
+            this.label13.Location = new System.Drawing.Point(61, 402);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(279, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label13.Location = new System.Drawing.Point(61, 402);
             this.label13.Name = "label13";
@@ -226,9 +249,15 @@
             this.label11.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label11.Location = new System.Drawing.Point(554, 270);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 31);
+=======
+            this.label11.Location = new System.Drawing.Point(556, 255);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label11.Location = new System.Drawing.Point(556, 255);
             this.label11.Name = "label11";
@@ -243,9 +272,15 @@
             this.label10.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label10.Location = new System.Drawing.Point(753, 116);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 31);
+=======
+            this.label10.Location = new System.Drawing.Point(755, 101);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label10.Location = new System.Drawing.Point(755, 101);
             this.label10.Name = "label10";
@@ -260,9 +295,15 @@
             this.label8.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label8.Location = new System.Drawing.Point(554, 352);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 31);
+=======
+            this.label8.Location = new System.Drawing.Point(556, 337);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label8.Location = new System.Drawing.Point(556, 337);
             this.label8.Name = "label8";
@@ -277,9 +318,15 @@
             this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label6.Location = new System.Drawing.Point(44, 346);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(259, 31);
+=======
+            this.label6.Location = new System.Drawing.Point(61, 331);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(245, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label6.Location = new System.Drawing.Point(61, 331);
             this.label6.Name = "label6";
@@ -294,9 +341,15 @@
             this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(44, 260);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(228, 31);
+=======
+            this.label3.Location = new System.Drawing.Point(61, 245);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(215, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label3.Location = new System.Drawing.Point(61, 245);
             this.label3.Name = "label3";
@@ -311,9 +364,15 @@
             this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(44, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(301, 31);
+=======
+            this.label2.Location = new System.Drawing.Point(61, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(280, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label2.Location = new System.Drawing.Point(61, 97);
             this.label2.Name = "label2";
@@ -328,9 +387,15 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(44, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 31);
+=======
+            this.label1.Location = new System.Drawing.Point(61, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label1.Location = new System.Drawing.Point(61, 164);
             this.label1.Name = "label1";
@@ -344,7 +409,11 @@
             this.btnGenerar_PFX.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerar_PFX.Image = global::control_principal.Properties.Resources.generarpfx;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnGenerar_PFX.Location = new System.Drawing.Point(310, 516);
+=======
+            this.btnGenerar_PFX.Location = new System.Drawing.Point(305, 516);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.btnGenerar_PFX.Location = new System.Drawing.Point(305, 516);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -399,10 +468,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(863, 660);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.txtNombrePFX);
             this.Controls.Add(this.btnVisibilidadPass);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtNombreKey);
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.Controls.Add(this.pnlTxtTitulo);

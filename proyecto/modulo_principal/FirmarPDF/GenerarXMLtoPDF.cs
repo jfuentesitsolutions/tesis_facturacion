@@ -86,7 +86,10 @@ namespace FirmarPDF
 
                 //aplicamos razor
 <<<<<<< HEAD
+<<<<<<< HEAD
                 
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                 resultHtml = RazorEngine.Razor.Parse(sHtml, objetoComprobante);

@@ -1372,6 +1372,9 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\inte
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.tarjeta.resources
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.auxiliares.validacion_firma.resources
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\interfaces\bin\Debug\Ubiety.Dns.Core.dll
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf

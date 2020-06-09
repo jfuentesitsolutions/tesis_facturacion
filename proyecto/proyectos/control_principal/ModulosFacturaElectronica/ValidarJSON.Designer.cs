@@ -80,7 +80,11 @@
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label4.Size = new System.Drawing.Size(199, 32);
+=======
+            this.label4.Size = new System.Drawing.Size(182, 34);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label4.Size = new System.Drawing.Size(182, 34);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -110,9 +114,15 @@
             this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(49, 236);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 31);
+=======
+            this.label2.Location = new System.Drawing.Point(103, 203);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label2.Location = new System.Drawing.Point(103, 203);
             this.label2.Name = "label2";
@@ -125,6 +135,7 @@
             // 
             this.lblRutaJSON.Enabled = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblRutaJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRutaJSON.Location = new System.Drawing.Point(55, 293);
             this.lblRutaJSON.Margin = new System.Windows.Forms.Padding(4);
@@ -132,12 +143,17 @@
             this.lblRutaJSON.Name = "lblRutaJSON";
             this.lblRutaJSON.Size = new System.Drawing.Size(750, 55);
 =======
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.lblRutaJSON.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRutaJSON.Location = new System.Drawing.Point(191, 204);
             this.lblRutaJSON.Margin = new System.Windows.Forms.Padding(4);
             this.lblRutaJSON.Multiline = true;
             this.lblRutaJSON.Name = "lblRutaJSON";
             this.lblRutaJSON.Size = new System.Drawing.Size(519, 131);
+<<<<<<< HEAD
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.lblRutaJSON.TabIndex = 37;
             // 
@@ -147,9 +163,15 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(49, 170);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 31);
+=======
+            this.label1.Location = new System.Drawing.Point(103, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.label1.Location = new System.Drawing.Point(103, 150);
             this.label1.Name = "label1";
@@ -178,7 +200,11 @@
             this.btnBuscar_JSON.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar_JSON.Image = global::control_principal.Properties.Resources.folder2;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnBuscar_JSON.Location = new System.Drawing.Point(339, 159);
+=======
+            this.btnBuscar_JSON.Location = new System.Drawing.Point(303, 135);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
             this.btnBuscar_JSON.Location = new System.Drawing.Point(303, 135);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -209,7 +235,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(863, 554);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.ListaRutasArchivosJSON);
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.Controls.Add(this.pnlTxtTitulo);

@@ -127,9 +127,12 @@
   <data name="js-file" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\js-file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 <<<<<<< HEAD
+<<<<<<< HEAD
   </data>
   <data name="validarpdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\validarpdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
   </data>
@@ -227,8 +230,13 @@
     <value>..\Resources\restore (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <data name="generarpfx2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\generarpfx2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="close (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
   <data name="close (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -282,12 +290,17 @@
   <data name="validar xml" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\validar xml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="visible1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\visible1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 <<<<<<< HEAD
   <data name="visible2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\visible2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="generarpfx2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\generarpfx2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
   <data name="generarpfx2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\generarpfx2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

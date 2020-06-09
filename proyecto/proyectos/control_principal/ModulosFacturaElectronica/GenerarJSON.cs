@@ -141,6 +141,7 @@ namespace control_principal.ModulosFacturaElectronica
                             doc.Load(Ruta_XML);
 
                             string json = JsonConvert.SerializeXmlNode(doc);
+<<<<<<< HEAD
 
                             System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
 
@@ -148,6 +149,11 @@ namespace control_principal.ModulosFacturaElectronica
                             _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                             CargarDatosFormularios();
 =======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+
+                            System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                             MessageBox.Show("El archivo JSON se genero con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -162,6 +168,7 @@ namespace control_principal.ModulosFacturaElectronica
                                 System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
                                 doc.Load(Ruta_XML);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                 string json = JsonConvert.SerializeXmlNode(doc);
 
@@ -169,6 +176,13 @@ namespace control_principal.ModulosFacturaElectronica
 
                                 _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                                 CargarDatosFormularios();
+=======
+
+                                string json = JsonConvert.SerializeXmlNode(doc);
+
+                                System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 
                                 string json = JsonConvert.SerializeXmlNode(doc);

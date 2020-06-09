@@ -106,8 +106,11 @@ namespace control_principal.ModulosFacturaElectronica
                 {
                     case 0:
 <<<<<<< HEAD
+<<<<<<< HEAD
                         _firma.ActulizarDatosDeRutasArchivosJSON(Ruta_JSON);
                         CargarDatosFormularios();
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                         MessageBox.Show("El JSON es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);

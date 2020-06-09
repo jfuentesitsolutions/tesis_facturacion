@@ -132,8 +132,11 @@ namespace control_principal.ModulosFacturaElectronica
                 {
                     case 0:
 <<<<<<< HEAD
+<<<<<<< HEAD
                         _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                         CargarDatosFormularios();
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                         DialogResult result = MessageBox.Show("El PDF se generó con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -142,6 +145,7 @@ namespace control_principal.ModulosFacturaElectronica
                           //se visualiza el pdf en un cuadro de dialogo
                             new Visor_PDF(Ruta_SelectPDF + "\\" + txtNombrePDF.Text + ".pdf").ShowDialog();
                         }
+<<<<<<< HEAD
 
                             break;
 
@@ -160,6 +164,21 @@ namespace control_principal.ModulosFacturaElectronica
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                         DialogResult result2 = MessageBox.Show("El PDF se sobrescribio y se genero con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
+=======
+
+                            break;
+
+                    case 1:
+                        MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        break;
+                    case 2:
+                        MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+
+                    case 3:
+                        DialogResult result2 = MessageBox.Show("El PDF se sobrescribio y se genero con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                         if (result2.Equals(DialogResult.Yes))
                         {   //se visualiza el pdf en un cuadro de dialogo
                             new Visor_PDF(Ruta_SelectPDF + "\\" + txtNombrePDF.Text + ".pdf").ShowDialog();

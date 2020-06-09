@@ -61,11 +61,14 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\Firm
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\utilitarios.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MessagingToolkit.QRCode.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MySql.Data.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\Google.Protobuf.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\Renci.SshNet.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MySql.Data.xml
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
