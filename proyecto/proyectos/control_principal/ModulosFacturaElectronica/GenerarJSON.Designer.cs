@@ -81,12 +81,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(329, 6);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
+<<<<<<< HEAD
             this.label4.Size = new System.Drawing.Size(213, 32);
+=======
+            this.label4.Size = new System.Drawing.Size(194, 34);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.label4.TabIndex = 27;
             this.label4.Text = "Generar JSON";
             this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
@@ -110,77 +114,153 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(61, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(217, 31);
+=======
+            this.label2.Location = new System.Drawing.Point(97, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.label2.TabIndex = 38;
             this.label2.Text = "Selecione XML:";
             // 
             // lblRutaXML
             // 
             this.lblRutaXML.Enabled = false;
+<<<<<<< HEAD
             this.lblRutaXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRutaXML.Location = new System.Drawing.Point(67, 214);
             this.lblRutaXML.Margin = new System.Windows.Forms.Padding(4);
             this.lblRutaXML.Multiline = true;
             this.lblRutaXML.Name = "lblRutaXML";
             this.lblRutaXML.Size = new System.Drawing.Size(750, 55);
+=======
+            this.lblRutaXML.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRutaXML.Location = new System.Drawing.Point(259, 152);
+            this.lblRutaXML.Margin = new System.Windows.Forms.Padding(4);
+            this.lblRutaXML.Multiline = true;
+            this.lblRutaXML.Name = "lblRutaXML";
+            this.lblRutaXML.Size = new System.Drawing.Size(519, 70);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.lblRutaXML.TabIndex = 37;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(61, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 31);
             this.label1.TabIndex = 35;
             this.label1.Text = "Buscar XML(factura) :";
+=======
+            this.label1.Location = new System.Drawing.Point(97, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(318, 33);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Selecione XML(factura) :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(97, 387);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 33);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "Ruta JSON:";
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             // 
             // txtRutaJSON
             // 
             this.txtRutaJSON.Enabled = false;
+<<<<<<< HEAD
             this.txtRutaJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRutaJSON.Location = new System.Drawing.Point(67, 428);
             this.txtRutaJSON.Margin = new System.Windows.Forms.Padding(4);
             this.txtRutaJSON.Multiline = true;
             this.txtRutaJSON.Name = "txtRutaJSON";
             this.txtRutaJSON.Size = new System.Drawing.Size(750, 55);
+=======
+            this.txtRutaJSON.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRutaJSON.Location = new System.Drawing.Point(259, 387);
+            this.txtRutaJSON.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRutaJSON.Multiline = true;
+            this.txtRutaJSON.Name = "txtRutaJSON";
+            this.txtRutaJSON.Size = new System.Drawing.Size(519, 70);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.txtRutaJSON.TabIndex = 42;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(61, 366);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(630, 31);
+=======
+            this.label5.Location = new System.Drawing.Point(97, 325);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(585, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.label5.TabIndex = 40;
             this.label5.Text = "Seleccione la ruta donde se gusrdara el JSON :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.label6.Location = new System.Drawing.Point(61, 293);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(265, 31);
             this.label6.TabIndex = 44;
             this.label6.Text = "Nombre del JSON: ";
             // 
+=======
+            this.label6.Location = new System.Drawing.Point(97, 254);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(248, 33);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Nombre del JSON: ";
+            // 
+            // txtNombreJSON
+            // 
+            this.txtNombreJSON.BackColor = System.Drawing.Color.Transparent;
+            this.txtNombreJSON.Br = System.Drawing.Color.White;
+            this.txtNombreJSON.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txtNombreJSON.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNombreJSON.Location = new System.Drawing.Point(366, 254);
+            this.txtNombreJSON.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreJSON.Name = "txtNombreJSON";
+            this.txtNombreJSON.Size = new System.Drawing.Size(348, 41);
+            this.txtNombreJSON.TabIndex = 46;
+            // 
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.label7.Location = new System.Drawing.Point(742, 301);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 31);
+=======
+            this.label7.Location = new System.Drawing.Point(717, 262);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 33);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.label7.TabIndex = 47;
             this.label7.Text = ".json ";
             // 
@@ -188,7 +268,11 @@
             // 
             this.btnSlecionarRutaJSON.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSlecionarRutaJSON.Image = global::control_principal.Properties.Resources.folder2;
+<<<<<<< HEAD
             this.btnSlecionarRutaJSON.Location = new System.Drawing.Point(756, 361);
+=======
+            this.btnSlecionarRutaJSON.Location = new System.Drawing.Point(689, 315);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.btnSlecionarRutaJSON.Margin = new System.Windows.Forms.Padding(4);
             this.btnSlecionarRutaJSON.Name = "btnSlecionarRutaJSON";
             this.btnSlecionarRutaJSON.Size = new System.Drawing.Size(61, 49);
@@ -203,7 +287,11 @@
             // 
             this.btnBuscar_XML.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar_XML.Image = global::control_principal.Properties.Resources.folder2;
+<<<<<<< HEAD
             this.btnBuscar_XML.Location = new System.Drawing.Point(391, 99);
+=======
+            this.btnBuscar_XML.Location = new System.Drawing.Point(431, 89);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.btnBuscar_XML.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar_XML.Name = "btnBuscar_XML";
             this.btnBuscar_XML.Size = new System.Drawing.Size(61, 49);
@@ -218,7 +306,11 @@
             // 
             this.btnCrearJson.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrearJson.Image = global::control_principal.Properties.Resources.crearJson;
+<<<<<<< HEAD
             this.btnCrearJson.Location = new System.Drawing.Point(309, 523);
+=======
+            this.btnCrearJson.Location = new System.Drawing.Point(289, 523);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.btnCrearJson.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearJson.Name = "btnCrearJson";
             this.btnCrearJson.Size = new System.Drawing.Size(244, 94);
@@ -253,6 +345,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(863, 660);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.label7);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.Controls.Add(this.txtNombreJSON);
             this.Controls.Add(this.ListaRutasArchivosXML);
             this.Controls.Add(this.label7);

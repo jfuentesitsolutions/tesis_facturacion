@@ -96,6 +96,7 @@ namespace control_principal.ModulosFacturaElectronica
 
         private void btnValidar_XML_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
            
 
             if (Ruta_XML != null && Ruta_XML != "")
@@ -106,6 +107,16 @@ namespace control_principal.ModulosFacturaElectronica
                             _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                             CargarDatosFormularios();
                             MessageBox.Show("El XML es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+=======
+          
+
+            if (Ruta_XML != null && Ruta_XML != "")
+            {
+
+                switch (_firma.VerificarXML(Ruta_XML)) {
+                    case 0:
+                           MessageBox.Show("El XML es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                             break;
                            
                     case 1:

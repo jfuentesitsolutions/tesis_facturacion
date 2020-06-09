@@ -85,7 +85,10 @@ namespace FirmarPDF
                 if (!CreacionCodigoQR(objetoComprobante.Sello, pathQR)) return 6;//realiza la creacion del QR 
 
                 //aplicamos razor
+<<<<<<< HEAD
                 
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                 resultHtml = RazorEngine.Razor.Parse(sHtml, objetoComprobante);
                 
                 //creamos el archivo html temporal con informacion obtenida del xml

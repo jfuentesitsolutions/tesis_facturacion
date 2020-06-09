@@ -19,10 +19,13 @@ namespace control_principal.ModulosFacturaElectronica
     {
         private string Ruta_PDF { get; set; } = null;
         private DataTable DatosCertificados;
+<<<<<<< HEAD
         private bool visible = false;
         private FirmaElectronica _firma = new FirmaElectronica();
         List<string> listaNomArchivos = new List<string>();
         List<string> listaRutArchivos = new List<string>();
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 
         #region DLL para mover la ventana
 
@@ -187,6 +190,7 @@ namespace control_principal.ModulosFacturaElectronica
 
         }
 
+<<<<<<< HEAD
         private void btnVisibilidadPass_Click(object sender, EventArgs e)
         {
            
@@ -204,6 +208,8 @@ namespace control_principal.ModulosFacturaElectronica
         }
 
 
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
         private void btnBuscar_PDF_MouseEnter(object sender, EventArgs e)
         {
             this.btnBuscar_PDF.Image = global::control_principal.Properties.Resources.folder22;

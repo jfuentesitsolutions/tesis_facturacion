@@ -354,6 +354,7 @@ namespace control_principal.Properties {
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap medal_32 {
+<<<<<<< HEAD
             get {
                 object obj = ResourceManager.GetObject("medal_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -374,6 +375,8 @@ namespace control_principal.Properties {
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap minimize {
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             get {
                 object obj = ResourceManager.GetObject("minimize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

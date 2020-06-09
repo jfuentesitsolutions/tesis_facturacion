@@ -1457,7 +1457,11 @@
         </member>
         <member name="F:MySql.Data.MySqlClient.MySqlConnection._sshHandler">
             <summary>
+<<<<<<< HEAD
             The client used to handle SSH connections.
+=======
+            The used client to handle SSH connections.
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             </summary>
         </member>
         <member name="E:MySql.Data.MySqlClient.MySqlConnection.InfoMessage">

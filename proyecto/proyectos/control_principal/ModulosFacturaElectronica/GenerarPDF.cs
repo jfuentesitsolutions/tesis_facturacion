@@ -131,8 +131,11 @@ namespace control_principal.ModulosFacturaElectronica
                 switch (_generarPDF.CrearPDF())
                 {
                     case 0:
+<<<<<<< HEAD
                         _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                         CargarDatosFormularios();
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                         DialogResult result = MessageBox.Show("El PDF se generó con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                         if (result.Equals(DialogResult.Yes)) {
@@ -150,8 +153,11 @@ namespace control_principal.ModulosFacturaElectronica
                         break;
 
                     case 3:
+<<<<<<< HEAD
                         _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                         CargarDatosFormularios();
+=======
+>>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
                         DialogResult result2 = MessageBox.Show("El PDF se sobrescribio y se genero con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                         if (result2.Equals(DialogResult.Yes))
