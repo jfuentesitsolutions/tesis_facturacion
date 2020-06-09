@@ -389,26 +389,6 @@ namespace control_principal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap novisible {
-            get {
-                object obj = ResourceManager.GetObject("novisible", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap novisible2 {
-            get {
-                object obj = ResourceManager.GetObject("novisible2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pdf__1_ {
             get {
                 object obj = ResourceManager.GetObject("pdf (1)", resourceCulture);
@@ -542,36 +522,6 @@ namespace control_principal.Properties {
         internal static System.Drawing.Bitmap validarpdf2 {
             get {
                 object obj = ResourceManager.GetObject("validarpdf2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap visible {
-            get {
-                object obj = ResourceManager.GetObject("visible", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap visible1 {
-            get {
-                object obj = ResourceManager.GetObject("visible1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap visible2 {
-            get {
-                object obj = ResourceManager.GetObject("visible2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

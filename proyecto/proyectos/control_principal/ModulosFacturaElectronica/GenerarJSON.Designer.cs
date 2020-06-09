@@ -35,15 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblRutaXML = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtRutaJSON = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtNombreJSON = new AltoControls.AltoTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSlecionarRutaJSON = new System.Windows.Forms.PictureBox();
             this.btnBuscar_XML = new System.Windows.Forms.PictureBox();
             this.btnCrearJson = new System.Windows.Forms.PictureBox();
-            this.ListaRutasArchivosXML = new System.Windows.Forms.ComboBox();
-            this.txtNombreJSON = new System.Windows.Forms.TextBox();
             this.pnlTxtTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlecionarRutaJSON)).BeginInit();
@@ -88,6 +88,7 @@
             this.label4.Name = "label4";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label4.Size = new System.Drawing.Size(213, 32);
 =======
             this.label4.Size = new System.Drawing.Size(194, 34);
@@ -95,6 +96,9 @@
 =======
             this.label4.Size = new System.Drawing.Size(194, 34);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label4.Size = new System.Drawing.Size(194, 34);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label4.TabIndex = 27;
             this.label4.Text = "Generar JSON";
             this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
@@ -122,6 +126,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(61, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(217, 31);
@@ -135,12 +140,18 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 33);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label2.Location = new System.Drawing.Point(97, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 33);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label2.TabIndex = 38;
-            this.label2.Text = "Selecione XML:";
+            this.label2.Text = "Ruta XML:";
             // 
             // lblRutaXML
             // 
             this.lblRutaXML.Enabled = false;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.lblRutaXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,6 +173,14 @@
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.lblRutaXML.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRutaXML.Location = new System.Drawing.Point(259, 152);
+            this.lblRutaXML.Margin = new System.Windows.Forms.Padding(4);
+            this.lblRutaXML.Multiline = true;
+            this.lblRutaXML.Name = "lblRutaXML";
+            this.lblRutaXML.Size = new System.Drawing.Size(519, 70);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.lblRutaXML.TabIndex = 37;
             // 
             // label1
@@ -171,10 +190,15 @@
             this.label1.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(61, 107);
+=======
+            this.label1.Location = new System.Drawing.Point(97, 100);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 31);
+            this.label1.Size = new System.Drawing.Size(318, 33);
             this.label1.TabIndex = 35;
+<<<<<<< HEAD
             this.label1.Text = "Buscar XML(factura) :";
 =======
 =======
@@ -183,6 +207,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 33);
             this.label1.TabIndex = 35;
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label1.Text = "Selecione XML(factura) :";
             // 
             // label3
@@ -195,11 +221,15 @@
             this.label3.Size = new System.Drawing.Size(155, 33);
             this.label3.TabIndex = 43;
             this.label3.Text = "Ruta JSON:";
+<<<<<<< HEAD
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             // 
             // txtRutaJSON
             // 
             this.txtRutaJSON.Enabled = false;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.txtRutaJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,6 +254,14 @@
             this.txtRutaJSON.Name = "txtRutaJSON";
             this.txtRutaJSON.Size = new System.Drawing.Size(519, 70);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.txtRutaJSON.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRutaJSON.Location = new System.Drawing.Point(259, 387);
+            this.txtRutaJSON.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRutaJSON.Multiline = true;
+            this.txtRutaJSON.Name = "txtRutaJSON";
+            this.txtRutaJSON.Size = new System.Drawing.Size(519, 70);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.txtRutaJSON.TabIndex = 42;
             // 
             // label5
@@ -231,6 +269,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(61, 366);
@@ -246,6 +285,11 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(585, 33);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label5.Location = new System.Drawing.Point(97, 325);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(585, 33);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label5.TabIndex = 40;
             this.label5.Text = "Seleccione la ruta donde se gusrdara el JSON :";
             // 
@@ -256,12 +300,17 @@
             this.label6.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label6.Location = new System.Drawing.Point(61, 293);
+=======
+            this.label6.Location = new System.Drawing.Point(97, 254);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(265, 31);
+            this.label6.Size = new System.Drawing.Size(248, 33);
             this.label6.TabIndex = 44;
             this.label6.Text = "Nombre del JSON: ";
             // 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
@@ -271,6 +320,8 @@
             this.label6.TabIndex = 44;
             this.label6.Text = "Nombre del JSON: ";
             // 
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             // txtNombreJSON
             // 
             this.txtNombreJSON.BackColor = System.Drawing.Color.Transparent;
@@ -283,12 +334,16 @@
             this.txtNombreJSON.Size = new System.Drawing.Size(348, 41);
             this.txtNombreJSON.TabIndex = 46;
             // 
+<<<<<<< HEAD
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.label7.Location = new System.Drawing.Point(742, 301);
@@ -304,6 +359,11 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 33);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label7.Location = new System.Drawing.Point(717, 262);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 33);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label7.TabIndex = 47;
             this.label7.Text = ".json ";
             // 
@@ -313,6 +373,7 @@
             this.btnSlecionarRutaJSON.Image = global::control_principal.Properties.Resources.folder2;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnSlecionarRutaJSON.Location = new System.Drawing.Point(756, 361);
 =======
             this.btnSlecionarRutaJSON.Location = new System.Drawing.Point(689, 315);
@@ -320,6 +381,9 @@
 =======
             this.btnSlecionarRutaJSON.Location = new System.Drawing.Point(689, 315);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.btnSlecionarRutaJSON.Location = new System.Drawing.Point(689, 315);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.btnSlecionarRutaJSON.Margin = new System.Windows.Forms.Padding(4);
             this.btnSlecionarRutaJSON.Name = "btnSlecionarRutaJSON";
             this.btnSlecionarRutaJSON.Size = new System.Drawing.Size(61, 49);
@@ -336,6 +400,7 @@
             this.btnBuscar_XML.Image = global::control_principal.Properties.Resources.folder2;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnBuscar_XML.Location = new System.Drawing.Point(391, 99);
 =======
             this.btnBuscar_XML.Location = new System.Drawing.Point(431, 89);
@@ -343,6 +408,9 @@
 =======
             this.btnBuscar_XML.Location = new System.Drawing.Point(431, 89);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.btnBuscar_XML.Location = new System.Drawing.Point(431, 89);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.btnBuscar_XML.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar_XML.Name = "btnBuscar_XML";
             this.btnBuscar_XML.Size = new System.Drawing.Size(61, 49);
@@ -359,6 +427,7 @@
             this.btnCrearJson.Image = global::control_principal.Properties.Resources.crearJson;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnCrearJson.Location = new System.Drawing.Point(309, 523);
 =======
             this.btnCrearJson.Location = new System.Drawing.Point(289, 523);
@@ -366,6 +435,9 @@
 =======
             this.btnCrearJson.Location = new System.Drawing.Point(289, 523);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.btnCrearJson.Location = new System.Drawing.Point(289, 523);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.btnCrearJson.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearJson.Name = "btnCrearJson";
             this.btnCrearJson.Size = new System.Drawing.Size(244, 94);
@@ -376,30 +448,13 @@
             this.btnCrearJson.MouseEnter += new System.EventHandler(this.btnCrearJson_MouseEnter);
             this.btnCrearJson.MouseLeave += new System.EventHandler(this.btnCrearJson_MouseLeave);
             // 
-            // ListaRutasArchivosXML
-            // 
-            this.ListaRutasArchivosXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListaRutasArchivosXML.FormattingEnabled = true;
-            this.ListaRutasArchivosXML.Location = new System.Drawing.Point(391, 155);
-            this.ListaRutasArchivosXML.Name = "ListaRutasArchivosXML";
-            this.ListaRutasArchivosXML.Size = new System.Drawing.Size(426, 39);
-            this.ListaRutasArchivosXML.TabIndex = 48;
-            this.ListaRutasArchivosXML.SelectedValueChanged += new System.EventHandler(this.ListaRutasArchivosXML_SelectedValueChanged);
-            // 
-            // txtNombreJSON
-            // 
-            this.txtNombreJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreJSON.Location = new System.Drawing.Point(391, 297);
-            this.txtNombreJSON.Name = "txtNombreJSON";
-            this.txtNombreJSON.Size = new System.Drawing.Size(345, 38);
-            this.txtNombreJSON.TabIndex = 49;
-            // 
             // GenerarJSON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(863, 660);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -409,8 +464,12 @@
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.Controls.Add(this.txtNombreJSON);
             this.Controls.Add(this.ListaRutasArchivosXML);
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtNombreJSON);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtRutaJSON);
             this.Controls.Add(this.btnSlecionarRutaJSON);
             this.Controls.Add(this.label5);
@@ -448,12 +507,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnCrearJson;
         private System.Windows.Forms.PictureBox btn_cancelar;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRutaJSON;
         private System.Windows.Forms.PictureBox btnSlecionarRutaJSON;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private AltoControls.AltoTextBox txtNombreJSON;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox ListaRutasArchivosXML;
-        private System.Windows.Forms.TextBox txtNombreJSON;
     }
 }

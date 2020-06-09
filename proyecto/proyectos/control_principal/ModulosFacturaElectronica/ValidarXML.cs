@@ -16,8 +16,7 @@ namespace control_principal.ModulosFacturaElectronica
     {
         private string Ruta_XML { get;  set; }
         private FirmaElectronica _firma = new FirmaElectronica();
-        List<string> listaNomArchivos = new List<string>();
-        List<string> listaRutArchivos = new List<string>();
+
 
         #region DLL para mover la ventana
 
@@ -28,39 +27,9 @@ namespace control_principal.ModulosFacturaElectronica
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
 
-
-        private void CargarDatosFormularios() {
- 
-            listaRutArchivos = _firma.ObtenerRutasDeArchivosXML();
-            listaNomArchivos = _firma.ObtenerNombresDeArchivosXML();
-
-
-            ListaRutasArchivos.DataSource = listaNomArchivos;
-            datosListas();
-        }
-
-        private void datosListas() {
-            if (ListaRutasArchivos.Text != "" || ListaRutasArchivos.Text != null)
-            {
-
-                foreach (var item in listaRutArchivos)
-                {
-                    if (item.Contains(ListaRutasArchivos.SelectedItem.ToString()))
-                    {
-                        lblRutaXML.Text = item.ToString();
-                        break;
-                    }
-
-                }
-            }
-            Ruta_XML = lblRutaXML.Text;
-        }
-
         public ValidarXML()
         {
             InitializeComponent();
-            CargarDatosFormularios();
-            
         }
 
         private string BuscarRutaDocumento()
@@ -86,7 +55,6 @@ namespace control_principal.ModulosFacturaElectronica
             string RutaXML = BuscarRutaDocumento();
             lblRutaXML.Text = RutaXML;
             Ruta_XML = RutaXML;
-            ListaRutasArchivos.Text = RutaXML;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -98,13 +66,18 @@ namespace control_principal.ModulosFacturaElectronica
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            
+=======
+          
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
 
             if (Ruta_XML != null && Ruta_XML != "")
             {
-             
+
                 switch (_firma.VerificarXML(Ruta_XML)) {
                     case 0:
+<<<<<<< HEAD
                             _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                             CargarDatosFormularios();
                             MessageBox.Show("El XML es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -127,6 +100,9 @@ namespace control_principal.ModulosFacturaElectronica
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+                           MessageBox.Show("El XML es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
                             break;
                            
                     case 1:
@@ -199,11 +175,6 @@ namespace control_principal.ModulosFacturaElectronica
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void ListaRutasArchivos_SelectedValueChanged(object sender, EventArgs e)
-        {
-            datosListas();
         }
     }
 }

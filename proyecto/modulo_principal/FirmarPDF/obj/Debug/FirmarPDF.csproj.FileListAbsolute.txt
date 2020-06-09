@@ -62,6 +62,7 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\Firm
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MessagingToolkit.QRCode.dll
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\MySql.Data.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\Google.Protobuf.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\FirmarPDF\bin\Debug\BouncyCastle.Crypto.dll
@@ -72,3 +73,5 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\Firm
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos

@@ -17,7 +17,7 @@ using System.Xml.Linq;
 
 namespace ModulosfacturaElectronica.ClasesValidacion
 {
-    public class FirmaElectronica : OperacionDB
+    public class FirmaElectronica
     {
 
         private AsymmetricKeyParameter llave_privada;
@@ -73,71 +73,6 @@ namespace ModulosfacturaElectronica.ClasesValidacion
         {
 
         }
-
-
-        #region Metodos Rutas de Archivos XMl
-        /*metodo que sirve para obtener el listado de los nombres de los archivos de las rutas guardadas en la base de datos*/
-        public List<string> ObtenerNombresDeArchivosXML() {
-            return ObtenerListaNombresXML();
-        }
-
-        /*metodo que sirve para obtener las rutas guardadas en la base de datos*/
-        public List<string> ObtenerRutasDeArchivosXML() {
-
-           return ConsultarRutasDearchivosXML();
-        }
-
-        /*metoodo que sirve para actualizar las rutas guradadas en la base de datos*/
-        public bool ActulizarDatosDeRutasArchivosXML(string _rutaArchivo) {
-            return ActualizarTablaRutaArchivosXML(_rutaArchivo);
-        }
-        #endregion
-
-
-        #region Metodos Rutas de Archivos PDF
-        /*metodo que sirve para obtener el listado de los nombres de los archivos de las rutas guardadas en la base de datos*/
-        public List<string> ObtenerNombresDeArchivosPDF()
-        {
-            return ObtenerListaNombresPDF();
-        }
-
-        /*metodo que sirve para obtener las rutas guardadas en la base de datos*/
-        public List<string> ObtenerRutasDeArchivosPDF()
-        {
-
-            return ConsultarRutasDearchivosPDF();
-        }
-
-        /*metoodo que sirve para actualizar las rutas guradadas en la base de datos*/
-        public bool ActulizarDatosDeRutasArchivosPDF(string _rutaArchivo)
-        {
-            return ActualizarTablaRutaArchivosPDF(_rutaArchivo);
-        }
-        #endregion
-
-
-        #region Metodos Rutas de Archivos JSON
-        /*metodo que sirve para obtener el listado de los nombres de los archivos de las rutas guardadas en la base de datos*/
-        public List<string> ObtenerNombresDeArchivosJSON()
-        {
-            return ObtenerListaNombresJSON();
-        }
-
-        /*metodo que sirve para obtener las rutas guardadas en la base de datos*/
-        public List<string> ObtenerRutasDeArchivosJSON()
-        {
-
-            return ConsultarRutasDearchivosJSON();
-        }
-
-        /*metoodo que sirve para actualizar las rutas guradadas en la base de datos*/
-        public bool ActulizarDatosDeRutasArchivosJSON(string _rutaArchivo)
-        {
-            return ActualizarTablaRutaArchivosJSON(_rutaArchivo);
-        }
-
-        #endregion
-
 
         public FirmaElectronica(string ruta_del_certificado, string clave_del_certificado = null)
         {
@@ -270,7 +205,7 @@ namespace ModulosfacturaElectronica.ClasesValidacion
             try
             {
                 
-                tran.Load(_pathXslt);//<-- esta funcion necesita estar conectada a internet
+                tran.Load(_pathXslt);
                 return true;
             }
             catch (Exception)

@@ -185,8 +185,11 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\tr
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.pdb
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\transferencias_internet\bin\Debug\Ubiety.Dns.Core.dll
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos

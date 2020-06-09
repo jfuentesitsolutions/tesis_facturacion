@@ -15,9 +15,7 @@ namespace control_principal.ModulosFacturaElectronica
     public partial class ValidarJSON : Form
     {
         public string Ruta_JSON { get; set; } = null;
-        private FirmaElectronica _firma = new FirmaElectronica();
-        List<string> listaNomArchivos = new List<string>();
-        List<string> listaRutArchivos = new List<string>();
+
 
         #region DLL para mover la ventana
 
@@ -28,39 +26,9 @@ namespace control_principal.ModulosFacturaElectronica
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
 
-        private void CargarDatosFormularios()
-        {
-
-            listaRutArchivos = _firma.ObtenerRutasDeArchivosJSON();
-            listaNomArchivos = _firma.ObtenerNombresDeArchivosJSON();
-
-
-            ListaRutasArchivosJSON.DataSource = listaNomArchivos;
-            datosListas();
-        }
-
-        private void datosListas()
-        {
-            if (ListaRutasArchivosJSON.Text != "" || ListaRutasArchivosJSON.Text != null)
-            {
-
-                foreach (var item in listaRutArchivos)
-                {
-                    if (item.Contains(ListaRutasArchivosJSON.SelectedItem.ToString()))
-                    {
-                        lblRutaJSON.Text = item.ToString();
-                        break;
-                    }
-
-                }
-            }
-            Ruta_JSON = lblRutaJSON.Text;
-        }
-
         public ValidarJSON()
         {
             InitializeComponent();
-            CargarDatosFormularios();
         }
 
 
@@ -92,7 +60,6 @@ namespace control_principal.ModulosFacturaElectronica
             string RutaJson = BuscarRutaDocumento();
             lblRutaJSON.Text = RutaJson;
             Ruta_JSON = RutaJson;
-            ListaRutasArchivosJSON.Text = RutaJson;
         }
 
         private void btnValidarJson_Click(object sender, EventArgs e)
@@ -107,12 +74,15 @@ namespace control_principal.ModulosFacturaElectronica
                     case 0:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         _firma.ActulizarDatosDeRutasArchivosJSON(Ruta_JSON);
                         CargarDatosFormularios();
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
                         MessageBox.Show("El JSON es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case 1:
@@ -183,11 +153,6 @@ namespace control_principal.ModulosFacturaElectronica
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void ListaRutasArchivosJSON_SelectedValueChanged(object sender, EventArgs e)
-        {
-            datosListas();
         }
     }
 }

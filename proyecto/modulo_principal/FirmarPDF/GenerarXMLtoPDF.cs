@@ -87,13 +87,16 @@ namespace FirmarPDF
                 //aplicamos razor
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
                 resultHtml = RazorEngine.Razor.Parse(sHtml, objetoComprobante);
-                
+
                 //creamos el archivo html temporal con informacion obtenida del xml
                 System.IO.File.WriteAllText(pathHTMLTemp, resultHtml);
 

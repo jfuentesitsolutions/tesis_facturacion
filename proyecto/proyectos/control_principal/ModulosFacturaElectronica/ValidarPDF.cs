@@ -1,6 +1,5 @@
 ﻿using conexiones_BD.clases;
 using FirmarPDF;
-using ModulosfacturaElectronica.ClasesValidacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +20,7 @@ namespace control_principal.ModulosFacturaElectronica
         private DataTable DatosCertificados;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         private bool visible = false;
         private FirmaElectronica _firma = new FirmaElectronica();
         List<string> listaNomArchivos = new List<string>();
@@ -29,6 +29,8 @@ namespace control_principal.ModulosFacturaElectronica
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
 
         #region DLL para mover la ventana
 
@@ -39,42 +41,10 @@ namespace control_principal.ModulosFacturaElectronica
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
 
-        private void CargarDatosFormularios()
-        {
-
-            listaRutArchivos = _firma.ObtenerRutasDeArchivosPDF();
-            listaNomArchivos = _firma.ObtenerNombresDeArchivosPDF();
-
-
-            ListaRutasArchivosPDF.DataSource = listaNomArchivos;
-            datosListas();
-        }
-
-        private void datosListas()
-        {
-            if (ListaRutasArchivosPDF.Text != "" || ListaRutasArchivosPDF.Text != null)
-            {
-
-                foreach (var item in listaRutArchivos)
-                {
-                    if (item.Contains(ListaRutasArchivosPDF.SelectedItem.ToString()))
-                    {
-                        lblRutaPDF.Text = item.ToString();
-                        break;
-                    }
-
-                }
-            }
-            @Ruta_PDF = lblRutaPDF.Text;
-        }
-
-
-
         public ValidarPDF()
         {
             InitializeComponent();
             DatosCertificados = empresa.datos_empresa();
-            CargarDatosFormularios();
         }
 
 
@@ -100,7 +70,6 @@ namespace control_principal.ModulosFacturaElectronica
             string RutaPDF = BuscarRutaDocumento();
             lblRutaPDF.Text = RutaPDF;
             Ruta_PDF = RutaPDF;
-            ListaRutasArchivosPDF.Text = RutaPDF;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -143,8 +112,6 @@ namespace control_principal.ModulosFacturaElectronica
                         switch (documentoValido)
                         {
                             case 0:
-                                _firma.ActulizarDatosDeRutasArchivosPDF(@Ruta_PDF);
-                                CargarDatosFormularios();
                                 MessageBox.Show("El archivo PDF es valido, y no ha sido modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
                             case 1:
@@ -195,6 +162,7 @@ namespace control_principal.ModulosFacturaElectronica
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         private void btnVisibilidadPass_Click(object sender, EventArgs e)
         {
            
@@ -216,6 +184,8 @@ namespace control_principal.ModulosFacturaElectronica
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
         private void btnBuscar_PDF_MouseEnter(object sender, EventArgs e)
         {
             this.btnBuscar_PDF.Image = global::control_principal.Properties.Resources.folder22;
@@ -246,29 +216,6 @@ namespace control_principal.ModulosFacturaElectronica
             this.btn_cancelar.Image = global::control_principal.Properties.Resources.cerrar1;
         }
 
-        private void btnVisibilidadPass_MouseEnter(object sender, EventArgs e)
-        {
-            if (visible) {
-                this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.visible2;
-            }
-            else {
-                this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.novisible2;
-            }
-            
-        }
-
-        private void btnVisibilidadPass_MouseLeave(object sender, EventArgs e)
-        {
-            if (visible)
-            {
-                this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.visible;
-            }
-            else
-            {
-                this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.novisible;
-            }
-        }
-
         private void pnlTxtTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -279,11 +226,6 @@ namespace control_principal.ModulosFacturaElectronica
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void ListaRutasArchivosPDF_SelectedValueChanged(object sender, EventArgs e)
-        {
-            datosListas();
         }
     }
 }

@@ -37,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnValidar_XML = new System.Windows.Forms.PictureBox();
             this.btnBuscar_XML = new System.Windows.Forms.PictureBox();
-            this.ListaRutasArchivos = new System.Windows.Forms.ComboBox();
             this.pnlTxtTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnValidar_XML)).BeginInit();
@@ -78,6 +77,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(340, 6);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -94,6 +94,12 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(168, 34);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label3.Location = new System.Drawing.Point(338, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(168, 34);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label3.TabIndex = 27;
             this.label3.Text = "Validar XML";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -122,6 +128,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(54, 214);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 31);
@@ -135,12 +142,18 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 33);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label2.Location = new System.Drawing.Point(132, 204);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 33);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label2.TabIndex = 34;
-            this.label2.Text = "Selecione XML :";
+            this.label2.Text = "Ruta:";
             // 
             // lblRutaXML
             // 
             this.lblRutaXML.Enabled = false;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.lblRutaXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,6 +175,14 @@
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.lblRutaXML.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRutaXML.Location = new System.Drawing.Point(220, 205);
+            this.lblRutaXML.Margin = new System.Windows.Forms.Padding(4);
+            this.lblRutaXML.Multiline = true;
+            this.lblRutaXML.Name = "lblRutaXML";
+            this.lblRutaXML.Size = new System.Drawing.Size(519, 131);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.lblRutaXML.TabIndex = 33;
             // 
             // label1
@@ -169,6 +190,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(54, 160);
@@ -184,13 +206,19 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 33);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label1.Location = new System.Drawing.Point(132, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(220, 33);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label1.TabIndex = 29;
-            this.label1.Text = "Buscar XML :";
+            this.label1.Text = "Seleccione XML:";
             // 
             // btnValidar_XML
             // 
             this.btnValidar_XML.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnValidar_XML.Image = global::control_principal.Properties.Resources.validar_xml;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.btnValidar_XML.Location = new System.Drawing.Point(307, 393);
@@ -200,6 +228,9 @@
 =======
             this.btnValidar_XML.Location = new System.Drawing.Point(288, 404);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.btnValidar_XML.Location = new System.Drawing.Point(288, 404);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.btnValidar_XML.Margin = new System.Windows.Forms.Padding(4);
             this.btnValidar_XML.Name = "btnValidar_XML";
             this.btnValidar_XML.Size = new System.Drawing.Size(244, 94);
@@ -216,6 +247,7 @@
             this.btnBuscar_XML.Image = global::control_principal.Properties.Resources.folder2;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnBuscar_XML.Location = new System.Drawing.Point(313, 149);
 =======
             this.btnBuscar_XML.Location = new System.Drawing.Point(360, 139);
@@ -223,6 +255,9 @@
 =======
             this.btnBuscar_XML.Location = new System.Drawing.Point(360, 139);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.btnBuscar_XML.Location = new System.Drawing.Point(360, 139);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.btnBuscar_XML.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar_XML.Name = "btnBuscar_XML";
             this.btnBuscar_XML.Size = new System.Drawing.Size(61, 49);
@@ -233,16 +268,6 @@
             this.btnBuscar_XML.MouseEnter += new System.EventHandler(this.btnBuscar_XML_MouseEnter);
             this.btnBuscar_XML.MouseLeave += new System.EventHandler(this.btnBuscar_XML_MouseLeave);
             // 
-            // ListaRutasArchivos
-            // 
-            this.ListaRutasArchivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListaRutasArchivos.FormattingEnabled = true;
-            this.ListaRutasArchivos.Location = new System.Drawing.Point(313, 214);
-            this.ListaRutasArchivos.Name = "ListaRutasArchivos";
-            this.ListaRutasArchivos.Size = new System.Drawing.Size(497, 39);
-            this.ListaRutasArchivos.TabIndex = 36;
-            this.ListaRutasArchivos.SelectedValueChanged += new System.EventHandler(this.ListaRutasArchivos_SelectedValueChanged);
-            // 
             // ValidarXML
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,11 +276,14 @@
             this.ClientSize = new System.Drawing.Size(863, 554);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.ListaRutasArchivos);
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.Controls.Add(this.pnlTxtTitulo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRutaXML);
@@ -289,6 +317,5 @@
         private System.Windows.Forms.PictureBox btnBuscar_XML;
         private System.Windows.Forms.PictureBox btn_cancelar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ListaRutasArchivos;
     }
 }

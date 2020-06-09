@@ -1,5 +1,4 @@
 ﻿using FirmarPDF;
-using ModulosfacturaElectronica.ClasesValidacion;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -19,11 +18,6 @@ namespace control_principal.ModulosFacturaElectronica
         public string Ruta_XML { get; private set; } = null;
         public string Ruta_SelectJSON { get; private set; } = null;
 
-        private FirmaElectronica _firma = new FirmaElectronica();
-        List<string> listaNomArchivos = new List<string>();
-        List<string> listaRutArchivos = new List<string>();
-
-
         #region DLL para mover la ventana
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -33,39 +27,10 @@ namespace control_principal.ModulosFacturaElectronica
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
 
-        private void CargarDatosFormularios()
-        {
-
-            listaRutArchivos = _firma.ObtenerRutasDeArchivosXML();
-            listaNomArchivos = _firma.ObtenerNombresDeArchivosXML();
-
-
-            ListaRutasArchivosXML.DataSource = listaNomArchivos;
-            datosListas();
-        }
-
-        private void datosListas()
-        {
-            if (ListaRutasArchivosXML.Text != "" || ListaRutasArchivosXML.Text != null)
-            {
-
-                foreach (var item in listaRutArchivos)
-                {
-                    if (item.Contains(ListaRutasArchivosXML.SelectedItem.ToString()))
-                    {
-                        lblRutaXML.Text = item.ToString();
-                        break;
-                    }
-
-                }
-            }
-            Ruta_XML = lblRutaXML.Text;
-        }
 
         public GenerarJSON()
         {
             InitializeComponent();
-            CargarDatosFormularios();
         }
 
         private string BuscarRutaDocumento()
@@ -109,7 +74,6 @@ namespace control_principal.ModulosFacturaElectronica
             string RutaXML = BuscarRutaDocumento();
             lblRutaXML.Text = RutaXML;
             Ruta_XML = RutaXML;
-            ListaRutasArchivosXML.Text = RutaXML;
         }
 
         private void btnSlecionarRutaJSON_Click(object sender, EventArgs e)
@@ -146,6 +110,7 @@ namespace control_principal.ModulosFacturaElectronica
                             System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                             _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                             CargarDatosFormularios();
 =======
@@ -155,6 +120,8 @@ namespace control_principal.ModulosFacturaElectronica
                             System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
 
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
                             MessageBox.Show("El archivo JSON se genero con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -174,6 +141,7 @@ namespace control_principal.ModulosFacturaElectronica
 
                                 System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
 
+<<<<<<< HEAD
                                 _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
                                 CargarDatosFormularios();
 =======
@@ -190,6 +158,8 @@ namespace control_principal.ModulosFacturaElectronica
                                 System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
 
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
                                 MessageBox.Show("El archivo JSON se genero y se sobrescribio con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
@@ -278,11 +248,6 @@ namespace control_principal.ModulosFacturaElectronica
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void ListaRutasArchivosXML_SelectedValueChanged(object sender, EventArgs e)
-        {
-            datosListas();
         }
     }
 }

@@ -35,15 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblRutaPDF = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtContraPFX = new AltoControls.AltoTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.ListaRutasArchivosPDF = new System.Windows.Forms.ComboBox();
-            this.btnVisibilidadPass = new System.Windows.Forms.PictureBox();
             this.brnValidarPDF = new System.Windows.Forms.PictureBox();
             this.btnBuscar_PDF = new System.Windows.Forms.PictureBox();
-            this.txtContraPFX = new System.Windows.Forms.TextBox();
             this.pnlTxtTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cancelar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVisibilidadPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brnValidarPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar_PDF)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +82,7 @@
             this.label4.Name = "label4";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label4.Size = new System.Drawing.Size(179, 32);
 =======
             this.label4.Size = new System.Drawing.Size(161, 34);
@@ -92,6 +90,9 @@
 =======
             this.label4.Size = new System.Drawing.Size(161, 34);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label4.Size = new System.Drawing.Size(161, 34);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label4.TabIndex = 27;
             this.label4.Text = "Validar PDF";
             this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
@@ -119,6 +120,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(54, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 31);
@@ -132,12 +134,18 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 33);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label2.Location = new System.Drawing.Point(68, 254);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 33);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label2.TabIndex = 38;
-            this.label2.Text = "Selecione PDF :";
+            this.label2.Text = "Ruta:";
             // 
             // lblRutaPDF
             // 
             this.lblRutaPDF.Enabled = false;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.lblRutaPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,6 +167,14 @@
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
 =======
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.lblRutaPDF.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRutaPDF.Location = new System.Drawing.Point(153, 254);
+            this.lblRutaPDF.Margin = new System.Windows.Forms.Padding(4);
+            this.lblRutaPDF.Multiline = true;
+            this.lblRutaPDF.Name = "lblRutaPDF";
+            this.lblRutaPDF.Size = new System.Drawing.Size(606, 131);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.lblRutaPDF.TabIndex = 37;
             // 
             // label1
@@ -168,10 +184,15 @@
             this.label1.ForeColor = System.Drawing.Color.White;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(54, 194);
+=======
+            this.label1.Location = new System.Drawing.Point(68, 207);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(302, 31);
+            this.label1.Size = new System.Drawing.Size(350, 33);
             this.label1.TabIndex = 33;
+<<<<<<< HEAD
             this.label1.Text = "Buscar PDF Firmado :";
 =======
             this.label1.Location = new System.Drawing.Point(68, 207);
@@ -182,6 +203,8 @@
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
             this.label1.Size = new System.Drawing.Size(350, 33);
             this.label1.TabIndex = 33;
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label1.Text = "Selecione un PDF Firmado :";
             // 
             // txtContraPFX
@@ -195,13 +218,17 @@
             this.txtContraPFX.Name = "txtContraPFX";
             this.txtContraPFX.Size = new System.Drawing.Size(306, 41);
             this.txtContraPFX.TabIndex = 61;
+<<<<<<< HEAD
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.label6.Location = new System.Drawing.Point(54, 116);
@@ -217,37 +244,19 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(364, 33);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.label6.Location = new System.Drawing.Point(68, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(364, 33);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.label6.TabIndex = 60;
-            this.label6.Text = "Contraseña PFX:";
-            // 
-            // ListaRutasArchivosPDF
-            // 
-            this.ListaRutasArchivosPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListaRutasArchivosPDF.FormattingEnabled = true;
-            this.ListaRutasArchivosPDF.Location = new System.Drawing.Point(379, 258);
-            this.ListaRutasArchivosPDF.Name = "ListaRutasArchivosPDF";
-            this.ListaRutasArchivosPDF.Size = new System.Drawing.Size(431, 39);
-            this.ListaRutasArchivosPDF.TabIndex = 62;
-            this.ListaRutasArchivosPDF.SelectedValueChanged += new System.EventHandler(this.ListaRutasArchivosPDF_SelectedValueChanged);
-            // 
-            // btnVisibilidadPass
-            // 
-            this.btnVisibilidadPass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVisibilidadPass.Image = global::control_principal.Properties.Resources.novisible;
-            this.btnVisibilidadPass.Location = new System.Drawing.Point(756, 108);
-            this.btnVisibilidadPass.Name = "btnVisibilidadPass";
-            this.btnVisibilidadPass.Size = new System.Drawing.Size(54, 49);
-            this.btnVisibilidadPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVisibilidadPass.TabIndex = 63;
-            this.btnVisibilidadPass.TabStop = false;
-            this.btnVisibilidadPass.Click += new System.EventHandler(this.btnVisibilidadPass_Click);
-            this.btnVisibilidadPass.MouseEnter += new System.EventHandler(this.btnVisibilidadPass_MouseEnter);
-            this.btnVisibilidadPass.MouseLeave += new System.EventHandler(this.btnVisibilidadPass_MouseLeave);
+            this.label6.Text = "Contraseña de almacen PFX:";
             // 
             // brnValidarPDF
             // 
             this.brnValidarPDF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.brnValidarPDF.Image = global::control_principal.Properties.Resources.validarpdf;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.brnValidarPDF.Location = new System.Drawing.Point(309, 430);
@@ -257,6 +266,9 @@
 =======
             this.brnValidarPDF.Location = new System.Drawing.Point(290, 432);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.brnValidarPDF.Location = new System.Drawing.Point(290, 432);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.brnValidarPDF.Margin = new System.Windows.Forms.Padding(4);
             this.brnValidarPDF.Name = "brnValidarPDF";
             this.brnValidarPDF.Size = new System.Drawing.Size(244, 94);
@@ -273,6 +285,7 @@
             this.btnBuscar_PDF.Image = global::control_principal.Properties.Resources.folder2;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnBuscar_PDF.Location = new System.Drawing.Point(379, 181);
 =======
             this.btnBuscar_PDF.Location = new System.Drawing.Point(440, 190);
@@ -280,6 +293,9 @@
 =======
             this.btnBuscar_PDF.Location = new System.Drawing.Point(440, 190);
 >>>>>>> parent of 307fd4a... envio de archivos por correo y reparacion de pdf
+=======
+            this.btnBuscar_PDF.Location = new System.Drawing.Point(440, 190);
+>>>>>>> parent of 543427e... gusrdar las rutas de los archivos(pdf,xml,json) en la base de datos
             this.btnBuscar_PDF.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar_PDF.Name = "btnBuscar_PDF";
             this.btnBuscar_PDF.Size = new System.Drawing.Size(61, 49);
@@ -290,15 +306,6 @@
             this.btnBuscar_PDF.MouseEnter += new System.EventHandler(this.btnBuscar_PDF_MouseEnter);
             this.btnBuscar_PDF.MouseLeave += new System.EventHandler(this.btnBuscar_PDF_MouseLeave);
             // 
-            // txtContraPFX
-            // 
-            this.txtContraPFX.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraPFX.Location = new System.Drawing.Point(379, 116);
-            this.txtContraPFX.Name = "txtContraPFX";
-            this.txtContraPFX.PasswordChar = '●';
-            this.txtContraPFX.Size = new System.Drawing.Size(371, 38);
-            this.txtContraPFX.TabIndex = 64;
-            // 
             // ValidarPDF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -306,8 +313,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(863, 554);
             this.Controls.Add(this.txtContraPFX);
-            this.Controls.Add(this.btnVisibilidadPass);
-            this.Controls.Add(this.ListaRutasArchivosPDF);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pnlTxtTitulo);
             this.Controls.Add(this.label2);
@@ -324,7 +329,6 @@
             this.pnlTxtTitulo.ResumeLayout(false);
             this.pnlTxtTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cancelar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVisibilidadPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brnValidarPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar_PDF)).EndInit();
             this.ResumeLayout(false);
@@ -343,9 +347,7 @@
         private System.Windows.Forms.PictureBox btn_cancelar;
         private System.Windows.Forms.PictureBox btnBuscar_PDF;
         private System.Windows.Forms.Label label1;
+        private AltoControls.AltoTextBox txtContraPFX;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox ListaRutasArchivosPDF;
-        private System.Windows.Forms.PictureBox btnVisibilidadPass;
-        private System.Windows.Forms.TextBox txtContraPFX;
     }
 }
