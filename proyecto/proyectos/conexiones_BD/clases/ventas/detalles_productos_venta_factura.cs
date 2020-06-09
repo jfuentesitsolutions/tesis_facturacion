@@ -181,19 +181,10 @@ namespace conexiones_BD.clases.ventas
             }
         }
 
-        public detalles_productos_venta_factura(string iddetalle, 
-            string idpresentacion_producto, 
-            string cantidad, 
-            string precio_venta, 
-            string total, 
-            string utilidad, 
-            string idventa_factura, 
-            string descuento_iva, 
-            string codigo, 
-            string idsucursal_producto, 
-            string cantidad_paquete,
-            string nombre, 
-            string presentacion)
+        public detalles_productos_venta_factura(string iddetalle, string idpresentacion_producto, 
+            string cantidad, string precio_venta, string total, string utilidad, string idventa_factura, 
+            string descuento_iva, string codigo, string idsucursal_producto, string cantidad_paquete,
+            string nombre, string presentacion)
         {
             this.Iddetalle = iddetalle;
             this.Idpresentacion_producto = idpresentacion_producto;

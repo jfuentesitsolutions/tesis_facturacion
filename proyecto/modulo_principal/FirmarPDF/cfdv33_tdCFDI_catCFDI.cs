@@ -21,22 +21,23 @@ using System.Xml.Serialization;
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.sat.gob.mx/cfd/3", IsNullable=false)]
-public partial class Comprobante {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.sat.gob.mx/cfd/3", IsNullable = false)]
+public partial class Comprobante
+{
+
     private ComprobanteEmisor emisorField;
-    
+
     private ComprobanteReceptor receptorField;
-    
+
     private ComprobanteConcepto[] conceptosField;
-    
+
     private ComprobanteImpuestos impuestosField;
-    
+
     private ComprobanteComplemento[] complementoField;
 
     private ComprobanteMayor200 mayor200;
-    
+
     //version de la factura
     private string versionField;
     //fecha en la que se entregan los bienes cuando sea posterior a la factura
@@ -73,19 +74,19 @@ public partial class Comprobante {
     private string monedaField;
     //
     private decimal tipoCambioField;
-    
+
     private bool tipoCambioFieldSpecified;
-    
+
     private decimal totalField;
-    
+
     private string tipoDeComprobanteField;
-    
+
     private string metodoPagoField;
-    
+
     private bool metodoPagoFieldSpecified;
-    
+
     private string lugarExpedicionField;
-    
+
     private string confirmacionField;
 
     private string num_resolucion;
@@ -98,92 +99,117 @@ public partial class Comprobante {
 
     [XmlAttribute("SchemaLocation", Namespace = XmlSchema.InstanceNamespace)]
     public string xsiSchemaLocation = "http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd";
-    
-    public Comprobante() {
+
+    public Comprobante()
+    {
         this.versionField = "3.3";
     }
-    
+
     /// <remarks/>
-    public ComprobanteEmisor Emisor {
-        get {
+    public ComprobanteEmisor Emisor
+    {
+        get
+        {
             return this.emisorField;
         }
-        set {
+        set
+        {
             this.emisorField = value;
         }
     }
-    
+
     /// <remarks/>
-    public ComprobanteReceptor Receptor {
-        get {
+    public ComprobanteReceptor Receptor
+    {
+        get
+        {
             return this.receptorField;
         }
-        set {
+        set
+        {
             this.receptorField = value;
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Concepto", IsNullable=false)]
-    public ComprobanteConcepto[] Conceptos {
-        get {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Concepto", IsNullable = false)]
+    public ComprobanteConcepto[] Conceptos
+    {
+        get
+        {
             return this.conceptosField;
         }
-        set {
+        set
+        {
             this.conceptosField = value;
         }
     }
     
     /// <remarks/>
-    public ComprobanteImpuestos Impuestos {
-        get {
+    public ComprobanteImpuestos Impuestos
+    {
+        get
+        {
             return this.impuestosField;
         }
-        set {
+        set
+        {
             this.impuestosField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Complemento")]
-    public ComprobanteComplemento[] Complemento {
-        get {
+    public ComprobanteComplemento[] Complemento
+    {
+        get
+        {
             return this.complementoField;
         }
-        set {
+        set
+        {
             this.complementoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Version {
-        get {
+    public string Version
+    {
+        get
+        {
             return this.versionField;
         }
-        set {
+        set
+        {
             this.versionField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string NumFactura {
-        get {
+    public string NumFactura
+    {
+        get
+        {
             return this.num_factura;
         }
-        set {
+        set
+        {
             this.num_factura = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string CorrInicio {
-        get {
+    public string CorrInicio
+    {
+        get
+        {
             return this.correlativo_inicio;
         }
-        set {
+        set
+        {
             this.correlativo_inicio = value;
         }
     }
@@ -204,11 +230,14 @@ public partial class Comprobante {
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string FechaExpedicion {
-        get {
+    public string FechaExpedicion
+    {
+        get
+        {
             return this.fecha_expedicicion;
         }
-        set {
+        set
+        {
             this.fecha_expedicicion = value;
         }
     }
@@ -243,198 +272,252 @@ public partial class Comprobante {
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Sello {
-        get {
+    public string Sello
+    {
+        get
+        {
             return this.selloField;
         }
-        set {
+        set
+        {
             this.selloField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string FormaPago {
-        get {
+    public string FormaPago
+    {
+        get
+        {
             return this.formaPagoField;
         }
-        set {
+        set
+        {
             this.formaPagoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool FormaPagoSpecified {
-        get {
+    public bool FormaPagoSpecified
+    {
+        get
+        {
             return this.formaPagoFieldSpecified;
         }
-        set {
+        set
+        {
             this.formaPagoFieldSpecified = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string NoCertificado {
-        get {
+    public string NoCertificado
+    {
+        get
+        {
             return this.noCertificadoField;
         }
-        set {
+        set
+        {
             this.noCertificadoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Certificado {
-        get {
+    public string Certificado
+    {
+        get
+        {
             return this.certificadoField;
         }
-        set {
+        set
+        {
             this.certificadoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string CondicionesDePago {
-        get {
+    public string CondicionesDePago
+    {
+        get
+        {
             return this.condicionesDePagoField;
         }
-        set {
+        set
+        {
             this.condicionesDePagoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal SubTotal {
-        get {
+    public decimal SubTotal
+    {
+        get
+        {
             return this.subTotalField;
         }
-        set {
+        set
+        {
             this.subTotalField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Descuento {
-        get {
+    public decimal Descuento
+    {
+        get
+        {
             return this.descuentoField;
         }
-        set {
+        set
+        {
             this.descuentoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool DescuentoSpecified {
-        get {
+    public bool DescuentoSpecified
+    {
+        get
+        {
             return this.descuentoFieldSpecified;
         }
-        set {
+        set
+        {
             this.descuentoFieldSpecified = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Moneda {
-        get {
+    public string Moneda
+    {
+        get
+        {
             return this.monedaField;
         }
-        set {
+        set
+        {
             this.monedaField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal TipoCambio {
-        get {
+    public decimal TipoCambio
+    {
+        get
+        {
             return this.tipoCambioField;
         }
-        set {
+        set
+        {
             this.tipoCambioField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool TipoCambioSpecified {
-        get {
+    public bool TipoCambioSpecified
+    {
+        get
+        {
             return this.tipoCambioFieldSpecified;
         }
-        set {
+        set
+        {
             this.tipoCambioFieldSpecified = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Total {
-        get {
+    public decimal Total
+    {
+        get
+        {
             return this.totalField;
         }
-        set {
+        set
+        {
             this.totalField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string TipoDeComprobante {
-        get {
+    public string TipoDeComprobante
+    {
+        get
+        {
             return this.tipoDeComprobanteField;
         }
-        set {
+        set
+        {
             this.tipoDeComprobanteField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string MetodoPago {
-        get {
+    public string MetodoPago
+    {
+        get
+        {
             return this.metodoPagoField;
         }
-        set {
+        set
+        {
             this.metodoPagoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool MetodoPagoSpecified {
-        get {
+    public bool MetodoPagoSpecified
+    {
+        get
+        {
             return this.metodoPagoFieldSpecified;
         }
-        set {
+        set
+        {
             this.metodoPagoFieldSpecified = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string LugarExpedicion {
-        get {
+    public string LugarExpedicion
+    {
+        get
+        {
             return this.lugarExpedicionField;
         }
-        set {
+        set
+        {
             this.lugarExpedicionField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Confirmacion {
-        get {
+    public string Confirmacion
+    {
+        get
+        {
             return this.confirmacionField;
         }
-        set {
+        set
+        {
             this.confirmacionField = value;
         }
     }
@@ -599,13 +682,14 @@ public partial class ComprobanteMayor200
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-public partial class ComprobanteEmisor {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+public partial class ComprobanteEmisor
+{
+
     private string nrc;
-    
+
     private string nombre_empresa;
-    
+
     private string razon_social;
 
     private string denominacion;
@@ -615,36 +699,45 @@ public partial class ComprobanteEmisor {
     private string direccion_local;
 
     private string nit;
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Nrc {
-        get {
+    public string NRC
+    {
+        get
+        {
             return this.nrc;
         }
-        set {
+        set
+        {
             this.nrc = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string NombreEmpresa {
-        get {
+    public string NombreEmpresa
+    {
+        get
+        {
             return this.nombre_empresa;
         }
-        set {
+        set
+        {
             this.nombre_empresa = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string RazonSocial {
-        get {
+    public string RazonSocial
+    {
+        get
+        {
             return this.razon_social;
         }
-        set {
+        set
+        {
             this.razon_social = value;
         }
     }
@@ -701,7 +794,7 @@ public partial class ComprobanteEmisor {
 
         set
         {
-            nit= value;
+            nit = value;
         }
     }
 }
@@ -711,100 +804,119 @@ public partial class ComprobanteEmisor {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-public partial class ComprobanteReceptor {
-    
-    private string nrc_cliente;
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+public partial class ComprobanteReceptor
+{
+
+    private string nrc;
+
     private string nombre_cliente;
-    
-    private string denominacion_cliente;
-    
-    private string razon_social_cliente;
-    
-    private string giro_cliente;
-    
+
+    private string denominacion;
+
+    private string razon_social;
+
+    private string giro;
+
     private string direccion;
 
-    private string nit_cliente;
-    
+    private string nit;
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Nrc_Cliente {
-        get {
-            return this.nrc_cliente;
+    public string NRC
+    {
+        get
+        {
+            return this.nrc;
         }
-        set {
-            this.nrc_cliente = value;
+        set
+        {
+            this.nrc = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Nombre_Cliente {
-        get {
+    public string Nombre_Cliente
+    {
+        get
+        {
             return this.nombre_cliente;
         }
-        set {
+        set
+        {
             this.nombre_cliente = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Denominacion_Cliente {
-        get {
-            return this.denominacion_cliente;
+    public string Denominacion
+    {
+        get
+        {
+            return this.denominacion;
         }
-        set {
-            this.denominacion_cliente = value;
+        set
+        {
+            this.denominacion = value;
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Razon_Social_Cliente {
-        get {
-            return this.razon_social_cliente;
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public string Razon_Social
+    {
+        get
+        {
+            return this.razon_social;
         }
-        set {
-            this.razon_social_cliente = value;
+        set
+        {
+            this.razon_social = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Giro_Cliente {
-        get {
-            return this.giro_cliente;
+    public string Giro
+    {
+        get
+        {
+            return this.giro;
         }
-        set {
-            this.giro_cliente = value;
+        set
+        {
+            this.giro = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Direccion {
-        get {
+    public string Direccion
+    {
+        get
+        {
             return this.direccion;
         }
-        set {
+        set
+        {
             this.direccion = value;
         }
     }
 
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Nit_Cliente
+    public string Nit
     {
         get
         {
-            return nit_cliente ;
+            return nit;
         }
 
         set
         {
-            nit_cliente = value;
+            nit = value;
         }
     }
 }
@@ -815,160 +927,197 @@ public partial class ComprobanteReceptor {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-public partial class ComprobanteConcepto {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+public partial class ComprobanteConcepto
+{
+
     private ComprobanteConceptoComplementoConcepto complementoConceptoField;
-    
+
     private ComprobanteConceptoParte[] parteField;
-    
+
     private decimal cantidad;
-    
+
     private string descripcion;
-    
+
     private decimal precio_unitario;
-    
+
     private decimal monto_total;
-    
+
     private decimal operaciones_gravadas;
-    
+
     private decimal ventas_exentas;
-    
+
     private decimal ventas_no_sujetas;
-    
+
     private string condiciones_de_operaciones;
-    
+
     private decimal descuentoField;
-    
+
     private bool descuentoFieldSpecified;
-    
+
     /// <remarks/>
-    public ComprobanteConceptoComplementoConcepto ComplementoConcepto {
-        get {
+    public ComprobanteConceptoComplementoConcepto ComplementoConcepto
+    {
+        get
+        {
             return this.complementoConceptoField;
         }
-        set {
+        set
+        {
             this.complementoConceptoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Parte")]
-    public ComprobanteConceptoParte[] Parte {
-        get {
+    public ComprobanteConceptoParte[] Parte
+    {
+        get
+        {
             return this.parteField;
         }
-        set {
+        set
+        {
             this.parteField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Cantidad {
-        get {
+    public decimal Cantidad
+    {
+        get
+        {
             return this.cantidad;
         }
-        set {
+        set
+        {
             this.cantidad = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Descripcion {
-        get {
+    public string Descripcion
+    {
+        get
+        {
             return this.descripcion;
         }
-        set {
+        set
+        {
             this.descripcion = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Precio_Unitario {
-        get {
+    public decimal Precio_Unitario
+    {
+        get
+        {
             return this.precio_unitario;
         }
-        set {
+        set
+        {
             this.precio_unitario = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Monto_Total {
-        get {
+    public decimal Monto_Total
+    {
+        get
+        {
             return this.monto_total;
         }
-        set {
+        set
+        {
             this.monto_total = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Operaciones_Gravadas {
-        get {
+    public decimal Operaciones_Gravadas
+    {
+        get
+        {
             return this.operaciones_gravadas;
         }
-        set {
+        set
+        {
             this.operaciones_gravadas = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Ventas_Exentas {
-        get {
+    public decimal Ventas_Exentas
+    {
+        get
+        {
             return this.ventas_exentas;
         }
-        set {
+        set
+        {
             this.ventas_exentas = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Ventas_No_Sujetas {
-        get {
+    public decimal Ventas_No_Sujetas
+    {
+        get
+        {
             return this.ventas_no_sujetas;
         }
-        set {
+        set
+        {
             this.ventas_no_sujetas = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Condiciones {
-        get {
+    public string Condiciones
+    {
+        get
+        {
             return this.condiciones_de_operaciones;
         }
-        set {
+        set
+        {
             this.condiciones_de_operaciones = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Descuento {
-        get {
+    public decimal Descuento
+    {
+        get
+        {
             return this.descuentoField;
         }
-        set {
+        set
+        {
             this.descuentoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool DescuentoSpecified {
-        get {
+    public bool DescuentoSpecified
+    {
+        get
+        {
             return this.descuentoFieldSpecified;
         }
-        set {
+        set
+        {
             this.descuentoFieldSpecified = value;
         }
     }
@@ -979,18 +1128,22 @@ public partial class ComprobanteConcepto {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-public partial class ComprobanteConceptoComplementoConcepto {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+public partial class ComprobanteConceptoComplementoConcepto
+{
+
     private System.Xml.XmlElement[] anyField;
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAnyElementAttribute()]
-    public System.Xml.XmlElement[] Any {
-        get {
+    public System.Xml.XmlElement[] Any
+    {
+        get
+        {
             return this.anyField;
         }
-        set {
+        set
+        {
             this.anyField = value;
         }
     }
@@ -1001,123 +1154,151 @@ public partial class ComprobanteConceptoComplementoConcepto {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-public partial class ComprobanteConceptoParte {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+public partial class ComprobanteConceptoParte
+{
+
     private string claveProdServField;
-    
+
     private string noIdentificacionField;
-    
+
     private decimal cantidadField;
-    
+
     private string unidadField;
-    
+
     private string descripcionField;
-    
+
     private decimal valorUnitarioField;
-    
+
     private bool valorUnitarioFieldSpecified;
-    
+
     private decimal importeField;
-    
+
     private bool importeFieldSpecified;
-   
-    
+
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string ClaveProdServ {
-        get {
+    public string ClaveProdServ
+    {
+        get
+        {
             return this.claveProdServField;
         }
-        set {
+        set
+        {
             this.claveProdServField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string NoIdentificacion {
-        get {
+    public string NoIdentificacion
+    {
+        get
+        {
             return this.noIdentificacionField;
         }
-        set {
+        set
+        {
             this.noIdentificacionField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Cantidad {
-        get {
+    public decimal Cantidad
+    {
+        get
+        {
             return this.cantidadField;
         }
-        set {
+        set
+        {
             this.cantidadField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Unidad {
-        get {
+    public string Unidad
+    {
+        get
+        {
             return this.unidadField;
         }
-        set {
+        set
+        {
             this.unidadField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Descripcion {
-        get {
+    public string Descripcion
+    {
+        get
+        {
             return this.descripcionField;
         }
-        set {
+        set
+        {
             this.descripcionField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal ValorUnitario {
-        get {
+    public decimal ValorUnitario
+    {
+        get
+        {
             return this.valorUnitarioField;
         }
-        set {
+        set
+        {
             this.valorUnitarioField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool ValorUnitarioSpecified {
-        get {
+    public bool ValorUnitarioSpecified
+    {
+        get
+        {
             return this.valorUnitarioFieldSpecified;
         }
-        set {
+        set
+        {
             this.valorUnitarioFieldSpecified = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Importe {
-        get {
+    public decimal Importe
+    {
+        get
+        {
             return this.importeField;
         }
-        set {
+        set
+        {
             this.importeField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool ImporteSpecified {
-        get {
+    public bool ImporteSpecified
+    {
+        get
+        {
             return this.importeFieldSpecified;
         }
-        set {
+        set
+        {
             this.importeFieldSpecified = value;
         }
     }
@@ -1129,71 +1310,87 @@ public partial class ComprobanteConceptoParte {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-public partial class ComprobanteImpuestos {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+public partial class ComprobanteImpuestos
+{
+
     private ComprobanteImpuestosRetencion[] retencionesField;
-    
+
     private decimal total_iva;
-    
+
     private bool total_iva_Specified;
-    
+
     private decimal total_renta;
-    
+
     private bool total_renta_Specified;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Retencion", IsNullable=false)]
-    public ComprobanteImpuestosRetencion[] Retenciones {
-        get {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Retencion", IsNullable = false)]
+    public ComprobanteImpuestosRetencion[] Retenciones
+    {
+        get
+        {
             return this.retencionesField;
         }
-        set {
+        set
+        {
             this.retencionesField = value;
         }
     }
-   
-    
+
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Total_Iva {
-        get {
+    public decimal Total_Iva
+    {
+        get
+        {
             return this.total_iva;
         }
-        set {
+        set
+        {
             this.total_iva = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool Total_Iva_Specified {
-        get {
+    public bool Total_Iva_Specified
+    {
+        get
+        {
             return this.total_iva_Specified;
         }
-        set {
+        set
+        {
             this.total_iva_Specified = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Total_Renta {
-        get {
+    public decimal Total_Renta
+    {
+        get
+        {
             return this.total_renta;
         }
-        set {
+        set
+        {
             this.total_renta = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool Total_Renta_Specified {
-        get {
+    public bool Total_Renta_Specified
+    {
+        get
+        {
             return this.total_renta_Specified;
         }
-        set {
+        set
+        {
             this.total_renta_Specified = value;
         }
     }
@@ -1204,31 +1401,38 @@ public partial class ComprobanteImpuestos {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-public partial class ComprobanteImpuestosRetencion {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+public partial class ComprobanteImpuestosRetencion
+{
+
     private string impuestoField;
-    
+
     private decimal importeField;
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Impuesto {
-        get {
+    public string Impuesto
+    {
+        get
+        {
             return this.impuestoField;
         }
-        set {
+        set
+        {
             this.impuestoField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Importe {
-        get {
+    public decimal Importe
+    {
+        get
+        {
             return this.importeField;
         }
-        set {
+        set
+        {
             this.importeField = value;
         }
     }
@@ -1239,18 +1443,22 @@ public partial class ComprobanteImpuestosRetencion {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
-public partial class ComprobanteComplemento {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.sat.gob.mx/cfd/3")]
+public partial class ComprobanteComplemento
+{
+
     private System.Xml.XmlElement[] anyField;
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAnyElementAttribute()]
-    public System.Xml.XmlElement[] Any {
-        get {
+    public System.Xml.XmlElement[] Any
+    {
+        get
+        {
             return this.anyField;
         }
-        set {
+        set
+        {
             this.anyField = value;
         }
     }

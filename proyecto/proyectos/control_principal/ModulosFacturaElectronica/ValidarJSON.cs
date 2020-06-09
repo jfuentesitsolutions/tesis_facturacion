@@ -66,40 +66,32 @@ namespace control_principal.ModulosFacturaElectronica
         {
             if (Ruta_JSON != null && Ruta_JSON != "")
             {
-                
-                using(espera_datos.splash_espera fe=new espera_datos.splash_espera())
-                {
-                    fe.Funcion_verificar = verificando;
-                    fe.Tipo_operacio = 2;
+                FirmaElectronica validarJson = new FirmaElectronica();
 
-                    if (fe.ShowDialog() == DialogResult.OK)
-                    {
-                        switch (fe.Numero)
-                        {
-                            case 0:
-                                MessageBox.Show("El JSON es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                break;
-                            case 1:
-                                MessageBox.Show("El archivo que selecciono no es un JSON", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-                            case 2:
-                                MessageBox.Show("Error al tratar de encontrar el archivo xslt", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
-                            case 3:
-                                MessageBox.Show("Version de comprobate invalida, verifique que la version sea (3.3 ó 3.2) del comprobante", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-                            case 4:
-                                MessageBox.Show("El JSON es invalido, su contenido ha sido modificado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                break;
-                            case 5:
-                                MessageBox.Show("Error al validarce el JSON", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
-                            default:
-                                MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                break;
-                        }
-                    }
-                    
+
+                switch (validarJson.ValidarJSON(Ruta_JSON))
+                {
+                    case 0:
+                        MessageBox.Show("El JSON es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case 1:
+                        MessageBox.Show("El archivo que selecciono no es un JSON", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    case 2:
+                        MessageBox.Show("Error al tratar de encontrar el archivo xslt", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    case 3:
+                        MessageBox.Show("Version de comprobate invalida, verifique que la version sea (3.3 ó 3.2) del comprobante", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    case 4:
+                        MessageBox.Show("El JSON es invalido, su contenido ha sido modificado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        break;
+                    case 5:
+                        MessageBox.Show("Error al validarce el JSON", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    default:
+                        MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
                 }
 
             }
@@ -108,13 +100,6 @@ namespace control_principal.ModulosFacturaElectronica
 
             }
 
-        }
-
-        private int verificando()
-        {
-            FirmaElectronica validarJson = new FirmaElectronica();
-            int respuesta = validarJson.ValidarJSON(Ruta_JSON);
-            return respuesta;
         }
 
         private void btn_cancelar_MouseEnter(object sender, EventArgs e)

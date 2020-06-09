@@ -51,8 +51,9 @@
             this.pnlTxtTitulo.Controls.Add(this.btn_cancelar);
             this.pnlTxtTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTxtTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTxtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTxtTitulo.Name = "pnlTxtTitulo";
-            this.pnlTxtTitulo.Size = new System.Drawing.Size(531, 37);
+            this.pnlTxtTitulo.Size = new System.Drawing.Size(863, 46);
             this.pnlTxtTitulo.TabIndex = 39;
             this.pnlTxtTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTxtTitulo_MouseDown);
             // 
@@ -60,9 +61,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 36);
+            this.panel1.Location = new System.Drawing.Point(0, 45);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(531, 1);
+            this.panel1.Size = new System.Drawing.Size(863, 1);
             this.panel1.TabIndex = 28;
             // 
             // label4
@@ -71,11 +73,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(250, 6);
+            this.label4.Location = new System.Drawing.Point(333, 7);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 26);
+            this.label4.Size = new System.Drawing.Size(182, 34);
             this.label4.TabIndex = 27;
             this.label4.Text = "Validar JSON";
             this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
@@ -85,9 +88,10 @@
             this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cancelar.Image = global::control_principal.Properties.Resources.cerrar1;
-            this.btn_cancelar.Location = new System.Drawing.Point(488, 2);
+            this.btn_cancelar.Location = new System.Drawing.Point(805, 3);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(37, 32);
+            this.btn_cancelar.Size = new System.Drawing.Size(49, 39);
             this.btn_cancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_cancelar.TabIndex = 33;
             this.btn_cancelar.TabStop = false;
@@ -98,34 +102,33 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(35, 122);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(103, 203);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(78, 33);
             this.label2.TabIndex = 38;
             this.label2.Text = "Ruta:";
             // 
             // lblRutaJSON
             // 
             this.lblRutaJSON.Enabled = false;
-            this.lblRutaJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRutaJSON.Location = new System.Drawing.Point(108, 123);
+            this.lblRutaJSON.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRutaJSON.Location = new System.Drawing.Point(191, 204);
+            this.lblRutaJSON.Margin = new System.Windows.Forms.Padding(4);
             this.lblRutaJSON.Multiline = true;
             this.lblRutaJSON.Name = "lblRutaJSON";
-            this.lblRutaJSON.Size = new System.Drawing.Size(390, 107);
+            this.lblRutaJSON.Size = new System.Drawing.Size(519, 131);
             this.lblRutaJSON.TabIndex = 37;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 79);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(103, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 25);
+            this.label1.Size = new System.Drawing.Size(191, 33);
             this.label1.TabIndex = 34;
             this.label1.Text = "Buscar  JSON:";
             // 
@@ -133,9 +136,10 @@
             // 
             this.btnValidarJson.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnValidarJson.Image = global::control_principal.Properties.Resources.validarJSON;
-            this.btnValidarJson.Location = new System.Drawing.Point(206, 255);
+            this.btnValidarJson.Location = new System.Drawing.Point(303, 419);
+            this.btnValidarJson.Margin = new System.Windows.Forms.Padding(4);
             this.btnValidarJson.Name = "btnValidarJson";
-            this.btnValidarJson.Size = new System.Drawing.Size(127, 41);
+            this.btnValidarJson.Size = new System.Drawing.Size(244, 94);
             this.btnValidarJson.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnValidarJson.TabIndex = 36;
             this.btnValidarJson.TabStop = false;
@@ -147,9 +151,10 @@
             // 
             this.btnBuscar_JSON.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar_JSON.Image = global::control_principal.Properties.Resources.folder2;
-            this.btnBuscar_JSON.Location = new System.Drawing.Point(206, 64);
+            this.btnBuscar_JSON.Location = new System.Drawing.Point(303, 135);
+            this.btnBuscar_JSON.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar_JSON.Name = "btnBuscar_JSON";
-            this.btnBuscar_JSON.Size = new System.Drawing.Size(46, 40);
+            this.btnBuscar_JSON.Size = new System.Drawing.Size(61, 49);
             this.btnBuscar_JSON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBuscar_JSON.TabIndex = 35;
             this.btnBuscar_JSON.TabStop = false;
@@ -159,10 +164,10 @@
             // 
             // ValidarJSON
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(531, 308);
+            this.ClientSize = new System.Drawing.Size(863, 554);
             this.Controls.Add(this.pnlTxtTitulo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRutaJSON);
@@ -170,6 +175,7 @@
             this.Controls.Add(this.btnBuscar_JSON);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ValidarJSON";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

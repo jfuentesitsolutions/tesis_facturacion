@@ -90,61 +90,54 @@ namespace control_principal.ModulosFacturaElectronica
             if (Ruta_XML != null && Ruta_XML != "" && Ruta_SelectPDF != null && Ruta_SelectPDF != "" &&
                 txtNombrePDF.Text != null && txtNombrePDF.Text != "")
             {
-                using(espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                GenerarXMLtoPDF _generarPDF = new GenerarXMLtoPDF(Ruta_XML, txtNombrePDF.Text, Ruta_SelectPDF);
+
+                switch (_generarPDF.CrearPDF())
                 {
-                    fe.Funcion_verificar = verificando;
-                    fe.Tipo_operacio = 2;
+                    case 0:
+                        DialogResult result = MessageBox.Show("El PDF se generó con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-                    if (fe.ShowDialog() == DialogResult.OK)
-                    {
-                        switch (fe.Numero)
-                        {
-                            case 0:
-                                DialogResult result = MessageBox.Show("El PDF se generó con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                                if (result.Equals(DialogResult.Yes))
-                                {
-                                    //se visualiza el pdf en un cuadro de dialogo
-                                    new Visor_PDF(Ruta_SelectPDF + "\\" + txtNombrePDF.Text + ".pdf").ShowDialog();
-                                }
-
-                                break;
-
-                            case 1:
-                                MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                break;
-                            case 2:
-                                MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-
-                            case 3:
-                                DialogResult result2 = MessageBox.Show("El PDF se sobrescribio y se genero con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                                if (result2.Equals(DialogResult.Yes))
-                                {   //se visualiza el pdf en un cuadro de dialogo
-                                    new Visor_PDF(Ruta_SelectPDF + "\\" + txtNombrePDF.Text + ".pdf").ShowDialog();
-                                }
-
-                                break;
-
-                            case 4:
-                                /*este caso solo es de salida */
-                                break;
-                            case 5:
-                                MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-
-                            case 6:
-                                MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
-
-                            default:
-                                MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
-
+                        if (result.Equals(DialogResult.Yes)) {
+                          //se visualiza el pdf en un cuadro de dialogo
+                            new Visor_PDF(Ruta_SelectPDF + "\\" + txtNombrePDF.Text + ".pdf").ShowDialog();
                         }
-                    }    
+
+                            break;
+
+                    case 1:
+                        MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        break;
+                    case 2:
+                        MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+
+                    case 3:
+                        DialogResult result2 = MessageBox.Show("El PDF se sobrescribio y se genero con exito, ¿Desea visualizar el archivo PDF?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (result2.Equals(DialogResult.Yes))
+                        {   //se visualiza el pdf en un cuadro de dialogo
+                            new Visor_PDF(Ruta_SelectPDF + "\\" + txtNombrePDF.Text + ".pdf").ShowDialog();
+                        }
+
+                        break;
+
+                    case 4:
+                        /*este caso solo es de salida */
+                        break;
+                    case 5:
+                        MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+
+                    case 6:
+                        MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    default:
+                        MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
                 }
+
             }
             else
             {
@@ -179,13 +172,6 @@ namespace control_principal.ModulosFacturaElectronica
                         }
                 }
             }
-        }
-
-        private int verificando()
-        {
-            GenerarXMLtoPDF _generarPDF = new GenerarXMLtoPDF(Ruta_XML, txtNombrePDF.Text, Ruta_SelectPDF+"\\");
-            _generarPDF.Ima = Properties.Resources.logo2;
-            return _generarPDF.CrearPDF();
         }
 
 

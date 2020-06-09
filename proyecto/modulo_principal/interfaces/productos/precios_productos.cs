@@ -116,7 +116,7 @@ namespace interfaces.productos
 
                     if (fe.ShowDialog() == DialogResult.OK)
                     {
-                        List<DataTable> listas = fe.Datos_varios;
+                        List<DataTable> listas = fe.Funcion();
                         producto pr = new producto();
 
                         pr.txtCodigo.Text = tablad.CurrentRow.Cells[1].Value.ToString();

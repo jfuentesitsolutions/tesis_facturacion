@@ -69,10 +69,5 @@ namespace control_principal.ModulosFacturaElectronica
         {
             new GenerarCertificado().ShowDialog();
         }
-
-        private void btnEnviarFactura_Click(object sender, EventArgs e)
-        {
-            new EnviarFactura().ShowDialog();
-        }
     }
 }

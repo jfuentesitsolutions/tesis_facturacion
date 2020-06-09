@@ -1,4 +1,4 @@
-﻿
+﻿using iTextSharp.text.pdf;
 using Org.BouncyCastle.Security;
 using System;
 using System.Collections.Generic;
@@ -6,8 +6,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iText.Kernel.Pdf;
-using iText.Signatures;
 
 namespace FirmarPDF
 {
@@ -20,21 +18,19 @@ namespace FirmarPDF
             this.certificado = certificado;
         }
 
+
+       
+
         public int ValidarDocumentoPDF(string rutaDocumentoFirmado)
         {
             try
             {
                 bool pdfFirmado =false;
 
-                PdfReader pdf = new PdfReader(rutaDocumentoFirmado);
-                
-
-               
-
-                /*using (var reader = new PdfReader(rutaDocumentoFirmado))
+                using (var reader = new PdfReader(rutaDocumentoFirmado))
                 {
-                    iText.Signatures.PdfSignature firmas = reader.sig
-                    var nombresDefirmas = firma
+                    var campos = reader.AcroFields;
+                    var nombresDefirmas = campos.GetSignatureNames();
                     foreach (var nombre in nombresDefirmas)
                     {
                         pdfFirmado = true; //el pdf si esta firmado
@@ -44,7 +40,7 @@ namespace FirmarPDF
                         }
                        
                     }
-                }*/
+                }
 
                 if (pdfFirmado)
                 {
@@ -64,7 +60,7 @@ namespace FirmarPDF
           
         }
 
-       /* private bool ValidarFirma(AcroFields campos, string nombre)
+        private bool ValidarFirma(AcroFields campos, string nombre)
         {
             // Solo se verificará la última revision del documento.
 
@@ -108,7 +104,7 @@ namespace FirmarPDF
             }
 
             return false;
-        }*/
-        
+        }
+
     }
 }

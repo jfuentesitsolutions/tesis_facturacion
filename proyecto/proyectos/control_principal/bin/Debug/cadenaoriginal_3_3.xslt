@@ -142,13 +142,11 @@
   <xsl:template match="cfdi:Emisor">
     <!-- Iniciamos el tratamiento de los atributos del Emisor -->
     <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@Nrc"/>
+      <xsl:with-param name="valor" select="./@Ncr"/>
     </xsl:call-template>
-    
-    <xsl:call-template name="Requerido">
+    <xsl:call-template name="Opcional">
       <xsl:with-param name="valor" select="./@NombreEmpresa"/>
     </xsl:call-template>
-    
     <xsl:call-template name="Requerido">
       <xsl:with-param name="valor" select="./@RazonSocial"/>
     </xsl:call-template>
@@ -193,25 +191,22 @@
   <xsl:template match="cfdi:Receptor">
     <!-- Iniciamos el tratamiento de los atributos del Receptor -->
     <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@Nrc_Cliente"/>
+      <xsl:with-param name="valor" select="./@Ncr"/>
     </xsl:call-template>
-    <xsl:call-template name="Requerido">
+    <xsl:call-template name="Opcional">
       <xsl:with-param name="valor" select="./@Nombre_Cliente"/>
     </xsl:call-template>
-    <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@Denominacion_Cliente"/>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@Denominacion"/>
     </xsl:call-template>
-    <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@Razon_Social_Cliente"/>
-    </xsl:call-template>
-    <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@Giro_Cliente"/>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@Razon_Social"/>
     </xsl:call-template>
     <xsl:call-template name="Requerido">
       <xsl:with-param name="valor" select="./@Direccion"/>
     </xsl:call-template>
     <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@Nit_Cliente"/>  
+      <xsl:with-param name="valor" select="./Nit"/>  
     </xsl:call-template>
 
   </xsl:template>

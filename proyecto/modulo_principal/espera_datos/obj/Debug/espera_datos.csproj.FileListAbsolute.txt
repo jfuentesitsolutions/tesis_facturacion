@@ -126,4 +126,3 @@ C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\es
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csproj.GenerateResource.Cache
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.dll
 C:\Users\Fuentes\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.pdb
-D:\Tesis_Facturacion\tesis_facturacion\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.dll.config

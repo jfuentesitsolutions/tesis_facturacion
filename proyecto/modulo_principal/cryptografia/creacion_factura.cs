@@ -618,7 +618,7 @@ public partial class ComprobanteEmisor {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Nrc {
+    public string NRC {
         get {
             return this.nrc;
         }
@@ -701,7 +701,7 @@ public partial class ComprobanteEmisor {
 
         set
         {
-            nit= value;
+            nit = value;
         }
     }
 }
@@ -714,28 +714,28 @@ public partial class ComprobanteEmisor {
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.sat.gob.mx/cfd/3")]
 public partial class ComprobanteReceptor {
     
-    private string nrc_cliente;
+    private string nrc;
     
     private string nombre_cliente;
     
-    private string denominacion_cliente;
+    private string denominacion;
     
-    private string razon_social_cliente;
+    private string razon_social;
     
-    private string giro_cliente;
+    private string giro;
     
     private string direccion;
 
-    private string nit_cliente;
+    private string nit;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Nrc_Cliente {
+    public string NRC {
         get {
-            return this.nrc_cliente;
+            return this.nrc;
         }
         set {
-            this.nrc_cliente = value;
+            this.nrc = value;
         }
     }
     
@@ -752,34 +752,34 @@ public partial class ComprobanteReceptor {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Denominacion_Cliente {
+    public string Denominacion {
         get {
-            return this.denominacion_cliente;
+            return this.denominacion;
         }
         set {
-            this.denominacion_cliente = value;
+            this.denominacion = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public string Razon_Social {
+        get {
+            return this.razon_social;
+        }
+        set {
+            this.razon_social = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Razon_Social_Cliente {
+    public string Giro {
         get {
-            return this.razon_social_cliente;
+            return this.giro;
         }
         set {
-            this.razon_social_cliente = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Giro_Cliente {
-        get {
-            return this.giro_cliente;
-        }
-        set {
-            this.giro_cliente = value;
+            this.giro = value;
         }
     }
     
@@ -795,16 +795,16 @@ public partial class ComprobanteReceptor {
     }
 
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Nit_Cliente
+    public string Nit
     {
         get
         {
-            return nit_cliente ;
+            return nit;
         }
 
         set
         {
-            nit_cliente = value;
+            nit = value;
         }
     }
 }

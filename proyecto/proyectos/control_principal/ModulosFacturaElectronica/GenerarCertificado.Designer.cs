@@ -60,8 +60,9 @@
             this.pnlTxtTitulo.Controls.Add(this.btn_cancelar);
             this.pnlTxtTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTxtTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTxtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTxtTitulo.Name = "pnlTxtTitulo";
-            this.pnlTxtTitulo.Size = new System.Drawing.Size(647, 37);
+            this.pnlTxtTitulo.Size = new System.Drawing.Size(863, 46);
             this.pnlTxtTitulo.TabIndex = 51;
             this.pnlTxtTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTxtTitulo_MouseDown);
             // 
@@ -69,9 +70,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 36);
+            this.panel1.Location = new System.Drawing.Point(0, 45);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(647, 1);
+            this.panel1.Size = new System.Drawing.Size(863, 1);
             this.panel1.TabIndex = 28;
             // 
             // label4
@@ -80,11 +82,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(248, 6);
+            this.label4.Location = new System.Drawing.Point(331, 7);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 26);
+            this.label4.Size = new System.Drawing.Size(173, 34);
             this.label4.TabIndex = 27;
             this.label4.Text = "Generar PFX";
             this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
@@ -94,9 +97,10 @@
             this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cancelar.Image = global::control_principal.Properties.Resources.cerrar1;
-            this.btn_cancelar.Location = new System.Drawing.Point(604, 2);
+            this.btn_cancelar.Location = new System.Drawing.Point(805, 3);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(37, 32);
+            this.btn_cancelar.Size = new System.Drawing.Size(49, 39);
             this.btn_cancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_cancelar.TabIndex = 44;
             this.btn_cancelar.TabStop = false;
@@ -110,28 +114,31 @@
             this.txtNombrePFX.Br = System.Drawing.Color.White;
             this.txtNombrePFX.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtNombrePFX.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNombrePFX.Location = new System.Drawing.Point(273, 322);
+            this.txtNombrePFX.Location = new System.Drawing.Point(364, 396);
+            this.txtNombrePFX.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombrePFX.Name = "txtNombrePFX";
-            this.txtNombrePFX.Size = new System.Drawing.Size(292, 33);
+            this.txtNombrePFX.Size = new System.Drawing.Size(389, 41);
             this.txtNombrePFX.TabIndex = 49;
             // 
             // txtTiempoValides
             // 
             this.txtTiempoValides.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtTiempoValides.Location = new System.Drawing.Point(273, 255);
+            this.txtTiempoValides.Location = new System.Drawing.Point(364, 314);
+            this.txtTiempoValides.Margin = new System.Windows.Forms.Padding(4);
             this.txtTiempoValides.Name = "txtTiempoValides";
             this.txtTiempoValides.SignColor = System.Drawing.Color.White;
-            this.txtTiempoValides.Size = new System.Drawing.Size(139, 46);
+            this.txtTiempoValides.Size = new System.Drawing.Size(185, 57);
             this.txtTiempoValides.TabIndex = 48;
             this.txtTiempoValides.Value = 365D;
             // 
             // txtLongitudBit
             // 
             this.txtLongitudBit.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.txtLongitudBit.Location = new System.Drawing.Point(273, 186);
+            this.txtLongitudBit.Location = new System.Drawing.Point(364, 229);
+            this.txtLongitudBit.Margin = new System.Windows.Forms.Padding(4);
             this.txtLongitudBit.Name = "txtLongitudBit";
             this.txtLongitudBit.SignColor = System.Drawing.Color.White;
-            this.txtLongitudBit.Size = new System.Drawing.Size(139, 46);
+            this.txtLongitudBit.Size = new System.Drawing.Size(185, 57);
             this.txtLongitudBit.TabIndex = 47;
             this.txtLongitudBit.Value = 2048D;
             // 
@@ -141,9 +148,10 @@
             this.txtPass.Br = System.Drawing.Color.White;
             this.txtPass.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtPass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPass.Location = new System.Drawing.Point(273, 133);
+            this.txtPass.Location = new System.Drawing.Point(364, 164);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(292, 33);
+            this.txtPass.Size = new System.Drawing.Size(389, 41);
             this.txtPass.TabIndex = 46;
             // 
             // txtNombreKey
@@ -152,116 +160,108 @@
             this.txtNombreKey.Br = System.Drawing.Color.White;
             this.txtNombreKey.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtNombreKey.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNombreKey.Location = new System.Drawing.Point(273, 76);
+            this.txtNombreKey.Location = new System.Drawing.Point(364, 94);
+            this.txtNombreKey.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreKey.Name = "txtNombreKey";
-            this.txtNombreKey.Size = new System.Drawing.Size(292, 33);
+            this.txtNombreKey.Size = new System.Drawing.Size(389, 41);
             this.txtNombreKey.TabIndex = 45;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(566, 329);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(755, 405);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 25);
+            this.label12.Size = new System.Drawing.Size(62, 33);
             this.label12.TabIndex = 43;
             this.label12.Text = ".pfx";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(46, 327);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(61, 402);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(242, 25);
+            this.label13.Size = new System.Drawing.Size(279, 33);
             this.label13.TabIndex = 42;
             this.label13.Text = "Nombre  archivo PFX:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(417, 207);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(556, 255);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 25);
+            this.label11.Size = new System.Drawing.Size(46, 33);
             this.label11.TabIndex = 41;
             this.label11.Text = "bit";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(566, 82);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(755, 101);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 25);
+            this.label10.Size = new System.Drawing.Size(66, 33);
             this.label10.TabIndex = 40;
             this.label10.Text = ".key";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(417, 274);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(556, 337);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 25);
+            this.label8.Size = new System.Drawing.Size(68, 33);
             this.label8.TabIndex = 39;
             this.label8.Text = "Dias";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(46, 269);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(61, 331);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(211, 25);
+            this.label6.Size = new System.Drawing.Size(245, 33);
             this.label6.TabIndex = 38;
             this.label6.Text = "Tiempo de valides:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(46, 199);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(61, 245);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 25);
+            this.label3.Size = new System.Drawing.Size(215, 33);
             this.label3.TabIndex = 37;
             this.label3.Text = "Logitud de llave:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(46, 79);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(61, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(243, 25);
+            this.label2.Size = new System.Drawing.Size(280, 33);
             this.label2.TabIndex = 36;
             this.label2.Text = "Nombre de llave RSA:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(46, 133);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(61, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 25);
+            this.label1.Size = new System.Drawing.Size(226, 33);
             this.label1.TabIndex = 35;
             this.label1.Text = "Contraseña llave:";
             // 
@@ -269,22 +269,22 @@
             // 
             this.btnGenerar_PFX.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerar_PFX.Image = global::control_principal.Properties.Resources.generarpfx;
-            this.btnGenerar_PFX.Location = new System.Drawing.Point(229, 419);
+            this.btnGenerar_PFX.Location = new System.Drawing.Point(305, 516);
+            this.btnGenerar_PFX.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenerar_PFX.Name = "btnGenerar_PFX";
-            this.btnGenerar_PFX.Size = new System.Drawing.Size(183, 76);
+            this.btnGenerar_PFX.Size = new System.Drawing.Size(244, 94);
             this.btnGenerar_PFX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnGenerar_PFX.TabIndex = 50;
             this.btnGenerar_PFX.TabStop = false;
-            this.btnGenerar_PFX.Click += new System.EventHandler(this.btnGenerar_PFX_Click);
             this.btnGenerar_PFX.MouseEnter += new System.EventHandler(this.btnGenerar_PFX_MouseEnter);
             this.btnGenerar_PFX.MouseLeave += new System.EventHandler(this.btnGenerar_PFX_MouseLeave);
             // 
             // GenerarCertificado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(647, 536);
+            this.ClientSize = new System.Drawing.Size(863, 660);
             this.Controls.Add(this.pnlTxtTitulo);
             this.Controls.Add(this.btnGenerar_PFX);
             this.Controls.Add(this.txtNombrePFX);
@@ -302,6 +302,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GenerarCertificado";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

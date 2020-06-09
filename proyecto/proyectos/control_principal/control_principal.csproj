@@ -110,12 +110,6 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="manejadorVentanas.cs" />
-    <Compile Include="ModulosFacturaElectronica\EnviarFactura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModulosFacturaElectronica\EnviarFactura.Designer.cs">
-      <DependentUpon>EnviarFactura.cs</DependentUpon>
-    </Compile>
     <Compile Include="ModulosFacturaElectronica\FirmarPDF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,9 +196,6 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModulosFacturaElectronica\EnviarFactura.resx">
-      <DependentUpon>EnviarFactura.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ModulosFacturaElectronica\FirmarPDF.resx">
       <DependentUpon>FirmarPDF.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,10 +254,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\modulo_principal\espera_datos\espera_datos.csproj">
-      <Project>{0822e6f8-74d5-4526-be21-afdd3dbc6154}</Project>
-      <Name>espera_datos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\modulo_principal\FirmarPDF\FirmarPDF.csproj">
       <Project>{08df8707-3f2a-4ab8-8cd9-68d5ca7f0db3}</Project>
       <Name>FirmarPDF</Name>
@@ -462,15 +449,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\generarpfx2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mail2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\boton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

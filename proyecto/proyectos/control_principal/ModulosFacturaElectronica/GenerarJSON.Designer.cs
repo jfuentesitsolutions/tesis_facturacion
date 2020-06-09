@@ -59,8 +59,9 @@
             this.pnlTxtTitulo.Controls.Add(this.btn_cancelar);
             this.pnlTxtTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTxtTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTxtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTxtTitulo.Name = "pnlTxtTitulo";
-            this.pnlTxtTitulo.Size = new System.Drawing.Size(620, 37);
+            this.pnlTxtTitulo.Size = new System.Drawing.Size(863, 46);
             this.pnlTxtTitulo.TabIndex = 39;
             this.pnlTxtTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTxtTitulo_MouseDown);
             // 
@@ -68,9 +69,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 36);
+            this.panel1.Location = new System.Drawing.Point(0, 45);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(620, 1);
+            this.panel1.Size = new System.Drawing.Size(863, 1);
             this.panel1.TabIndex = 28;
             // 
             // label4
@@ -79,11 +81,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(207, 5);
+            this.label4.Location = new System.Drawing.Point(329, 6);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 26);
+            this.label4.Size = new System.Drawing.Size(194, 34);
             this.label4.TabIndex = 27;
             this.label4.Text = "Generar JSON";
             this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
@@ -93,9 +96,10 @@
             this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cancelar.Image = global::control_principal.Properties.Resources.cerrar1;
-            this.btn_cancelar.Location = new System.Drawing.Point(577, 2);
+            this.btn_cancelar.Location = new System.Drawing.Point(805, 3);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(37, 32);
+            this.btn_cancelar.Size = new System.Drawing.Size(49, 39);
             this.btn_cancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_cancelar.TabIndex = 33;
             this.btn_cancelar.TabStop = false;
@@ -106,80 +110,77 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(31, 122);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(97, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 25);
+            this.label2.Size = new System.Drawing.Size(141, 33);
             this.label2.TabIndex = 38;
             this.label2.Text = "Ruta XML:";
             // 
             // lblRutaXML
             // 
             this.lblRutaXML.Enabled = false;
-            this.lblRutaXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRutaXML.Location = new System.Drawing.Point(152, 122);
+            this.lblRutaXML.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRutaXML.Location = new System.Drawing.Point(259, 152);
+            this.lblRutaXML.Margin = new System.Windows.Forms.Padding(4);
             this.lblRutaXML.Multiline = true;
             this.lblRutaXML.Name = "lblRutaXML";
-            this.lblRutaXML.Size = new System.Drawing.Size(433, 58);
+            this.lblRutaXML.Size = new System.Drawing.Size(519, 70);
             this.lblRutaXML.TabIndex = 37;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 79);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(97, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 25);
+            this.label1.Size = new System.Drawing.Size(318, 33);
             this.label1.TabIndex = 35;
             this.label1.Text = "Selecione XML(factura) :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(31, 312);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(97, 387);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 25);
+            this.label3.Size = new System.Drawing.Size(155, 33);
             this.label3.TabIndex = 43;
             this.label3.Text = "Ruta JSON:";
             // 
             // txtRutaJSON
             // 
             this.txtRutaJSON.Enabled = false;
-            this.txtRutaJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRutaJSON.Location = new System.Drawing.Point(181, 312);
+            this.txtRutaJSON.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRutaJSON.Location = new System.Drawing.Point(259, 387);
+            this.txtRutaJSON.Margin = new System.Windows.Forms.Padding(4);
             this.txtRutaJSON.Multiline = true;
             this.txtRutaJSON.Name = "txtRutaJSON";
-            this.txtRutaJSON.Size = new System.Drawing.Size(404, 58);
+            this.txtRutaJSON.Size = new System.Drawing.Size(519, 70);
             this.txtRutaJSON.TabIndex = 42;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(31, 262);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(97, 325);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(513, 25);
+            this.label5.Size = new System.Drawing.Size(585, 33);
             this.label5.TabIndex = 40;
             this.label5.Text = "Seleccione la ruta donde se gusrdara el JSON :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(31, 204);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(97, 254);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(213, 25);
+            this.label6.Size = new System.Drawing.Size(248, 33);
             this.label6.TabIndex = 44;
             this.label6.Text = "Nombre del JSON: ";
             // 
@@ -189,20 +190,20 @@
             this.txtNombreJSON.Br = System.Drawing.Color.White;
             this.txtNombreJSON.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtNombreJSON.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNombreJSON.Location = new System.Drawing.Point(249, 204);
+            this.txtNombreJSON.Location = new System.Drawing.Point(366, 254);
+            this.txtNombreJSON.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreJSON.Name = "txtNombreJSON";
-            this.txtNombreJSON.Size = new System.Drawing.Size(261, 33);
+            this.txtNombreJSON.Size = new System.Drawing.Size(348, 41);
             this.txtNombreJSON.TabIndex = 46;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(515, 212);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(717, 262);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 25);
+            this.label7.Size = new System.Drawing.Size(81, 33);
             this.label7.TabIndex = 47;
             this.label7.Text = ".json ";
             // 
@@ -210,9 +211,10 @@
             // 
             this.btnSlecionarRutaJSON.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSlecionarRutaJSON.Image = global::control_principal.Properties.Resources.folder2;
-            this.btnSlecionarRutaJSON.Location = new System.Drawing.Point(539, 247);
+            this.btnSlecionarRutaJSON.Location = new System.Drawing.Point(689, 315);
+            this.btnSlecionarRutaJSON.Margin = new System.Windows.Forms.Padding(4);
             this.btnSlecionarRutaJSON.Name = "btnSlecionarRutaJSON";
-            this.btnSlecionarRutaJSON.Size = new System.Drawing.Size(46, 40);
+            this.btnSlecionarRutaJSON.Size = new System.Drawing.Size(61, 49);
             this.btnSlecionarRutaJSON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSlecionarRutaJSON.TabIndex = 41;
             this.btnSlecionarRutaJSON.TabStop = false;
@@ -224,9 +226,10 @@
             // 
             this.btnBuscar_XML.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar_XML.Image = global::control_principal.Properties.Resources.folder2;
-            this.btnBuscar_XML.Location = new System.Drawing.Point(309, 64);
+            this.btnBuscar_XML.Location = new System.Drawing.Point(431, 89);
+            this.btnBuscar_XML.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar_XML.Name = "btnBuscar_XML";
-            this.btnBuscar_XML.Size = new System.Drawing.Size(46, 40);
+            this.btnBuscar_XML.Size = new System.Drawing.Size(61, 49);
             this.btnBuscar_XML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBuscar_XML.TabIndex = 36;
             this.btnBuscar_XML.TabStop = false;
@@ -238,9 +241,10 @@
             // 
             this.btnCrearJson.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrearJson.Image = global::control_principal.Properties.Resources.crearJson;
-            this.btnCrearJson.Location = new System.Drawing.Point(249, 386);
+            this.btnCrearJson.Location = new System.Drawing.Point(289, 523);
+            this.btnCrearJson.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearJson.Name = "btnCrearJson";
-            this.btnCrearJson.Size = new System.Drawing.Size(121, 44);
+            this.btnCrearJson.Size = new System.Drawing.Size(244, 94);
             this.btnCrearJson.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCrearJson.TabIndex = 34;
             this.btnCrearJson.TabStop = false;
@@ -250,10 +254,10 @@
             // 
             // GenerarJSON
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(620, 451);
+            this.ClientSize = new System.Drawing.Size(863, 660);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNombreJSON);
             this.Controls.Add(this.label6);
@@ -268,6 +272,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCrearJson);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GenerarJSON";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

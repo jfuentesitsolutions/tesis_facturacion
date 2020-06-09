@@ -71,12 +71,9 @@ namespace cryptografia
             factura_xml.MetodoPagoSpecified = true;
             factura_xml.LugarExpedicion = factura.Lugar_expedicion;
             factura_xml.Cantidad_letras = factura.Cantidad_letras;
-            //empieza la empresa
             factura_xml.Emisor = empre();
-            //empieza el cliente
             factura_xml.Receptor = client();
             factura_xml.Conceptos = item().ToArray();
-            //empieza los clientes
             factura_xml.Impuestos = impuestos();
             if (Convert.ToDouble(factura.Total) > 200)
             {
@@ -138,7 +135,7 @@ namespace cryptografia
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load(directorio_xml);
-                //File.Delete(directorio_xml);
+                File.Delete(directorio_xml);
                 string json = JsonConvert.SerializeXmlNode(doc);
                 File.WriteAllText(directorio_json, json);
                 return true;
@@ -176,7 +173,7 @@ namespace cryptografia
         private ComprobanteEmisor empre()
         {
             ComprobanteEmisor empre = new ComprobanteEmisor();
-            empre.Nrc = empres.Rows[0][2].ToString(); 
+            empre.NRC = empres.Rows[0][2].ToString(); 
             empre.NombreEmpresa = empres.Rows[0][1].ToString();
             empre.RazonSocial = empres.Rows[0][3].ToString();
             empre.Denominacion = empres.Rows[0][4].ToString();
@@ -192,12 +189,12 @@ namespace cryptografia
         {
             ComprobanteReceptor cli = new ComprobanteReceptor();
             cli.Nombre_Cliente = cliente.Rows[0][2].ToString() + " " + cliente.Rows[0][3].ToString();
-            cli.Nrc_Cliente = cliente.Rows[0][7].ToString();
-            cli.Denominacion_Cliente = cliente.Rows[0][1].ToString();
-            cli.Razon_Social_Cliente = cliente.Rows[0][8].ToString();
-            cli.Giro_Cliente = cliente.Rows[0][8].ToString();
+            cli.NRC = cliente.Rows[0][7].ToString();
+            cli.Denominacion = cliente.Rows[0][1].ToString();
+            cli.Razon_Social = cliente.Rows[0][8].ToString();
+            cli.Giro = cliente.Rows[0][8].ToString();
             cli.Direccion = cliente.Rows[0][4].ToString();
-            cli.Nit_Cliente = cliente.Rows[0][6].ToString();
+            cli.Nit = cliente.Rows[0][6].ToString();
 
             return cli;
         }

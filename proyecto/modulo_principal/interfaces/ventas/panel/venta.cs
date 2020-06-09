@@ -1,5 +1,4 @@
-﻿using FirmarPDF;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +10,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 
 namespace interfaces.ventas.panel
@@ -26,7 +24,7 @@ namespace interfaces.ventas.panel
         //DataTable vendedor = conexiones_BD.clases.usuarios.datosTabla();
         utilitarios.cargar_tablas tabla, tablaC;
         string cantiAn, precioAn;
-        bool busqueda = false, busquedaC = false;
+        bool busqueda = false, busquedaC=false;
         string idticket_Buscado = null;
         Action accion;
         string correlativoAA, idcorrel;
@@ -67,7 +65,7 @@ namespace interfaces.ventas.panel
                 txtNumFact.Visible = false;
                 listaVendedor.Visible = false;
             }
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -117,7 +115,7 @@ namespace interfaces.ventas.panel
                 listaVendedor.Enabled = false;
             }
             //nuevoCliente();
-
+            
         }
 
         private void cargarTablas()
@@ -132,7 +130,7 @@ namespace interfaces.ventas.panel
 
         //private void cargarListaProductos()
         //{
-
+            
         //    if (chkCod.Checked)
         //    {
         //        if (sesion.Datos[3].Equals("Administradores"))
@@ -173,18 +171,18 @@ namespace interfaces.ventas.panel
         //        //lbltipoBusqueda.Text = "Presentación:";
         //    }
 
-
-
+ 
+            
         //}
 
         private void venta_Load(object sender, EventArgs e)
         {
             relog.Start();
-
+            
             //  producto_venta = conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_X_SUCURSAL_VENTA(sesion.DatosRegistro[1]);
             Thread t = new Thread(creandoaccion);
             t.Start();
-
+            
         }
 
         private void creandoaccion()
@@ -195,7 +193,7 @@ namespace interfaces.ventas.panel
                 Invoke(accion);
             }
 
-
+            
         }
 
         private void cargarTodo()
@@ -265,11 +263,11 @@ namespace interfaces.ventas.panel
             else if (e.KeyCode == Keys.F9)
             {
                 btnCancelar.PerformClick();
-            } else if (e.KeyCode == Keys.F5)
+            }else if (e.KeyCode == Keys.F5)
             {
                 cargarTablas();
                 barraDeprogreso(10);
-            } else if (e.KeyCode == Keys.F11)
+            }else if (e.KeyCode == Keys.F11)
             {
                 cobrosinTicket();
             }
@@ -284,10 +282,10 @@ namespace interfaces.ventas.panel
                     if (chkCod.Checked || chkNom.Checked)
                     {
                         //cantidadProductos();
-                    } else if (chkPres.Checked)
+                    }else if(chkPres.Checked)
                     {
                         //cantidadProductoPrese();
-                    }
+                    } 
                 }
                 catch
                 {
@@ -347,7 +345,7 @@ namespace interfaces.ventas.panel
         //                pu.lblExis.Text,
         //                pu.Sucursal_producto
         //                );
-
+                        
         //            }else
         //            {
         //                //si el articulo no esta repetido
@@ -370,9 +368,9 @@ namespace interfaces.ventas.panel
         //                pu.Sucursal_producto
         //                );
         //                }
-
+                        
         //            }
-
+                    
         //            utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
         //            cargarListaProductos();
         //            calcularTotales();
@@ -437,14 +435,14 @@ namespace interfaces.ventas.panel
         //                    }
         //                }
 
-
-
+                        
+                          
         //            }
         //        }
         //        utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
         //        cargarListaProductos();
         //        calcularTotales();
-
+                
         //    }
         //}
 
@@ -529,40 +527,40 @@ namespace interfaces.ventas.panel
         private bool productoRepetido(string idpr_pro, string cant)
         {
             bool encontrado = false;
-
-            foreach (DataGridViewRow fila in tabla_articulos.Rows)
-            {
-                if (fila.Cells[7].Value.Equals(idpr_pro))
+            
+                foreach (DataGridViewRow fila in tabla_articulos.Rows)
                 {
-                    Int32 canA = Convert.ToInt32(fila.Cells[4].Value); // cantidad actual del producto.
-                    Int32 canN = Convert.ToInt32(cant); //cantidad nueva del producto
-
-                    Int32 canInt = Convert.ToInt32(fila.Cells[10].Value); //cantidad interna del producto
-                    Int32 exis = Convert.ToInt32(fila.Cells[11].Value); //Existencias del producto
-
-                    Int32 canTN = canA + canN; //cantidad nueva ya sumada
-                    Int32 tN = (canA * canInt) + (canN * canInt); //determinando la cantidad total segun la cantidad interna
-
-                    if (tN > exis)
+                    if (fila.Cells[7].Value.Equals(idpr_pro))
                     {
-                        MessageBox.Show("No hay existencias", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        encontrado = true;
-                    }
-                    else
-                    {
-                        fila.Cells[4].Value = canTN.ToString(); //colocando la cantidad nueva sumada
-                        double total = Convert.ToDouble(recalcularTotalProducto(fila.Cells[4].Value.ToString(), fila.Cells[5].Value.ToString()));
-                        double iva = Math.Round(total * 0.13, 2);
-                        fila.Cells[6].Value = Math.Round(total, 2).ToString();
-                        fila.Cells[15].Value = iva.ToString();
+                        Int32 canA = Convert.ToInt32(fila.Cells[4].Value); // cantidad actual del producto.
+                        Int32 canN = Convert.ToInt32(cant); //cantidad nueva del producto
+
+                        Int32 canInt = Convert.ToInt32(fila.Cells[10].Value); //cantidad interna del producto
+                        Int32 exis = Convert.ToInt32(fila.Cells[11].Value); //Existencias del producto
+
+                        Int32 canTN = canA + canN; //cantidad nueva ya sumada
+                        Int32 tN = (canA * canInt) + (canN * canInt); //determinando la cantidad total segun la cantidad interna
+
+                        if (tN > exis)
+                        {
+                            MessageBox.Show("No hay existencias", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            encontrado = true;
+                        }
+                        else
+                        {
+                            fila.Cells[4].Value = canTN.ToString(); //colocando la cantidad nueva sumada
+                            double total = Convert.ToDouble(recalcularTotalProducto(fila.Cells[4].Value.ToString(), fila.Cells[5].Value.ToString()));
+                            double iva= Math.Round(total * 0.13, 2);
+                            fila.Cells[6].Value = Math.Round(total,2).ToString();
+                            fila.Cells[15].Value = iva.ToString();
                         calcularTotales();
-                        encontrado = true;
+                            encontrado = true;
+                        }
                     }
                 }
-            }
 
 
-
+            
 
             return encontrado;
         }
@@ -595,8 +593,8 @@ namespace interfaces.ventas.panel
                         break;
                     }
             }
-
-
+            
+            
             return total;
         }
 
@@ -605,7 +603,7 @@ namespace interfaces.ventas.panel
             double precio = 0.00;
             double iva = 0.00;
 
-            foreach (DataGridViewRow fila in tabla_articulos.Rows)
+            foreach(DataGridViewRow fila in tabla_articulos.Rows)
             {
                 precio += Convert.ToDouble(fila.Cells[6].Value);
                 iva += Convert.ToDouble(fila.Cells[15].Value);
@@ -625,7 +623,7 @@ namespace interfaces.ventas.panel
                         lblDescuento.Text = tota.ToString();
                         break;
                     }
-
+                
                 case 5:
                     {
                         lblCantidad_de_articulos.Text = "Cantidad de articulos " + tabla_articulos.Rows.Count;
@@ -643,20 +641,19 @@ namespace interfaces.ventas.panel
                         lblSubt.Text = precio.ToString();
                         lblDescuento.Text = precio.ToString();
                         lblTotal.Text = "$ " + precio.ToString();
-                        lblIva.Text = iva.ToString();
                         total = precio.ToString();
                         break;
                     }
             }
 
-
-
+            
+            
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (tabla_articulos.RowCount != 0)
+            if (tabla_articulos.RowCount!=0)
             {
-                if (MessageBox.Show("Tienes articulos agregados ¿Deseas quitarlos?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                if (MessageBox.Show("Tienes articulos agregados ¿Deseas quitarlos?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)==DialogResult.Yes)
                 {
                     tabla_articulos.Rows.Clear();
                     tabla_articulos.Enabled = true;
@@ -683,13 +680,13 @@ namespace interfaces.ventas.panel
                 {
                     con.TabPages.Remove(con.SelectedTab);
                 }
-
+                
             }
             catch
             {
 
             }
-
+            
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -697,7 +694,7 @@ namespace interfaces.ventas.panel
 
             switch (listaTipoFactura.SelectedIndex)
             {
-                case 0:
+                 case 0:
                     {
                         if (!validar())
                         {
@@ -714,7 +711,7 @@ namespace interfaces.ventas.panel
                                 cobro.Size = new Size(232, 429);
                                 cobro.ShowDialog();
                                 if (cobro.Cobrado)
-                                {
+                                {    
                                     ingresandoVentaTicket(correlativo, cobro.txtefe.Text, cobro.lblCambio.Text, id); // metodo para ingresar la venta del ticket
                                 }
                             }
@@ -739,7 +736,7 @@ namespace interfaces.ventas.panel
                                     cobro.ShowDialog();
                                     if (cobro.Cobrado)
                                     {
-                                        int lt = cobro.listaMetodoPago.SelectedIndex + 1;
+                                        int lt = cobro.listaMetodoPago.SelectedIndex+1;
 
                                         switch (cobro.listaMetodoPago.SelectedIndex)
                                         {
@@ -762,17 +759,17 @@ namespace interfaces.ventas.panel
                                                     break;
                                                 }
                                         }
-
+                                        
                                     }
                                 }
-
+                               
                             }
                             else
                             {
                                 MessageBox.Show("No esta configurada la información de la empresa, porfavor vaya a la opcion configuraciones y agregue la información", "No hay información de la empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-
+                        
                         break;
                     }
 
@@ -936,8 +933,8 @@ namespace interfaces.ventas.panel
                         break;
                     }
             }
-
-
+            
+ 
         }
         private void cobrosinTicket()
         {
@@ -964,63 +961,63 @@ namespace interfaces.ventas.panel
         }
         private void ingresandoVentaTicket(string correl, string efec, string cam, string idcorre)
         {
-
+            
             utilitarios.maneja_fechas fecha = new utilitarios.maneja_fechas();
             Console.WriteLine(fecha_actual.ToString());
 
             conexiones_BD.clases.ventas.tickets ticke = new conexiones_BD.clases.ventas.tickets(
-                "0",
-                "0",
-                fecha.fechaMy(lblrelog.ToString()),
+                "0", 
+                "0", 
+                fecha.fechaMy(lblrelog.ToString()), 
                 sesion.DatosRegistro[1],
-                "1",
+                "1", 
                 listaFormaPago.SelectedValue.ToString(),
-                correl,
-                listaVendedor.SelectedValue.ToString(),
+                correl, 
+                listaVendedor.SelectedValue.ToString(), 
                 lblSubt.Text, lblDescuento.Text,
-                this.total,
-                "1",
-                efec,
-                cam,
-                lista[0],
-                idcorre,
+                this.total, 
+                "1", 
+                efec, 
+                cam, 
+                lista[0], 
+                idcorre, 
                 sesion.Idcaja);
 
             conexiones_BD.operaciones op = new conexiones_BD.operaciones();
-            conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasTickets(retornoProductos(), ticke);
+            conexiones_BD.clases.ctrl_errores.errores err= op.transaccionVentasTickets(retornoProductos(), ticke);
 
             Int32 res = err.Res;
 
-            if (res > 0)
+            if ( res > 0)
             {
-                // Aqui se imprime los tickets en la impresora
-                PrintDocument printDoc = new PrintDocument();
+               // Aqui se imprime los tickets en la impresora
+                    PrintDocument printDoc = new PrintDocument();
                 string impresora = printDoc.PrinterSettings.PrinterName;
-
-                conexiones_BD.clases.ventas.impresion_prueba imp = new conexiones_BD.clases.ventas.impresion_prueba();
-                if (imp.impresionTicket(impresora, conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(correl)))
-                {
+                    
+                        conexiones_BD.clases.ventas.impresion_prueba imp = new conexiones_BD.clases.ventas.impresion_prueba();
+                        if (imp.impresionTicket(impresora, conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(correl)))
+                        {
 
                     limpiarTodo();
-                    //if (Gcliente.Height==137)
-                    //{
-                    //    ocultarDetalles();
-                    //}
-
-                }
-                else
-                {
+                        //if (Gcliente.Height==137)
+                        //{
+                        //    ocultarDetalles();
+                        //}
+                        
+                    }
+                    else
+                    {
 
                     MessageBox.Show("Se produjo un error al guardar el ticket, pero la venta se guardo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    tabla_articulos.Rows.Clear();
-                    calcularTotales();
-                    busqueda = false;
-                    txtBusqueda.Text = "";
-                    txtBusqueda.Focus();
-                    tablad.Visible = false;
-                    tablad.DataSource = null;
-                }
-
+                        tabla_articulos.Rows.Clear();
+                        calcularTotales();
+                        busqueda = false;
+                        txtBusqueda.Text = "";
+                        txtBusqueda.Focus();
+                        tablad.Visible = false;
+                        tablad.DataSource = null;
+                    }
+       
             }
             else
             {
@@ -1055,13 +1052,13 @@ namespace interfaces.ventas.panel
             System.Console.Write(lista[1]);
         }
 
-        private void ingresandoVentaFactura(string efec, string cam, string num_factura, string serie_auto,
+        private void ingresandoVentaFactura(string efec, string cam, string num_factura, string serie_auto, 
             string meto_pago, conexiones_BD.clases.entidad en)
         {
-            string centre = "ND", crecibe = "ND", dentrega = "ND", drecibe = "ND", nentrega = "ND", nrecibe = "ND";
-            if (Convert.ToDouble(lblDescuento.Text) >= 200)
+            string centre = "ND", crecibe = "ND", dentrega = "ND", drecibe = "ND", nentrega = "ND", nrecibe = "ND"; 
+            if (Convert.ToDouble(lblDescuento.Text)>=200)
             {
-                if (MessageBox.Show("La cantidad es mayor a 200 dolares, ¿Desea colocar los datos de quien entrega y quien recibe?", "Venta mayor a 200 dolares", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("La cantidad es mayor a 200 dolares, ¿Desea colocar los datos de quien entrega y quien recibe?", "Venta mayor a 200 dolares",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     auxiliares.datos_emisor_receptor datos = new auxiliares.datos_emisor_receptor();
                     datos.ShowDialog();
@@ -1074,7 +1071,7 @@ namespace interfaces.ventas.panel
                         nentrega = datos.txtNientrega.Text;
                         nrecibe = datos.txtNirecibe.Text;
                     }
-                } else
+                }else
                 {
                     centre = "ND";
                     crecibe = "ND";
@@ -1085,8 +1082,8 @@ namespace interfaces.ventas.panel
                 }
             }
 
-
-            double descuento = Math.Round((Convert.ToDouble(lblIva.Text) + Convert.ToDouble(lblExe.Text) + Convert.ToDouble(lblDesc.Text)), 2);
+            
+            double descuento = Math.Round((Convert.ToDouble(lblIva.Text) + Convert.ToDouble(lblExe.Text) + Convert.ToDouble(lblDesc.Text)),2);
             utilitarios.convertir_letra letras = new utilitarios.convertir_letra();
 
             conexiones_BD.clases.ventas.facturas factura = new conexiones_BD.clases.ventas.facturas("F" + txtSerie.Text + txtNumFact.Text, "", sesion.DatosRegistro[1],
@@ -1153,7 +1150,7 @@ namespace interfaces.ventas.panel
                                     }
                                     else
                                     {
-
+                                        
                                         MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                     break;
@@ -1183,13 +1180,13 @@ namespace interfaces.ventas.panel
                                     }
                                     else
                                     {
-
+                                        
                                         MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                     break;
                                 }
                         }
-
+                        
                         break;
                     }
             }
@@ -1227,7 +1224,7 @@ namespace interfaces.ventas.panel
                                     MessageBox.Show("La contraseña no coincide o el archivo de contenedor del certificado esta dañado", "Error al abrir el almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
-                            break;
+                                break;
                         }
 
                     case 1:
@@ -1249,29 +1246,20 @@ namespace interfaces.ventas.panel
                                     {
                                         MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         limpiarTodo();
-                                    } else
+                                    }else
                                     {
                                         MessageBox.Show("No se pudo regenerar la farmacia en formato json", "Error al generar json", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
-
-                                } else
+                                        
+                                }else
                                 {
                                     MessageBox.Show("La contraseña no coincide o el archivo de contenedor del certificado esta dañado", "Error al abrir el almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
-                            break;
+                                    break;
                         }
                 }
             }
-        }
-
-        private string Ruta_XML, txtNombrePDF, Ruta_SelectPDF;
-
-        private int verificando()
-        {
-            GenerarXMLtoPDF _generarPDF = new GenerarXMLtoPDF(Ruta_XML, txtNombrePDF, Ruta_SelectPDF);
-            _generarPDF.Ima = Properties.Resources.logo2;
-            return _generarPDF.CrearPDF();
         }
 
         private void generando_factura_electronica(conexiones_BD.clases.ventas.facturas factura, string tipo, conexiones_BD.clases.entidad en)
@@ -1290,16 +1278,11 @@ namespace interfaces.ventas.panel
                             guarda_xml.DefaultExt = "xml";
                             guarda_xml.Filter = "Text files (*.xml)|*.xml|All files (*.*)|*.*";
                             guarda_xml.FileName = factura.Numero_factura;
-                           
                             if (guarda_xml.ShowDialog() == DialogResult.OK)
                             {
                                 cryptografia.crear_xml fact = new cryptografia.crear_xml(lista[0], factura,
                                             retornoProductos_factura(), guarda_xml.FileName, valida.txtContrase.Text);
-                                Ruta_XML = guarda_xml.FileName;
-                                txtNombrePDF = factura.Numero_factura;
-                                Ruta_SelectPDF = @"C:\Facturas\";
 
-                                //Creando el xml
                                 if (creando_xml_json(true, fact))
                                 {
                                     conexiones_BD.operaciones op = new conexiones_BD.operaciones();
@@ -1312,68 +1295,8 @@ namespace interfaces.ventas.panel
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
-                                                    if (MessageBox.Show("La factura se genero en formato xml con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                                    {
-                                                        using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
-                                                        {
-                                                            fe.Funcion_verificar = verificando;
-                                                            fe.Tipo_operacio = 2;
-
-                                                            if (fe.ShowDialog() == DialogResult.OK)
-                                                            {
-                                                                switch (fe.Numero)
-                                                                {
-                                                                    case 0:
-                                                                        //Envio del pdf al correo
-                                                                        correo.envio correo = new correo.envio();
-                                                                        //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
-                                                                        correo.RutaArchivo = Ruta_XML;
-                                                                        correo.RutaArchivo2 = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF;
-                                                                        correo.ShowDialog();
-                                                                        if (correo.Enviado)
-                                                                        {
-                                                                            MessageBox.Show("Enviado con exíto");
-                                                                            limpiarTodo();
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            limpiarTodo();
-                                                                        }
-                                                                        break;
-
-                                                                    case 1:
-                                                                        MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                                                        break;
-                                                                    case 2:
-                                                                        MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                        break;
-
-                                                                    case 3:
-                                                                        
-                                                                        break;
-
-                                                                    case 4:
-                                                                        /*este caso solo es de salida */
-                                                                        break;
-                                                                    case 5:
-                                                                        MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                        break;
-
-                                                                    case 6:
-                                                                        MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                        break;
-
-                                                                    default:
-                                                                        MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                        break;
-                                                                }
-                                                            }
-                                                        }                                                       
-                                                    }
-                                                    else
-                                                    {
-                                                        limpiarTodo();
-                                                    }                  
+                                                    MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    limpiarTodo();
                                                 }
                                                 else
                                                 {
@@ -1390,74 +1313,14 @@ namespace interfaces.ventas.panel
                                                 factura.recargandoDatos();
                                                 ta.cargarDatosNuevamente();
                                                 conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasFacturas(
-                                                    retornoProductos_factura(), factura);
+                                                    retornoProductos_factura(),factura);
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
                                                     if (op.insertar2(ta.sentenciaIngresar()) > 0)
                                                     {
-                                                        if (MessageBox.Show("La factura se genero en formato xml con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                                        {
-                                                            using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
-                                                            {
-                                                                fe.Funcion_verificar = verificando;
-                                                                fe.Tipo_operacio = 2;
-
-                                                                if (fe.ShowDialog() == DialogResult.OK)
-                                                                {
-                                                                    switch (fe.Numero)
-                                                                    {
-                                                                        case 0:
-                                                                            //Envio del pdf al correo
-                                                                            correo.envio correo = new correo.envio();
-                                                                            //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
-                                                                            correo.RutaArchivo = Ruta_XML;
-                                                                            correo.RutaArchivo2 = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF;
-                                                                            correo.ShowDialog();
-                                                                            if (correo.Enviado)
-                                                                            {
-                                                                                MessageBox.Show("Enviado con exíto");
-                                                                                limpiarTodo();
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                limpiarTodo();
-                                                                            }
-                                                                            break;
-
-                                                                        case 1:
-                                                                            MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                                                            break;
-                                                                        case 2:
-                                                                            MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                            break;
-
-                                                                        case 3:
-
-                                                                            break;
-
-                                                                        case 4:
-                                                                            /*este caso solo es de salida */
-                                                                            break;
-                                                                        case 5:
-                                                                            MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                            break;
-
-                                                                        case 6:
-                                                                            MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                            break;
-
-                                                                        default:
-                                                                            MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                            break;
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                        else
-                                                        {
-                                                            limpiarTodo();
-                                                        }
+                                                        MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        limpiarTodo();
                                                     }
                                                     else
                                                     {
@@ -1483,75 +1346,15 @@ namespace interfaces.ventas.panel
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
-                                                    if (op.insertar2(ta.sentenciaIngresar()) > 0)
+                                                    if (op.insertar2(ta.sentenciaIngresar())>0)
                                                     {
-                                                        if (MessageBox.Show("La factura se genero en formato xml con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                                        {
-                                                            using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
-                                                            {
-                                                                fe.Funcion_verificar = verificando;
-                                                                fe.Tipo_operacio = 2;
-
-                                                                if (fe.ShowDialog() == DialogResult.OK)
-                                                                {
-                                                                    switch (fe.Numero)
-                                                                    {
-                                                                        case 0:
-                                                                            //Envio del pdf al correo
-                                                                            correo.envio correo = new correo.envio();
-                                                                            //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
-                                                                            correo.RutaArchivo = Ruta_XML;
-                                                                            correo.RutaArchivo2 = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF;
-                                                                            correo.ShowDialog();
-                                                                            if (correo.Enviado)
-                                                                            {
-                                                                                MessageBox.Show("Enviado con exíto");
-                                                                                limpiarTodo();
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                limpiarTodo();
-                                                                            }
-                                                                            break;
-
-                                                                        case 1:
-                                                                            MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                                                            break;
-                                                                        case 2:
-                                                                            MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                            break;
-
-                                                                        case 3:
-
-                                                                            break;
-
-                                                                        case 4:
-                                                                            /*este caso solo es de salida */
-                                                                            break;
-                                                                        case 5:
-                                                                            MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                            break;
-
-                                                                        case 6:
-                                                                            MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                            break;
-
-                                                                        default:
-                                                                            MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                            break;
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                        else
-                                                        {
-                                                            limpiarTodo();
-                                                        }
+                                                        MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        limpiarTodo();
                                                     } else
                                                     {
                                                         MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                                     }
-
+                                                    
                                                 }
                                                 else
                                                 {
@@ -1561,6 +1364,8 @@ namespace interfaces.ventas.panel
                                                 break;
                                             }
                                     }
+                                    
+                                       
                                 }
                                 else
                                 {
@@ -1577,15 +1382,11 @@ namespace interfaces.ventas.panel
                             guarda_xml.DefaultExt = "json";
                             guarda_xml.Filter = "Text files (*.json)|*.json|All files (*.*)|*.*";
                             guarda_xml.FileName = factura.Numero_factura;
-
                             if (guarda_xml.ShowDialog() == DialogResult.OK)
                             {
-                                string ruta = Path.GetFullPath("xmlTemporal.xml");
+                                string ruta= Path.GetFullPath("xmlTemporal.xml");
                                 cryptografia.crear_xml fact = new cryptografia.crear_xml(lista[0], factura,
                                             retornoProductos_factura(), ruta, valida.txtContrase.Text);
-                                Ruta_XML = ruta;
-                                txtNombrePDF = factura.Numero_factura;
-                                Ruta_SelectPDF = @"C:\Facturas\";
 
                                 if (creando_xml_json(false, fact))
                                 {
@@ -1599,77 +1400,16 @@ namespace interfaces.ventas.panel
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
-                                                    if (fact.creando_json(ruta, guarda_xml.FileName))
+                                                    if(fact.creando_json(ruta, guarda_xml.FileName))
                                                     {
-                                                        //Colocar aqui el codigo
-                                                        if (MessageBox.Show("La factura se genero en formato json con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                                        {
-                                                            using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
-                                                            {
-                                                                fe.Funcion_verificar = verificando;
-                                                                fe.Tipo_operacio = 2;
-
-                                                                if (fe.ShowDialog() == DialogResult.OK)
-                                                                {
-                                                                    switch (fe.Numero)
-                                                                    {
-                                                                        case 0:
-                                                                            //Envio del pdf al correo
-                                                                            correo.envio correo = new correo.envio();
-                                                                            //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
-                                                                            correo.RutaArchivo = guarda_xml.FileName;
-                                                                            correo.RutaArchivo2 = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF;
-                                                                            correo.ShowDialog();
-                                                                            if (correo.Enviado)
-                                                                            {
-                                                                                MessageBox.Show("Enviado con exíto");
-                                                                                File.Delete(ruta);
-                                                                                limpiarTodo();
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                limpiarTodo();
-                                                                            }
-                                                                            break;
-
-                                                                        case 1:
-                                                                            MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                                                            break;
-                                                                        case 2:
-                                                                            MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                            break;
-
-                                                                        case 3:
-
-                                                                            break;
-
-                                                                        case 4:
-                                                                            /*este caso solo es de salida */
-                                                                            break;
-                                                                        case 5:
-                                                                            MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                            break;
-
-                                                                        case 6:
-                                                                            MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                            break;
-
-                                                                        default:
-                                                                            MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                            break;
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                        else
-                                                        {
-                                                            limpiarTodo();
-                                                        }
+                                                        MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        limpiarTodo();
                                                     }
                                                     else
                                                     {
                                                         MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                                     }
+                                                    
                                                 }
                                                 else
                                                 {
@@ -1694,69 +1434,8 @@ namespace interfaces.ventas.panel
                                                     {
                                                         if (fact.creando_json(ruta, guarda_xml.FileName))
                                                         {
-                                                            if (MessageBox.Show("La factura se genero en formato json con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                                            {
-                                                                using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
-                                                                {
-                                                                    fe.Funcion_verificar = verificando;
-                                                                    fe.Tipo_operacio = 2;
-
-                                                                    if (fe.ShowDialog() == DialogResult.OK)
-                                                                    {
-                                                                        switch (fe.Numero)
-                                                                        {
-                                                                            case 0:
-                                                                                //Envio del pdf al correo
-                                                                                correo.envio correo = new correo.envio();
-                                                                                //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
-                                                                                correo.RutaArchivo = guarda_xml.FileName;
-                                                                                correo.RutaArchivo2 = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF;
-                                                                                correo.ShowDialog();
-                                                                                if (correo.Enviado)
-                                                                                {
-                                                                                    MessageBox.Show("Enviado con exíto");
-                                                                                    File.Delete(ruta);
-                                                                                    limpiarTodo();
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    limpiarTodo();
-                                                                                }
-                                                                                break;
-
-                                                                            case 1:
-                                                                                MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                                                                break;
-                                                                            case 2:
-                                                                                MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                                break;
-
-                                                                            case 3:
-
-                                                                                break;
-
-                                                                            case 4:
-                                                                                /*este caso solo es de salida */
-                                                                                break;
-                                                                            case 5:
-                                                                                MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                                break;
-
-                                                                            case 6:
-                                                                                MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                                break;
-
-                                                                            default:
-                                                                                MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                                break;
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                            else
-                                                            {
-                                                                limpiarTodo();
-                                                            }
+                                                            MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            limpiarTodo();
                                                         }
                                                         else
                                                         {
@@ -1791,69 +1470,8 @@ namespace interfaces.ventas.panel
                                                     {
                                                         if (fact.creando_json(ruta, guarda_xml.FileName))
                                                         {
-                                                            if (MessageBox.Show("La factura se genero en formato json con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                                            {
-                                                                using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
-                                                                {
-                                                                    fe.Funcion_verificar = verificando;
-                                                                    fe.Tipo_operacio = 2;
-
-                                                                    if (fe.ShowDialog() == DialogResult.OK)
-                                                                    {
-                                                                        switch (fe.Numero)
-                                                                        {
-                                                                            case 0:
-                                                                                //Envio del pdf al correo
-                                                                                correo.envio correo = new correo.envio();
-                                                                                //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
-                                                                                correo.RutaArchivo = guarda_xml.FileName;
-                                                                                correo.RutaArchivo2 = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF;
-                                                                                correo.ShowDialog();
-                                                                                if (correo.Enviado)
-                                                                                {
-                                                                                    MessageBox.Show("Enviado con exíto");
-                                                                                    File.Delete(ruta);
-                                                                                    limpiarTodo();
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    limpiarTodo();
-                                                                                }
-                                                                                break;
-
-                                                                            case 1:
-                                                                                MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                                                                break;
-                                                                            case 2:
-                                                                                MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                                break;
-
-                                                                            case 3:
-
-                                                                                break;
-
-                                                                            case 4:
-                                                                                /*este caso solo es de salida */
-                                                                                break;
-                                                                            case 5:
-                                                                                MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                                                break;
-
-                                                                            case 6:
-                                                                                MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                                break;
-
-                                                                            default:
-                                                                                MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                                                                break;
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                            else
-                                                            {
-                                                                limpiarTodo();
-                                                            }
+                                                            MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            limpiarTodo();
                                                         }
                                                         else
                                                         {
@@ -1864,6 +1482,7 @@ namespace interfaces.ventas.panel
                                                     {
                                                         MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                                     }
+
                                                 }
                                                 else
                                                 {
@@ -1873,6 +1492,8 @@ namespace interfaces.ventas.panel
                                                 break;
                                             }
                                     }
+
+
                                 }
                                 else
                                 {
@@ -1883,9 +1504,9 @@ namespace interfaces.ventas.panel
                         }
                 }
 
-
+                
             }
-
+          
         }
 
         private bool creando_xml_json(bool tipo, cryptografia.crear_xml fac)
@@ -1898,10 +1519,10 @@ namespace interfaces.ventas.panel
                     fe.Tipo_operacio = 1;
                     if (fe.ShowDialog() == DialogResult.OK)
                     {
-                        return fe.Creado;
-                    } else
+                        return true;
+                    }else
                     {
-                        return fe.Creado;
+                        return false;
                     }
                 }
             }
@@ -1913,11 +1534,11 @@ namespace interfaces.ventas.panel
                     fe.Tipo_operacio = 1;
                     if (fe.ShowDialog() == DialogResult.OK)
                     {
-                        return fe.Creado;
+                        return true;
                     }
                     else
                     {
-                        return fe.Creado;
+                        return false;
                     }
                 }
             }
@@ -1943,26 +1564,26 @@ namespace interfaces.ventas.panel
             {
 
                 MessageBox.Show("Venta realizada", "Exíto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tabla_articulos.Rows.Clear();
-                calcularTotales();
-                busqueda = false;
-                txtBusqueda.Text = "";
-                txtBusqueda.Focus();
-                tablad.Visible = false;
-                tablad.DataSource = null;
-                tabla_clientes.DataSource = null;
-                cargaListas();
+                    tabla_articulos.Rows.Clear();
+                    calcularTotales();
+                    busqueda = false;
+                    txtBusqueda.Text = "";
+                    txtBusqueda.Focus();
+                    tablad.Visible = false;
+                    tablad.DataSource = null;
+                    tabla_clientes.DataSource = null;
+                    cargaListas();
 
-                cargarTablas();
+                    cargarTablas();
 
-                lista.Clear();
-                lista_p.ForEach(c => lista.Add(c));
+                    lista.Clear();
+                    lista_p.ForEach(c => lista.Add(c));
 
-                txtDireccion.Text = lista_p[3];
-                txtBuscarCliente.Text = lista_p[1] + " " + lista_p[2];
+                    txtDireccion.Text = lista_p[3];
+                    txtBuscarCliente.Text = lista_p[1] + " " + lista_p[2];
 
-                tabla_clientes.Visible = false;
-                System.Console.Write(lista[1]);
+                    tabla_clientes.Visible = false;
+                    System.Console.Write(lista[1]);
 
             }
             else
@@ -1978,7 +1599,7 @@ namespace interfaces.ventas.panel
             bool valido = false;
             error.Clear();
 
-            if (listaTipoFactura.SelectedIndex != 0)
+            if (listaTipoFactura.SelectedIndex!=0)
             {
                 if (txtNumFact.Value == 0)
                 {
@@ -2005,16 +1626,16 @@ namespace interfaces.ventas.panel
         private List<conexiones_BD.clases.ventas.detalles_productos_venta_ticket> retornoProductos()
         {
             List<conexiones_BD.clases.ventas.detalles_productos_venta_ticket> dp = new List<conexiones_BD.clases.ventas.detalles_productos_venta_ticket>();
-
+            
             foreach (DataGridViewRow fila in tabla_articulos.Rows)
             {
-                double cantidad = Convert.ToDouble(fila.Cells[4].Value.ToString()) * Convert.ToDouble(fila.Cells[10].Value.ToString());
-                double can = Convert.ToDouble(fila.Cells[4].Value.ToString());
-                dp.Add(new conexiones_BD.clases.ventas.detalles_productos_venta_ticket(
-                    "0", fila.Cells[7].Value.ToString(), cantidad.ToString(),
-                    fila.Cells[5].Value.ToString(), fila.Cells[6].Value.ToString(),
-                    fila.Cells[8].Value.ToString(), "0", fila.Cells[12].Value.ToString(),
-                    can.ToString(), fila.Cells[1].Value.ToString()));
+                    double cantidad = Convert.ToDouble(fila.Cells[4].Value.ToString()) * Convert.ToDouble(fila.Cells[10].Value.ToString());
+                    double can = Convert.ToDouble(fila.Cells[4].Value.ToString());
+                    dp.Add(new conexiones_BD.clases.ventas.detalles_productos_venta_ticket(
+                        "0", fila.Cells[7].Value.ToString(), cantidad.ToString(),
+                        fila.Cells[5].Value.ToString(), fila.Cells[6].Value.ToString(),
+                        fila.Cells[8].Value.ToString(), "0", fila.Cells[12].Value.ToString(),
+                        can.ToString(), fila.Cells[1].Value.ToString()));
             }
 
 
@@ -2027,34 +1648,15 @@ namespace interfaces.ventas.panel
 
             foreach (DataGridViewRow fila in tabla_articulos.Rows)
             {
-                double cantidad_interna = Convert.ToDouble(fila.Cells[4].Value.ToString()) *
+                double cantidad_interna = Convert.ToDouble(fila.Cells[4].Value.ToString()) * 
                     Convert.ToDouble(fila.Cells[10].Value.ToString()); // colocamos las dos cantidades
                 double cantidad_neta = Convert.ToDouble(fila.Cells[4].Value.ToString()); // cantidad actual
 
-                double precio = 0.0;
-                switch (listaTipoFactura.SelectedIndex)
-                {
-                    case 2:
-                        {
-                            precio = Math.Round((Convert.ToDouble(fila.Cells[5].Value) / 1.13),2);
-                            break;
-                        }
-                    case 5:
-                        {
-                            precio = Math.Round((Convert.ToDouble(fila.Cells[5].Value) / 1.13), 2);
-                            break;
-                        }
-                    default:
-                        {
-                            precio = Convert.ToDouble(fila.Cells[5].Value);
-                            break;
-                        }
-                }
                 dp.Add(new conexiones_BD.clases.ventas.detalles_productos_venta_factura(
                     "",
                     fila.Cells[7].Value.ToString(),
                     cantidad_neta.ToString(),
-                    precio.ToString(),
+                    fila.Cells[5].Value.ToString(),
                     fila.Cells[6].Value.ToString(),
                     fila.Cells[8].Value.ToString(),
                     "",
@@ -2076,11 +1678,11 @@ namespace interfaces.ventas.panel
             if (tabla_articulos.Columns[e.ColumnIndex].Name == "canti")
             {
                 double canN = 0; // cantidad nueva
-                double canNU = 0;
+                double canNU = 0; 
                 int canNuu = 0;
 
                 if (tabla_articulos.Rows[e.RowIndex].Cells[13].Value.ToString().Equals("0"))
-                {
+                {   
                     try
                     {
                         canN = Convert.ToDouble(tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToInt32(tabla_articulos.Rows[e.RowIndex].Cells[10].Value.ToString());
@@ -2124,7 +1726,7 @@ namespace interfaces.ventas.panel
                                             break;
                                         }
                                 }
-
+                                
                             }
                             else
                             {
@@ -2136,15 +1738,15 @@ namespace interfaces.ventas.panel
                         {
                             tabla_articulos.Rows[e.RowIndex].Cells[4].Value = cantiAn;
                         }
-                    } catch {
+                    } catch{
                         MessageBox.Show("No puedes agregar esa cantidad", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         canN = Convert.ToInt32(cantiAn);
                         tabla_articulos.Rows[e.RowIndex].Cells[4].Value = cantiAn;
-                        tabla_articulos.Rows[e.RowIndex].Cells[6].Value = recalcularTotalProducto(cantiAn.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString());
+                        tabla_articulos.Rows[e.RowIndex].Cells[6].Value = recalcularTotalProducto(cantiAn.ToString(), tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString());          
                     }
                 }
                 else
-                {
+                { 
                     try
                     {
                         canN = Convert.ToDouble(tabla_articulos.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToInt32(tabla_articulos.Rows[e.RowIndex].Cells[10].Value.ToString());
@@ -2208,17 +1810,17 @@ namespace interfaces.ventas.panel
                         tabla_articulos.Rows[e.RowIndex].Cells[4].Value = cantiAn;
                     }
                 }
-            } else if (tabla_articulos.Columns[e.ColumnIndex].Name == "preci")
+            }else if (tabla_articulos.Columns[e.ColumnIndex].Name == "preci")
             {
 
-                if (MessageBox.Show("¿Deseas cambiar el precio de la presentación?", "Pregunta",
+                if (MessageBox.Show("¿Deseas cambiar el precio de la presentación?","Pregunta", 
                     MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     barraDeprogreso(10);
                     string precioN = tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(); //recogemos el precio digitado
                     if (!conexiones_BD.clases.presentaciones_productos.cambio_precio(tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(),
                         tabla_articulos.Rows[e.RowIndex].Cells[7].Value.ToString())) //Guardamos el nuevo precio
-                    {
+                    {     
                         tabla_articulos.Rows[e.RowIndex].Cells[5].Value = precioN; //Asignamos el nuevo precio a la celda    
                     }
 
@@ -2269,7 +1871,7 @@ namespace interfaces.ventas.panel
                         case 2:
                             {
                                 double iva = Math.Round((tota * 0.13), 2);
-                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(tota, 2);
+                                tabla_articulos.Rows[e.RowIndex].Cells[6].Value = Math.Round(tota,2);
                                 tabla_articulos.Rows[e.RowIndex].Cells[15].Value = Math.Round(iva, 2);
                                 break;
                             }
@@ -2287,7 +1889,7 @@ namespace interfaces.ventas.panel
                             }
                     }
 
-
+                    
                     cargarTablas();
                     txtBusqueda.Text = "";
                     txtBusqueda.Focus();
@@ -2334,7 +1936,7 @@ namespace interfaces.ventas.panel
             }
             else if (tabla_articulos.Columns[e.ColumnIndex].Name == "preci")
             {
-                precioAn = tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(); //precio actual
+                precioAn= tabla_articulos.Rows[e.RowIndex].Cells[5].Value.ToString(); //precio actual
             }
         }
 
@@ -2344,7 +1946,7 @@ namespace interfaces.ventas.panel
             {
                 ingresandoNuevoCliente();
             }
-
+                
         }
 
         private void ingresandoNuevoCliente()
@@ -2368,12 +1970,12 @@ namespace interfaces.ventas.panel
                     lista.Add(cli.txtDire.Text);
                     lista.Add(cli.listaGenero.SelectedValue.ToString());
 
-                    txtBuscarCliente.Text = lista[1] + " " + lista[2];
+                    txtBuscarCliente.Text = lista[1]+" "+lista[2];
                     txtDireccion.Text = lista[3];
                     txtBuscarCliente.Focus();
                     tabla_clientes.Visible = false;
-
-                }
+                    
+      }
             }
             else
             {
@@ -2383,11 +1985,12 @@ namespace interfaces.ventas.panel
 
         private void activacionCampoDocumento()
         {
-            if (listaTipoFactura.SelectedIndex == 0)
+            if (listaTipoFactura.SelectedIndex==0)
             {
                 txtNumFact.Enabled = false;
                 txtNumFact.Text = "";
                 txtSerie.Text = "";
+
             }
             else
             {
@@ -2404,7 +2007,7 @@ namespace interfaces.ventas.panel
                                 sesion.Serie_inicio = datos.Rows[0][4].ToString();
                                 sesion.Serie_final = datos.Rows[0][5].ToString();
                                 sesion.Serie = txtSerie.Text;
-
+                                
                                 break;
                             }
                         case 2:
@@ -2443,12 +2046,12 @@ namespace interfaces.ventas.panel
                     txtNumFact.Enabled = true;
                     txtNumFact.Text = "";
                     txtNumFact.Focus();
-                } else
+                }else
                 {
-                    MessageBox.Show("No hay resoluciones activas porfavor vaya a configuraciones en la opcion resoluciones y active o agregue una", "No hay resolución activa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No hay resoluciones activas porfavor vaya a configuraciones en la opcion resoluciones y active o agregue una","No hay resolución activa", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     listaTipoFactura.SelectedIndex = 0;
                 }
-
+                
             }
 
         }
@@ -2460,7 +2063,7 @@ namespace interfaces.ventas.panel
             if (correlativos == null)
             {
                 idcorre = "0";
-            } else
+            }else
             {
                 idcorre = correlativos.Rows[0][0].ToString();
             }
@@ -2470,88 +2073,29 @@ namespace interfaces.ventas.panel
 
         private void listaTipoFactura_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listaTipoFactura.SelectedValue != null) //verifica que lo seleccionado seha valido
+            if (listaTipoFactura.SelectedValue != null)
             {
-                if (tabla_articulos.Rows.Count != 0)// verifica que hay datos ingresados en el detalle de venta
+                if (tabla_articulos.Rows.Count != 0)
                 {
-                    if (tipo_factura != listaTipoFactura.SelectedIndex) //verificar que lo que se elija sea diferente a lo que tenia 
+                    if (tipo_factura != listaTipoFactura.SelectedIndex)
                     {
-                        if (MessageBox.Show("Al cambiar el tipo de factura se recalculara los montos ¿Desea cambiar el tipo de factura?", "Cambio de factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            recalculando_totales(listaTipoFactura.SelectedIndex);
-                        }
-                        else
-                        {
-                            listaTipoFactura.SelectedIndex = tipo_factura;
-                        }
+                        
+                                    if (MessageBox.Show("Al cambiar el tipo de factura se borran los articulos de la grilla. ¿Desea cambiar el tipo de factura?", "Cambio de factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                    {
+                                        tabla_articulos.Rows.Clear();
+                                        lblIva.Text = "0.00";
+                                        calcularTotales();
+                                    }
+                                    else
+                                    {
+                                        listaTipoFactura.SelectedIndex = tipo_factura;
+                                    }
+                        
                     }
                 }
-                activacionCampoDocumento();
+                activacionCampoDocumento();      
             }
         }
-
-        private void recalculando_totales(int tipodocu)
-        {
-            switch (tipodocu)
-            {
-                case 2:
-                    {
-                        int cantidad = 0;
-                        double precio = 0.0;
-                        double precio_sin_iva = 0.0;
-                        double desc_iva = 0.0;
-
-                        foreach (DataGridViewRow fila in tabla_articulos.Rows)
-                        {
-                            cantidad = Convert.ToInt32(fila.Cells[4].Value.ToString());
-                            precio = Convert.ToDouble(fila.Cells[5].Value.ToString());
-                            precio_sin_iva = Math.Round((precio / 1.13), 2);
-                            desc_iva = Math.Round(((precio / 1.13) * 0.13), 2);
-                            fila.Cells[6].Value = Math.Round((precio_sin_iva * cantidad), 2);
-                            fila.Cells[15].Value = Math.Round((desc_iva * cantidad), 2);
-                        }
-
-                        calcularTotales();
-                        break;
-                    }
-                case 5:
-                    {
-                        int cantidad = 0;
-                        double precio = 0.0;
-                        double precio_sin_iva = 0.0;
-                        double desc_iva = 0.0;
-
-                        foreach (DataGridViewRow fila in tabla_articulos.Rows)
-                        {
-                            cantidad = Convert.ToInt32(fila.Cells[4].Value.ToString());
-                            precio = Convert.ToDouble(fila.Cells[5].Value.ToString());
-                            precio_sin_iva = Math.Round((precio / 1.13), 2);
-                            desc_iva = Math.Round(((precio / 1.13) * 0.13), 2);
-                            fila.Cells[6].Value = Math.Round((precio_sin_iva * cantidad), 2);
-                            fila.Cells[15].Value = Math.Round((desc_iva * cantidad), 2);
-                        }
-                        calcularTotales();
-                        break;
-                    }
-                default:
-                    {
-                        int cantidad = 0;
-                        double precio = 0.0;
-                        foreach (DataGridViewRow fila in tabla_articulos.Rows)
-                        {
-                            cantidad = Convert.ToInt32(fila.Cells[4].Value.ToString());
-                            precio = Convert.ToDouble(fila.Cells[5].Value.ToString());
-                            fila.Cells[6].Value = (precio * cantidad).ToString();
-                            fila.Cells[15].Value = 0;
-                        }
-
-                        calcularTotales();
-                        break;
-                    }
-            }
-        }
-
-
 
         private void txtncr_KeyUp(object sender, KeyEventArgs e)
         {
@@ -3470,7 +3014,7 @@ namespace interfaces.ventas.panel
 
         private void listaTipoFactura_Click(object sender, EventArgs e)
         {
-            tipo_factura = listaTipoFactura.SelectedIndex; //esto se ejecuta antes de seleccionar una opcion para poner obtener el valor cambiado
+            tipo_factura = listaTipoFactura.SelectedIndex;
         }
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
